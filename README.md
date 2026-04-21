@@ -102,6 +102,37 @@ Tokens principais (em `tailwind.config.ts`):
 - [ ] Verificar em celular real (iOS e Android).
 - [ ] Configurar Google Search Console + Analytics.
 
+## Deploy na Vercel via GitHub Actions
+
+O projeto possui workflow pronto em [.github/workflows/vercel-deploy.yml](.github/workflows/vercel-deploy.yml).
+
+Comportamento:
+
+- Pull request para main: gera Preview Deploy.
+- Push na main: faz deploy de Produção.
+
+### 1. Criar tokens e IDs na Vercel
+
+1. Crie um token em Vercel Account Settings > Tokens.
+2. No projeto da Vercel, copie Project ID e Org ID.
+
+### 2. Configurar secrets no GitHub
+
+No repositório do GitHub, adicione em Settings > Secrets and variables > Actions:
+
+- VERCEL_TOKEN
+- VERCEL_ORG_ID
+- VERCEL_PROJECT_ID
+
+### 3. Testar o pipeline
+
+1. Abra um pull request para a main e confirme o job Vercel Deploy.
+2. Faça merge na main para disparar deploy de produção.
+
+### 4. Domínio
+
+Conecte seu domínio em Vercel Project > Settings > Domains.
+
 ---
 
 # 1. Inicializa o repositório git
