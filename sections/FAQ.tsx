@@ -16,7 +16,15 @@ export function FAQ() {
           <SectionTitle
             eyebrow="Dúvidas frequentes"
             title="O que as pessoas perguntam"
-            subtitle="Respostas rápidas para as dúvidas mais comuns. Não achou a sua? Manda no WhatsApp."
+            subtitle={
+              <>
+                <span className="text-glow-aqua font-medium">
+                  Respostas rápidas
+                </span>{" "}
+                para as dúvidas mais comuns. Não achou a sua? Manda no{" "}
+                <span className="text-glow-aqua font-medium">WhatsApp</span>.
+              </>
+            }
           />
         </ScrollReveal>
 

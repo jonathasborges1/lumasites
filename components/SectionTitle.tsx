@@ -1,7 +1,9 @@
+import type { ReactNode } from "react";
+
 type Props = {
   eyebrow?: string;
   title: string;
-  subtitle?: string;
+  subtitle?: ReactNode;
   align?: "center" | "left";
 };
 

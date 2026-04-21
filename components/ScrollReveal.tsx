@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import React, { useEffect, useRef, useState, type ReactNode } from "react";
 
 type Direction = "up" | "down" | "left" | "right" | "fade" | "scale";
 
@@ -13,7 +13,7 @@ type Props = {
   once?: boolean;
   threshold?: number;
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType;
 };
 
 const directionTransforms: Record<Direction, string> = {
@@ -80,21 +80,20 @@ export function ScrollReveal({
       : directionTransforms[direction]
     : directionTransforms[direction];
 
-  const Tag = as as keyof JSX.IntrinsicElements;
-
-  return (
-    // @ts-expect-error polymorphic ref
-    <Tag
-      ref={ref}
-      className={className}
-      style={{
+  return React.createElement(
+    as,
+    {
+      ref: (node: HTMLElement | null) => {
+        ref.current = node;
+      },
+      className,
+      style: {
         opacity: visible ? 1 : 0,
         transform: visible ? "none" : transform,
         transition: `opacity ${duration}ms cubic-bezier(.22,.61,.36,1) ${delay}ms, transform ${duration}ms cubic-bezier(.22,.61,.36,1) ${delay}ms`,
         willChange: visible ? "auto" : "opacity, transform",
-      }}
-    >
-      {children}
-    </Tag>
+      },
+    },
+    children
   );
 }

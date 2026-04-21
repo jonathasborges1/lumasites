@@ -12,7 +12,17 @@ export function Benefits() {
           <SectionTitle
             eyebrow="Por que ter um site"
             title="Sem site, você some"
-            subtitle="Hoje, quem não aparece na internet perde para o concorrente que aparece. Um site é o porteiro do seu negócio — 24 horas por dia, 7 dias por semana."
+            subtitle={
+              <>
+                Hoje, quem não aparece na internet{" "}
+                <span className="text-glow-aqua font-medium">perde</span> para o
+                concorrente que aparece. Um site é o porteiro do seu negócio -{" "}
+                <span className="text-glow-aqua font-medium">
+                  24 horas por dia
+                </span>
+                , 7 dias por semana.
+              </>
+            }
           />
         </ScrollReveal>
 

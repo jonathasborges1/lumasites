@@ -20,7 +20,7 @@ export function Process() {
           obs.unobserve(entry.target);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -33,7 +33,14 @@ export function Process() {
           <SectionTitle
             eyebrow="Como funciona"
             title="Do WhatsApp ao ar em dias"
-            subtitle="Um processo simples, pensado para quem tem negócio para tocar e não tem tempo para perder."
+            subtitle={
+              <>
+                Um processo{" "}
+                <span className="text-glow-aqua font-medium">simples</span>,
+                pensado para quem tem negócio para tocar e não tem tempo para
+                perder.
+              </>
+            }
           />
         </ScrollReveal>
 
@@ -63,7 +70,8 @@ export function Process() {
               strokeDasharray="1200"
               strokeDashoffset={inView ? 0 : 1200}
               style={{
-                transition: "stroke-dashoffset 2.4s cubic-bezier(.22,.61,.36,1)",
+                transition:
+                  "stroke-dashoffset 2.4s cubic-bezier(.22,.61,.36,1)",
                 filter: "drop-shadow(0 0 4px rgba(79,200,255,.6))",
               }}
             />

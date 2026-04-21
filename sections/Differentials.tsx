@@ -16,7 +16,15 @@ export function Differentials() {
           <SectionTitle
             eyebrow="Diferenciais"
             title="Por que nos escolher"
-            subtitle="Somos de Manaus, falamos simples, entregamos rápido e cobramos o justo. Sem marketing vazio."
+            subtitle={
+              <>
+                Somos de{" "}
+                <span className="text-glow-aqua font-medium">Manaus</span>,
+                falamos simples, entregamos{" "}
+                <span className="text-glow-aqua font-medium">rápido</span> e
+                cobramos o justo. Sem marketing vazio.
+              </>
+            }
           />
         </ScrollReveal>
 

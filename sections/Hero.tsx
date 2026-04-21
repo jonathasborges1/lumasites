@@ -163,9 +163,13 @@ export function Hero() {
 
           <ScrollReveal delay={300} duration={900}>
             <p className="mt-8 text-lg md:text-xl text-ink-secondary max-w-2xl mx-auto leading-relaxed">
-              Criamos sites simples, rápidos e profissionais em{" "}
+              Criamos{" "}
+              <span className="text-glow-aqua font-medium">sites simples</span>,
+              rápidos e profissionais em{" "}
               <span className="text-ink-primary">Manaus</span>. Seu cliente te
-              encontra. Você cresce. Sem complicação, sem mensalidade abusiva.
+              <span className="text-glow-aqua font-medium"> encontra</span>.
+              Você <span className="text-glow-aqua font-medium">cresce</span>.
+              Sem complicação, sem mensalidade abusiva.
             </p>
           </ScrollReveal>
 

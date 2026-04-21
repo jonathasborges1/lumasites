@@ -34,7 +34,6 @@ export function FinalCTA() {
       {/* ── layout: personagem (esq) + texto (dir) ── */}
       <div className="relative container mx-auto px-5 md:px-8">
         <div className="flex flex-col lg:flex-row items-end lg:items-center min-h-[560px] lg:min-h-[640px]">
-
           {/* personagem Luma — render 3D emergindo do fundo */}
           <ScrollReveal
             direction="up"
@@ -73,7 +72,10 @@ export function FinalCTA() {
           <div className="flex-1 py-20 lg:py-28 lg:pl-12 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
             <ScrollReveal>
               <div className="inline-flex items-center gap-2 rounded-full border border-accent-amber/40 bg-midnight/80 px-4 py-1.5 backdrop-blur-sm">
-                <Sparkles size={13} className="text-accent-amber animate-pulse-glow" />
+                <Sparkles
+                  size={13}
+                  className="text-accent-amber animate-pulse-glow"
+                />
                 <span className="font-display text-xs uppercase tracking-[0.3em] text-accent-amber">
                   Vagas limitadas em {currentMonth}
                 </span>
@@ -106,8 +108,17 @@ export function FinalCTA() {
 
             <ScrollReveal delay={260}>
               <p className="mt-5 text-base md:text-lg text-ink-primary/80 leading-relaxed max-w-lg mx-auto lg:mx-0">
-                Manda um oi no WhatsApp. Em minutos, você vai saber exatamente
-                quanto custa e em quantos dias seu site fica no ar.{" "}
+                Manda um oi no{" "}
+                <span className="text-glow-aqua font-medium">WhatsApp</span>. Em{" "}
+                <span className="text-glow-aqua font-medium">minutos</span>,
+                você vai saber exatamente
+                <span className="text-glow-aqua font-medium">
+                  {" "}
+                  quanto custa
+                </span>{" "}
+                e em quantos{" "}
+                <span className="text-glow-aqua font-medium">dias</span> seu
+                site fica no ar.{" "}
                 <span className="text-glow-aqua font-medium">
                   Sem compromisso.
                 </span>

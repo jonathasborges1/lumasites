@@ -12,7 +12,15 @@ export function Testimonials() {
           <SectionTitle
             eyebrow="Prova social"
             title="Quem já saiu da escuridão"
-            subtitle="Clientes reais de Manaus que hoje recebem contato todo dia pela internet."
+            subtitle={
+              <>
+                Clientes reais de{" "}
+                <span className="text-glow-aqua font-medium">Manaus</span> que
+                hoje recebem contato{" "}
+                <span className="text-glow-aqua font-medium">todo dia</span>{" "}
+                pela internet.
+              </>
+            }
           />
         </ScrollReveal>
 

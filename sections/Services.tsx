@@ -21,7 +21,15 @@ export function Services() {
           <SectionTitle
             eyebrow="Nossos serviços"
             title="Escolha o seu tipo de site"
-            subtitle="Clique nos cards para montar seu combo. O botão de WhatsApp vai resumir tudo para você em uma única mensagem."
+            subtitle={
+              <>
+                Clique nos cards para montar seu{" "}
+                <span className="text-glow-aqua font-medium">combo</span>. O
+                botão de{" "}
+                <span className="text-glow-aqua font-medium">WhatsApp</span> vai
+                resumir tudo para você em uma única mensagem.
+              </>
+            }
           />
         </ScrollReveal>
 
