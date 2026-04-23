@@ -36,6 +36,7 @@ export function Footer() {
                 { href: "#como-funciona", label: "Como funciona" },
                 { href: "#diferenciais", label: "Diferenciais" },
                 { href: "#duvidas", label: "Dúvidas" },
+                { href: "/blog", label: "Blog" },
               ].map((l) => (
                 <li key={l.href}>
                   <a
