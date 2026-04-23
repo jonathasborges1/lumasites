@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata, Viewport } from "next";
 import { Cinzel, Inter } from "next/font/google";
 import { site } from "@/content/site";
@@ -89,7 +90,9 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${display.variable} ${body.variable}`}>
       <body className="antialiased">
         <SelectionProvider>
-          <GlobalLoadingOverlay />
+          <Suspense fallback={null}>
+            <GlobalLoadingOverlay />
+          </Suspense>
           <ScrollProgress />
           <CursorGlow />
           {children}
