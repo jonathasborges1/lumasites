@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation";
 import { LoadingScreen } from "@/components/LoadingScreen";
 
 const INITIAL_MIN_MS = 900;
-const NAV_MIN_MS = 450;
+const ROUTE_SHOW_DELAY_MS = 140;
+const NAV_MIN_MS = 180;
 const ROUTE_FAILSAFE_MS = 2500;
 
 export function GlobalLoadingOverlay() {
@@ -15,6 +16,7 @@ export function GlobalLoadingOverlay() {
   const startedAtRef = useRef<number>(Date.now());
   const bootHandledRef = useRef(false);
   const hideTimerRef = useRef<number | null>(null);
+  const routeShowTimerRef = useRef<number | null>(null);
 
   const hideWithMinimum = (minimumMs: number) => {
     const elapsed = Date.now() - startedAtRef.current;
@@ -71,8 +73,21 @@ export function GlobalLoadingOverlay() {
       if (!isRouteChange) return;
 
       startedAtRef.current = Date.now();
-      setMode("route");
-      setVisible(true);
+
+      if (hideTimerRef.current) {
+        window.clearTimeout(hideTimerRef.current);
+        hideTimerRef.current = null;
+      }
+
+      if (routeShowTimerRef.current) {
+        window.clearTimeout(routeShowTimerRef.current);
+      }
+
+      routeShowTimerRef.current = window.setTimeout(() => {
+        routeShowTimerRef.current = null;
+        setMode("route");
+        setVisible(true);
+      }, ROUTE_SHOW_DELAY_MS);
     };
 
     document.addEventListener("click", handleClick, true);
@@ -82,8 +97,13 @@ export function GlobalLoadingOverlay() {
   useEffect(() => {
     if (!bootHandledRef.current) return;
 
+    if (routeShowTimerRef.current) {
+      window.clearTimeout(routeShowTimerRef.current);
+      routeShowTimerRef.current = null;
+    }
+
     hideWithMinimum(mode === "boot" ? INITIAL_MIN_MS : NAV_MIN_MS);
-  }, [pathname, mode]);
+  }, [pathname]);
 
   useEffect(() => {
     if (!visible || mode !== "route") return;
@@ -99,6 +119,9 @@ export function GlobalLoadingOverlay() {
     return () => {
       if (hideTimerRef.current) {
         window.clearTimeout(hideTimerRef.current);
+      }
+      if (routeShowTimerRef.current) {
+        window.clearTimeout(routeShowTimerRef.current);
       }
     };
   }, []);
