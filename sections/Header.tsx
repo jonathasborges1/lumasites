@@ -8,11 +8,11 @@ import { site } from "@/content/site";
 import { Menu, X, MessageCircle } from "lucide-react";
 
 const nav = [
-  { href: "#beneficios", label: "Benefícios" },
-  { href: "#servicos", label: "Serviços" },
-  { href: "#como-funciona", label: "Como funciona" },
-  { href: "#diferenciais", label: "Diferenciais" },
-  { href: "#duvidas", label: "Dúvidas" },
+  { href: "/#beneficios", label: "Benefícios" },
+  { href: "/#servicos", label: "Serviços" },
+  { href: "/#como-funciona", label: "Como funciona" },
+  { href: "/#diferenciais", label: "Diferenciais" },
+  { href: "/#duvidas", label: "Dúvidas" },
   { href: "/blog", label: "Blog" },
 ];
 
@@ -36,32 +36,22 @@ export function Header() {
       }`}
     >
       <div className="container mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between">
-        <a
-          href="#inicio"
+        <Link
+          href="/#inicio"
           className="font-display text-xl md:text-2xl uppercase tracking-[0.3em] text-ink-primary hover:text-glow-aqua transition-colors"
         >
           {site.brand}
-        </a>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
           {nav.map((item) => (
-            item.href.startsWith("/") ? (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="font-display text-xs uppercase tracking-[0.25em] text-ink-secondary hover:text-glow-aqua transition-colors"
-              >
-                {item.label}
-              </Link>
-            ) : (
-              <a
-                key={item.href}
-                href={item.href}
-                className="font-display text-xs uppercase tracking-[0.25em] text-ink-secondary hover:text-glow-aqua transition-colors"
-              >
-                {item.label}
-              </a>
-            )
+            <Link
+              key={item.href}
+              href={item.href}
+              className="font-display text-xs uppercase tracking-[0.25em] text-ink-secondary hover:text-glow-aqua transition-colors"
+            >
+              {item.label}
+            </Link>
           ))}
         </nav>
 
@@ -92,25 +82,14 @@ export function Header() {
         <div className="md:hidden border-t border-white/8 bg-midnight/96 backdrop-blur-md animate-fade-up">
           <nav className="container mx-auto px-5 py-5 flex flex-col gap-4">
             {nav.map((item) => (
-              item.href.startsWith("/") ? (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="font-display text-sm uppercase tracking-[0.2em] text-ink-secondary hover:text-glow-aqua"
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="font-display text-sm uppercase tracking-[0.2em] text-ink-secondary hover:text-glow-aqua"
-                >
-                  {item.label}
-                </a>
-              )
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="font-display text-sm uppercase tracking-[0.2em] text-ink-secondary hover:text-glow-aqua"
+              >
+                {item.label}
+              </Link>
             ))}
             <GlowButton
               href={whatsappLink()}

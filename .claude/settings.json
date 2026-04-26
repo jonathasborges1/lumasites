@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Read(//c/c/Users/jonathas.000/Desktop/projetos-x/seu-site-simples-completo/**)",
-      "Bash(npm run *)",
-      "Bash(npx next *)"
-    ]
-  }
-}

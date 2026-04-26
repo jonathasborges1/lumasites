@@ -5,8 +5,9 @@ import { Footer } from "@/sections/Footer";
 import { GlowButton } from "@/components/GlowButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { site } from "@/content/site";
-import { CheckCircle2, Zap, MessageCircle, ArrowRight, ChevronRight, Clock, Star } from "lucide-react";
+import { CalendarDays, CheckCircle2, Zap, MessageCircle, ArrowRight, ChevronRight, Clock, Star } from "lucide-react";
 import {
+  articleDates,
   pageMetadata,
   articleSchema,
   faqSchema,
@@ -78,6 +79,14 @@ export default function CriacaoDeSitesEmManausPage() {
             </h1>
 
             <div className="flex flex-wrap items-center gap-5 text-sm text-ink-muted mb-10">
+              <span className="flex items-center gap-1.5">
+                <CalendarDays size={14} className="text-glow-cyan/60" />
+                Publicado em {articleDates.publishedLabel}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CalendarDays size={14} className="text-accent-green/70" />
+                Atualizado em {articleDates.updatedLabel}
+              </span>
               <span className="flex items-center gap-1.5">
                 <Clock size={14} className="text-glow-cyan/60" />
                 Leitura: 8 minutos

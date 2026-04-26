@@ -188,7 +188,7 @@ export function Hero() {
               </GlowButton>
 
               <GlowButton
-                href="#servicos"
+                href="/#servicos"
                 variant="ghost"
                 size="lg"
                 className="w-full sm:w-auto"

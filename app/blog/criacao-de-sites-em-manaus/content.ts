@@ -55,6 +55,13 @@ export type ContractingItem = {
   tip: string;
 };
 
+export const articleDates = {
+  publishedAt: "2026-04-23",
+  publishedLabel: "23 de abril de 2026",
+  updatedAt: "2026-04-26",
+  updatedLabel: "26 de abril de 2026",
+};
+
 // ─── SEO ─────────────────────────────────────────────────────────────────────
 
 export const pageMetadata: Metadata = {
@@ -98,6 +105,8 @@ export const articleSchema = {
     "Guia completo sobre como funciona a criação de sites profissionais em Manaus. Tipos de site, como avaliar fornecedores e por que presença digital é essencial para negócios locais.",
   author: { "@type": "Organization", name: site.name, url: site.url },
   publisher: { "@type": "Organization", name: site.name, url: site.url },
+  datePublished: articleDates.publishedAt,
+  dateModified: articleDates.updatedAt,
   url: `${site.url}/blog/criacao-de-sites-em-manaus`,
   mainEntityOfPage: `${site.url}/blog/criacao-de-sites-em-manaus`,
   inLanguage: "pt-BR",

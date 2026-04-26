@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
+  CalendarDays,
   CheckCircle2,
   ChevronRight,
   Clock,
@@ -16,6 +17,7 @@ import { site } from "@/content/site";
 import { Footer } from "@/sections/Footer";
 import { Header } from "@/sections/Header";
 import {
+  articleDates,
   articleSchema,
   benefits,
   contractingGuide,
@@ -56,7 +58,7 @@ export default function SiteParaAdvogadosEmManausPage() {
               <ol className="flex flex-wrap items-center gap-1.5 text-sm text-ink-muted">
                 <li>
                   <Link href="/" className="transition-colors duration-200 hover:text-glow-aqua">
-                    Inicio
+                    Início
                   </Link>
                 </li>
                 <li>
@@ -79,7 +81,7 @@ export default function SiteParaAdvogadosEmManausPage() {
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-8 bg-glow-cyan/70" />
               <span className="font-display text-xs uppercase tracking-[0.35em] text-glow-aqua">
-                Marketing juridico
+                Marketing jurídico
               </span>
               <span className="h-px w-8 bg-glow-cyan/70" />
             </div>
@@ -88,31 +90,39 @@ export default function SiteParaAdvogadosEmManausPage() {
               Site para advogados
               <span className="text-glow-aqua"> em Manaus</span>
               <br />
-              estrutura, credibilidade e captacao etica
+              estrutura, credibilidade e captação ética
             </h1>
 
             <div className="mb-10 flex flex-wrap items-center gap-5 text-sm text-ink-muted">
+              <span className="flex items-center gap-1.5">
+                <CalendarDays size={14} className="text-glow-cyan/60" />
+                Publicado em {articleDates.publishedLabel}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CalendarDays size={14} className="text-accent-green/70" />
+                Atualizado em {articleDates.updatedLabel}
+              </span>
               <span className="flex items-center gap-1.5">
                 <Clock size={14} className="text-glow-cyan/60" />
                 Leitura: 9 minutos
               </span>
               <span className="flex items-center gap-1.5">
                 <Scale size={14} className="text-accent-amber/70" />
-                Para escritorios e advogados autonomos
+                Para escritórios e advogados autônomos
               </span>
             </div>
 
             <div className="space-y-4 border-l-2 border-glow-cyan/30 pl-6 text-base leading-relaxed text-ink-secondary md:text-lg">
               <p>
-                Quando alguem recebe uma indicacao ou pesquisa por um advogado em Manaus, uma das
-                primeiras acoes e procurar o nome do profissional no Google. Se encontra um site
-                claro, sobrio e objetivo, a percepcao de confianca sobe. Se nao encontra nada, ou
-                encontra uma pagina fraca, a duvida aparece antes mesmo do primeiro contato.
+                Quando alguém recebe uma indicação ou pesquisa por um advogado em Manaus, uma das
+                primeiras ações é procurar o nome do profissional no Google. Se encontra um site
+                claro, sóbrio e objetivo, a percepção de confiança sobe. Se não encontra nada, ou
+                encontra uma página fraca, a dúvida aparece antes mesmo do primeiro contato.
               </p>
               <p>
-                Um bom site juridico nao precisa ser chamativo. Ele precisa explicar bem, transmitir
-                seriedade, facilitar o contato e mostrar que o escritorio sabe o que faz. Neste
-                guia, voce vai ver como estruturar um site para advogados em Manaus e o que vale
+                Um bom site jurídico não precisa ser chamativo. Ele precisa explicar bem, transmitir
+                seriedade, facilitar o contato e mostrar que o escritório sabe o que faz. Neste
+                guia, você vai ver como estruturar um site para advogados em Manaus e o que vale
                 analisar antes de contratar.
               </p>
             </div>
@@ -123,7 +133,7 @@ export default function SiteParaAdvogadosEmManausPage() {
           <div className="mx-auto max-w-4xl px-5 md:px-8">
             <ScrollReveal>
               <h2 className="mb-8 font-display text-2xl uppercase text-ink-primary md:text-3xl lg:text-4xl">
-                Por que um escritorio em Manaus precisa de um
+                Por que um escritório em Manaus precisa de um
                 <span className="text-glow-aqua"> site profissional</span>
               </h2>
             </ScrollReveal>
@@ -131,16 +141,16 @@ export default function SiteParaAdvogadosEmManausPage() {
             <ScrollReveal delay={80}>
               <div className="mb-10 space-y-5 text-base leading-relaxed text-ink-secondary">
                 <p>
-                  Na advocacia, a jornada do cliente raramente comeca com uma decisao imediata.
-                  Ela comeca com uma duvida, uma busca, uma comparacao silenciosa. Em Manaus, isso
-                  acontece tanto com quem procura um escritorio no centro quanto com quem quer ser
-                  atendido online em bairros mais afastados ou em cidades proximas.
+                  Na advocacia, a jornada do cliente raramente começa com uma decisão imediata.
+                  Ela começa com uma dúvida, uma busca, uma comparação silenciosa. Em Manaus, isso
+                  acontece tanto com quem procura um escritório no centro quanto com quem quer ser
+                  atendido online em bairros mais afastados ou em cidades próximas.
                 </p>
                 <p>
-                  O site organiza essa primeira impressao. Ele responde o essencial: quem atende,
-                  em quais areas, como funciona o contato e por que aquele escritorio merece ser
+                  O site organiza essa primeira impressão. Ele responde o essencial: quem atende,
+                  em quais áreas, como funciona o contato e por que aquele escritório merece ser
                   considerado. Sem isso, o advogado depende apenas de redes sociais, perfis
-                  dispersos e indicacoes sem contexto.
+                  dispersos e indicações sem contexto.
                 </p>
               </div>
             </ScrollReveal>
@@ -152,8 +162,8 @@ export default function SiteParaAdvogadosEmManausPage() {
                   Ponto decisivo
                 </p>
                 <p className="text-base leading-relaxed text-ink-primary md:text-lg">
-                  Em servicos juridicos, o site nao serve so para aparecer. Ele serve para reduzir
-                  inseguranca antes da consulta e transformar interesse em contato qualificado.
+                  Em serviços jurídicos, o site não serve só para aparecer. Ele serve para reduzir
+                  insegurança antes da consulta e transformar interesse em contato qualificado.
                 </p>
               </div>
             </ScrollReveal>
@@ -189,8 +199,8 @@ export default function SiteParaAdvogadosEmManausPage() {
                 <span className="text-glow-aqua"> seu perfil de advocacia</span>
               </h2>
               <p className="mb-12 max-w-2xl text-base leading-relaxed text-ink-secondary">
-                O melhor projeto depende do momento do escritorio, da forma de captacao e das areas
-                que voce quer destacar. Em vez de montar algo generico, o ideal e escolher a
+                O melhor projeto depende do momento do escritório, da forma de captação e das áreas
+                que você quer destacar. Em vez de montar algo genérico, o ideal é escolher a
                 estrutura certa para o objetivo certo.
               </p>
             </ScrollReveal>
@@ -247,10 +257,10 @@ export default function SiteParaAdvogadosEmManausPage() {
                 <div className="pointer-events-none absolute inset-0 bg-grad-hero opacity-50" />
                 <div className="relative">
                   <p className="mb-4 font-display text-xs uppercase tracking-[0.35em] text-glow-aqua">
-                    {site.name} | Projetos juridicos em Manaus
+                    {site.name} | Projetos jurídicos em Manaus
                   </p>
                   <p className="mx-auto mb-7 max-w-2xl text-lg leading-relaxed text-ink-primary md:text-xl">
-                    Quer entender qual estrutura faz mais sentido para o seu escritorio hoje:
+                    Quer entender qual estrutura faz mais sentido para o seu escritório hoje:
                     landing page, site institucional ou site com blog?
                   </p>
                   <GlowButton
@@ -261,7 +271,7 @@ export default function SiteParaAdvogadosEmManausPage() {
                     size="lg"
                   >
                     <MessageCircle size={18} />
-                    Pedir avaliacao no WhatsApp
+                    Pedir avaliação no WhatsApp
                   </GlowButton>
                 </div>
               </div>
@@ -273,12 +283,12 @@ export default function SiteParaAdvogadosEmManausPage() {
           <div className="mx-auto max-w-4xl px-5 md:px-8">
             <ScrollReveal>
               <h2 className="mb-4 font-display text-2xl uppercase text-ink-primary md:text-3xl lg:text-4xl">
-                Como funciona a criacao de um site para
+                Como funciona a criação de um site para
                 <span className="text-glow-aqua"> advogados em Manaus</span>
               </h2>
               <p className="mb-12 max-w-2xl text-base leading-relaxed text-ink-secondary">
-                Um projeto juridico tende a dar mais certo quando o processo e simples, claro e
-                focado em posicionamento. Estas sao as etapas que realmente importam.
+                Um projeto jurídico tende a dar mais certo quando o processo é simples, claro e
+                focado em posicionamento. Estas são as etapas que realmente importam.
               </p>
             </ScrollReveal>
 
@@ -308,13 +318,13 @@ export default function SiteParaAdvogadosEmManausPage() {
           <div className="mx-auto max-w-4xl px-5 md:px-8">
             <ScrollReveal>
               <h2 className="mb-4 font-display text-2xl uppercase text-ink-primary md:text-3xl lg:text-4xl">
-                Diferenciais para quem precisa de um projeto juridico
+                Diferenciais para quem precisa de um projeto jurídico
                 <span className="text-glow-aqua"> com cara profissional</span>
               </h2>
               <p className="mb-12 max-w-2xl text-base leading-relaxed text-ink-secondary">
                 O visual, a arquitetura e o SEO precisam conversar com a realidade da advocacia.
-                Em Manaus, isso tambem passa por entender busca local, agilidade de atendimento e
-                confianca no digital.
+                Em Manaus, isso também passa por entender busca local, agilidade de atendimento e
+                confiança no digital.
               </p>
             </ScrollReveal>
 
@@ -342,12 +352,12 @@ export default function SiteParaAdvogadosEmManausPage() {
                   <Shield size={20} className="mt-1 shrink-0 text-accent-amber" />
                   <div>
                     <p className="mb-3 font-display text-xs uppercase tracking-[0.3em] text-accent-amber">
-                      Observacao importante
+                      Observação importante
                     </p>
                     <p className="text-sm leading-relaxed text-ink-secondary md:text-base">
-                      Um site juridico eficiente nao precisa soar comercial demais. O equilibrio
-                      esta em passar seguranca, organizar a informacao e facilitar o contato com
-                      uma comunicacao institucional e etica.
+                      Um site jurídico eficiente não precisa soar comercial demais. O equilíbrio
+                      está em passar segurança, organizar a informação e facilitar o contato com
+                      uma comunicação institucional e ética.
                     </p>
                   </div>
                 </div>
@@ -361,10 +371,10 @@ export default function SiteParaAdvogadosEmManausPage() {
             <ScrollReveal>
               <h2 className="mb-4 font-display text-2xl uppercase text-ink-primary md:text-3xl lg:text-4xl">
                 O que perguntar antes de contratar um site para
-                <span className="text-glow-aqua"> escritorio de advocacia</span>
+                <span className="text-glow-aqua"> escritório de advocacia</span>
               </h2>
               <p className="mb-12 max-w-2xl text-base leading-relaxed text-ink-secondary">
-                A melhor escolha nao e a mais barata nem a mais bonita isoladamente. E a que
+                A melhor escolha não é a mais barata nem a mais bonita isoladamente. É a que
                 combina estrutura, posicionamento e capacidade de transformar busca em contato.
               </p>
             </ScrollReveal>
@@ -402,7 +412,7 @@ export default function SiteParaAdvogadosEmManausPage() {
                 <div className="mb-5 flex items-center gap-3">
                   <span className="h-px w-8 bg-glow-cyan/70" />
                   <span className="font-display text-xs uppercase tracking-[0.35em] text-glow-aqua">
-                    Duvidas frequentes
+                    Dúvidas frequentes
                   </span>
                   <span className="h-px w-8 bg-glow-cyan/70" />
                 </div>
@@ -447,12 +457,12 @@ export default function SiteParaAdvogadosEmManausPage() {
 
               <h2 className="mb-6 font-display text-3xl uppercase text-ink-primary md:text-4xl lg:text-5xl">
                 Pronto para estruturar um site que
-                <span className="text-glow-aqua"> fortalece seu escritorio?</span>
+                <span className="text-glow-aqua"> fortalece seu escritório?</span>
               </h2>
 
               <p className="mx-auto mb-10 max-w-xl text-base leading-relaxed text-ink-secondary md:text-lg">
-                Atendemos projetos para advogados autonomos e escritorios em Manaus com foco em
-                presenca digital, sobriedade visual e contato qualificado.
+                Atendemos projetos para advogados autônomos e escritórios em Manaus com foco em
+                presença digital, sobriedade visual e contato qualificado.
               </p>
 
               <div className="mb-8 flex flex-col justify-center gap-4 sm:flex-row">
@@ -473,7 +483,7 @@ export default function SiteParaAdvogadosEmManausPage() {
               </div>
 
               <p className="text-sm text-ink-muted">
-                Prefere email?{" "}
+                Prefere e-mail?{" "}
                 <a
                   href={`mailto:${site.email}`}
                   className="text-glow-aqua underline underline-offset-2 transition-colors duration-200 hover:text-white"

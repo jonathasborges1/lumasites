@@ -8,12 +8,12 @@ import { Header } from "@/sections/Header";
 export const metadata: Metadata = {
   title: `Blog | ${site.name}`,
   description:
-    "Artigos praticos sobre criacao de sites, presenca digital e marketing para pequenos negocios em Manaus e no Amazonas.",
+    "Artigos práticos sobre criação de sites, presença digital e marketing para pequenos negócios em Manaus e no Amazonas.",
   alternates: { canonical: `${site.url}/blog` },
   openGraph: {
     title: `Blog | ${site.name}`,
     description:
-      "Artigos praticos sobre criacao de sites, presenca digital e marketing para pequenos negocios em Manaus e no Amazonas.",
+      "Artigos práticos sobre criação de sites, presença digital e marketing para pequenos negócios em Manaus e no Amazonas.",
     url: `${site.url}/blog`,
     siteName: site.name,
     locale: "pt_BR",
@@ -24,23 +24,27 @@ export const metadata: Metadata = {
 const posts = [
   {
     slug: "site-para-advogados-em-manaus",
-    title: "Site para Advogados em Manaus: como gerar confianca e mais consultas",
+    title: "Site para Advogados em Manaus: como gerar confiança e mais consultas",
     description:
-      "Um guia pratico para advogados e escritorios de Manaus entenderem estrutura, SEO local, comunicacao sobria e o que avaliar antes de contratar um site juridico.",
-    date: "2026-04-23",
-    dateLabel: "23 de abril de 2026",
+      "Um guia prático para advogados e escritórios de Manaus entenderem estrutura, SEO local, comunicação sóbria e o que avaliar antes de contratar um site jurídico.",
+    publishedAt: "2026-04-23",
+    publishedLabel: "23 de abril de 2026",
+    updatedAt: "2026-04-26",
+    updatedLabel: "26 de abril de 2026",
     readTime: "9 min",
     tags: ["Advocacia", "SEO Local", "Manaus"],
   },
   {
     slug: "criacao-de-sites-em-manaus",
-    title: "Criacao de Sites em Manaus: guia completo para pequenos negocios",
+    title: "Criação de Sites em Manaus: guia completo para pequenos negócios",
     description:
-      "Tudo que voce precisa saber antes de contratar um site em Manaus: tipos de site, precos, o que perguntar e como escolher a agencia certa para o seu negocio.",
-    date: "2026-04-23",
-    dateLabel: "23 de abril de 2026",
+      "Tudo que você precisa saber antes de contratar um site em Manaus: tipos de site, preços, o que perguntar e como escolher a agência certa para o seu negócio.",
+    publishedAt: "2026-04-23",
+    publishedLabel: "23 de abril de 2026",
+    updatedAt: "2026-04-26",
+    updatedLabel: "26 de abril de 2026",
     readTime: "8 min",
-    tags: ["Sites", "Manaus", "Negocios Locais"],
+    tags: ["Sites", "Manaus", "Negócios Locais"],
   },
 ];
 
@@ -60,13 +64,13 @@ export default function BlogPage() {
             </div>
 
             <h1 className="mb-4 font-display text-4xl uppercase leading-tight text-ink-primary md:text-5xl">
-              Presenca digital{" "}
+              Presença digital{" "}
               <span className="text-glow-aqua">que funciona</span>
             </h1>
 
             <p className="max-w-2xl text-lg leading-relaxed text-ink-secondary md:text-xl">
-              Artigos praticos sobre criacao de sites, presenca online e crescimento digital para
-              pequenos negocios em <span className="text-ink-primary">Manaus</span>.
+              Artigos práticos sobre criação de sites, presença online e crescimento digital para
+              pequenos negócios em <span className="text-ink-primary">Manaus</span>.
             </p>
           </div>
         </section>
@@ -90,7 +94,12 @@ export default function BlogPage() {
                         {tag}
                       </span>
                     ))}
-                    <span className="text-xs text-ink-muted">{post.dateLabel}</span>
+                    <span className="text-xs text-ink-muted">
+                      Publicado em {post.publishedLabel}
+                    </span>
+                    <span className="text-xs text-ink-muted">
+                      Atualizado em {post.updatedLabel}
+                    </span>
                     <span className="text-xs text-ink-muted">· {post.readTime} de leitura</span>
                   </div>
 
