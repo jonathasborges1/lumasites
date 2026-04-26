@@ -1,21 +1,20 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { LoadingScreen } from "@/components/LoadingScreen";
 
 const INITIAL_MIN_MS = 900;
 const NAV_MIN_MS = 450;
+const ROUTE_FAILSAFE_MS = 2500;
 
 export function GlobalLoadingOverlay() {
   const [visible, setVisible] = useState(true);
   const [mode, setMode] = useState<"boot" | "route">("boot");
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const startedAtRef = useRef<number>(Date.now());
   const bootHandledRef = useRef(false);
   const hideTimerRef = useRef<number | null>(null);
-  const routeKey = `${pathname}?${searchParams.toString()}`;
 
   const hideWithMinimum = (minimumMs: number) => {
     const elapsed = Date.now() - startedAtRef.current;
@@ -32,19 +31,13 @@ export function GlobalLoadingOverlay() {
   };
 
   useEffect(() => {
-    const hide = () => {
+    const frame = window.requestAnimationFrame(() => {
       if (bootHandledRef.current) return;
       bootHandledRef.current = true;
       hideWithMinimum(INITIAL_MIN_MS);
-    };
+    });
 
-    if (document.readyState === "complete") {
-      hide();
-      return;
-    }
-
-    window.addEventListener("load", hide, { once: true });
-    return () => window.removeEventListener("load", hide);
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   useEffect(() => {
@@ -90,7 +83,17 @@ export function GlobalLoadingOverlay() {
     if (!bootHandledRef.current) return;
 
     hideWithMinimum(mode === "boot" ? INITIAL_MIN_MS : NAV_MIN_MS);
-  }, [routeKey, mode]);
+  }, [pathname, mode]);
+
+  useEffect(() => {
+    if (!visible || mode !== "route") return;
+
+    const failsafe = window.setTimeout(() => {
+      setVisible(false);
+    }, ROUTE_FAILSAFE_MS);
+
+    return () => window.clearTimeout(failsafe);
+  }, [visible, mode, pathname]);
 
   useEffect(() => {
     return () => {

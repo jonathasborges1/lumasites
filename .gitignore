@@ -9,6 +9,7 @@ node_modules/
 !.yarn/versions
 
 # next
+.next-dev
 .next/
 out/
 build

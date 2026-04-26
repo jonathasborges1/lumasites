@@ -4,6 +4,7 @@
   "private": true,
   "description": "Site de captura para serviços de criação de sites simples em Manaus, tema Luma.",
   "scripts": {
+    "predev": "node -e \"require('fs').rmSync('.next', { recursive: true, force: true })\"",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

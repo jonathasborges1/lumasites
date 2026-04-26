@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { GlowButton } from "@/components/GlowButton";
 import { whatsappLink } from "@/utils/whatsapp";
@@ -44,13 +45,23 @@ export function Header() {
 
         <nav className="hidden lg:flex items-center gap-8">
           {nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="font-display text-xs uppercase tracking-[0.25em] text-ink-secondary hover:text-glow-aqua transition-colors"
-            >
-              {item.label}
-            </a>
+            item.href.startsWith("/") ? (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="font-display text-xs uppercase tracking-[0.25em] text-ink-secondary hover:text-glow-aqua transition-colors"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.href}
+                href={item.href}
+                className="font-display text-xs uppercase tracking-[0.25em] text-ink-secondary hover:text-glow-aqua transition-colors"
+              >
+                {item.label}
+              </a>
+            )
           ))}
         </nav>
 
@@ -81,14 +92,25 @@ export function Header() {
         <div className="md:hidden border-t border-white/8 bg-midnight/96 backdrop-blur-md animate-fade-up">
           <nav className="container mx-auto px-5 py-5 flex flex-col gap-4">
             {nav.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="font-display text-sm uppercase tracking-[0.2em] text-ink-secondary hover:text-glow-aqua"
-              >
-                {item.label}
-              </a>
+              item.href.startsWith("/") ? (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="font-display text-sm uppercase tracking-[0.2em] text-ink-secondary hover:text-glow-aqua"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="font-display text-sm uppercase tracking-[0.2em] text-ink-secondary hover:text-glow-aqua"
+                >
+                  {item.label}
+                </a>
+              )
             ))}
             <GlowButton
               href={whatsappLink()}

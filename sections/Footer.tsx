@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site } from "@/content/site";
 import { whatsappLink } from "@/utils/whatsapp";
 import { Instagram, MessageCircle, Mail, MapPin } from "lucide-react";
@@ -39,12 +40,21 @@ export function Footer() {
                 { href: "/blog", label: "Blog" },
               ].map((l) => (
                 <li key={l.href}>
-                  <a
-                    href={l.href}
-                    className="hover:text-glow-aqua transition-colors"
-                  >
-                    {l.label}
-                  </a>
+                  {l.href.startsWith("/") ? (
+                    <Link
+                      href={l.href}
+                      className="hover:text-glow-aqua transition-colors"
+                    >
+                      {l.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={l.href}
+                      className="hover:text-glow-aqua transition-colors"
+                    >
+                      {l.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

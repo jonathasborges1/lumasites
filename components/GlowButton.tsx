@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
 type Variant = "primary" | "ghost" | "amber";
@@ -33,10 +34,23 @@ export function GlowButton({
   children,
   ...props
 }: Props) {
+  const classes = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
+  const href = props.href;
+  const isInternalRoute =
+    typeof href === "string" && href.startsWith("/");
+
+  if (isInternalRoute) {
+    return (
+      <Link href={href} className={classes} onClick={props.onClick}>
+        {children}
+      </Link>
+    );
+  }
+
   return (
     <a
       {...props}
-      className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
+      className={classes}
     >
       {children}
     </a>
