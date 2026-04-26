@@ -41,8 +41,8 @@ const posts = [
       "Tudo que você precisa saber antes de contratar um site em Manaus: tipos de site, preços, o que perguntar e como escolher a agência certa para o seu negócio.",
     publishedAt: "2026-04-23",
     publishedLabel: "23 de abril de 2026",
-    updatedAt: "2026-04-26",
-    updatedLabel: "26 de abril de 2026",
+    updatedAt: null,
+    updatedLabel: null,
     readTime: "8 min",
     tags: ["Sites", "Manaus", "Negócios Locais"],
   },
@@ -97,9 +97,11 @@ export default function BlogPage() {
                     <span className="text-xs text-ink-muted">
                       Publicado em {post.publishedLabel}
                     </span>
-                    <span className="text-xs text-ink-muted">
-                      Atualizado em {post.updatedLabel}
-                    </span>
+                    {post.updatedLabel && (
+                      <span className="text-xs text-ink-muted">
+                        Atualizado em {post.updatedLabel}
+                      </span>
+                    )}
                     <span className="text-xs text-ink-muted">· {post.readTime} de leitura</span>
                   </div>
 

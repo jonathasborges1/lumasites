@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 const lastModified = {
   home: new Date("2026-04-25"),
   blog: new Date("2026-04-23"),
-  criacaoDeSites: new Date("2026-04-26"),
+  criacaoDeSites: new Date("2026-04-23"),
   advogados: new Date("2026-04-26"),
 };
 

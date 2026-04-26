@@ -83,10 +83,12 @@ export default function CriacaoDeSitesEmManausPage() {
                 <CalendarDays size={14} className="text-glow-cyan/60" />
                 Publicado em {articleDates.publishedLabel}
               </span>
-              <span className="flex items-center gap-1.5">
-                <CalendarDays size={14} className="text-accent-green/70" />
-                Atualizado em {articleDates.updatedLabel}
-              </span>
+              {articleDates.updatedLabel && (
+                <span className="flex items-center gap-1.5">
+                  <CalendarDays size={14} className="text-accent-green/70" />
+                  Atualizado em {articleDates.updatedLabel}
+                </span>
+              )}
               <span className="flex items-center gap-1.5">
                 <Clock size={14} className="text-glow-cyan/60" />
                 Leitura: 8 minutos

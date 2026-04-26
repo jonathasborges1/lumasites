@@ -58,8 +58,8 @@ export type ContractingItem = {
 export const articleDates = {
   publishedAt: "2026-04-23",
   publishedLabel: "23 de abril de 2026",
-  updatedAt: "2026-04-26",
-  updatedLabel: "26 de abril de 2026",
+  updatedAt: null,
+  updatedLabel: null,
 };
 
 // ─── SEO ─────────────────────────────────────────────────────────────────────
@@ -106,7 +106,7 @@ export const articleSchema = {
   author: { "@type": "Organization", name: site.name, url: site.url },
   publisher: { "@type": "Organization", name: site.name, url: site.url },
   datePublished: articleDates.publishedAt,
-  dateModified: articleDates.updatedAt,
+  ...(articleDates.updatedAt ? { dateModified: articleDates.updatedAt } : {}),
   url: `${site.url}/blog/criacao-de-sites-em-manaus`,
   mainEntityOfPage: `${site.url}/blog/criacao-de-sites-em-manaus`,
   inLanguage: "pt-BR",
