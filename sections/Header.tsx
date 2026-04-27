@@ -5,16 +5,8 @@ import { useEffect, useState } from "react";
 import { GlowButton } from "@/components/GlowButton";
 import { whatsappLink } from "@/utils/whatsapp";
 import { site } from "@/content/site";
+import { mainNavigation } from "@/content/navigation";
 import { Menu, X, MessageCircle } from "lucide-react";
-
-const nav = [
-  { href: "/#beneficios", label: "Benefícios" },
-  { href: "/#servicos", label: "Serviços" },
-  { href: "/#como-funciona", label: "Como funciona" },
-  { href: "/#diferenciais", label: "Diferenciais" },
-  { href: "/#duvidas", label: "Dúvidas" },
-  { href: "/blog", label: "Blog" },
-];
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -43,12 +35,12 @@ export function Header() {
           {site.brand}
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
-          {nav.map((item) => (
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+          {mainNavigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="font-display text-xs uppercase tracking-[0.25em] text-ink-secondary hover:text-glow-aqua transition-colors"
+              className="font-display text-xs uppercase tracking-[0.18em] xl:tracking-[0.25em] text-ink-secondary hover:text-glow-aqua transition-colors"
             >
               {item.label}
             </Link>
@@ -81,7 +73,7 @@ export function Header() {
       {open && (
         <div className="md:hidden border-t border-white/8 bg-midnight/96 backdrop-blur-md animate-fade-up">
           <nav className="container mx-auto px-5 py-5 flex flex-col gap-4">
-            {nav.map((item) => (
+            {mainNavigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

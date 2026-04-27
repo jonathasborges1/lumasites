@@ -3,9 +3,14 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { site } from "@/content/site";
+import { mainNavigation } from "@/content/navigation";
+import { whatsappLink } from "@/utils/whatsapp";
+import { GlowButton } from "@/components/GlowButton";
+import { Menu, MessageCircle, X } from "lucide-react";
 
 export function LandingHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -22,14 +27,76 @@ export function LandingHeader() {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center">
+      <div className="container mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between">
         <Link
           href="/"
           className="font-display text-xl md:text-2xl uppercase tracking-[0.3em] text-ink-primary hover:text-glow-aqua transition-colors"
         >
           {site.brand}
         </Link>
+
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+          {mainNavigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="font-display text-xs uppercase tracking-[0.18em] xl:tracking-[0.22em] text-ink-secondary hover:text-glow-aqua transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="hidden md:block">
+          <GlowButton
+            href={whatsappLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="primary"
+            size="md"
+          >
+            <MessageCircle size={16} />
+            Falar agora
+          </GlowButton>
+        </div>
+
+        <button
+          type="button"
+          aria-label={open ? "Fechar menu" : "Abrir menu"}
+          onClick={() => setOpen((value) => !value)}
+          className="md:hidden flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-ink-primary"
+        >
+          {open ? <X size={18} /> : <Menu size={18} />}
+        </button>
       </div>
+
+      {open && (
+        <div className="md:hidden border-t border-white/8 bg-midnight/96 backdrop-blur-md animate-fade-up">
+          <nav className="container mx-auto px-5 py-5 flex flex-col gap-4">
+            {mainNavigation.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="font-display text-sm uppercase tracking-[0.2em] text-ink-secondary hover:text-glow-aqua"
+              >
+                {item.label}
+              </Link>
+            ))}
+            <GlowButton
+              href={whatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="primary"
+              size="md"
+              onClick={() => setOpen(false)}
+            >
+              <MessageCircle size={16} />
+              Falar no WhatsApp
+            </GlowButton>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

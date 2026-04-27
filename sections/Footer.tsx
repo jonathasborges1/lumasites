@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/content/site";
+import { footerNavigation } from "@/content/navigation";
 import { whatsappLink } from "@/utils/whatsapp";
 import { MessageCircle, Mail, MapPin } from "lucide-react";
 
@@ -31,14 +32,7 @@ export function Footer() {
               Navegação
             </div>
             <ul className="space-y-2 text-sm text-ink-secondary">
-              {[
-                { href: "/#beneficios", label: "Benefícios" },
-                { href: "/#servicos", label: "Serviços" },
-                { href: "/#como-funciona", label: "Como funciona" },
-                { href: "/#diferenciais", label: "Diferenciais" },
-                { href: "/#duvidas", label: "Dúvidas" },
-                { href: "/blog", label: "Blog" },
-              ].map((l) => (
+              {footerNavigation.map((l) => (
                 <li key={l.href}>
                   <Link
                     href={l.href}
