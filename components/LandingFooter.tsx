@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { footerNavigation } from "@/content/navigation";
+import { footerNavigation, servicePages } from "@/content/navigation";
 import { site } from "@/content/site";
 
 export function LandingFooter() {
@@ -9,7 +9,7 @@ export function LandingFooter() {
     <footer className="border-t border-white/10 bg-midnight/80 py-8 text-xs text-ink-muted">
       <div className="container mx-auto flex flex-col items-center gap-4 px-5 text-center md:px-8">
         <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-          {footerNavigation.map((item) => (
+          {[...footerNavigation, ...servicePages].map((item) => (
             <Link
               key={item.href}
               href={item.href}

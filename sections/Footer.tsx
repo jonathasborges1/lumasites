@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { site } from "@/content/site";
-import { footerNavigation } from "@/content/navigation";
+import { footerNavigation, servicePages } from "@/content/navigation";
 import { whatsappLink } from "@/utils/whatsapp";
 import { MessageCircle, Mail, MapPin } from "lucide-react";
 
@@ -47,6 +47,22 @@ export function Footer() {
 
           <div>
             <div className="font-display uppercase tracking-[0.2em] text-sm text-glow-aqua mb-4">
+              Servicos
+            </div>
+            <ul className="space-y-2 text-sm text-ink-secondary">
+              {servicePages.map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="hover:text-glow-aqua transition-colors"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 font-display uppercase tracking-[0.2em] text-sm text-glow-aqua mb-4">
               Contato
             </div>
             <ul className="space-y-3 text-sm text-ink-secondary">

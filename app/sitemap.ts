@@ -5,6 +5,7 @@ const lastModified = {
   home: new Date("2026-04-25"),
   criarSiteManaus: new Date("2026-04-26"),
   siteProfissionalManaus: new Date("2026-04-27"),
+  siteInstitucionalManaus: new Date("2026-04-27"),
   blog: new Date("2026-04-23"),
   criacaoDeSites: new Date("2026-04-23"),
   advogados: new Date("2026-04-26"),
@@ -33,6 +34,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${site.url}/site-profissional-manaus`,
       lastModified: lastModified.siteProfissionalManaus,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${site.url}/site-institucional-manaus`,
+      lastModified: lastModified.siteInstitucionalManaus,
       changeFrequency: "monthly",
       priority: 0.9,
     },
