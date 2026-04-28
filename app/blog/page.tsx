@@ -23,6 +23,18 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "como-aparecer-no-google-em-manaus",
+    title: "Seu cliente está no Google. A pergunta é: ele encontra você?",
+    description:
+      "O que o Google considera para mostrar negócios locais, por que tantos negócios em Manaus ficam invisíveis nas buscas e um checklist prático para mudar isso hoje.",
+    publishedAt: "2026-04-28",
+    publishedLabel: "28 de abril de 2026",
+    updatedAt: null,
+    updatedLabel: null,
+    readTime: "7 min",
+    tags: ["Google", "SEO Local", "Manaus"],
+  },
+  {
     slug: "site-para-advogados-em-manaus",
     title: "Site para Advogados em Manaus: como gerar confiança e mais consultas",
     description:
