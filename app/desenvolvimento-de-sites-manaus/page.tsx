@@ -37,10 +37,10 @@ export const metadata = pageMetadata;
 
 const breadcrumbItems = [
   { label: "Serviços", href: "/#servicos" },
-  { label: "Site profissional em Manaus" },
+  { label: "Desenvolvimento de sites em Manaus" },
 ];
 
-export default function SiteProfissionalManausPage() {
+export default function DesenvolvimentoDeSitesManausPage() {
   return (
     <>
       <script
@@ -65,11 +65,11 @@ export default function SiteProfissionalManausPage() {
         <section className="relative min-h-[600px] overflow-hidden pt-20 md:pt-28">
           <div className="absolute inset-0 pointer-events-none">
             <Image
-              src="/characters/gameplay-forest.jpg"
+              src="/services/desenvolvimento-sites-manaus-hero.png"
               alt=""
               fill
               priority
-              className="object-cover object-center opacity-40"
+              className="object-cover object-center opacity-20"
               sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-midnight/75 via-midnight/82 to-midnight" />
@@ -135,6 +135,18 @@ export default function SiteProfissionalManausPage() {
                   {hero.helper}
                 </p>
 
+                <div className="mt-6 overflow-hidden border border-glow-cyan/20 bg-midnight/72 p-2 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-md lg:hidden">
+                  <Image
+                    src="/services/desenvolvimento-sites-manaus-hero.png"
+                    alt="Mockup visual de desenvolvimento de sites em Manaus com interface, código e SEO local"
+                    width={1536}
+                    height={864}
+                    priority
+                    className="h-auto w-full border border-white/10"
+                    sizes="(max-width: 1023px) calc(100vw - 56px), 1px"
+                  />
+                </div>
+
                 <div className="mt-6 grid gap-2.5 sm:grid-cols-2">
                   {proofItems.map((item) => (
                     <div
@@ -152,7 +164,15 @@ export default function SiteProfissionalManausPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={120} className="hidden lg:block">
-                <div className="relative ml-auto max-w-md border border-glow-cyan/20 bg-midnight/76 p-5 backdrop-blur-md">
+                <div className="relative ml-auto max-w-xl border border-glow-cyan/20 bg-midnight/76 p-4 backdrop-blur-md">
+                  <Image
+                    src="/services/desenvolvimento-sites-manaus-hero.png"
+                    alt="Mockup visual de desenvolvimento de sites em Manaus com interface, código e SEO local"
+                    width={1536}
+                    height={864}
+                    priority
+                    className="mb-5 h-auto w-full border border-white/10"
+                  />
                   <div className="mb-5 flex items-center justify-between border-b border-white/10 pb-3">
                     <span className="font-display text-xs uppercase tracking-[0.3em] text-glow-aqua">
                       Diagnóstico
@@ -180,22 +200,22 @@ export default function SiteProfissionalManausPage() {
           </div>
         </section>
 
-        {/* Por que profissional */}
+        {/* Por que desenvolvimento importa */}
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-5 md:px-8 lg:px-12 xl:px-20">
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
               <ScrollReveal>
                 <span className="font-display text-xs uppercase tracking-[0.32em] text-glow-aqua">
-                  Por que profissional importa
+                  Por que desenvolvimento profissional importa
                 </span>
                 <h2 className="mt-3 font-display text-2xl uppercase leading-tight text-ink-primary md:text-3xl">
                   Seu cliente pesquisa antes de ligar. O que ele encontra sobre
                   você?
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-ink-secondary">
-                  Um site feito em construtor gratuito, lento e idêntico a mil
-                  outros passa a mensagem errada. Um site profissional transmite
-                  competência silenciosamente — antes da primeira conversa.
+                  Um site feito sem estrutura, lento e difícil de atualizar
+                  atrapalha sua presença digital. Um desenvolvimento bem feito
+                  organiza conteúdo, performance e SEO desde a base.
                 </p>
               </ScrollReveal>
 
@@ -226,7 +246,7 @@ export default function SiteProfissionalManausPage() {
                 Processo simples
               </span>
               <h2 className="mt-3 font-display text-2xl uppercase leading-tight text-ink-primary md:text-3xl">
-                Do primeiro contato ao site profissional no ar sem complicar sua
+                Do primeiro contato ao site publicado sem complicar sua
                 rotina.
               </h2>
             </ScrollReveal>
@@ -313,7 +333,7 @@ export default function SiteProfissionalManausPage() {
                 <p className="mt-4 text-sm leading-relaxed text-ink-secondary">
                   Se você depende da credibilidade para fechar negócios — seja
                   numa clínica, escritório ou empresa de serviços — um site
-                  profissional é o ponto de partida certo.
+                  bem desenvolvido é o ponto de partida certo.
                 </p>
                 <div className="mt-6">
                   <GlowButton
@@ -403,7 +423,7 @@ export default function SiteProfissionalManausPage() {
             <ScrollReveal>
               <FileSearch className="mx-auto mb-5 text-glow-cyan" size={28} />
               <h2 className="font-display text-2xl uppercase leading-tight text-ink-primary md:text-4xl">
-                Pronto para ter um site que representa de verdade o seu
+                Pronto para desenvolver um site que representa de verdade o seu
                 negócio?
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-ink-secondary md:text-base">

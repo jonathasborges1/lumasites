@@ -6,8 +6,8 @@ import { Star, MapPin, Quote } from "lucide-react";
 
 export function Testimonials() {
   return (
-    <section id="depoimentos" className="relative py-24 md:py-32">
-      <div className="container mx-auto px-5 md:px-8">
+    <section id="depoimentos" className="relative py-16 md:py-24">
+      <div className="container mx-auto px-5 md:px-8 lg:px-12 xl:px-20">
         <ScrollReveal>
           <SectionTitle
             eyebrow="Prova social"
@@ -27,7 +27,7 @@ export function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-6xl mx-auto">
           {testimonials.map((t, idx) => (
             <ScrollReveal key={t.name} delay={idx * 140}>
-              <TornCard className="p-6 md:p-7 flex flex-col h-full group relative overflow-hidden">
+              <TornCard className="p-5 md:p-6 flex flex-col h-full group relative overflow-hidden">
                 <Quote
                   aria-hidden="true"
                   className="absolute -top-2 -right-2 text-glow-cyan/10 group-hover:text-glow-cyan/20 transition-colors"
@@ -41,7 +41,7 @@ export function Testimonials() {
                   {Array.from({ length: t.rating }).map((_, i) => (
                     <Star
                       key={i}
-                      size={16}
+                      size={13}
                       className="fill-accent-gold text-accent-gold animate-twinkle"
                       style={{ animationDelay: `${i * 200}ms` }}
                     />
@@ -53,7 +53,7 @@ export function Testimonials() {
                 </p>
 
                 <div className="relative mt-auto flex items-center gap-3 pt-4 border-t border-white/10 z-10">
-                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-glow-cyan/40 to-accent-magenta/40 flex items-center justify-center font-display text-sm text-white shadow-glow-sm group-hover:shadow-glow-md transition-all">
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-glow-cyan/40 to-accent-magenta/40 flex items-center justify-center font-display text-xs text-white shadow-glow-sm group-hover:shadow-glow-md transition-all">
                     {t.initials}
                   </div>
                   <div>

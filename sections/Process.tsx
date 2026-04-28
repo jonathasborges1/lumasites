@@ -27,8 +27,8 @@ export function Process() {
   }, []);
 
   return (
-    <section id="como-funciona" className="relative py-24 md:py-32">
-      <div className="container mx-auto px-5 md:px-8">
+    <section id="como-funciona" className="relative py-16 md:py-24">
+      <div className="container mx-auto px-5 md:px-8 lg:px-12 xl:px-20">
         <ScrollReveal>
           <SectionTitle
             eyebrow="Como funciona"
@@ -86,7 +86,7 @@ export function Process() {
                 duration={800}
               >
                 <div className="relative text-center group">
-                  <div className="relative mx-auto w-28 h-28 mb-5">
+                  <div className="relative mx-auto w-24 h-24 mb-4">
                     <div className="absolute inset-0 rounded-full bg-glow-cyan/5 border border-glow-cyan/30 group-hover:border-glow-cyan/70 group-hover:shadow-glow-md transition-all duration-500" />
                     <div className="absolute inset-2 rounded-full bg-midnight/80 flex items-center justify-center overflow-hidden">
                       <div
@@ -98,13 +98,13 @@ export function Process() {
                       />
                       <Icon
                         name={s.icon}
-                        size={34}
+                        size={28}
                         className="text-glow-aqua relative z-10 group-hover:scale-110 transition-transform duration-500"
                         strokeWidth={1.4}
                       />
                     </div>
-                    <div className="absolute -top-2 -right-1 w-11 h-11 rounded-full bg-midnight border-2 border-glow-cyan/70 flex items-center justify-center shadow-glow-sm group-hover:shadow-glow-md group-hover:-rotate-12 transition-all duration-500">
-                      <span className="font-display text-glow-aqua text-sm tabular-nums">
+                    <div className="absolute -top-2 -right-1 w-9 h-9 rounded-full bg-midnight border-2 border-glow-cyan/70 flex items-center justify-center shadow-glow-sm group-hover:shadow-glow-md group-hover:-rotate-12 transition-all duration-500">
+                      <span className="font-display text-glow-aqua text-xs tabular-nums">
                         {s.step}
                       </span>
                     </div>

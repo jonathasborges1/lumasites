@@ -75,11 +75,12 @@ export default function BlogPage() {
           </div>
         </section>
 
-        <section className="container mx-auto px-5 md:px-8">
+        <section className="container mx-auto px-5 md:px-8 lg:px-12 xl:px-20">
           <div className="grid max-w-4xl gap-6 md:gap-8">
             {posts.map((post) => (
-              <article
+              <Link
                 key={post.slug}
+                href={`/blog/${post.slug}`}
                 className="group relative overflow-hidden rounded-2xl border border-white/8 bg-surface/40 transition-all duration-300 hover:border-white/16 hover:bg-surface/70"
               >
                 <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-glow-aqua/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -111,15 +112,14 @@ export default function BlogPage() {
 
                   <p className="mb-6 leading-relaxed text-ink-secondary">{post.description}</p>
 
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-2 font-display text-xs uppercase tracking-[0.2em] text-glow-aqua transition-colors duration-200 hover:text-ink-primary"
+                  <span
+                    className="inline-flex items-center gap-2 font-display text-xs uppercase tracking-[0.2em] text-glow-aqua transition-colors duration-200 group-hover:text-ink-primary"
                   >
                     Ler artigo
                     <ArrowRight size={14} />
-                  </Link>
+                  </span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </section>

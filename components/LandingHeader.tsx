@@ -38,12 +38,12 @@ export function LandingHeader() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
-        scrolled
-          ? "bg-midnight/92 backdrop-blur-md border-b border-white/8"
+        scrolled || servicesOpen || open
+          ? "border-b border-white/[0.08] bg-[rgba(7,19,33,0.92)] backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between">
+      <div className="container mx-auto px-5 md:px-8 lg:px-12 xl:px-20 h-16 md:h-20 flex items-center justify-between">
         <Link
           href="/"
           className="font-display text-xl md:text-2xl uppercase tracking-[0.3em] text-ink-primary hover:text-glow-aqua transition-colors"
@@ -63,7 +63,7 @@ export function LandingHeader() {
                   : "text-ink-secondary hover:text-glow-aqua"
               }`}
             >
-              Servicos
+              Serviços
               <ChevronDown
                 size={13}
                 className={`transition-transform duration-200 ${
@@ -73,23 +73,28 @@ export function LandingHeader() {
             </button>
 
             {servicesOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 border border-white/12 bg-midnight/96 backdrop-blur-md shadow-xl">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 overflow-hidden border border-glow-cyan/25 bg-[rgba(8,21,35,0.98)] shadow-[0_22px_80px_rgba(0,0,0,0.72)] backdrop-blur-2xl">
+                <div className="border-b border-white/[0.1] bg-white/[0.03] px-4 py-3">
+                  <span className="font-display text-[10px] uppercase tracking-[0.24em] text-glow-aqua">
+                    Serviços em Manaus
+                  </span>
+                </div>
                 <div className="p-2">
                   {servicePages.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={() => setServicesOpen(false)}
-                      className={`block px-4 py-3 transition-colors hover:bg-glow-cyan/8 ${
+                      className={`block border px-4 py-3 transition-colors ${
                         pathname === item.href
-                          ? "text-glow-aqua"
-                          : "text-ink-secondary"
+                          ? "border-glow-cyan/35 bg-glow-cyan/[0.12] text-glow-aqua"
+                          : "border-transparent text-ink-primary hover:border-white/[0.12] hover:bg-white/[0.07]"
                       }`}
                     >
-                      <span className="block font-display text-xs uppercase tracking-[0.16em]">
+                      <span className="block font-display text-xs uppercase tracking-[0.16em] text-current">
                         {item.label}
                       </span>
-                      <span className="mt-1 block text-xs leading-relaxed text-ink-muted">
+                      <span className="mt-1.5 block text-xs leading-relaxed text-ink-secondary">
                         {item.description}
                       </span>
                     </Link>
@@ -138,7 +143,7 @@ export function LandingHeader() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-white/8 bg-midnight/96 backdrop-blur-md animate-fade-up">
+        <div className="md:hidden border-t border-white/[0.08] bg-[rgba(7,19,33,0.97)] backdrop-blur-xl animate-fade-up">
           <nav className="container mx-auto px-5 py-5 flex flex-col gap-1">
             <button
               type="button"
@@ -150,7 +155,7 @@ export function LandingHeader() {
                   : "text-ink-secondary hover:text-glow-aqua"
               }`}
             >
-              Servicos
+              Serviços
               <ChevronDown
                 size={15}
                 className={`transition-transform duration-200 ${
@@ -170,7 +175,7 @@ export function LandingHeader() {
                       setMobileServicesOpen(false);
                     }}
                     className={`py-2 transition-colors hover:text-glow-aqua ${
-                      pathname === item.href ? "text-glow-aqua" : "text-ink-muted"
+                      pathname === item.href ? "text-glow-aqua" : "text-ink-secondary"
                     }`}
                   >
                     <span className="block font-display text-xs uppercase tracking-[0.18em]">

@@ -1,0 +1,51 @@
+<svg width="1280" height="960" viewBox="0 0 1280 960" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Desenvolvimento de sites em Manaus</title>
+  <desc id="desc">Interface de site profissional com codigo, SEO local e chamada para WhatsApp.</desc>
+  <rect width="1280" height="960" fill="#071321"/>
+  <rect x="74" y="78" width="1132" height="804" rx="34" fill="#0d1d31" stroke="#43d9ff" stroke-opacity=".26" stroke-width="2"/>
+  <rect x="112" y="124" width="1056" height="682" rx="24" fill="#101f33"/>
+  <rect x="112" y="124" width="1056" height="58" rx="24" fill="#15283e"/>
+  <circle cx="154" cy="153" r="9" fill="#ffcf5a"/>
+  <circle cx="184" cy="153" r="9" fill="#6ee7b7"/>
+  <circle cx="214" cy="153" r="9" fill="#43d9ff"/>
+  <rect x="814" y="145" width="304" height="16" rx="8" fill="#27445d"/>
+  <rect x="148" y="230" width="460" height="52" rx="8" fill="#43d9ff" fill-opacity=".14"/>
+  <rect x="148" y="304" width="566" height="34" rx="7" fill="#f7fbff" fill-opacity=".9"/>
+  <rect x="148" y="358" width="496" height="16" rx="8" fill="#95a9bd"/>
+  <rect x="148" y="390" width="420" height="16" rx="8" fill="#768ca2"/>
+  <rect x="148" y="444" width="196" height="52" rx="12" fill="#ffcf5a"/>
+  <rect x="368" y="444" width="190" height="52" rx="12" fill="#17304a" stroke="#43d9ff" stroke-opacity=".36"/>
+  <rect x="148" y="560" width="180" height="116" rx="18" fill="#15283e" stroke="#43d9ff" stroke-opacity=".24"/>
+  <rect x="358" y="560" width="180" height="116" rx="18" fill="#15283e" stroke="#43d9ff" stroke-opacity=".24"/>
+  <rect x="568" y="560" width="180" height="116" rx="18" fill="#15283e" stroke="#43d9ff" stroke-opacity=".24"/>
+  <path d="M193 618h90M402 618h90M612 618h90" stroke="#f7fbff" stroke-opacity=".78" stroke-width="14" stroke-linecap="round"/>
+  <path d="M193 648h58M402 648h66M612 648h54" stroke="#43d9ff" stroke-opacity=".65" stroke-width="10" stroke-linecap="round"/>
+  <g filter="url(#screenGlow)">
+    <rect x="794" y="244" width="284" height="354" rx="22" fill="#071321" stroke="#43d9ff" stroke-opacity=".44" stroke-width="2"/>
+  </g>
+  <rect x="824" y="276" width="108" height="16" rx="8" fill="#43d9ff"/>
+  <rect x="824" y="326" width="210" height="12" rx="6" fill="#6ee7b7" fill-opacity=".76"/>
+  <rect x="824" y="362" width="178" height="12" rx="6" fill="#95a9bd"/>
+  <rect x="824" y="398" width="232" height="12" rx="6" fill="#95a9bd" fill-opacity=".68"/>
+  <path d="M842 480l42-42M884 438l42 42M1014 438l-42 42M972 480l-42-42" stroke="#ffcf5a" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="824" y="536" width="214" height="28" rx="14" fill="#25d366"/>
+  <circle cx="1082" cy="642" r="88" fill="#43d9ff" fill-opacity=".12" stroke="#43d9ff" stroke-opacity=".32"/>
+  <path d="M1082 593c-29 0-53 24-53 53 0 39 53 91 53 91s53-52 53-91c0-29-24-53-53-53z" fill="#ffcf5a"/>
+  <circle cx="1082" cy="646" r="18" fill="#071321"/>
+  <rect x="766" y="650" width="236" height="76" rx="18" fill="#15283e" stroke="#6ee7b7" stroke-opacity=".34"/>
+  <path d="M804 688h64M804 712h128" stroke="#f7fbff" stroke-opacity=".8" stroke-width="12" stroke-linecap="round"/>
+  <path d="M938 682l20 20 34-42" stroke="#6ee7b7" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M118 824c171-38 316-22 438 0 170 31 302 45 612-34" stroke="#43d9ff" stroke-opacity=".16" stroke-width="4"/>
+  <defs>
+    <filter id="screenGlow" x="758" y="208" width="356" height="426" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/>
+      <feGaussianBlur stdDeviation="18"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.262745 0 0 0 0 0.85098 0 0 0 0 1 0 0 0 0.34 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_2"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_2" result="shape"/>
+    </filter>
+  </defs>
+</svg>

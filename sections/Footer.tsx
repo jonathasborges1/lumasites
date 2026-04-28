@@ -9,7 +9,7 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-white/10 bg-midnight/80">
-      <div className="container mx-auto px-5 md:px-8 py-12">
+      <div className="container mx-auto px-5 md:px-8 lg:px-12 xl:px-20 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           <div>
             <div

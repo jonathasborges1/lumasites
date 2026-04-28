@@ -5,13 +5,13 @@ import { differentials } from "@/content/differentials";
 
 export function Differentials() {
   return (
-    <section id="diferenciais" className="relative py-24 md:py-32">
+    <section id="diferenciais" className="relative py-16 md:py-24">
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-blue/40 to-transparent"
       />
 
-      <div className="relative container mx-auto px-5 md:px-8">
+      <div className="relative container mx-auto px-5 md:px-8 lg:px-12 xl:px-20">
         <ScrollReveal>
           <SectionTitle
             eyebrow="Diferenciais"

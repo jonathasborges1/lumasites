@@ -43,7 +43,7 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between">
+      <div className="container mx-auto px-5 md:px-8 lg:px-12 xl:px-20 h-16 md:h-20 flex items-center justify-between">
         <Link
           href="/"
           className="font-display text-xl md:text-2xl uppercase tracking-[0.3em] text-ink-primary hover:text-glow-aqua transition-colors"

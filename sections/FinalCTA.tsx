@@ -13,7 +13,7 @@ export function FinalCTA() {
   return (
     <section
       id="contato"
-      className="relative overflow-hidden py-20 md:py-28 lg:py-0"
+      className="relative overflow-hidden py-16 md:py-24 lg:py-0"
     >
       {/* ── plano de fundo: floresta portal (luma-cover) ── */}
       <div className="absolute inset-0 pointer-events-none">
@@ -32,8 +32,8 @@ export function FinalCTA() {
       <Fireflies count={12} />
 
       {/* ── layout: personagem (esq) + texto (dir) ── */}
-      <div className="relative container mx-auto px-5 md:px-8">
-        <div className="flex flex-col lg:flex-row items-end lg:items-center min-h-[560px] lg:min-h-[640px]">
+      <div className="relative container mx-auto px-5 md:px-8 lg:px-12 xl:px-20">
+        <div className="flex flex-col lg:flex-row items-end lg:items-center min-h-[480px] lg:min-h-[560px]">
           {/* personagem Luma — render 3D emergindo do fundo */}
           <ScrollReveal
             direction="up"
@@ -42,8 +42,8 @@ export function FinalCTA() {
             <div
               style={{
                 position: "relative",
-                width: 340,
-                height: 500,
+                width: 300,
+                height: 440,
                 mixBlendMode: "screen",
                 WebkitMaskImage:
                   "linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)",
@@ -61,15 +61,14 @@ export function FinalCTA() {
                 alt="Luma, a personagem luminosa que representa sua presença digital"
                 fill
                 className="object-cover animate-float-slow"
-                /* objectPosition: mostra apenas o render 3D (lado direito, 55-100%) */
                 style={{ objectPosition: "96% 12%" }}
-                sizes="340px"
+                sizes="300px"
               />
             </div>
           </ScrollReveal>
 
           {/* conteúdo textual */}
-          <div className="flex-1 py-20 lg:py-28 lg:pl-12 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
+          <div className="flex-1 py-16 lg:py-24 lg:pl-12 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
             <ScrollReveal>
               <div className="inline-flex items-center gap-2 rounded-full border border-accent-amber/40 bg-midnight/80 px-4 py-1.5 backdrop-blur-sm">
                 <Sparkles
@@ -84,9 +83,9 @@ export function FinalCTA() {
 
             <ScrollReveal delay={140}>
               <h2
-                className="mt-6 font-display uppercase leading-[0.93] text-ink-primary"
+                className="mt-5 font-display uppercase leading-[0.93] text-ink-primary"
                 style={{
-                  fontSize: "clamp(2.4rem, 6vw, 4.5rem)",
+                  fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)",
                   textShadow: "0 2px 4px rgba(0,0,0,.5)",
                 }}
               >
@@ -107,7 +106,7 @@ export function FinalCTA() {
             </ScrollReveal>
 
             <ScrollReveal delay={260}>
-              <p className="mt-5 text-base md:text-lg text-ink-primary/80 leading-relaxed max-w-lg mx-auto lg:mx-0">
+              <p className="mt-4 text-sm md:text-base text-ink-primary/80 leading-relaxed max-w-lg mx-auto lg:mx-0">
                 Manda um oi no{" "}
                 <span className="text-glow-aqua font-medium">WhatsApp</span>. Em{" "}
                 <span className="text-glow-aqua font-medium">minutos</span>,
@@ -126,7 +125,7 @@ export function FinalCTA() {
             </ScrollReveal>
 
             <ScrollReveal delay={380}>
-              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <GlowButton
                   href={whatsappLink()}
                   target="_blank"
@@ -135,7 +134,7 @@ export function FinalCTA() {
                   size="lg"
                   className="w-full sm:w-auto"
                 >
-                  <MessageCircle size={18} strokeWidth={2} />
+                  <MessageCircle size={17} strokeWidth={2} />
                   Quero meu orçamento agora
                 </GlowButton>
               </div>

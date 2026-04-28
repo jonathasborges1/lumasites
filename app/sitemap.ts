@@ -4,6 +4,7 @@ import { site } from "@/content/site";
 const lastModified = {
   home: new Date("2026-04-25"),
   criarSiteManaus: new Date("2026-04-26"),
+  desenvolvimentoDeSitesManaus: new Date("2026-04-28"),
   siteProfissionalManaus: new Date("2026-04-27"),
   siteInstitucionalManaus: new Date("2026-04-27"),
   blog: new Date("2026-04-23"),
@@ -28,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${site.url}/criar-site-em-manaus`,
       lastModified: lastModified.criarSiteManaus,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${site.url}/desenvolvimento-de-sites-manaus`,
+      lastModified: lastModified.desenvolvimentoDeSitesManaus,
       changeFrequency: "monthly",
       priority: 0.9,
     },

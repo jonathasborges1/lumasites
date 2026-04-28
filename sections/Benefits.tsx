@@ -6,8 +6,8 @@ import { benefits } from "@/content/benefits";
 
 export function Benefits() {
   return (
-    <section id="beneficios" className="relative py-24 md:py-32">
-      <div className="container mx-auto px-5 md:px-8">
+    <section id="beneficios" className="relative py-16 md:py-24">
+      <div className="container mx-auto px-5 md:px-8 lg:px-12 xl:px-20">
         <ScrollReveal>
           <SectionTitle
             eyebrow="Por que ter um site"
@@ -33,7 +33,7 @@ export function Benefits() {
               delay={idx * 100}
               direction={idx % 2 === 0 ? "up" : "up"}
             >
-              <TornCard className="p-7 h-full group">
+              <TornCard className="p-6 h-full group">
                 <div className="flex items-start gap-4">
                   <div className="relative flex-shrink-0 w-12 h-12 rounded-full bg-glow-cyan/10 border border-glow-cyan/50 flex items-center justify-center shadow-glow-sm group-hover:shadow-glow-md transition-all duration-500">
                     <Icon
@@ -47,7 +47,7 @@ export function Benefits() {
                     <h3 className="font-display text-xl uppercase tracking-wide text-ink-primary mb-2 group-hover:text-glow-aqua transition-colors">
                       {b.title}
                     </h3>
-                    <p className="text-ink-secondary leading-relaxed text-sm md:text-base">
+                    <p className="text-ink-secondary leading-relaxed text-sm">
                       {b.description}
                     </p>
                   </div>

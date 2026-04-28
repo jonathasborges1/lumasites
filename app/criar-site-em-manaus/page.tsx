@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -13,9 +13,11 @@ import {
 } from "lucide-react";
 import { LandingHeader } from "@/components/LandingHeader";
 import { LandingFooter } from "@/components/LandingFooter";
+import { Breadcrumb, breadcrumbSchema } from "@/components/Breadcrumb";
 import { GlowButton } from "@/components/GlowButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Fireflies } from "@/components/Fireflies";
+import { site } from "@/content/site";
 import {
   audiences,
   campaignWhatsApp,
@@ -33,6 +35,11 @@ import {
 
 export const metadata = pageMetadata;
 
+const breadcrumbItems = [
+  { label: "Serviços", href: "/#servicos" },
+  { label: "Criar site em Manaus" },
+];
+
 export default function CriarSiteEmManausPage() {
   return (
     <>
@@ -44,12 +51,18 @@ export default function CriarSiteEmManausPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema(breadcrumbItems, site.url)),
+        }}
+      />
 
       <LandingHeader />
 
       <main className="bg-midnight text-ink-primary">
         {/* Hero */}
-        <section className="relative min-h-[720px] overflow-hidden pt-28 md:pt-36">
+        <section className="relative min-h-[600px] overflow-hidden pt-20 md:pt-28">
           <div className="absolute inset-0 pointer-events-none">
             <Image
               src="/characters/gameplay-forest.jpg"
@@ -65,21 +78,22 @@ export default function CriarSiteEmManausPage() {
 
           <Fireflies count={16} />
 
-          <div className="relative container mx-auto px-5 md:px-8 pb-16">
-            <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="relative container mx-auto px-5 md:px-8 lg:px-12 xl:px-20 pb-12">
+            <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
               <ScrollReveal className="max-w-3xl">
-                <div className="mb-4 inline-flex items-center gap-2 border border-glow-cyan/30 bg-midnight/70 px-4 py-2 text-xs uppercase tracking-[0.28em] text-glow-aqua backdrop-blur-sm">
-                  <MapPin size={14} />
+                <Breadcrumb items={breadcrumbItems} />
+
+                <div className="mb-4 inline-flex items-center gap-2 border border-glow-cyan/30 bg-midnight/70 px-4 py-1.5 text-xs uppercase tracking-[0.28em] text-glow-aqua backdrop-blur-sm">
+                  <MapPin size={13} />
                   {hero.eyebrow}
                 </div>
 
-                {/* Prova social acima do fold */}
-                <div className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-ink-secondary">
+                <div className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-ink-secondary">
                   <span className="flex items-center gap-1">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star
                         key={i}
-                        size={13}
+                        size={12}
                         className="fill-accent-amber text-accent-amber"
                       />
                     ))}
@@ -92,15 +106,15 @@ export default function CriarSiteEmManausPage() {
                   </span>
                 </div>
 
-                <h1 className="font-display text-4xl uppercase leading-[0.98] text-ink-primary sm:text-5xl md:text-6xl lg:text-7xl">
+                <h1 className="font-display text-3xl uppercase leading-[0.98] text-ink-primary sm:text-4xl md:text-5xl lg:text-6xl">
                   {hero.title}
                 </h1>
 
-                <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-secondary md:text-lg">
+                <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink-secondary md:text-base">
                   {hero.description}
                 </p>
 
-                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <GlowButton
                     href={campaignWhatsApp}
                     target="_blank"
@@ -109,26 +123,26 @@ export default function CriarSiteEmManausPage() {
                     variant="amber"
                     className="w-full sm:w-auto"
                   >
-                    <MessageCircle size={18} />
+                    <MessageCircle size={17} />
                     {hero.primaryCta}
                   </GlowButton>
                   <GlowButton href="#como-funciona" size="lg" variant="ghost">
                     {hero.secondaryCta}
-                    <ArrowRight size={16} />
+                    <ArrowRight size={15} />
                   </GlowButton>
                 </div>
                 <p className="mt-3 text-xs text-ink-muted">
                   {hero.helper}
                 </p>
 
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <div className="mt-6 grid gap-2.5 sm:grid-cols-2">
                   {proofItems.map((item) => (
                     <div
                       key={item}
-                      className="flex items-center gap-3 border border-white/10 bg-midnight/58 px-4 py-3 text-sm text-ink-secondary backdrop-blur-sm"
+                      className="flex items-center gap-3 border border-white/10 bg-midnight/58 px-4 py-2.5 text-sm text-ink-secondary backdrop-blur-sm"
                     >
                       <CheckCircle2
-                        size={16}
+                        size={15}
                         className="shrink-0 text-accent-green"
                       />
                       {item}
@@ -138,22 +152,22 @@ export default function CriarSiteEmManausPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={120} className="hidden lg:block">
-                <div className="relative ml-auto max-w-md border border-glow-cyan/20 bg-midnight/76 p-6 backdrop-blur-md">
-                  <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
+                <div className="relative ml-auto max-w-md border border-glow-cyan/20 bg-midnight/76 p-5 backdrop-blur-md">
+                  <div className="mb-5 flex items-center justify-between border-b border-white/10 pb-3">
                     <span className="font-display text-xs uppercase tracking-[0.3em] text-glow-aqua">
                       Diagnóstico
                     </span>
-                    <Clock3 size={16} className="text-accent-amber" />
+                    <Clock3 size={15} className="text-accent-amber" />
                   </div>
-                  <p className="font-display text-2xl uppercase leading-tight text-ink-primary">
+                  <p className="font-display text-xl uppercase leading-tight text-ink-primary">
                     Em poucos minutos você entende o melhor caminho para seu
                     site.
                   </p>
-                  <div className="mt-6 space-y-4">
+                  <div className="mt-5 space-y-3">
                     {diagnosticItems.map((item) => (
                       <div key={item} className="flex gap-3 text-sm text-ink-secondary">
                         <BadgeCheck
-                          size={16}
+                          size={15}
                           className="mt-0.5 shrink-0 text-glow-cyan"
                         />
                         <span>{item}</span>
@@ -167,33 +181,33 @@ export default function CriarSiteEmManausPage() {
         </section>
 
         {/* Por que criar agora */}
-        <section className="py-16 md:py-20">
-          <div className="container mx-auto px-5 md:px-8">
+        <section className="py-12 md:py-16">
+          <div className="container mx-auto px-5 md:px-8 lg:px-12 xl:px-20">
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
               <ScrollReveal>
                 <span className="font-display text-xs uppercase tracking-[0.32em] text-glow-aqua">
                   Por que criar agora
                 </span>
-                <h2 className="mt-4 font-display text-3xl uppercase leading-tight text-ink-primary md:text-4xl">
+                <h2 className="mt-3 font-display text-2xl uppercase leading-tight text-ink-primary md:text-3xl">
                   Quem procura no Google precisa encontrar algo melhor que um
                   perfil perdido.
                 </h2>
-                <p className="mt-5 text-base leading-relaxed text-ink-secondary">
+                <p className="mt-4 text-sm leading-relaxed text-ink-secondary">
                   Redes sociais ajudam, mas o site é o endereço próprio da sua
                   empresa na internet. Ele organiza sua oferta, passa
                   credibilidade e conduz o cliente para a conversa certa.
                 </p>
               </ScrollReveal>
 
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-3 sm:grid-cols-2">
                 {deliverables.map((item, index) => (
                   <ScrollReveal key={item.title} delay={index * 70}>
                     <div className="h-full border border-white/10 bg-surface/45 p-5 transition-colors duration-300 hover:border-glow-cyan/25">
-                      <item.Icon size={22} className="mb-5 text-glow-cyan" />
+                      <item.Icon size={20} className="mb-4 text-glow-cyan" />
                       <h3 className="font-display text-sm uppercase tracking-[0.18em] text-ink-primary">
                         {item.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
+                      <p className="mt-2.5 text-sm leading-relaxed text-ink-secondary">
                         {item.text}
                       </p>
                     </div>
@@ -205,28 +219,28 @@ export default function CriarSiteEmManausPage() {
         </section>
 
         {/* Como funciona */}
-        <section id="como-funciona" className="bg-deep-blue/35 py-16 md:py-20">
-          <div className="container mx-auto px-5 md:px-8">
+        <section id="como-funciona" className="bg-deep-blue/35 py-12 md:py-16">
+          <div className="container mx-auto px-5 md:px-8 lg:px-12 xl:px-20">
             <ScrollReveal className="mx-auto max-w-2xl text-center">
               <span className="font-display text-xs uppercase tracking-[0.32em] text-glow-aqua">
                 Processo simples
               </span>
-              <h2 className="mt-4 font-display text-3xl uppercase leading-tight text-ink-primary md:text-4xl">
+              <h2 className="mt-3 font-display text-2xl uppercase leading-tight text-ink-primary md:text-3xl">
                 Do primeiro contato ao site no ar sem complicar sua rotina.
               </h2>
             </ScrollReveal>
 
-            <div className="mt-12 grid gap-5 md:grid-cols-3">
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
               {steps.map((step, index) => (
                 <ScrollReveal key={step.title} delay={index * 90}>
-                  <div className="h-full border border-white/10 bg-midnight/60 p-6">
-                    <div className="mb-6 font-display text-5xl text-glow-cyan/20">
+                  <div className="h-full border border-white/10 bg-midnight/60 p-5">
+                    <div className="mb-4 font-display text-4xl text-glow-cyan/20">
                       {String(index + 1).padStart(2, "0")}
                     </div>
-                    <h3 className="font-display text-base uppercase tracking-[0.2em] text-ink-primary">
+                    <h3 className="font-display text-sm uppercase tracking-[0.2em] text-ink-primary">
                       {step.title}
                     </h3>
-                    <p className="mt-4 text-sm leading-relaxed text-ink-secondary">
+                    <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
                       {step.text}
                     </p>
                   </div>
@@ -237,26 +251,26 @@ export default function CriarSiteEmManausPage() {
         </section>
 
         {/* Depoimentos */}
-        <section className="py-16 md:py-20">
-          <div className="container mx-auto px-5 md:px-8">
+        <section className="py-12 md:py-16">
+          <div className="container mx-auto px-5 md:px-8 lg:px-12 xl:px-20">
             <ScrollReveal className="mx-auto max-w-2xl text-center">
               <span className="font-display text-xs uppercase tracking-[0.32em] text-glow-aqua">
                 Quem já criou com a Luma
               </span>
-              <h2 className="mt-4 font-display text-3xl uppercase leading-tight text-ink-primary md:text-4xl">
+              <h2 className="mt-3 font-display text-2xl uppercase leading-tight text-ink-primary md:text-3xl">
                 Resultados reais de negócios em Manaus.
               </h2>
             </ScrollReveal>
 
-            <div className="mt-12 grid gap-5 md:grid-cols-3">
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
               {testimonials.map((t, index) => (
                 <ScrollReveal key={t.name} delay={index * 80}>
-                  <article className="h-full border border-white/10 bg-surface/45 p-6 flex flex-col gap-5">
+                  <article className="h-full border border-white/10 bg-surface/45 p-5 flex flex-col gap-4">
                     <div className="flex items-center gap-1">
                       {Array.from({ length: t.rating }).map((_, i) => (
                         <Star
                           key={i}
-                          size={13}
+                          size={12}
                           className="fill-accent-amber text-accent-amber"
                         />
                       ))}
@@ -264,8 +278,8 @@ export default function CriarSiteEmManausPage() {
                     <p className="flex-1 text-sm leading-relaxed text-ink-secondary">
                       "{t.text}"
                     </p>
-                    <div className="flex items-center gap-3 border-t border-white/10 pt-4">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center bg-glow-cyan/10 font-display text-xs text-glow-aqua">
+                    <div className="flex items-center gap-3 border-t border-white/10 pt-3">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center bg-glow-cyan/10 font-display text-xs text-glow-aqua">
                         {t.initials}
                       </div>
                       <div>
@@ -285,22 +299,22 @@ export default function CriarSiteEmManausPage() {
         </section>
 
         {/* Para quem é */}
-        <section className="bg-deep-blue/35 py-16 md:py-20">
-          <div className="container mx-auto px-5 md:px-8">
-            <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
+        <section className="bg-deep-blue/35 py-12 md:py-16">
+          <div className="container mx-auto px-5 md:px-8 lg:px-12 xl:px-20">
+            <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
               <ScrollReveal>
                 <span className="font-display text-xs uppercase tracking-[0.32em] text-glow-aqua">
                   Indicado para
                 </span>
-                <h2 className="mt-4 font-display text-3xl uppercase leading-tight text-ink-primary md:text-4xl">
+                <h2 className="mt-3 font-display text-2xl uppercase leading-tight text-ink-primary md:text-3xl">
                   Uma página comercial para negócios que precisam gerar contato.
                 </h2>
-                <p className="mt-5 text-base leading-relaxed text-ink-secondary">
+                <p className="mt-4 text-sm leading-relaxed text-ink-secondary">
                   A landing é ideal quando você quer divulgar uma oferta,
                   apresentar uma empresa ou transformar cliques de anúncios em
                   conversas pelo WhatsApp.
                 </p>
-                <div className="mt-8">
+                <div className="mt-6">
                   <GlowButton
                     href={campaignWhatsApp}
                     target="_blank"
@@ -308,7 +322,7 @@ export default function CriarSiteEmManausPage() {
                     variant="amber"
                     size="lg"
                   >
-                    <MessageCircle size={18} />
+                    <MessageCircle size={17} />
                     Receber proposta gratuita
                   </GlowButton>
                   <p className="mt-3 text-xs text-ink-muted">
@@ -318,14 +332,14 @@ export default function CriarSiteEmManausPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={120}>
-                <div className="grid gap-3 sm:grid-cols-2">
+                <div className="grid gap-2.5 sm:grid-cols-2">
                   {audiences.map((item) => (
                     <div
                       key={item}
-                      className="flex items-center gap-3 border border-white/10 bg-surface/45 px-4 py-4 text-sm text-ink-secondary"
+                      className="flex items-center gap-3 border border-white/10 bg-surface/45 px-4 py-3 text-sm text-ink-secondary"
                     >
                       <Sparkles
-                        size={15}
+                        size={14}
                         className="shrink-0 text-accent-amber"
                       />
                       <span className="capitalize">{item}</span>
@@ -338,30 +352,30 @@ export default function CriarSiteEmManausPage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 md:py-20">
-          <div className="container mx-auto px-5 md:px-8">
-            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <section className="py-12 md:py-16">
+          <div className="container mx-auto px-5 md:px-8 lg:px-12 xl:px-20">
+            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
               <ScrollReveal>
                 <span className="font-display text-xs uppercase tracking-[0.32em] text-glow-aqua">
                   Dúvidas frequentes
                 </span>
-                <h2 className="mt-4 font-display text-3xl uppercase leading-tight text-ink-primary md:text-4xl">
+                <h2 className="mt-3 font-display text-2xl uppercase leading-tight text-ink-primary md:text-3xl">
                   Perguntas comuns antes de contratar.
                 </h2>
-                <p className="mt-5 text-base leading-relaxed text-ink-secondary">
+                <p className="mt-4 text-sm leading-relaxed text-ink-secondary">
                   Respostas curtas para decidir com mais segurança antes de
                   pedir seu orçamento.
                 </p>
               </ScrollReveal>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {faqs.map((faq, index) => (
                   <ScrollReveal key={faq.question} delay={index * 60}>
-                    <article className="border border-white/10 bg-midnight/60 p-5">
+                    <article className="border border-white/10 bg-midnight/60 p-4">
                       <h3 className="font-display text-sm uppercase tracking-[0.18em] text-glow-aqua">
                         {faq.question}
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
+                      <p className="mt-2.5 text-sm leading-relaxed text-ink-secondary">
                         {faq.answer}
                       </p>
                     </article>
@@ -373,7 +387,7 @@ export default function CriarSiteEmManausPage() {
         </section>
 
         {/* CTA Final */}
-        <section className="relative overflow-hidden py-20 md:py-28">
+        <section className="relative overflow-hidden py-14 md:py-20">
           <div className="absolute inset-0 pointer-events-none">
             <Image
               src="/characters/luma-cover.jpg"
@@ -387,15 +401,15 @@ export default function CriarSiteEmManausPage() {
 
           <div className="relative mx-auto max-w-3xl px-5 text-center md:px-8">
             <ScrollReveal>
-              <FileSearch className="mx-auto mb-6 text-glow-cyan" size={32} />
-              <h2 className="font-display text-3xl uppercase leading-tight text-ink-primary md:text-5xl">
+              <FileSearch className="mx-auto mb-5 text-glow-cyan" size={28} />
+              <h2 className="font-display text-2xl uppercase leading-tight text-ink-primary md:text-4xl">
                 Vamos descobrir o melhor site para o seu negócio?
               </h2>
-              <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-ink-secondary md:text-lg">
+              <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-ink-secondary md:text-base">
                 Chame no WhatsApp, conte rapidamente o que você vende e receba
                 uma orientação objetiva sobre formato, prazo e investimento.
               </p>
-              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <GlowButton
                   href={campaignWhatsApp}
                   target="_blank"
@@ -404,7 +418,7 @@ export default function CriarSiteEmManausPage() {
                   size="lg"
                   className="w-full sm:w-auto"
                 >
-                  <MessageCircle size={18} />
+                  <MessageCircle size={17} />
                   Falar agora no WhatsApp
                 </GlowButton>
                 <Link

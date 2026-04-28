@@ -14,9 +14,9 @@ export function Services() {
   const { toggle, has } = useSelection();
 
   return (
-    <section id="servicos" className="relative py-24 md:py-32">
+    <section id="servicos" className="relative py-16 md:py-24">
       <Aurora intensity="soft" />
-      <div className="relative container mx-auto px-5 md:px-8">
+      <div className="relative container mx-auto px-5 md:px-8 lg:px-12 xl:px-20">
         <ScrollReveal>
           <SectionTitle
             eyebrow="Nossos serviços"
@@ -44,7 +44,7 @@ export function Services() {
               >
                 <TornCard
                   highlight={s.highlight || selected}
-                  className={`p-6 md:p-8 h-full flex flex-col group ${
+                  className={`p-5 md:p-7 h-full flex flex-col group ${
                     selected ? "scale-[1.015]" : ""
                   } transition-transform`}
                 >
@@ -67,7 +67,7 @@ export function Services() {
                         )}
                       </div>
                       <div>
-                        <h3 className="font-display text-2xl uppercase text-ink-primary group-hover:text-glow-aqua transition-colors">
+                        <h3 className="font-display text-xl uppercase text-ink-primary group-hover:text-glow-aqua transition-colors">
                           {s.title}
                         </h3>
                         <p className="text-sm text-glow-aqua font-display tracking-wide">
@@ -103,7 +103,7 @@ export function Services() {
                       <div className="font-display text-xs uppercase tracking-[0.25em] text-ink-muted">
                         A partir de
                       </div>
-                      <div className="font-display text-3xl text-glow-aqua leading-none mt-1">
+                      <div className="font-display text-2xl text-glow-aqua leading-none mt-1">
                         {s.priceFrom}
                       </div>
                       <div className="text-xs text-ink-muted mt-1">

@@ -125,10 +125,10 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 container mx-auto px-5 md:px-8 py-24 md:py-32">
+      <div className="relative z-10 container mx-auto px-5 md:px-8 lg:px-12 xl:px-20 py-20 md:py-28">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal duration={800}>
-            <div className="inline-flex items-center gap-3 mb-8 rounded-full border border-white/8 bg-midnight/78 px-4 py-1.5">
+            <div className="inline-flex items-center gap-3 mb-6 rounded-full border border-white/8 bg-midnight/78 px-4 py-1.5">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-accent-green opacity-35 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-green" />
@@ -141,7 +141,7 @@ export function Hero() {
 
           <ScrollReveal delay={150} duration={900}>
             <h1
-              className="font-display uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-ink-primary"
+              className="font-display uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] text-ink-primary"
               style={{
                 textShadow: "0 1px 0 rgba(0,0,0,.35)",
               }}
@@ -162,7 +162,7 @@ export function Hero() {
           </ScrollReveal>
 
           <ScrollReveal delay={300} duration={900}>
-            <p className="mt-8 text-lg md:text-xl text-ink-secondary max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-5 text-base md:text-lg text-ink-secondary max-w-2xl mx-auto leading-relaxed">
               Criamos{" "}
               <span className="text-glow-aqua font-medium">sites simples</span>,
               rápidos e profissionais em{" "}
@@ -174,7 +174,7 @@ export function Hero() {
           </ScrollReveal>
 
           <ScrollReveal delay={450} duration={900}>
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-4">
               <GlowButton
                 href={whatsappLink()}
                 target="_blank"
@@ -183,7 +183,7 @@ export function Hero() {
                 size="lg"
                 className="w-full sm:w-auto"
               >
-                <MessageCircle size={18} strokeWidth={2} />
+                <MessageCircle size={17} strokeWidth={2} />
                 Falar no WhatsApp agora
               </GlowButton>
 
@@ -194,13 +194,13 @@ export function Hero() {
                 className="w-full sm:w-auto"
               >
                 Ver serviços
-                <ArrowDown size={16} />
+                <ArrowDown size={15} />
               </GlowButton>
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={600} duration={1000}>
-            <div className="mt-14 grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto">
+            <div className="mt-10 grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto">
               <StatItem
                 valueNode={
                   <>
@@ -245,10 +245,10 @@ function StatItem({
 }) {
   return (
     <div className="text-center">
-      <div className="font-display text-2xl md:text-4xl text-glow-aqua tabular-nums">
+      <div className="font-display text-xl md:text-3xl text-glow-aqua tabular-nums">
         {valueNode}
       </div>
-      <div className="mt-1 text-xs md:text-sm uppercase tracking-widest text-ink-muted">
+      <div className="mt-1 text-xs uppercase tracking-widest text-ink-muted">
         {label}
       </div>
     </div>

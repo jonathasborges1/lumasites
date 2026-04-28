@@ -23,7 +23,7 @@ export function MascotBand() {
         <div className="absolute inset-0 bg-gradient-to-b from-midnight via-midnight/70 to-midnight" />
       </div>
 
-      <div className="relative container mx-auto px-5 md:px-8">
+      <div className="relative container mx-auto px-5 md:px-8 lg:px-12 xl:px-20">
         <div className="flex flex-col md:flex-row items-center gap-0 md:gap-12">
 
           {/* ── personagem Luma ── */}

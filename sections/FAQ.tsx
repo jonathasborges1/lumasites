@@ -10,8 +10,8 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="duvidas" className="relative py-24 md:py-32">
-      <div className="container mx-auto px-5 md:px-8">
+    <section id="duvidas" className="relative py-16 md:py-24">
+      <div className="container mx-auto px-5 md:px-8 lg:px-12 xl:px-20">
         <ScrollReveal>
           <SectionTitle
             eyebrow="Dúvidas frequentes"
@@ -71,7 +71,7 @@ export function FAQ() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="px-5 md:px-6 pb-5 text-ink-secondary leading-relaxed text-sm md:text-base">
+                      <p className="px-5 md:px-6 pb-4 text-ink-secondary leading-relaxed text-sm">
                         {item.answer}
                       </p>
                     </div>
