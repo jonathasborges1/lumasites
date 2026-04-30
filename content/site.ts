@@ -18,7 +18,7 @@ export const site = {
   seo: {
     title: "Luma Sites | Criação de Sites Simples em Manaus - AM",
     description:
-      "Criamos sites profissionais, rápidos e acessíveis em Manaus. Ideal para autônomos, clínicas, advogados, comércio e pequenos negócios. Sem complicação, sem mensalidade abusiva. Orçamento no WhatsApp.",
+      "Criamos sites profissionais e rápidos em Manaus. Ideal para autônomos, clínicas, advogados e comércio. Sem mensalidade abusiva. Orçamento pelo WhatsApp.",
     keywords: [
       "criação de sites em Manaus",
       "site profissional Manaus",

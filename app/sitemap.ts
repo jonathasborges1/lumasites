@@ -9,6 +9,7 @@ const lastModified = {
   siteInstitucionalManaus: new Date("2026-04-27"),
   blog: new Date("2026-04-23"),
   criacaoDeSites: new Date("2026-04-23"),
+  comoAparecerNoGoogle: new Date("2026-04-25"),
   advogados: new Date("2026-04-26"),
 };
 
@@ -53,6 +54,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${site.url}/blog/criacao-de-sites-em-manaus`,
       lastModified: lastModified.criacaoDeSites,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${site.url}/blog/como-aparecer-no-google-em-manaus`,
+      lastModified: lastModified.comoAparecerNoGoogle,
       changeFrequency: "monthly",
       priority: 0.8,
     },

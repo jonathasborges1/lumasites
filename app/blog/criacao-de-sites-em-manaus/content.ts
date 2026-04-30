@@ -67,7 +67,7 @@ export const articleDates = {
 export const pageMetadata: Metadata = {
   title: "Criação de Sites em Manaus | Desenvolvimento Web Profissional",
   description:
-    "Precisa de um site profissional em Manaus? Entenda como funciona o processo, quais tipos de site existem e o que avaliar antes de contratar. Solicite um orçamento gratuito.",
+    "Precisa de um site profissional em Manaus? Veja tipos de site, como funciona o processo e o que avaliar antes de contratar. Orçamento gratuito no WhatsApp.",
   keywords: [
     "criação de sites em Manaus",
     "desenvolvimento de sites em Manaus",
