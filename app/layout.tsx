@@ -38,7 +38,6 @@ export const metadata: Metadata = {
   authors: [{ name: site.name }],
   creator: site.name,
   publisher: site.name,
-  alternates: { canonical: site.url },
   openGraph: {
     type: "website",
     locale: "pt_BR",
@@ -160,6 +159,17 @@ export default function RootLayout({
                     },
                   },
                 ],
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: "-3.1019",
+                longitude: "-60.0250",
+              },
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                opens: "09:00",
+                closes: "18:00",
               },
               sameAs: [
                 `https://wa.me/${site.whatsapp.number}`,

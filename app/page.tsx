@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { site } from "@/content/site";
 import { Header } from "@/sections/Header";
 import { Hero } from "@/sections/Hero";
 import { Benefits } from "@/sections/Benefits";
@@ -10,6 +12,10 @@ import { FinalCTA } from "@/sections/FinalCTA";
 import { Footer } from "@/sections/Footer";
 import { MascotBand } from "@/sections/MascotBand";
 import { SectionTransition } from "@/components/SectionTransition";
+
+export const metadata: Metadata = {
+  alternates: { canonical: site.url },
+};
 
 export default function HomePage() {
   return (

@@ -29,7 +29,7 @@ export const pageMetadata: Metadata = {
   description:
     "Crie um site profissional em Manaus para apresentar sua empresa, aparecer melhor no Google e receber contatos pelo WhatsApp. Orçamento rápido e sem compromisso.",
   alternates: {
-    canonical: "/criar-site-em-manaus",
+    canonical: pageUrl,
   },
   keywords: [
     "criar site em Manaus",

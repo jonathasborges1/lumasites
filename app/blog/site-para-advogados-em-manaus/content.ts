@@ -83,7 +83,7 @@ export const pageMetadata: Metadata = {
     "desenvolvimento web para advogados em Manaus",
   ],
   alternates: {
-    canonical: `/blog/${slug}`,
+    canonical: articleUrl,
   },
   openGraph: {
     title: "Site para Advogados em Manaus | Estrutura, SEO e captação ética",
@@ -104,7 +104,7 @@ export const pageMetadata: Metadata = {
 
 export const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   headline: "Site para Advogados em Manaus: o que um escritório precisa para gerar confiança online",
   description:
     "Guia para advogados e escritórios de Manaus sobre estrutura de site, SEO local, regras de comunicação e como contratar um projeto profissional.",

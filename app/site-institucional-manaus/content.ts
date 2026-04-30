@@ -33,7 +33,7 @@ export const pageMetadata: Metadata = {
   description:
     "Criamos sites institucionais em Manaus para empresas que precisam de presença digital completa: múltiplas páginas, SEO local, identidade própria e estrutura para crescer. Orçamento pelo WhatsApp.",
   alternates: {
-    canonical: "/site-institucional-manaus",
+    canonical: pageUrl,
   },
   keywords: [
     "site institucional Manaus",

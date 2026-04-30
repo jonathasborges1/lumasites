@@ -62,7 +62,7 @@ export const pageMetadata: Metadata = {
     "ranquear no Google Manaus",
   ],
   alternates: {
-    canonical: "/blog/como-aparecer-no-google-em-manaus",
+    canonical: `${site.url}/blog/como-aparecer-no-google-em-manaus`,
   },
   openGraph: {
     title: "Como Aparecer no Google em Manaus | Guia para Pequenos Negócios",
@@ -83,7 +83,7 @@ export const pageMetadata: Metadata = {
 
 export const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   headline: "Como Aparecer no Google em Manaus: guia prático para pequenos negócios",
   description:
     "Guia prático para pequenos negócios de Manaus aparecerem no Google: Google Meu Negócio, SEO local, erros comuns e checklist de ações.",

@@ -29,7 +29,7 @@ export const pageMetadata: Metadata = {
   description:
     "Desenvolvimento de sites em Manaus para empresas que precisam de um site rápido, responsivo, profissional e preparado para SEO local. Solicite um orçamento pelo WhatsApp.",
   alternates: {
-    canonical: "/desenvolvimento-de-sites-manaus",
+    canonical: pageUrl,
   },
   keywords: [
     "desenvolvimento de sites Manaus",

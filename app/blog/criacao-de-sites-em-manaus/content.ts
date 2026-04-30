@@ -78,7 +78,7 @@ export const pageMetadata: Metadata = {
     "criação de site para empresas em Manaus",
   ],
   alternates: {
-    canonical: "/blog/criacao-de-sites-em-manaus",
+    canonical: `${site.url}/blog/criacao-de-sites-em-manaus`,
   },
   openGraph: {
     title: "Criação de Sites em Manaus | Desenvolvimento Web Profissional",
@@ -99,7 +99,7 @@ export const pageMetadata: Metadata = {
 
 export const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   headline: "Criação de Sites em Manaus: o que saber antes de contratar",
   description:
     "Guia completo sobre como funciona a criação de sites profissionais em Manaus. Tipos de site, como avaliar fornecedores e por que presença digital é essencial para negócios locais.",

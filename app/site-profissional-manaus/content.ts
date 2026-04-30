@@ -29,7 +29,7 @@ export const pageMetadata: Metadata = {
   description:
     "Criamos sites profissionais em Manaus para empresas, clínicas, advogados e autônomos que querem credibilidade digital. Design sob medida, rápido e otimizado para o Google. Orçamento pelo WhatsApp.",
   alternates: {
-    canonical: "/site-profissional-manaus",
+    canonical: pageUrl,
   },
   keywords: [
     "site profissional Manaus",
