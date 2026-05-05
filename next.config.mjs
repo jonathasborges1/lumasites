@@ -11,10 +11,25 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // HTTP → HTTPS (defense-in-depth; Vercel also handles this at edge)
       {
         source: "/:path*",
-        has: [{ type: "host", value: "www.lumasites.com.br" }],
+        has: [{ type: "header", key: "x-forwarded-proto", value: "http" }],
         destination: "https://lumasites.com.br/:path*",
+        permanent: true,
+      },
+      // www → non-www (homepage — avoids trailing slash on destination)
+      {
+        source: "/",
+        has: [{ type: "host", value: "www.lumasites.com.br" }],
+        destination: "https://lumasites.com.br",
+        permanent: true,
+      },
+      // www → non-www (all other paths)
+      {
+        source: "/:path+",
+        has: [{ type: "host", value: "www.lumasites.com.br" }],
+        destination: "https://lumasites.com.br/:path+",
         permanent: true,
       },
     ];

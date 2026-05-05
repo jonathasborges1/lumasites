@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { site } from "@/content/site";
 import { Header } from "@/sections/Header";
 import { Hero } from "@/sections/Hero";
 import { Benefits } from "@/sections/Benefits";
@@ -14,7 +13,7 @@ import { MascotBand } from "@/sections/MascotBand";
 import { SectionTransition } from "@/components/SectionTransition";
 
 export const metadata: Metadata = {
-  alternates: { canonical: site.url },
+  alternates: { canonical: "/" },
 };
 
 export default function HomePage() {
