@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
+import { articleDates as criacaoDeSitesDates } from "@/app/blog/criacao-de-sites-em-manaus/content";
+import { articleDates as comoAparecerNoGoogleDates } from "@/app/blog/como-aparecer-no-google-em-manaus/content";
+import { articleDates as advogadosDates } from "@/app/blog/site-para-advogados-em-manaus/content";
 
 const lastModified = {
   home: new Date("2026-04-25"),
@@ -7,10 +10,12 @@ const lastModified = {
   desenvolvimentoDeSitesManaus: new Date("2026-04-28"),
   siteProfissionalManaus: new Date("2026-04-27"),
   siteInstitucionalManaus: new Date("2026-04-27"),
-  blog: new Date("2026-04-23"),
-  criacaoDeSites: new Date("2026-04-23"),
-  comoAparecerNoGoogle: new Date("2026-04-25"),
-  advogados: new Date("2026-04-26"),
+  blog: new Date("2026-04-28"),
+  criacaoDeSites: new Date(criacaoDeSitesDates.updatedAt ?? criacaoDeSitesDates.publishedAt),
+  comoAparecerNoGoogle: new Date(
+    comoAparecerNoGoogleDates.updatedAt ?? comoAparecerNoGoogleDates.publishedAt,
+  ),
+  advogados: new Date(advogadosDates.updatedAt ?? advogadosDates.publishedAt),
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
