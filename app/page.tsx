@@ -11,9 +11,10 @@ import { FinalCTA } from "@/sections/FinalCTA";
 import { Footer } from "@/sections/Footer";
 import { MascotBand } from "@/sections/MascotBand";
 import { SectionTransition } from "@/components/SectionTransition";
+import { site } from "@/content/site";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/" },
+  alternates: { canonical: site.url },
 };
 
 export default function HomePage() {

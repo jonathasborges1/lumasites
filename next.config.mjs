@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+const CANONICAL_ORIGIN = "https://lumasites.com.br";
+const WWW_HOST = "www.lumasites.com.br";
+
 const nextConfig = {
   trailingSlash: false,
   allowedDevOrigins: ["192.168.100.11"],
@@ -11,26 +14,26 @@ const nextConfig = {
 
   async redirects() {
     return [
-      // HTTP → HTTPS (defense-in-depth; Vercel also handles this at edge)
+      // HTTP to HTTPS on the canonical non-www origin.
       {
         source: "/:path*",
         has: [{ type: "header", key: "x-forwarded-proto", value: "http" }],
-        destination: "https://lumasites.com.br/:path*",
-        permanent: true,
+        destination: `${CANONICAL_ORIGIN}/:path*`,
+        statusCode: 301,
       },
-      // www → non-www (homepage — avoids trailing slash on destination)
+      // WWW to non-WWW for the homepage.
       {
         source: "/",
-        has: [{ type: "host", value: "www.lumasites.com.br" }],
-        destination: "https://lumasites.com.br",
-        permanent: true,
+        has: [{ type: "host", value: WWW_HOST }],
+        destination: CANONICAL_ORIGIN,
+        statusCode: 301,
       },
-      // www → non-www (all other paths)
+      // WWW to non-WWW for every other path.
       {
         source: "/:path+",
-        has: [{ type: "host", value: "www.lumasites.com.br" }],
-        destination: "https://lumasites.com.br/:path+",
-        permanent: true,
+        has: [{ type: "host", value: WWW_HOST }],
+        destination: `${CANONICAL_ORIGIN}/:path+`,
+        statusCode: 301,
       },
     ];
   },
