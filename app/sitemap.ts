@@ -3,6 +3,7 @@ import { site } from "@/content/site";
 import { articleDates as criacaoDeSitesDates } from "@/app/blog/criacao-de-sites-em-manaus/content";
 import { articleDates as comoAparecerNoGoogleDates } from "@/app/blog/como-aparecer-no-google-em-manaus/content";
 import { articleDates as advogadosDates } from "@/app/blog/site-para-advogados-em-manaus/content";
+import { articleDates as psicologoDates } from "@/app/blog/site-para-psicologo-em-manaus/content";
 
 const lastModified = {
   home: new Date("2026-04-25"),
@@ -10,12 +11,13 @@ const lastModified = {
   desenvolvimentoDeSitesManaus: new Date("2026-04-28"),
   siteProfissionalManaus: new Date("2026-04-27"),
   siteInstitucionalManaus: new Date("2026-04-27"),
-  blog: new Date("2026-04-28"),
+  blog: new Date("2026-05-09"),
   criacaoDeSites: new Date(criacaoDeSitesDates.updatedAt ?? criacaoDeSitesDates.publishedAt),
   comoAparecerNoGoogle: new Date(
     comoAparecerNoGoogleDates.updatedAt ?? comoAparecerNoGoogleDates.publishedAt,
   ),
   advogados: new Date(advogadosDates.updatedAt ?? advogadosDates.publishedAt),
+  psicologo: new Date(psicologoDates.updatedAt ?? psicologoDates.publishedAt),
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -71,6 +73,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${site.url}/blog/site-para-advogados-em-manaus`,
       lastModified: lastModified.advogados,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${site.url}/blog/site-para-psicologo-em-manaus`,
+      lastModified: lastModified.psicologo,
       changeFrequency: "monthly",
       priority: 0.8,
     },

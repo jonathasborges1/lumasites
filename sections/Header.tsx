@@ -38,7 +38,7 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
-        scrolled
+        scrolled || servicesOpen || open
           ? "bg-midnight/92 backdrop-blur-md border-b border-white/8"
           : "bg-transparent"
       }`}
@@ -73,7 +73,7 @@ export function Header() {
             </button>
 
             {servicesOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 border border-white/12 bg-midnight/96 backdrop-blur-md shadow-xl">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 rounded-xl border border-white/15 bg-midnight shadow-2xl shadow-black/60 ring-1 ring-glow-cyan/10">
                 <div className="p-2">
                   {servicePages.map((item) => (
                     <Link
@@ -138,7 +138,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-white/8 bg-midnight/96 backdrop-blur-md animate-fade-up">
+        <div className="md:hidden border-t border-white/8 bg-midnight shadow-2xl shadow-black/60 animate-fade-up">
           <nav className="container mx-auto px-5 py-5 flex flex-col gap-1">
             <button
               type="button"

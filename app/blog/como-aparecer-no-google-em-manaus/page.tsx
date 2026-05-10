@@ -53,95 +53,89 @@ export default function ComoAparecerNoGoogleEmManausPage() {
           </div>
 
           <div className="relative max-w-5xl mx-auto px-5 md:px-8">
-            <div className="lg:grid lg:grid-cols-[1fr_280px] xl:grid-cols-[1fr_320px] lg:gap-14 lg:items-start">
+            <nav aria-label="Breadcrumb" className="mb-8">
+              <ol className="flex flex-wrap items-center gap-1.5 text-sm text-ink-muted">
+                <li>
+                  <Link href="/" className="hover:text-glow-aqua transition-colors duration-200">
+                    Início
+                  </Link>
+                </li>
+                <li><ChevronRight size={13} className="text-ink-muted/40" /></li>
+                <li>
+                  <Link href="/blog" className="hover:text-glow-aqua transition-colors duration-200">
+                    Blog
+                  </Link>
+                </li>
+                <li><ChevronRight size={13} className="text-ink-muted/40" /></li>
+                <li className="text-glow-aqua/80" aria-current="page">
+                  Como Aparecer no Google em Manaus
+                </li>
+              </ol>
+            </nav>
 
-              {/* ── Coluna de texto ── */}
-              <div>
-                <nav aria-label="Breadcrumb" className="mb-8">
-                  <ol className="flex flex-wrap items-center gap-1.5 text-sm text-ink-muted">
-                    <li>
-                      <Link href="/" className="hover:text-glow-aqua transition-colors duration-200">
-                        Início
-                      </Link>
-                    </li>
-                    <li><ChevronRight size={13} className="text-ink-muted/40" /></li>
-                    <li>
-                      <Link href="/blog" className="hover:text-glow-aqua transition-colors duration-200">
-                        Blog
-                      </Link>
-                    </li>
-                    <li><ChevronRight size={13} className="text-ink-muted/40" /></li>
-                    <li className="text-glow-aqua/80" aria-current="page">
-                      Como Aparecer no Google em Manaus
-                    </li>
-                  </ol>
-                </nav>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="h-px w-8 bg-glow-cyan/70" />
+              <span className="font-display text-xs uppercase tracking-[0.35em] text-glow-aqua">
+                Presença digital
+              </span>
+              <span className="h-px w-8 bg-glow-cyan/70" />
+            </div>
 
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="h-px w-8 bg-glow-cyan/70" />
-                  <span className="font-display text-xs uppercase tracking-[0.35em] text-glow-aqua">
-                    Presença digital
-                  </span>
-                  <span className="h-px w-8 bg-glow-cyan/70" />
-                </div>
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] uppercase text-ink-primary leading-[1.1] mb-8">
+              Seu cliente está no Google.{" "}
+              <br />
+              <span className="text-glow-aqua">ele encontra você?</span>
+            </h1>
 
-                <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] uppercase text-ink-primary leading-[1.1] mb-8">
-                  Seu cliente está no Google.{" "}
-                  <br />
-                  <span className="text-glow-aqua">ele encontra você?</span>
-                </h1>
+            <div className="flex flex-wrap items-center gap-5 text-sm text-ink-muted mb-12">
+              <span className="flex items-center gap-1.5">
+                <CalendarDays size={14} className="text-glow-cyan/60" />
+                Publicado em {articleDates.publishedLabel}
+              </span>
+              {articleDates.updatedLabel && (
+                <span className="flex items-center gap-1.5">
+                  <CalendarDays size={14} className="text-accent-green/70" />
+                  Atualizado em {articleDates.updatedLabel}
+                </span>
+              )}
+              <span className="flex items-center gap-1.5">
+                <Clock size={14} className="text-glow-cyan/60" />
+                Leitura: 7 minutos
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Star size={14} className="text-accent-amber/70" />
+                Para donos de negócios em Manaus
+              </span>
+            </div>
 
-                <div className="flex flex-wrap items-center gap-5 text-sm text-ink-muted mb-10">
-                  <span className="flex items-center gap-1.5">
-                    <CalendarDays size={14} className="text-glow-cyan/60" />
-                    Publicado em {articleDates.publishedLabel}
-                  </span>
-                  {articleDates.updatedLabel && (
-                    <span className="flex items-center gap-1.5">
-                      <CalendarDays size={14} className="text-accent-green/70" />
-                      Atualizado em {articleDates.updatedLabel}
-                    </span>
-                  )}
-                  <span className="flex items-center gap-1.5">
-                    <Clock size={14} className="text-glow-cyan/60" />
-                    Leitura: 7 minutos
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <Star size={14} className="text-accent-amber/70" />
-                    Para donos de negócios em Manaus
-                  </span>
-                </div>
-
-                <div className="border-l-2 border-glow-cyan/30 pl-6 space-y-4 text-ink-secondary text-base md:text-lg leading-relaxed">
-                  <p>
-                    Toda vez que alguém em Manaus digita &quot;dentista perto de mim&quot;,
-                    &quot;advocacia no Adrianópolis&quot; ou &quot;clínica de estética em Manaus&quot;,
-                    o Google entrega uma lista de negócios. Alguns aparecem. Outros não existem para
-                    quem está buscando. A diferença entre os dois grupos não é tamanho nem tempo
-                    de mercado — é presença digital configurada corretamente.
-                  </p>
-                  <p>
-                    Neste guia, você vai entender o que o Google leva em conta para decidir quem
-                    aparece nas buscas locais, quais erros impedem negócios de serem encontrados e
-                    quais ações concretas aplicar hoje para mudar isso.
-                  </p>
-                </div>
+            <div className="lg:grid lg:grid-cols-2 lg:gap-10 lg:items-center">
+              <div className="border-l-2 border-glow-cyan/30 pl-6 space-y-4 text-ink-secondary text-base md:text-lg leading-relaxed">
+                <p>
+                  Toda vez que alguém em Manaus digita &quot;dentista perto de mim&quot;,
+                  &quot;advocacia no Adrianópolis&quot; ou &quot;clínica de estética em Manaus&quot;,
+                  o Google entrega uma lista de negócios. Alguns aparecem. Outros não existem para
+                  quem está buscando. A diferença entre os dois grupos não é tamanho nem tempo
+                  de mercado — é presença digital configurada corretamente.
+                </p>
+                <p>
+                  Neste guia, você vai entender o que o Google leva em conta para decidir quem
+                  aparece nas buscas locais, quais erros impedem negócios de serem encontrados e
+                  quais ações concretas aplicar hoje para mudar isso.
+                </p>
               </div>
 
-              {/* ── Imagem lateral ── */}
-              <div className="mt-12 lg:mt-0 lg:sticky lg:top-28">
+              <div className="mt-10 lg:mt-0">
                 <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-glow-sm">
                   <Image
                     src="/blog/cliente-no-google-manaus.png"
                     alt="Seu cliente está no Google — ele encontra você? Presença digital para negócios em Manaus"
-                    width={640}
-                    height={960}
-                    className="w-full h-auto object-cover"
+                    width={1536}
+                    height={1024}
+                    className="w-full h-auto"
                     priority
                   />
                 </div>
               </div>
-
             </div>
           </div>
         </section>

@@ -93,9 +93,9 @@ export const pageMetadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "/blog/site-para-advogados-em-manaus.png",
+        width: 1680,
+        height: 960,
         alt: "Site profissional para escritório de advocacia em Manaus",
       },
     ],
@@ -120,6 +120,7 @@ export const articleSchema = {
   },
   datePublished: articleDates.publishedAt,
   dateModified: articleDates.updatedAt,
+  image: `${site.url}/blog/site-para-advogados-em-manaus.png`,
   url: articleUrl,
   mainEntityOfPage: articleUrl,
   inLanguage: "pt-BR",

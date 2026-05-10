@@ -88,9 +88,9 @@ export const pageMetadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "/blog/criacao-de-sites-em-manaus.png",
+        width: 1680,
+        height: 960,
         alt: "Tela de notebook mostrando um site profissional desenvolvido para empresa em Manaus",
       },
     ],
@@ -107,6 +107,7 @@ export const articleSchema = {
   publisher: { "@type": "Organization", name: site.name, url: site.url },
   datePublished: articleDates.publishedAt,
   ...(articleDates.updatedAt ? { dateModified: articleDates.updatedAt } : {}),
+  image: `${site.url}/blog/criacao-de-sites-em-manaus.png`,
   url: `${site.url}/blog/criacao-de-sites-em-manaus`,
   mainEntityOfPage: `${site.url}/blog/criacao-de-sites-em-manaus`,
   inLanguage: "pt-BR",
