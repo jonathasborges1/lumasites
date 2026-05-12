@@ -368,3 +368,27 @@ export const contractingGuide: ContractingItem[] = [
     tip: "O ideal é que o escritório possa continuar com o projeto mesmo se trocar de fornecedor no futuro.",
   },
 ];
+
+export type InternalLink = {
+  href: string;
+  label: string;
+  text: string;
+};
+
+export const internalLinks: InternalLink[] = [
+  {
+    href: "/blog/site-para-medico-em-manaus",
+    label: "Site para Médico em Manaus",
+    text: "Como médicos em Manaus podem fortalecer presença no Google com um site profissional e ético.",
+  },
+  {
+    href: "/site-profissional-manaus",
+    label: "Site profissional em Manaus",
+    text: "Veja como um site profissional transmite credibilidade antes do primeiro contato com o cliente.",
+  },
+  {
+    href: "/criar-site-em-manaus",
+    label: "Criar site em Manaus",
+    text: "Conheça formatos, prazos e caminhos para publicar uma presença digital própria em Manaus.",
+  },
+];

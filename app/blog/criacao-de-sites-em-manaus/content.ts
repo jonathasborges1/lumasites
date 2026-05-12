@@ -374,3 +374,27 @@ export const contractingGuide: ContractingItem[] = [
     tip: "Evite contratos que prendem seu site ao fornecedor. Você deve ter controle total do ativo que pagou para construir.",
   },
 ];
+
+export type InternalLink = {
+  href: string;
+  label: string;
+  text: string;
+};
+
+export const internalLinks: InternalLink[] = [
+  {
+    href: "/blog/site-para-medico-em-manaus",
+    label: "Site para Médico em Manaus",
+    text: "Como médicos em Manaus podem fortalecer presença no Google com um site profissional e otimizado.",
+  },
+  {
+    href: "/site-profissional-manaus",
+    label: "Site profissional em Manaus",
+    text: "Veja como um site profissional transmite credibilidade antes do primeiro contato com o cliente.",
+  },
+  {
+    href: "/desenvolvimento-de-sites-manaus",
+    label: "Desenvolvimento de Sites em Manaus",
+    text: "Entenda como funciona o desenvolvimento web profissional para empresas e negócios em Manaus.",
+  },
+];

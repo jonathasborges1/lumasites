@@ -18,6 +18,7 @@ import {
   siteTypes,
   localDifferentials,
   contractingGuide,
+  internalLinks,
 } from "./content";
 
 export const metadata: Metadata = pageMetadata;
@@ -426,6 +427,37 @@ export default function CriacaoDeSitesEmManausPage() {
                       {faq.a}
                     </p>
                   </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-20">
+          <div className="mx-auto max-w-4xl px-5 md:px-8">
+            <ScrollReveal>
+              <h2 className="mb-8 font-display text-2xl uppercase text-ink-primary md:text-3xl">
+                Continue lendo sobre
+                <span className="text-glow-aqua"> presença digital local</span>
+              </h2>
+            </ScrollReveal>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              {internalLinks.map((link, index) => (
+                <ScrollReveal key={link.href} delay={index * 70}>
+                  <Link
+                    href={link.href}
+                    className="group block h-full rounded-2xl border border-white/8 bg-surface/40 p-5 transition-colors duration-300 hover:border-glow-cyan/20"
+                  >
+                    <p className="mb-3 font-display text-sm uppercase tracking-wide text-ink-primary group-hover:text-glow-aqua">
+                      {link.label}
+                    </p>
+                    <p className="mb-5 text-sm leading-relaxed text-ink-secondary">{link.text}</p>
+                    <span className="inline-flex items-center gap-2 font-display text-xs uppercase tracking-[0.2em] text-glow-aqua">
+                      Ler artigo
+                      <ArrowRight size={14} />
+                    </span>
+                  </Link>
                 </ScrollReveal>
               ))}
             </div>

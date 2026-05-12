@@ -24,6 +24,25 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "site-para-medico-em-manaus",
+    title: "Site para Médico em Manaus: presença profissional para ser encontrado no Google",
+    description:
+      "Como médicos e especialistas em Manaus podem fortalecer a presença digital, aparecer nas buscas locais e gerar agendamentos qualificados com um site profissional.",
+    publishedAt: "2026-05-12",
+    publishedLabel: "12 de maio de 2026",
+    updatedAt: null,
+    updatedLabel: null,
+    readTime: "10 min",
+    tags: ["Medicina", "SEO Local", "Manaus"],
+    thumbnail: {
+      src: "/blog/site-para-medico-em-manaus.png",
+      alt: "Médico em consultório em Manaus com notebook mostrando presença profissional no Google",
+      headline: "Site para Médico em Manaus",
+      subheadline: "Credibilidade, SEO local e mais pacientes pelo Google",
+      hideTextOverlay: true,
+    },
+  },
+  {
     slug: "site-para-psicologo-em-manaus",
     title: "Site para Psicólogo em Manaus: como aparecer no Google com credibilidade",
     description:
@@ -141,11 +160,11 @@ export default function BlogPage() {
 
           <Link
             href={`/blog/${featuredPost.slug}`}
-            className="group relative grid overflow-hidden rounded-2xl border border-white/10 bg-surface/40 transition-all duration-300 hover:border-glow-aqua/30 hover:bg-surface/60 lg:grid-cols-[1.15fr_1fr] lg:items-center"
+            className="group relative grid overflow-hidden rounded-2xl border border-white/10 bg-surface/40 transition-all duration-300 hover:border-glow-aqua/30 hover:bg-surface/60 lg:grid-cols-[1.15fr_1fr]"
           >
             <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-glow-aqua/70 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-            <div className="relative aspect-[3/2] overflow-hidden border-b border-white/8 lg:border-b-0 lg:border-r">
+            <div className="relative aspect-[7/4] overflow-hidden border-b border-white/8 lg:border-b-0 lg:border-r">
               <Image
                 src={featuredPost.thumbnail.src}
                 alt={featuredPost.thumbnail.alt}

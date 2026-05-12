@@ -57,8 +57,8 @@ const articleUrl = `${site.url}/blog/${slug}`;
 export const thumbnail = {
   src: "/blog/site-para-psicologo-em-manaus.png",
   alt: "Psicóloga em Manaus usando notebook para fortalecer presença profissional no Google",
-  width: 1680,
-  height: 960,
+  width: 1536,
+  height: 1024,
   headline: "Site para Psicólogo em Manaus",
   subheadline: "Credibilidade, SEO local e mais contatos pelo Google",
 };
@@ -122,6 +122,7 @@ export const articleSchema = {
   },
   datePublished: articleDates.publishedAt,
   ...(articleDates.updatedAt ? { dateModified: articleDates.updatedAt } : {}),
+  image: `${site.url}${thumbnail.src}`,
   url: articleUrl,
   mainEntityOfPage: articleUrl,
   inLanguage: "pt-BR",
