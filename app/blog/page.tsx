@@ -24,6 +24,25 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "site-para-dentista-em-manaus",
+    title: "Site para Dentista em Manaus: presença profissional para ser encontrado no Google",
+    description:
+      "Como dentistas e clínicas odontológicas em Manaus podem fortalecer a presença digital, aparecer nas buscas locais e gerar agendamentos qualificados com um site profissional.",
+    publishedAt: "2026-05-13",
+    publishedLabel: "13 de maio de 2026",
+    updatedAt: null,
+    updatedLabel: null,
+    readTime: "10 min",
+    tags: ["Odontologia", "SEO Local", "Manaus"],
+    thumbnail: {
+      src: "/blog/site-para-dentista-em-manaus.png",
+      alt: "Dentista em consultório em Manaus com notebook mostrando presença profissional no Google",
+      headline: "Site para Dentista em Manaus",
+      subheadline: "Credibilidade, SEO local e mais pacientes pelo Google",
+      hideTextOverlay: true,
+    },
+  },
+  {
     slug: "site-para-medico-em-manaus",
     title: "Site para Médico em Manaus: presença profissional para ser encontrado no Google",
     description:

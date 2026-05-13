@@ -379,14 +379,14 @@ export const localDifferentials: Benefit[] = [
 
 export const internalLinks: InternalLink[] = [
   {
-    href: "/blog/como-aparecer-no-google-em-manaus",
-    label: "Como aparecer no Google em Manaus",
-    text: "Entenda os sinais locais que ajudam um negócio ou profissional a ser encontrado nas buscas.",
+    href: "/blog/site-para-dentista-em-manaus",
+    label: "Site para Dentista em Manaus",
+    text: "Como dentistas e clínicas odontológicas em Manaus podem fortalecer presença no Google e gerar mais agendamentos.",
   },
   {
-    href: "/site-profissional-manaus",
-    label: "Site profissional em Manaus",
-    text: "Veja como um site profissional pode transmitir credibilidade antes do primeiro contato.",
+    href: "/blog/como-aparecer-no-google-em-manaus",
+    label: "Como aparecer no Google em Manaus",
+    text: "Entenda os sinais locais que ajudam um profissional a ser encontrado nas buscas do Google.",
   },
   {
     href: "/criar-site-em-manaus",

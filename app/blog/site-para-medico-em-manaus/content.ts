@@ -380,9 +380,9 @@ export const localDifferentials: Benefit[] = [
 
 export const internalLinks: InternalLink[] = [
   {
-    href: "/blog/site-para-psicologo-em-manaus",
-    label: "Site para Psicólogo em Manaus",
-    text: "Como psicólogos em Manaus podem fortalecer presença no Google com um site ético e profissional.",
+    href: "/blog/site-para-dentista-em-manaus",
+    label: "Site para Dentista em Manaus",
+    text: "Como dentistas e clínicas odontológicas em Manaus podem fortalecer presença no Google e gerar agendamentos qualificados.",
   },
   {
     href: "/site-profissional-manaus",
