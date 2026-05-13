@@ -7,12 +7,12 @@ import { Footer } from "@/sections/Footer";
 import { Header } from "@/sections/Header";
 
 export const metadata: Metadata = {
-  title: `Blog | ${site.name}`,
+  title: `Blog sobre Sites Profissionais em Manaus | ${site.name}`,
   description:
     "Artigos práticos sobre criação de sites, presença digital e marketing para pequenos negócios em Manaus e no Amazonas.",
   alternates: { canonical: `${site.url}/blog` },
   openGraph: {
-    title: `Blog | ${site.name}`,
+    title: `Blog sobre Sites Profissionais em Manaus | ${site.name}`,
     description:
       "Artigos práticos sobre criação de sites, presença digital e marketing para pequenos negócios em Manaus e no Amazonas.",
     url: `${site.url}/blog`,

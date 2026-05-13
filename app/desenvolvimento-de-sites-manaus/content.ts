@@ -27,7 +27,7 @@ export const campaignWhatsApp = whatsappLink({
 export const pageMetadata: Metadata = {
   title: "Desenvolvimento de Sites em Manaus | Luma Sites",
   description:
-    "Desenvolvimento de sites em Manaus para empresas que precisam de um site rápido, responsivo, profissional e preparado para SEO local. Solicite um orçamento pelo WhatsApp.",
+    "Desenvolvimento de sites em Manaus para empresas que precisam de site rápido, responsivo e preparado para SEO local. Orçamento pelo WhatsApp.",
   alternates: {
     canonical: pageUrl,
   },

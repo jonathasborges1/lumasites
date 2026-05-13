@@ -31,7 +31,7 @@ export const campaignWhatsApp = whatsappLink({
 export const pageMetadata: Metadata = {
   title: "Site Institucional em Manaus | Luma Sites",
   description:
-    "Criamos sites institucionais em Manaus para empresas que precisam de presença digital completa: múltiplas páginas, SEO local, identidade própria e estrutura para crescer. Orçamento pelo WhatsApp.",
+    "Criamos sites institucionais em Manaus com múltiplas páginas, SEO local e identidade visual própria. Presença digital completa para sua empresa.",
   alternates: {
     canonical: pageUrl,
   },

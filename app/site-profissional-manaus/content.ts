@@ -27,7 +27,7 @@ export const campaignWhatsApp = whatsappLink({
 export const pageMetadata: Metadata = {
   title: "Site Profissional em Manaus | Luma Sites",
   description:
-    "Criamos sites profissionais em Manaus para empresas, clínicas, advogados e autônomos que querem credibilidade digital. Design sob medida, rápido e otimizado para o Google. Orçamento pelo WhatsApp.",
+    "Criamos sites profissionais em Manaus para empresas, clínicas, advogados e autônomos. Design sob medida, rápido e otimizado para o Google.",
   alternates: {
     canonical: pageUrl,
   },

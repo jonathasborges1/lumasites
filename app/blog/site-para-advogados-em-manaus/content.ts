@@ -70,7 +70,7 @@ export const articleDates = {
 };
 
 export const pageMetadata: Metadata = {
-  title: "Site para Advogados em Manaus | Como captar mais consultas com credibilidade",
+  title: "Site para Advogados em Manaus | Captação com Credibilidade",
   description:
     "Entenda como deve ser um site para advogados em Manaus: estrutura ideal, regras de comunicação, SEO local, investimento e o que avaliar antes de contratar.",
   keywords: [
@@ -102,7 +102,7 @@ export const pageMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Site para Advogados em Manaus | Como captar mais consultas com credibilidade",
+    title: "Site para Advogados em Manaus | Captação com Credibilidade",
     description:
       "Entenda como deve ser um site para advogados em Manaus: estrutura ideal, regras de comunicação, SEO local e o que avaliar antes de contratar.",
     images: ["/blog/site-para-advogados-em-manaus.png"],
