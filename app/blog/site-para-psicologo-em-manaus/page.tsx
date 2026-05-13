@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { GlowButton } from "@/components/GlowButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { breadcrumbSchema } from "@/components/Breadcrumb";
 import { site } from "@/content/site";
 import { Footer } from "@/sections/Footer";
 import { Header } from "@/sections/Header";
@@ -44,6 +45,17 @@ export default function SiteParaPsicologoEmManausPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema(
+              [{ label: "Blog", href: "/blog" }, { label: "Site para Psicólogo em Manaus" }],
+              site.url,
+            ),
+          ),
+        }}
       />
 
       <Header />

@@ -79,6 +79,13 @@ export const pageMetadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Como Aparecer no Google em Manaus | Guia para Pequenos Negócios",
+    description:
+      "Seu cliente está no Google — mas ele encontra você? Aprenda o que fazer para aparecer nas buscas locais de Manaus.",
+    images: ["/blog/cliente-no-google-manaus.png"],
+  },
 };
 
 export const articleSchema = {
@@ -87,7 +94,12 @@ export const articleSchema = {
   headline: "Como Aparecer no Google em Manaus: guia prático para pequenos negócios",
   description:
     "Guia prático para pequenos negócios de Manaus aparecerem no Google: Google Meu Negócio, SEO local, erros comuns e checklist de ações.",
-  author: { "@type": "Organization", name: site.name, url: site.url },
+  author: {
+    "@type": "Person",
+    name: "Jonathas Borges",
+    url: site.url,
+    sameAs: ["https://www.instagram.com/jonathasborges1"],
+  },
   publisher: { "@type": "Organization", name: site.name, url: site.url },
   datePublished: articleDates.publishedAt,
   ...(articleDates.updatedAt ? { dateModified: articleDates.updatedAt } : {}),

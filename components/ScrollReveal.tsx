@@ -37,7 +37,12 @@ export function ScrollReveal({
   as = "div",
 }: Props) {
   const ref = useRef<HTMLElement>(null);
+  const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const el = ref.current;
@@ -80,6 +85,10 @@ export function ScrollReveal({
       : directionTransforms[direction]
     : directionTransforms[direction];
 
+  // SSR e primeiro render: opacity:1 (visível para crawlers).
+  // Após hidratação no cliente: aplica animação normalmente.
+  const isHidden = mounted && !visible;
+
   return React.createElement(
     as,
     {
@@ -88,10 +97,12 @@ export function ScrollReveal({
       },
       className,
       style: {
-        opacity: visible ? 1 : 0,
-        transform: visible ? "none" : transform,
-        transition: `opacity ${duration}ms cubic-bezier(.22,.61,.36,1) ${delay}ms, transform ${duration}ms cubic-bezier(.22,.61,.36,1) ${delay}ms`,
-        willChange: visible ? "auto" : "opacity, transform",
+        opacity: isHidden ? 0 : 1,
+        transform: isHidden ? transform : "none",
+        transition: mounted
+          ? `opacity ${duration}ms cubic-bezier(.22,.61,.36,1) ${delay}ms, transform ${duration}ms cubic-bezier(.22,.61,.36,1) ${delay}ms`
+          : "none",
+        willChange: isHidden ? "opacity, transform" : "auto",
       },
     },
     children

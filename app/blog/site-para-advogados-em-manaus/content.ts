@@ -100,6 +100,13 @@ export const pageMetadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Site para Advogados em Manaus | Como captar mais consultas com credibilidade",
+    description:
+      "Entenda como deve ser um site para advogados em Manaus: estrutura ideal, regras de comunicação, SEO local e o que avaliar antes de contratar.",
+    images: ["/blog/site-para-advogados-em-manaus.png"],
+  },
 };
 
 export const articleSchema = {
@@ -109,9 +116,10 @@ export const articleSchema = {
   description:
     "Guia para advogados e escritórios de Manaus sobre estrutura de site, SEO local, regras de comunicação e como contratar um projeto profissional.",
   author: {
-    "@type": "Organization",
-    name: site.name,
+    "@type": "Person",
+    name: "Jonathas Borges",
     url: site.url,
+    sameAs: ["https://www.instagram.com/jonathasborges1"],
   },
   publisher: {
     "@type": "Organization",

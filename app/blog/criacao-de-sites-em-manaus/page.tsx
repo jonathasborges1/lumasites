@@ -4,6 +4,7 @@ import { Header } from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
 import { GlowButton } from "@/components/GlowButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { breadcrumbSchema } from "@/components/Breadcrumb";
 import { site } from "@/content/site";
 import { CalendarDays, CheckCircle2, Zap, MessageCircle, ArrowRight, ChevronRight, Clock, Star } from "lucide-react";
 import {
@@ -33,6 +34,17 @@ export default function CriacaoDeSitesEmManausPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema(
+              [{ label: "Blog", href: "/blog" }, { label: "Criação de Sites em Manaus" }],
+              site.url,
+            ),
+          ),
+        }}
       />
 
       <Header />

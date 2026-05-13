@@ -101,6 +101,13 @@ export const pageMetadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Site para Psicólogo em Manaus | Mais Pacientes pelo Google",
+    description:
+      "Entenda como um site para psicólogo em Manaus ajuda a transmitir credibilidade, aparecer no Google e gerar agendamentos qualificados.",
+    images: [thumbnail.src],
+  },
 };
 
 export const articleSchema = {
@@ -111,9 +118,10 @@ export const articleSchema = {
   description:
     "Artigo sobre criação de site para psicólogos em Manaus, SEO local, presença digital ética e como transformar buscas no Google em contatos qualificados.",
   author: {
-    "@type": "Organization",
-    name: site.name,
+    "@type": "Person",
+    name: "Jonathas Borges",
     url: site.url,
+    sameAs: ["https://www.instagram.com/jonathasborges1"],
   },
   publisher: {
     "@type": "Organization",

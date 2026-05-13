@@ -95,6 +95,13 @@ export const pageMetadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Criação de Sites em Manaus | Desenvolvimento Web Profissional",
+    description:
+      "Precisa de um site profissional em Manaus? Veja tipos de site, como funciona o processo e o que avaliar antes de contratar.",
+    images: ["/blog/criacao-de-sites-em-manaus.png"],
+  },
 };
 
 export const articleSchema = {
@@ -103,7 +110,12 @@ export const articleSchema = {
   headline: "Criação de Sites em Manaus: o que saber antes de contratar",
   description:
     "Guia completo sobre como funciona a criação de sites profissionais em Manaus. Tipos de site, como avaliar fornecedores e por que presença digital é essencial para negócios locais.",
-  author: { "@type": "Organization", name: site.name, url: site.url },
+  author: {
+    "@type": "Person",
+    name: "Jonathas Borges",
+    url: site.url,
+    sameAs: ["https://www.instagram.com/jonathasborges1"],
+  },
   publisher: { "@type": "Organization", name: site.name, url: site.url },
   datePublished: articleDates.publishedAt,
   ...(articleDates.updatedAt ? { dateModified: articleDates.updatedAt } : {}),

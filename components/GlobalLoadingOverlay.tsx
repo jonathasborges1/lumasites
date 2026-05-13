@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { LoadingScreen } from "@/components/LoadingScreen";
 
-const INITIAL_MIN_MS = 900;
+const INITIAL_MIN_MS = 200;
 const ROUTE_SHOW_DELAY_MS = 140;
 const NAV_MIN_MS = 180;
 const ROUTE_FAILSAFE_MS = 2500;

@@ -5,6 +5,7 @@ import { Header } from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
 import { GlowButton } from "@/components/GlowButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { breadcrumbSchema } from "@/components/Breadcrumb";
 import { site } from "@/content/site";
 import {
   CalendarDays,
@@ -42,6 +43,17 @@ export default function ComoAparecerNoGoogleEmManausPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema(
+              [{ label: "Blog", href: "/blog" }, { label: "Como Aparecer no Google em Manaus" }],
+              site.url,
+            ),
+          ),
+        }}
       />
 
       <Header />
