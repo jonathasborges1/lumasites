@@ -385,9 +385,9 @@ export type InternalLink = {
 
 export const internalLinks: InternalLink[] = [
   {
-    href: "/blog/site-para-medico-em-manaus",
-    label: "Site para Médico em Manaus",
-    text: "Como médicos em Manaus podem fortalecer presença no Google com um site profissional e ético.",
+    href: "/blog/site-para-psicologo-em-manaus",
+    label: "Site para Psicólogo em Manaus",
+    text: "Como psicólogos em Manaus podem construir presença digital ética e ser encontrados nas buscas locais.",
   },
   {
     href: "/site-profissional-manaus",

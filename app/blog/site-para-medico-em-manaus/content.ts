@@ -390,8 +390,8 @@ export const internalLinks: InternalLink[] = [
     text: "Veja como um site profissional transmite credibilidade antes do primeiro contato com o cliente.",
   },
   {
-    href: "/criar-site-em-manaus",
-    label: "Criar site em Manaus",
-    text: "Conheça formatos, prazos e caminhos para publicar uma presença digital própria em Manaus.",
+    href: "/blog/criacao-de-sites-em-manaus",
+    label: "Criação de Sites em Manaus",
+    text: "Guia completo sobre como funciona a criação de sites profissionais em Manaus para pequenos negócios.",
   },
 ];

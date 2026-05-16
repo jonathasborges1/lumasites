@@ -395,9 +395,9 @@ export type InternalLink = {
 
 export const internalLinks: InternalLink[] = [
   {
-    href: "/blog/site-para-medico-em-manaus",
-    label: "Site para Médico em Manaus",
-    text: "Como médicos em Manaus podem fortalecer presença no Google com um site profissional e otimizado.",
+    href: "/blog/site-para-dentista-em-manaus",
+    label: "Site para Dentista em Manaus",
+    text: "Como dentistas e clínicas odontológicas em Manaus podem fortalecer presença no Google e gerar agendamentos qualificados.",
   },
   {
     href: "/site-profissional-manaus",

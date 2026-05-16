@@ -13,6 +13,7 @@ const lastModified = {
   desenvolvimentoDeSitesManaus: new Date("2026-04-28"),
   siteProfissionalManaus: new Date("2026-04-27"),
   siteInstitucionalManaus: new Date("2026-04-27"),
+  landingPageManaus: new Date("2026-05-16"),
   blog: new Date("2026-05-12"),
   medicoEmManaus: new Date(medicoEmManausDates.updatedAt ?? medicoEmManausDates.publishedAt),
   criacaoDeSites: new Date(criacaoDeSitesDates.updatedAt ?? criacaoDeSitesDates.publishedAt),
@@ -59,6 +60,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${site.url}/site-institucional-manaus`,
       lastModified: lastModified.siteInstitucionalManaus,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${site.url}/landing-page-manaus`,
+      lastModified: lastModified.landingPageManaus,
       changeFrequency: "monthly",
       priority: 0.9,
     },

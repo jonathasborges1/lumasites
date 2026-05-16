@@ -144,10 +144,11 @@ export default function RootLayout({
                   },
                   {
                     "@type": "Offer",
+                    url: `${site.url}/landing-page-manaus`,
                     itemOffered: {
                       "@type": "Service",
                       name: "Landing Page",
-                      description: "Página de conversão focada em captação de clientes",
+                      description: "Página de conversão focada em captação de clientes pelo WhatsApp",
                     },
                   },
                   {

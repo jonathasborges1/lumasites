@@ -19,6 +19,11 @@ export const servicePages = [
     label: "Site institucional",
     description: "Site com várias páginas para apresentar uma empresa completa.",
   },
+  {
+    href: "/landing-page-manaus",
+    label: "Landing page",
+    description: "Página focada em uma única ação: captar clientes pelo WhatsApp.",
+  },
 ];
 
 export const mainNavigation = [
