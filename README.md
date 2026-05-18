@@ -159,3 +159,7 @@ git remote add origin https://github.com/jonathasborges1/lumasites.git
 # 6. Sobe para o GitHub
 
 git push -u origin main
+
+Get-NetTCPConnection -State Listen | Where-Object {$_.OwningProcess -in (Get-Process node).Id} | Select-Object LocalAddress, LocalPort, @{Name="Process";Expression={(Get-Process -Id $_.OwningProcess).ProcessName}}, OwningProcess
+
+taskkill /PID 15432 /F
