@@ -1,12 +1,16 @@
 "use client";
 
 import { useMemo } from "react";
+import { usePathname } from "next/navigation";
 import { useSelection } from "./SelectionContext";
 import { whatsappLink } from "@/utils/whatsapp";
 import { services } from "@/content/services";
 
 export function WhatsAppFloating() {
+  const pathname = usePathname();
   const { selected, clear } = useSelection();
+
+  if (pathname.startsWith("/proposta-comercial")) return null;
 
   const href = useMemo(() => {
     if (selected.length === 0) {
