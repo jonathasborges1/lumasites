@@ -214,12 +214,14 @@ function CTABtn({
   variant = "green",
   full = false,
   small = false,
+  noArrow = false,
 }: {
   href: string;
   children: React.ReactNode;
   variant?: "green" | "wine" | "outline";
   full?: boolean;
   small?: boolean;
+  noArrow?: boolean;
 }) {
   const base: React.CSSProperties = {
     display: "inline-flex",
@@ -261,7 +263,8 @@ function CTABtn({
       className="km-btn-hover km-pulse-cta"
     >
       {variant === "green" && <WAIcon size={17} />}
-      {children} →
+      {children}
+      {!noArrow && " →"}
     </a>
   );
 }
@@ -708,8 +711,8 @@ function HeroSection() {
               filhos não podem ser resolvidas no improviso.
               <br />
               <br />
-              Aqui, você tem uma advogada ao seu lado, do primeiro contato até
-              a solução.
+              Aqui, você tem uma advogada ao seu lado, do primeiro contato até a
+              solução.
             </p>
 
             <div
@@ -1044,6 +1047,7 @@ function IdentificationSection() {
             href={WA("Olá, Dra. Karen! Quero falar sobre meu caso.")}
             variant="green"
             small
+            noArrow
           >
             Falar com a Advogada Agora
           </CTABtn>
