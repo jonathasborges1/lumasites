@@ -862,7 +862,7 @@ function HeroSection() {
                   marginBottom: "6px",
                 }}
               >
-                Dra. Karen Cristina Moraes
+                Dra. Karen Moraes
               </p>
               <p
                 style={{
