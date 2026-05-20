@@ -27,8 +27,8 @@ const FB = "var(--km-font-body,'Inter',system-ui,sans-serif)";
 const WA_BASE = "https://wa.me/5566992486203";
 const WA = (msg = "Olá, Dra. Karen! Gostaria de agendar uma consulta.") =>
   `${WA_BASE}?text=${encodeURIComponent(msg)}`;
-const KAREN_HERO_PHOTO = "/images/karenmoraes/karen-moraes-hero.jpg";
-const KAREN_ABOUT_PHOTO = "/images/karenmoraes/karen-moraes-about.jpg";
+const KAREN_HERO_PHOTO = "/images/karenmoraes/karen-moraes-hero.jpg?v=2";
+const KAREN_ABOUT_PHOTO = "/images/karenmoraes/karen-moraes-about.jpg?v=2";
 
 /* ─── Responsive CSS ─────────────────────────────────────────────── */
 const CSS = `
@@ -260,6 +260,7 @@ function CTABtn({
       style={{ ...base, ...varStyle }}
       className="km-btn-hover km-pulse-cta"
     >
+      {variant === "green" && <WAIcon size={17} />}
       {children} →
     </a>
   );
@@ -616,7 +617,7 @@ function Navbar() {
             letterSpacing: ".5px",
           }}
         >
-          Falar com a Advogada →
+          <WAIcon size={18} /> Falar com a Advogada →
         </a>
       </div>
     </nav>
@@ -707,7 +708,7 @@ function HeroSection() {
               filhos não podem ser resolvidas no improviso.
               <br />
               <br />
-              Aqui, você tem uma advogada ao seu lado — do primeiro contato até
+              Aqui, você tem uma advogada ao seu lado, do primeiro contato até
               a solução.
             </p>
 
@@ -977,7 +978,7 @@ function IdentificationSection() {
               lineHeight: 1.7,
             }}
           >
-            Questões de família e herança são delicadas — e cada dia sem
+            Questões de família e herança são delicadas, e cada dia sem
             orientação jurídica pode custar caro.
           </p>
         </div>
@@ -1037,7 +1038,7 @@ function IdentificationSection() {
             }}
           >
             Se você se identificou com algum desses pontos, o problema não vai
-            se resolver sozinho — e adiar pode custar caro.
+            se resolver sozinho, e adiar pode custar caro.
           </p>
           <CTABtn
             href={WA("Olá, Dra. Karen! Quero falar sobre meu caso.")}
@@ -1093,7 +1094,7 @@ function UrgencySection() {
             marginBottom: "40px",
           }}
         >
-          Quanto antes você tiver clareza sobre o seu caso, menor o desgaste —
+          Quanto antes você tiver clareza sobre o seu caso, menor o desgaste
           emocional e financeiro.
         </p>
         <p
@@ -1117,12 +1118,12 @@ const services = [
   {
     icon: "⚖️",
     title: "Divórcio",
-    desc: "Divórcio consensual ou litigioso — com orientação clara em cada etapa, do início ao acordo ou sentença. Você não precisa enfrentar isso sozinha.",
+    desc: "Divórcio consensual ou litigioso, com orientação clara em cada etapa, do início ao acordo ou sentença. Você não precisa enfrentar isso sozinha.",
   },
   {
     icon: "👨‍👩‍👧",
     title: "Guarda dos Filhos",
-    desc: "Guarda compartilhada, unilateral, regulamentação de visitas e direito de convivência. Os filhos precisam de proteção jurídica — não apenas de boa vontade.",
+    desc: "Guarda compartilhada, unilateral, regulamentação de visitas e direito de convivência. Os filhos precisam de proteção jurídica, não apenas de boa vontade.",
   },
   {
     icon: "💳",
@@ -1132,17 +1133,17 @@ const services = [
   {
     icon: "🏠",
     title: "Partilha de Bens",
-    desc: "Divisão do patrimônio construído durante o casamento ou a união estável — com análise do que realmente pertence a você, mesmo que não esteja no seu nome.",
+    desc: "Divisão do patrimônio construído durante o casamento ou a união estável, com análise do que realmente pertence a você, mesmo que não esteja no seu nome.",
   },
   {
     icon: "📜",
     title: "Inventário e Herança",
-    desc: "Inventário extrajudicial (cartório) ou judicial — com acompanhamento completo. O prazo legal começa a contar após o falecimento e o atraso gera multa.",
+    desc: "Inventário extrajudicial (cartório) ou judicial, com acompanhamento completo. O prazo legal começa a contar após o falecimento e o atraso gera multa.",
   },
   {
     icon: "🛡️",
     title: "Planejamento Sucessório",
-    desc: "Organize seu patrimônio ainda em vida. Testamento, doação com reserva de usufruto e outras ferramentas para proteger quem você ama — com segurança jurídica.",
+    desc: "Organize seu patrimônio ainda em vida. Testamento, doação com reserva de usufruto e outras ferramentas para proteger quem você ama, com segurança jurídica.",
   },
 ];
 
@@ -1235,7 +1236,7 @@ function InventoryAlertSection() {
             marginBottom: "28px",
           }}
         >
-          ⚠ Atenção — Prazo Legal
+          ⚠ Atenção: Prazo Legal
         </span>
         <h2
           style={{
@@ -1264,7 +1265,7 @@ function InventoryAlertSection() {
           </strong>
           . Quando isso não acontece, o Estado pode aplicar uma multa que varia
           de <strong style={{ color: C.goldLight }}>10% a 20%</strong> sobre o
-          imposto devido — reduzindo o valor que cada herdeiro recebe.
+          imposto devido, reduzindo o valor que cada herdeiro recebe.
         </p>
         <p
           style={{
@@ -1510,7 +1511,7 @@ function AboutSection() {
               }}
             >
               Atuar em Direito de Família e Sucessões não é apenas uma escolha
-              profissional — é uma missão. Cada caso que chega até mim envolve
+              profissional. É uma missão. Cada caso que chega até mim envolve
               uma família atravessando um momento difícil, e é exatamente nesses
               momentos que uma orientação jurídica clara pode mudar o desfecho
               de tudo.
@@ -1526,7 +1527,7 @@ function AboutSection() {
             >
               Minha atuação é focada em proteção: dos seus direitos, do seu
               patrimônio e, principalmente, dos seus filhos. Trabalho para que
-              você tome decisões com segurança — sem achismos, sem promessas
+              você tome decisões com segurança: sem achismos, sem promessas
               vagas, sem juridiquês.
             </p>
 
@@ -1553,7 +1554,7 @@ function AboutSection() {
                 Credenciais
               </p>
               {[
-                "Graduada em Direito — UniCathedral-MT",
+                "Graduada em Direito pela UniCathedral-MT",
                 "Especialização em Direito de Família e Sucessões",
                 "Atuação em Direito de Família e Sucessões",
                 "Atendimento presencial em Barra do Garças – MT",
@@ -1613,7 +1614,7 @@ const steps = [
   {
     n: "01",
     title: "Você me conta sua situação",
-    desc: "Conversa segura e sigilosa via WhatsApp. Você explica o que está acontecendo — sem julgamento, sem pressa, sem juridiquês.",
+    desc: "Conversa segura e sigilosa via WhatsApp. Você explica o que está acontecendo, sem julgamento, sem pressa, sem juridiquês.",
   },
   {
     n: "02",
@@ -1859,7 +1860,7 @@ function Stars({ count }: { count: number }) {
 const faqs = [
   {
     q: "Posso me separar mesmo sem o outro concordar?",
-    a: "Sim. O divórcio é um direito individual — você não precisa da concordância do outro para dar início ao processo. Quando há consenso, o caminho é mais rápido; quando não há, o divórcio segue pela via judicial litigiosa, onde um juiz decide sobre os pontos em conflito (guarda, pensão, partilha de bens). Em todos os casos, você tem o direito de se separar.",
+    a: "Sim. O divórcio é um direito individual: você não precisa da concordância do outro para dar início ao processo. Quando há consenso, o caminho é mais rápido; quando não há, o divórcio segue pela via judicial litigiosa, onde um juiz decide sobre os pontos em conflito (guarda, pensão, partilha de bens). Em todos os casos, você tem o direito de se separar.",
   },
   {
     q: "Quem sai de casa perde direitos no divórcio?",
@@ -1867,15 +1868,15 @@ const faqs = [
   },
   {
     q: "Como é calculado o valor da pensão alimentícia?",
-    a: "A pensão é fixada com base em dois critérios: as necessidades de quem recebe e a capacidade de quem paga. Não existe um percentual fixo em lei — o valor é analisado caso a caso. A pensão pode incluir alimentação, escola, plano de saúde, atividades e outras necessidades dos filhos. Se o valor atual está desatualizado, é possível pedir revisão.",
+    a: "A pensão é fixada com base em dois critérios: as necessidades de quem recebe e a capacidade de quem paga. Não existe um percentual fixo em lei, o valor é analisado caso a caso. A pensão pode incluir alimentação, escola, plano de saúde, atividades e outras necessidades dos filhos. Se o valor atual está desatualizado, é possível pedir revisão.",
   },
   {
     q: "O pai pode tirar a guarda da mãe?",
-    a: "A guarda é definida com base no melhor interesse da criança — não em punição para os pais. A mudança de guarda exige demonstração de que o ambiente atual prejudica o bem-estar do filho. Ter uma advogada acompanhando o processo é essencial para proteger seu papel como mãe.",
+    a: "A guarda é definida com base no melhor interesse da criança, não em punição para os pais. A mudança de guarda exige demonstração de que o ambiente atual prejudica o bem-estar do filho. Ter uma advogada acompanhando o processo é essencial para proteger seu papel como mãe.",
   },
   {
     q: "Sou obrigada a fazer o inventário?",
-    a: "Sim, quando há bens a serem transmitidos, o inventário é obrigatório. A lei determina que o processo seja aberto em até 60 dias após o falecimento. O descumprimento gera multa sobre o imposto devido (ITCMD), que pode variar de 10% a 20%. Quando todos os herdeiros são maiores e estão de acordo, o inventário pode ser feito em cartório — mais rápido e menos burocrático.",
+    a: "Sim, quando há bens a serem transmitidos, o inventário é obrigatório. A lei determina que o processo seja aberto em até 60 dias após o falecimento. O descumprimento gera multa sobre o imposto devido (ITCMD), que pode variar de 10% a 20%. Quando todos os herdeiros são maiores e estão de acordo, o inventário pode ser feito em cartório, mais rápido e menos burocrático.",
   },
   {
     q: "Posso fazer inventário sem ir ao cartório ou à Justiça presencialmente?",
@@ -1883,11 +1884,11 @@ const faqs = [
   },
   {
     q: "Como funciona o atendimento online?",
-    a: "O contato inicial é feito pelo WhatsApp. Você explica sua situação, eu analiso o caso juridicamente e apresento os caminhos possíveis de forma clara. Toda a comunicação, envio de documentos e acompanhamento do processo acontece de forma digital — segura e sigilosa.",
+    a: "O contato inicial é feito pelo WhatsApp. Você explica sua situação, eu analiso o caso juridicamente e apresento os caminhos possíveis de forma clara. Toda a comunicação, envio de documentos e acompanhamento do processo acontece de forma digital, segura e sigilosa.",
   },
   {
     q: "Quanto custa contratar uma advogada?",
-    a: "Os honorários variam conforme a demanda e a complexidade do caso. Após a análise inicial, apresento uma proposta transparente — sem surpresas nem valores ocultos. Entre em contato para conversarmos sobre o seu caso.",
+    a: "Os honorários variam conforme a demanda e a complexidade do caso. Após a análise inicial, apresento uma proposta transparente, sem surpresas nem valores ocultos. Entre em contato para conversarmos sobre o seu caso.",
   },
 ];
 
@@ -2073,7 +2074,7 @@ function FinalCTASection() {
             marginBottom: "20px",
           }}
         >
-          Falar com a Dra. Karen Agora →
+          <WAIcon size={20} /> Falar com a Dra. Karen Agora →
         </a>
         <p
           style={{
@@ -2278,7 +2279,7 @@ function ContactFooter() {
                   cursor: "pointer",
                 }}
               >
-                Enviar mensagem →
+                <WAIcon size={16} /> Enviar mensagem →
               </button>
             </form>
           </div>
@@ -2304,7 +2305,7 @@ function ContactFooter() {
                 marginBottom: "20px",
               }}
             >
-              Rua Carlos Gomes, esq. c/ Raimundo Melo, 485 — Campinas, Barra do
+              Rua Carlos Gomes, esq. c/ Raimundo Melo, 485, Campinas, Barra do
               Garças-MT
             </p>
             <div
