@@ -136,7 +136,7 @@ const CSS = `
     .km-hero-photo > div > p:first-of-type{font-size:20px!important;margin-bottom:4px!important}
     .km-hero-photo > div > p:nth-of-type(2){font-size:11px!important;margin-bottom:0!important}
     .km-hero-photo > div > div:nth-of-type(2),.km-hero-photo > div > p:nth-of-type(3),.km-hero-photo > div > div:nth-of-type(3){display:none!important}
-    .km-wa-float{right:16px!important;bottom:max(20px,env(safe-area-inset-bottom))!important;width:54px!important;height:54px!important;box-shadow:0 10px 28px rgba(37,211,102,.38)!important}
+    .km-wa-float{right:16px!important;bottom:max(20px,env(safe-area-inset-bottom))!important;width:54px!important;height:54px!important}
     .km-about-cta{justify-content:center}
     .km-about-cta a{text-align:center}
   }
