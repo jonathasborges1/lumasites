@@ -15,9 +15,12 @@ import { useEffect, useRef, useState } from "react";
 export function Hero() {
   const parallaxRef = useRef<HTMLDivElement>(null);
   const [isDesktop, setIsDesktop] = useState(false);
+  const now = new Date();
   const currentMonth = new Intl.DateTimeFormat("pt-BR", {
     month: "long",
-  }).format(new Date());
+  }).format(now);
+  const currentMonthNum = String(now.getMonth() + 1).padStart(2, "0");
+  const currentYear = now.getFullYear();
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 768px)");
@@ -57,7 +60,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-[92vh] flex items-center overflow-hidden"
+      className="relative min-h-[100svh] md:min-h-[92vh] flex items-center overflow-hidden"
     >
       <div
         ref={parallaxRef}
@@ -84,6 +87,27 @@ export function Hero() {
       </div>
 
       {/* Luma — personagem flutuando à direita (desktop) */}
+      <HeroStarCanopy />
+
+      <div
+        aria-hidden="true"
+        className="absolute left-4 top-[24%] hidden lg:block rounded-full border border-glow-cyan/10 bg-midnight/28 px-4 py-2 font-display text-[10px] uppercase tracking-[0.28em] text-glow-aqua/45 backdrop-blur-sm"
+      >
+        SEO local
+      </div>
+      <div
+        aria-hidden="true"
+        className="absolute right-16 top-[30%] hidden lg:block rounded-full border border-white/10 bg-midnight/24 px-4 py-2 font-display text-[10px] uppercase tracking-[0.28em] text-ink-primary/45 backdrop-blur-sm"
+      >
+        Site rápido
+      </div>
+      <div
+        aria-hidden="true"
+        className="absolute left-16 bottom-[24%] hidden lg:block rounded-full border border-accent-green/15 bg-midnight/24 px-4 py-2 font-display text-[10px] uppercase tracking-[0.28em] text-accent-green/50 backdrop-blur-sm"
+      >
+        Mobile first
+      </div>
+
       {isDesktop && (
         <div
           aria-hidden="true"
@@ -125,23 +149,32 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 container mx-auto px-5 md:px-8 lg:px-12 xl:px-20 py-20 md:py-28">
+      <div className="relative z-10 container mx-auto px-5 md:px-8 lg:px-12 xl:px-20 pt-24 pb-12 md:py-28">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal duration={800}>
-            <div className="inline-flex items-center gap-3 mb-6 rounded-full border border-white/8 bg-midnight/78 px-4 py-1.5">
+            <div className="inline-flex max-w-full items-center gap-2.5 sm:gap-3 mb-4 sm:mb-6 rounded-full border border-white/8 bg-midnight/78 px-3.5 sm:px-4 py-1.5">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-accent-green opacity-35 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-green" />
               </span>
-              <span className="font-display text-xs uppercase tracking-[0.3em] text-ink-primary/85">
-                Atendendo Manaus — AM · Vagas limitadas em {currentMonth}
+              <span className="font-display text-xs uppercase tracking-[0.1em] sm:tracking-[0.3em] text-ink-primary/85 text-center leading-snug">
+                <span className="sm:hidden">
+                  Atendimento Especializado em Manaus · Agenda limitada em{" "}
+                  <span className="text-accent-green">{currentMonth}</span> (
+                  {currentMonthNum}/{currentYear})
+                </span>
+                <span className="hidden sm:inline">
+                  Atendendo em Manaus · Agenda limitada para o mês de{" "}
+                  <span className="text-accent-green">{currentMonth}</span> (
+                  {currentMonthNum}/{currentYear})
+                </span>
               </span>
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={150} duration={900}>
             <h1
-              className="font-display uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] text-ink-primary"
+              className="font-display uppercase text-[2.35rem] sm:text-4xl md:text-5xl lg:text-6xl leading-[0.92] sm:leading-[0.95] text-ink-primary"
               style={{
                 textShadow: "0 1px 0 rgba(0,0,0,.35)",
               }}
@@ -162,19 +195,21 @@ export function Hero() {
           </ScrollReveal>
 
           <ScrollReveal delay={300} duration={900}>
-            <p className="mt-5 text-base md:text-lg text-ink-secondary max-w-2xl mx-auto leading-relaxed">
-              Criamos{" "}
-              <span className="text-glow-aqua font-medium">sites simples</span>,
-              rápidos e profissionais em{" "}
-              <span className="text-ink-primary">Manaus</span>. Seu cliente te
+            <p className="mt-4 sm:mt-5 text-[15px] md:text-lg text-ink-secondary max-w-2xl mx-auto leading-relaxed">
+              Criamos sites{" "}
+              <span className="text-glow-aqua font-medium">
+                rápidos, profissionais
+              </span>{" "}
+              e sob medida em <span className="text-ink-primary">Manaus</span>.
+              Seu cliente te
               <span className="text-glow-aqua font-medium"> encontra</span>.
               Você <span className="text-glow-aqua font-medium">cresce</span>.
-              Sem complicação, sem mensalidade abusiva.
+              Sem enrolação. Sem taxa escondida.
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={450} duration={900}>
-            <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <GlowButton
                 href={whatsappLink()}
                 target="_blank"
@@ -200,14 +235,14 @@ export function Hero() {
           </ScrollReveal>
 
           <ScrollReveal delay={600} duration={1000}>
-            <div className="mt-10 grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto">
+            <div className="mt-6 md:mt-10 grid grid-cols-3 gap-3 md:gap-8 max-w-2xl mx-auto">
               <StatItem
                 valueNode={
                   <>
                     <Counter to={3} />–<Counter to={7} />
                   </>
                 }
-                label="dias de entrega"
+                label="dias no ar"
               />
               <StatItem
                 valueNode={<Counter to={497} prefix="R$ " duration={1800} />}
@@ -215,7 +250,7 @@ export function Hero() {
               />
               <StatItem
                 valueNode={<Counter to={100} suffix="%" />}
-                label="mobile first"
+                label="no celular"
               />
             </div>
           </ScrollReveal>
@@ -248,9 +283,121 @@ function StatItem({
       <div className="font-display text-xl md:text-3xl text-glow-aqua tabular-nums">
         {valueNode}
       </div>
-      <div className="mt-1 text-xs uppercase tracking-widest text-ink-muted">
+      <div className="mt-1 text-xs uppercase tracking-wide sm:tracking-widest text-ink-muted">
         {label}
       </div>
     </div>
+  );
+}
+
+function HeroStarCanopy() {
+  const stars = [
+    [16, 52, 1.7, 0.62, 3.6, 0.2],
+    [31, 27, 2.1, 0.78, 4.4, 1.1],
+    [45, 64, 1.7, 0.58, 3.9, 2.3],
+    [58, 36, 2.5, 0.9, 5.1, 0.7],
+    [72, 19, 1.7, 0.62, 3.8, 1.8],
+    [86, 48, 2, 0.82, 4.7, 3.1],
+    [106, 31, 1.8, 0.64, 4.1, 1.5],
+    [123, 58, 2.4, 0.86, 5.3, 2.6],
+    [141, 38, 1.7, 0.6, 3.7, 0.9],
+    [158, 67, 2.1, 0.7, 4.6, 3.4],
+  ];
+
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 180 120"
+      className="absolute inset-x-0 top-16 h-40 w-full pointer-events-none opacity-100 md:top-20 md:h-48"
+      fill="none"
+      preserveAspectRatio="none"
+      style={{
+        WebkitMaskImage:
+          "linear-gradient(to bottom, transparent 0%, black 18%, black 68%, transparent 100%)",
+        maskImage:
+          "linear-gradient(to bottom, transparent 0%, black 18%, black 68%, transparent 100%)",
+      }}
+    >
+      <rect width="180" height="120" fill="url(#canopy-wash)" />
+      <ellipse cx="90" cy="78" rx="74" ry="18" fill="url(#canopy-horizon)" />
+      <g style={{ filter: "drop-shadow(0 0 8px rgba(127,229,255,0.86))" }}>
+        {stars.map(([cx, cy, r, opacity, duration, delay]) => (
+          <circle
+            key={`${cx}-${cy}`}
+            cx={cx}
+            cy={cy}
+            r={r}
+            fill="url(#canopy-star)"
+            opacity={opacity}
+          >
+            <animate
+              attributeName="opacity"
+              values={`${Math.max(opacity - 0.34, 0.24)};1;${Math.max(opacity - 0.22, 0.3)};${opacity}`}
+              dur={`${duration}s`}
+              begin={`${delay}s`}
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="r"
+              values={`${r};${r + 0.55};${r}`}
+              dur={`${duration}s`}
+              begin={`${delay}s`}
+              repeatCount="indefinite"
+            />
+          </circle>
+        ))}
+        <path
+          d="M58 28v16M50 36h16"
+          stroke="#EAF2FF"
+          strokeWidth="0.9"
+          strokeLinecap="round"
+          opacity="0.72"
+        >
+          <animate
+            attributeName="opacity"
+            values="0.18;0.92;0.24;0.72"
+            dur="4.2s"
+            begin="0.8s"
+            repeatCount="indefinite"
+          />
+        </path>
+      </g>
+      <path
+        d="M28 74C58 57 91 53 127 63c12 3 23 7 31 12"
+        stroke="url(#canopy-arc)"
+        strokeWidth="0.8"
+        strokeLinecap="round"
+        opacity="0.22"
+      />
+      <defs>
+        <radialGradient id="canopy-wash" cx="50%" cy="46%" r="64%">
+          <stop stopColor="#4FC8FF" stopOpacity="0.18" />
+          <stop offset="0.52" stopColor="#173B58" stopOpacity="0.12" />
+          <stop offset="1" stopColor="#0A0E1A" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="canopy-horizon">
+          <stop stopColor="#7FE5FF" stopOpacity="0.24" />
+          <stop offset="0.55" stopColor="#4FC8FF" stopOpacity="0.12" />
+          <stop offset="1" stopColor="#4FC8FF" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="canopy-star">
+          <stop stopColor="#FFFFFF" />
+          <stop offset="0.48" stopColor="#7FE5FF" />
+          <stop offset="1" stopColor="#7FE5FF" stopOpacity="0" />
+        </radialGradient>
+        <linearGradient
+          id="canopy-arc"
+          x1="28"
+          y1="74"
+          x2="158"
+          y2="74"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#7FE5FF" stopOpacity="0" />
+          <stop offset="0.5" stopColor="#EAF2FF" />
+          <stop offset="1" stopColor="#84E2A8" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+    </svg>
   );
 }
