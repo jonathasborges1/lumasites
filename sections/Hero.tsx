@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { GlowButton } from "@/components/GlowButton";
 import { Fireflies } from "@/components/Fireflies";
 import { StarField } from "@/components/StarField";
@@ -86,7 +85,7 @@ export function Hero() {
         <LightOrb size={180} />
       </div>
 
-      {/* Luma — personagem flutuando à direita (desktop) */}
+      {/* Luma — personagem sugerida por contorno no desktop */}
       <HeroStarCanopy />
 
       <div
@@ -109,34 +108,7 @@ export function Hero() {
       </div>
 
       {isDesktop && (
-        <div
-          aria-hidden="true"
-          className="absolute right-0 top-1/2 -translate-y-[55%] pointer-events-none animate-float"
-          style={{
-            width: 300,
-            height: 380,
-            WebkitMaskImage:
-              "linear-gradient(to bottom, transparent 0%, black 30%, black 78%, transparent 100%)",
-            maskImage:
-              "linear-gradient(to bottom, transparent 0%, black 30%, black 78%, transparent 100%)",
-            mixBlendMode: "screen",
-          }}
-        >
-          {/* glow âmbar no chão do personagem */}
-          <div
-            className="absolute bottom-[18%] left-1/2 -translate-x-1/2 w-28 h-10 rounded-full blur-2xl animate-pulse-glow"
-            style={{ background: "rgba(255,190,60,.55)" }}
-          />
-          <Image
-            src="/characters/luma-flying.png"
-            alt=""
-            fill
-            className="object-cover"
-            style={{ objectPosition: "8% 78%" }}
-            sizes="300px"
-            priority
-          />
-        </div>
+        <LumaMascotOutline />
       )}
 
       {/* silhueta inferior */}
@@ -164,7 +136,7 @@ export function Hero() {
                   {currentMonthNum}/{currentYear})
                 </span>
                 <span className="hidden sm:inline">
-                  Atendendo em Manaus · Agenda limitada para o mês de{" "}
+                  Atendimento em Manaus · Agenda limitada para o mês de{" "}
                   <span className="text-accent-green">{currentMonth}</span> (
                   {currentMonthNum}/{currentYear})
                 </span>
@@ -290,6 +262,159 @@ function StatItem({
   );
 }
 
+function LumaMascotOutline() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 260 360"
+      className="absolute right-0 top-1/2 hidden h-[380px] w-[300px] -translate-y-[55%] pointer-events-none animate-float lg:block"
+      fill="none"
+    >
+      <g opacity="0.7" filter="url(#luma-desktop-outline-glow)">
+        <path
+          d="M131 111c33 0 59 25 61 59 2 38-27 68-62 68s-64-30-62-68c2-34 29-59 63-59Z"
+          stroke="url(#luma-desktop-outline)"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M96 115C59 86 38 47 50 27c27 2 58 35 68 78"
+          stroke="url(#luma-desktop-leaf)"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M151 111c13-45 43-76 70-76 10 24-17 65-56 90"
+          stroke="url(#luma-desktop-leaf)"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M105 103c-7-22-3-42 12-60 17 16 22 39 12 63"
+          stroke="url(#luma-desktop-leaf)"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          opacity="0.86"
+        />
+        <path
+          d="M80 218c-24 4-47-1-63-17 16-18 43-22 67-10"
+          stroke="url(#luma-desktop-outline)"
+          strokeWidth="1.9"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          opacity="0.74"
+        />
+        <path
+          d="M183 216c27 1 48 12 59 32-23 12-49 6-68-10"
+          stroke="url(#luma-desktop-outline)"
+          strokeWidth="1.9"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          opacity="0.74"
+        />
+        <path
+          d="M123 237c-5 31-21 55-45 68-12-29 4-61 33-80"
+          stroke="url(#luma-desktop-outline)"
+          strokeWidth="1.9"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          opacity="0.72"
+        />
+        <path
+          d="M148 236c20 24 26 52 16 79-25-13-40-38-44-69"
+          stroke="url(#luma-desktop-outline)"
+          strokeWidth="1.9"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          opacity="0.72"
+        />
+        <path
+          d="M97 166c8 8 17 8 25 0"
+          stroke="#EAF2FF"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          opacity="0.52"
+        />
+        <path
+          d="M153 166c8 8 17 8 25 0"
+          stroke="#EAF2FF"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          opacity="0.52"
+        />
+        <path
+          d="M126 194c7 4 14 4 20 0"
+          stroke="#EAF2FF"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          opacity="0.36"
+        />
+      </g>
+
+      <ellipse
+        cx="132"
+        cy="318"
+        rx="58"
+        ry="16"
+        fill="url(#luma-desktop-ground)"
+        opacity="0.5"
+      />
+
+      <defs>
+        <linearGradient
+          id="luma-desktop-outline"
+          x1="44"
+          y1="31"
+          x2="204"
+          y2="310"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#7FE5FF" />
+          <stop offset="0.48" stopColor="#EAF2FF" />
+          <stop offset="1" stopColor="#84E2A8" stopOpacity="0.58" />
+        </linearGradient>
+        <linearGradient
+          id="luma-desktop-leaf"
+          x1="52"
+          y1="24"
+          x2="207"
+          y2="125"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#84E2A8" />
+          <stop offset="0.62" stopColor="#7FE5FF" />
+          <stop offset="1" stopColor="#EAF2FF" />
+        </linearGradient>
+        <radialGradient id="luma-desktop-ground">
+          <stop stopColor="#FFD54F" stopOpacity="0.38" />
+          <stop offset="0.58" stopColor="#7DE68B" stopOpacity="0.18" />
+          <stop offset="1" stopColor="#7DE68B" stopOpacity="0" />
+        </radialGradient>
+        <filter
+          id="luma-desktop-outline-glow"
+          x="-30"
+          y="-30"
+          width="320"
+          height="420"
+          colorInterpolationFilters="sRGB"
+        >
+          <feDropShadow
+            dx="0"
+            dy="0"
+            stdDeviation="5"
+            floodColor="#4FC8FF"
+            floodOpacity="0.42"
+          />
+        </filter>
+      </defs>
+    </svg>
+  );
+}
+
 function HeroStarCanopy() {
   const stars = [
     [16, 52, 1.7, 0.62, 3.6, 0.2],
@@ -303,101 +428,166 @@ function HeroStarCanopy() {
     [141, 38, 1.7, 0.6, 3.7, 0.9],
     [158, 67, 2.1, 0.7, 4.6, 3.4],
   ];
+  const desktopStars = [
+    [8, 46, 2.1, 0.54, 4.6, 0.3],
+    [15, 28, 1.6, 0.42, 5.4, 1.1],
+    [22, 61, 2.6, 0.66, 4.1, 2.2],
+    [31, 34, 1.8, 0.5, 5.8, 1.7],
+    [42, 22, 2.4, 0.68, 4.8, 0.6],
+    [49, 52, 1.7, 0.44, 5.1, 2.8],
+    [57, 36, 3, 0.76, 4.3, 1.3],
+    [67, 58, 2, 0.52, 5.7, 3.2],
+    [76, 27, 2.5, 0.7, 4.9, 0.9],
+    [86, 48, 1.8, 0.48, 5.2, 2.4],
+    [93, 62, 2.2, 0.58, 4.5, 1.9],
+  ];
 
   return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 180 120"
-      className="absolute inset-x-0 top-16 h-40 w-full pointer-events-none opacity-100 md:top-20 md:h-48"
-      fill="none"
-      preserveAspectRatio="none"
-      style={{
-        WebkitMaskImage:
-          "linear-gradient(to bottom, transparent 0%, black 18%, black 68%, transparent 100%)",
-        maskImage:
-          "linear-gradient(to bottom, transparent 0%, black 18%, black 68%, transparent 100%)",
-      }}
-    >
-      <rect width="180" height="120" fill="url(#canopy-wash)" />
-      <ellipse cx="90" cy="78" rx="74" ry="18" fill="url(#canopy-horizon)" />
-      <g style={{ filter: "drop-shadow(0 0 8px rgba(127,229,255,0.86))" }}>
-        {stars.map(([cx, cy, r, opacity, duration, delay]) => (
-          <circle
-            key={`${cx}-${cy}`}
-            cx={cx}
-            cy={cy}
-            r={r}
-            fill="url(#canopy-star)"
-            opacity={opacity}
+    <>
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 180 120"
+        className="absolute inset-x-0 top-16 h-40 w-full pointer-events-none opacity-100 md:hidden"
+        fill="none"
+        preserveAspectRatio="none"
+        style={{
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, black 18%, black 68%, transparent 100%)",
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, black 18%, black 68%, transparent 100%)",
+        }}
+      >
+        <rect width="180" height="120" fill="url(#canopy-wash)" />
+        <ellipse cx="90" cy="78" rx="74" ry="18" fill="url(#canopy-horizon)" />
+        <g style={{ filter: "drop-shadow(0 0 8px rgba(127,229,255,0.86))" }}>
+          {stars.map(([cx, cy, r, opacity, duration, delay]) => (
+            <circle
+              key={`${cx}-${cy}`}
+              cx={cx}
+              cy={cy}
+              r={r}
+              fill="url(#canopy-star)"
+              opacity={opacity}
+            >
+              <animate
+                attributeName="opacity"
+                values={`${Math.max(opacity - 0.34, 0.24)};1;${Math.max(opacity - 0.22, 0.3)};${opacity}`}
+                dur={`${duration}s`}
+                begin={`${delay}s`}
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="r"
+                values={`${r};${r + 0.55};${r}`}
+                dur={`${duration}s`}
+                begin={`${delay}s`}
+                repeatCount="indefinite"
+              />
+            </circle>
+          ))}
+          <path
+            d="M58 28v16M50 36h16"
+            stroke="#EAF2FF"
+            strokeWidth="0.9"
+            strokeLinecap="round"
+            opacity="0.72"
           >
             <animate
               attributeName="opacity"
-              values={`${Math.max(opacity - 0.34, 0.24)};1;${Math.max(opacity - 0.22, 0.3)};${opacity}`}
-              dur={`${duration}s`}
-              begin={`${delay}s`}
+              values="0.18;0.92;0.24;0.72"
+              dur="4.2s"
+              begin="0.8s"
               repeatCount="indefinite"
             />
-            <animate
-              attributeName="r"
-              values={`${r};${r + 0.55};${r}`}
-              dur={`${duration}s`}
-              begin={`${delay}s`}
-              repeatCount="indefinite"
-            />
-          </circle>
-        ))}
+          </path>
+        </g>
         <path
-          d="M58 28v16M50 36h16"
-          stroke="#EAF2FF"
-          strokeWidth="0.9"
+          d="M28 74C58 57 91 53 127 63c12 3 23 7 31 12"
+          stroke="url(#canopy-arc)"
+          strokeWidth="0.8"
           strokeLinecap="round"
-          opacity="0.72"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.18;0.92;0.24;0.72"
-            dur="4.2s"
-            begin="0.8s"
-            repeatCount="indefinite"
-          />
-        </path>
-      </g>
-      <path
-        d="M28 74C58 57 91 53 127 63c12 3 23 7 31 12"
-        stroke="url(#canopy-arc)"
-        strokeWidth="0.8"
-        strokeLinecap="round"
-        opacity="0.22"
-      />
-      <defs>
-        <radialGradient id="canopy-wash" cx="50%" cy="46%" r="64%">
-          <stop stopColor="#4FC8FF" stopOpacity="0.18" />
-          <stop offset="0.52" stopColor="#173B58" stopOpacity="0.12" />
-          <stop offset="1" stopColor="#0A0E1A" stopOpacity="0" />
-        </radialGradient>
-        <radialGradient id="canopy-horizon">
-          <stop stopColor="#7FE5FF" stopOpacity="0.24" />
-          <stop offset="0.55" stopColor="#4FC8FF" stopOpacity="0.12" />
-          <stop offset="1" stopColor="#4FC8FF" stopOpacity="0" />
-        </radialGradient>
-        <radialGradient id="canopy-star">
-          <stop stopColor="#FFFFFF" />
-          <stop offset="0.48" stopColor="#7FE5FF" />
-          <stop offset="1" stopColor="#7FE5FF" stopOpacity="0" />
-        </radialGradient>
-        <linearGradient
-          id="canopy-arc"
-          x1="28"
-          y1="74"
-          x2="158"
-          y2="74"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#7FE5FF" stopOpacity="0" />
-          <stop offset="0.5" stopColor="#EAF2FF" />
-          <stop offset="1" stopColor="#84E2A8" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-    </svg>
+          opacity="0.22"
+        />
+        <defs>
+          <radialGradient id="canopy-wash" cx="50%" cy="46%" r="64%">
+            <stop stopColor="#4FC8FF" stopOpacity="0.18" />
+            <stop offset="0.52" stopColor="#173B58" stopOpacity="0.12" />
+            <stop offset="1" stopColor="#0A0E1A" stopOpacity="0" />
+          </radialGradient>
+          <radialGradient id="canopy-horizon">
+            <stop stopColor="#7FE5FF" stopOpacity="0.24" />
+            <stop offset="0.55" stopColor="#4FC8FF" stopOpacity="0.12" />
+            <stop offset="1" stopColor="#4FC8FF" stopOpacity="0" />
+          </radialGradient>
+          <radialGradient id="canopy-star">
+            <stop stopColor="#FFFFFF" />
+            <stop offset="0.48" stopColor="#7FE5FF" />
+            <stop offset="1" stopColor="#7FE5FF" stopOpacity="0" />
+          </radialGradient>
+          <linearGradient
+            id="canopy-arc"
+            x1="28"
+            y1="74"
+            x2="158"
+            y2="74"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#7FE5FF" stopOpacity="0" />
+            <stop offset="0.5" stopColor="#EAF2FF" />
+            <stop offset="1" stopColor="#84E2A8" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-20 hidden h-56 pointer-events-none overflow-hidden md:block"
+        style={{
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, black 16%, black 72%, transparent 100%)",
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, black 16%, black 72%, transparent 100%)",
+        }}
+      >
+        <style>{`
+          @keyframes lumaCanopyDesktopTwinkle {
+            0%, 100% { opacity: var(--star-base); transform: translateZ(0) scale(0.72); }
+            42% { opacity: 1; transform: translateZ(0) scale(1.22); }
+            68% { opacity: calc(var(--star-base) * 0.62); transform: translateZ(0) scale(0.88); }
+          }
+          @keyframes lumaCanopyDesktopDrift {
+            0%, 100% { transform: translate3d(0,0,0); }
+            50% { transform: translate3d(0,-8px,0); }
+          }
+        `}</style>
+        <div className="absolute left-1/2 top-6 h-40 w-[74rem] max-w-[94vw] -translate-x-1/2 animate-[lumaCanopyDesktopDrift_12s_ease-in-out_infinite]">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(79,200,255,0.20)_0%,rgba(23,59,88,0.11)_38%,rgba(10,14,26,0)_72%)]" />
+          <div className="absolute left-[14%] right-[14%] top-[62%] h-px bg-gradient-to-r from-transparent via-glow-aqua/30 to-transparent" />
+          {desktopStars.map(([left, top, size, opacity, duration, delay]) => (
+            <span
+              key={`${left}-${top}`}
+              className="absolute rounded-full bg-white"
+              style={
+                {
+                  left: `${left}%`,
+                  top: `${top}%`,
+                  width: `${size}px`,
+                  height: `${size}px`,
+                  opacity,
+                  boxShadow:
+                    "0 0 8px rgba(127,229,255,0.9), 0 0 18px rgba(79,200,255,0.42)",
+                  animation: `lumaCanopyDesktopTwinkle ${duration}s ease-in-out ${delay}s infinite`,
+                  "--star-base": opacity,
+                } as React.CSSProperties
+              }
+            />
+          ))}
+          <span className="absolute left-[57%] top-[38%] h-5 w-5 -translate-x-1/2 -translate-y-1/2">
+            <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-ink-primary/70 animate-[lumaCanopyDesktopTwinkle_4.8s_ease-in-out_1.4s_infinite]" />
+            <span className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-ink-primary/70 animate-[lumaCanopyDesktopTwinkle_4.8s_ease-in-out_1.4s_infinite]" />
+          </span>
+        </div>
+      </div>
+    </>
   );
 }
