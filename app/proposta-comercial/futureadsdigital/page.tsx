@@ -31,11 +31,22 @@ const GRAD_HERO = `linear-gradient(135deg, ${C.bg0} 0%, ${C.bg1} 60%, #0D1B3E 10
 /* ─── Global CSS ─────────────────────────────────────────────────── */
 const CSS = `
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:80px}
+  html{scroll-behavior:smooth;scroll-padding-top:116px}
 
   .fad{font-family:${FF};background:${C.bg0};color:${C.white};min-height:100vh;overflow-x:hidden;line-height:1.6;text-rendering:optimizeLegibility}
   .fad-wrap{max-width:1160px;margin:0 auto;padding:0 24px}
   .fad-wrap-sm{max-width:820px;margin:0 auto;padding:0 24px}
+
+  /* concept preview banner */
+  .fad-preview-banner{position:fixed;top:0;left:0;right:0;z-index:300;height:36px;background:#860000;color:rgba(255,255,255,.78);
+    display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px;font-family:${FF};
+    font-size:11.5px;font-weight:500;letter-spacing:.04em}
+  .fad-preview-banner-inner{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+  .fad-preview-dot{width:6px;height:6px;border-radius:999px;background:${C.cyan};box-shadow:0 0 14px rgba(0,212,255,.72);flex:0 0 auto}
+  .fad-preview-title{color:${C.white};font-weight:800;text-transform:uppercase}
+  .fad-preview-sep{opacity:.38}
+  .fad-preview-banner a{color:rgba(255,255,255,.78);text-decoration:underline;text-underline-offset:2px;transition:color .2s}
+  .fad-preview-banner a:hover{color:${C.white}}
 
   /* section */
   .fad-sec{padding:100px 0}
@@ -73,7 +84,7 @@ const CSS = `
   .fad-btn-outline:hover{border-color:rgba(0,212,255,.4)}
 
   /* nav */
-  .fad-nav{position:sticky;top:0;z-index:100;background:rgba(2,6,23,.85);backdrop-filter:blur(20px);
+  .fad-nav{position:sticky;top:36px;z-index:100;background:rgba(2,6,23,.85);backdrop-filter:blur(20px);
     border-bottom:1px solid ${C.border};transition:box-shadow .3s}
   .fad-nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.4)}
   .fad-nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1160px;margin:0 auto}
@@ -251,6 +262,10 @@ const CSS = `
   @media(max-width:599px){
     .fad-sec{padding:72px 0}
     .fad-wrap{padding:0 16px}
+    .fad-preview-banner{min-height:42px;height:auto;font-size:10.5px;line-height:1.4;padding:6px 12px}
+    .fad-preview-banner-inner{flex-wrap:wrap;gap:4px}
+    .fad-nav{top:42px}
+    .fad-nav{top:42px}
     .fad-hero{padding:72px 0 60px}
     .fad-hero-stats{gap:24px}
     .fad-hero-ctas{flex-direction:column}
@@ -346,6 +361,30 @@ function GradText({ children }: { children: React.ReactNode }) {
 }
 
 /* ─── Navbar ─────────────────────────────────────────────────────── */
+function ConceptPreviewBanner() {
+  return (
+    <div className="fad-preview-banner" role="status">
+      <span className="fad-preview-banner-inner">
+        <span className="fad-preview-dot" aria-hidden="true" />
+        <span className="fad-preview-title">Pr&eacute;via Conceitual</span>
+        <span className="fad-preview-sep" aria-hidden="true">
+          &middot;
+        </span>
+        <span className="fad-preview-copy">
+          Esta &eacute; uma proposta comercial elaborada pela{" "}
+          <a
+            href="https://lumasites.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LumaSites.com.br
+          </a>
+        </span>
+      </span>
+    </div>
+  );
+}
+
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -1624,11 +1663,23 @@ function ShowcaseSection() {
 function ClientsSection() {
   const clients = [
     { name: "DI", logo: "/images/futureadsdigital/clients/cliente-1.png" },
-    { name: "Conceito", logo: "/images/futureadsdigital/clients/cliente-2.png" },
-    { name: "El Elyon Automóveis", logo: "/images/futureadsdigital/clients/cliente-3.png" },
-    { name: "Arlete Coelho Studio de Beleza", logo: "/images/futureadsdigital/clients/cliente-4.png" },
+    {
+      name: "Conceito",
+      logo: "/images/futureadsdigital/clients/cliente-2.png",
+    },
+    {
+      name: "El Elyon Automóveis",
+      logo: "/images/futureadsdigital/clients/cliente-3.png",
+    },
+    {
+      name: "Arlete Coelho Studio de Beleza",
+      logo: "/images/futureadsdigital/clients/cliente-4.png",
+    },
     { name: "Patrone", logo: "/images/futureadsdigital/clients/cliente-5.png" },
-    { name: "DBE+ Imóveis Manaus", logo: "/images/futureadsdigital/clients/cliente-6.png" },
+    {
+      name: "DBE+ Imóveis Manaus",
+      logo: "/images/futureadsdigital/clients/cliente-6.png",
+    },
   ];
 
   return (
@@ -1636,15 +1687,28 @@ function ClientsSection() {
       <div className="fad-wrap">
         <div style={{ textAlign: "center", marginBottom: "42px" }}>
           <div className="fad-label">Nossos clientes</div>
-          <h2 className="fad-h2">Marcas que já aparecem<br /><GradText>ao lado da Future Ads</GradText></h2>
+          <h2 className="fad-h2">
+            Marcas que já aparecem
+            <br />
+            <GradText>ao lado da Future Ads</GradText>
+          </h2>
           <div className="fad-divider fad-divider-c" />
         </div>
 
         <div className="fad-clients-marquee" aria-label="Logotipos de clientes">
           <div className="fad-clients-track">
             {[...clients, ...clients].map((client, index) => (
-              <div key={`${client.name}-${index}`} className="fad-client-card" aria-hidden={index >= clients.length}>
-                <img className="fad-client-logo" src={client.logo} alt={index < clients.length ? `Logo ${client.name}` : ""} loading="lazy" />
+              <div
+                key={`${client.name}-${index}`}
+                className="fad-client-card"
+                aria-hidden={index >= clients.length}
+              >
+                <img
+                  className="fad-client-logo"
+                  src={client.logo}
+                  alt={index < clients.length ? `Logo ${client.name}` : ""}
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
@@ -2324,6 +2388,7 @@ export default function FutureAdsPage() {
   return (
     <main className="fad">
       <style>{CSS}</style>
+      <ConceptPreviewBanner />
       <Navbar />
       <HeroSection />
       <PainSection />
