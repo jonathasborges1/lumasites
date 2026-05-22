@@ -30,6 +30,7 @@ export const mainNavigation = [
   { href: "/", label: "Início" },
   { href: "/#como-funciona", label: "Como funciona" },
   { href: "/blog", label: "Blog" },
+  { href: "/proposta-comercial", label: "Propostas" },
 ];
 
 export const footerNavigation = [

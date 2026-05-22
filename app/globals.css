@@ -123,6 +123,15 @@ button {
   border-radius: 4px;
 }
 
+/* ── Transição de página — /proposta-comercial ───────────────────── */
+@keyframes proposal-page-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.proposal-page-enter {
+  animation: proposal-page-enter 0.35s cubic-bezier(0, 0, 0.2, 1) both;
+}
+
 /* Pulse-ring utility (para botões primários) */
 @layer utilities {
   .pulse-ring {
