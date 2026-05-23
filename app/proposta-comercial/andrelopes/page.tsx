@@ -109,7 +109,7 @@ const css = `
   button { font: inherit; }
 
   :root {
-    --proposal-bar-height: 38px;
+    --proposal-bar-height: 52px;
     --proposal-nav-height: 72px;
     --ink: #16120f;
     --soft-ink: #46382f;
@@ -148,29 +148,48 @@ const css = `
     right: 0;
     z-index: 1001;
     min-height: var(--proposal-bar-height);
-    padding: 8px 16px;
+    padding: 7px 16px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 2px;
     text-align: center;
     background: var(--dark);
     color: rgba(255, 253, 249, 0.74);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
   }
 
-  .al-preview strong { color: var(--white); }
-  .al-preview span {
+  .al-preview-line1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .al-preview-line1 span {
     width: 6px;
     height: 6px;
     border-radius: 999px;
     background: var(--gold);
     flex: 0 0 auto;
   }
-
+  .al-preview-detail {
+    display: block;
+    color: rgba(255, 253, 249, 0.55);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: none;
+  }
+  .al-preview-detail a {
+    color: rgba(255, 253, 249, 0.72);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .al-preview-detail a:hover { color: var(--white); }
   .al-nav {
     position: fixed;
     z-index: 1000;
@@ -1054,6 +1073,7 @@ const css = `
 
   @media (max-width: 759px) {
     :root { --proposal-nav-height: 66px; }
+    .al-result-hide-mobile { display: none; }
     .al-preview { font-size: 9px; line-height: 1.4; }
     .al-wrap, .al-nav-inner { width: min(100% - 28px, 1160px); }
     .al-brand strong { font-size: 19px; }
@@ -1103,9 +1123,16 @@ export default function AndreLopesProposalPage() {
       <style dangerouslySetInnerHTML={{ __html: css }} />
 
       <div className="al-preview" aria-label="Aviso de proposta">
-        <span aria-hidden="true" />
-        <strong>Proposta comercial</strong>
-        Conceito visual para Andre Lopes
+        <div className="al-preview-line1">
+          <span aria-hidden="true" />
+          Previa Conceitual
+        </div>
+        <span className="al-preview-detail">
+          Proposta comercial elaborada pela{" "}
+          <a href="https://lumasites.com.br" target="_blank" rel="noopener noreferrer">
+            LumaSites.com.br
+          </a>
+        </span>
       </div>
 
       <nav className={`al-nav${scrolled ? " scrolled" : ""}`} aria-label="Navegacao principal">
@@ -1304,7 +1331,7 @@ export default function AndreLopesProposalPage() {
                   <span>Brilho, alinhamento e saude capilar.</span>
                 </div>
               </div>
-              <div className="al-result small">
+              <div className="al-result small al-result-hide-mobile">
                 <img src={images.makeup} alt="Resultado de maquiagem profissional" style={{ objectPosition: "center 20%" }} />
                 <div className="al-result-caption">
                   <strong>Make</strong>
