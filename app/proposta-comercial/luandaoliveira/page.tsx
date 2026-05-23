@@ -279,12 +279,19 @@ const CSS = `
   .lo-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba(26,16,10,0.90) 0%,
-      rgba(26,16,10,0.55) 45%,
-      rgba(26,16,10,0.22) 100%
-    );
+    background:
+      linear-gradient(
+        to right,
+        rgba(20,12,8,0.82) 0%,
+        rgba(20,12,8,0.58) 42%,
+        rgba(20,12,8,0.18) 100%
+      ),
+      linear-gradient(
+        to top,
+        rgba(20,12,8,0.94) 0%,
+        rgba(20,12,8,0.66) 46%,
+        rgba(20,12,8,0.32) 100%
+      );
   }
   .lo-hero-content {
     position: relative;
@@ -323,16 +330,18 @@ const CSS = `
     max-width: 800px;
     margin-bottom: 24px;
     letter-spacing: -0.5px;
+    text-shadow: 0 3px 18px rgba(0,0,0,0.42);
   }
   .lo-hero-sub {
     font-family: ${FB};
     font-size: clamp(13px, 1.4vw, 15px);
     line-height: 1.75;
-    color: rgba(254,252,248,0.68);
-    max-width: 500px;
+    color: rgba(254,252,248,0.86);
+    max-width: 560px;
     margin-bottom: 40px;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 0.2px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.36);
   }
   .lo-hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center }
   .lo-wa-btn {
