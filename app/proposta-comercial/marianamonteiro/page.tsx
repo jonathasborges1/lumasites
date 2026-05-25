@@ -217,13 +217,13 @@ const css = `
   }
   .mm-preview-detail {
     display: block;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.04em;
-    color: rgba(253, 249, 245, 0.48);
+    color: rgba(253, 249, 245, 0.62);
   }
   .mm-preview-detail a {
-    color: rgba(253, 249, 245, 0.65);
+    color: rgba(253, 249, 245, 0.78);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
@@ -479,10 +479,10 @@ const css = `
   .mm-proof-item span {
     display: block;
     margin-top: 6px;
-    color: rgba(253, 249, 245, 0.55);
-    font-size: 10px;
+    color: rgba(253, 249, 245, 0.72);
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
   }
 
@@ -570,9 +570,9 @@ const css = `
   }
   .mm-about-badge span {
     color: var(--mm-gold);
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 0.2em;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
   }
   .mm-about-name {
@@ -949,11 +949,11 @@ const css = `
   }
   .mm-footer-brand-tag {
     padding: 4px 10px;
-    border: 1px solid rgba(253, 249, 245, 0.12);
-    color: rgba(253, 249, 245, 0.38);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 0.1em;
+    border: 1px solid rgba(253, 249, 245, 0.18);
+    color: rgba(253, 249, 245, 0.58);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     border-radius: 2px;
   }
@@ -967,7 +967,7 @@ const css = `
   }
   .mm-footer-col a {
     display: block;
-    color: rgba(253, 249, 245, 0.48);
+    color: rgba(253, 249, 245, 0.68);
     padding: 4px 0;
     font-size: 13px;
     transition: color 0.15s;
@@ -993,8 +993,8 @@ const css = `
     gap: 10px;
     align-items: center;
     justify-content: space-between;
-    font-size: 11px;
-    color: rgba(253, 249, 245, 0.26);
+    font-size: 12px;
+    color: rgba(253, 249, 245, 0.48);
   }
   .mm-footer-bottom a {
     color: var(--mm-gold);
@@ -1056,16 +1056,48 @@ const css = `
 
   @media (max-width: 767px) {
     :root { --mm-nav-height: 64px; }
-    .mm-wrap, .mm-nav-inner { width: min(100% - 28px, 1160px); }
+
+    /* Wrap — gutter generoso nos lados */
+    .mm-wrap, .mm-nav-inner { width: min(100% - 36px, 1160px); }
+
+    /* Nav */
     .mm-brand strong { font-size: 18px; }
-    .mm-hero { min-height: 700px; }
+    .mm-brand small { font-size: 10px; }
+
+    /* Hero */
+    .mm-hero { min-height: 100svh; padding: 96px 0 44px; }
     .mm-hero h1 { font-size: clamp(28px, 9vw, 44px); }
-    .mm-hero-sub { font-size: 14px; }
+    .mm-hero-sub { font-size: 15px; }
+    .mm-kicker { font-size: 11px; }
+    .mm-actions { margin-top: 28px; gap: 10px; }
     .mm-actions a { width: 100%; justify-content: center; }
-    .mm-section { padding: 72px 0; }
-    .mm-monogram { font-size: 72px; }
-    .mm-about-card { padding: 36px 28px; }
-    .mm-step { padding: 22px 18px; }
+    .mm-proof-bar { margin-top: 32px; gap: 8px; }
+
+    /* Sections */
+    .mm-section { padding: 64px 0; }
+    .mm-section-head { margin-bottom: 32px; }
+    .mm-label { font-size: 11px; }
+
+    /* Sobre */
+    .mm-two-col { gap: 32px; }
+    .mm-about-badge { left: 12px; right: auto; }
+
+    /* Diferenciais */
+    .mm-diff { padding: 24px 20px; }
+
+    /* Servicos */
+    .mm-service-card { padding: 24px 20px; }
+
+    /* Steps */
+    .mm-steps { margin-top: 28px; }
+    .mm-step { padding: 20px 16px; gap: 16px; }
+
+    /* Sobre – spacing between h2 and body text */
+    .mm-about-copy .mm-h2 { margin-bottom: 18px; }
+
+    /* Footer */
+    .mm-footer-body { padding: 44px 0 32px; gap: 28px; }
+    .mm-footer-contact-row { font-size: 14px; }
   }
 `;
 
