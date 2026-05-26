@@ -18,7 +18,7 @@ import {
 const WA_NUMBER = "5511983325791";
 
 const whatsApp = (
-  message = "Ola, Andre! Vim pelo seu site e gostaria de agendar um horario."
+  message = "Olá, Andre! Vim pelo seu site e gostaria de agendar um horário."
 ) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 
 const images = {
@@ -28,26 +28,41 @@ const images = {
   backstage: "/images/andrelopes/bastidores-salao-finalizacao.jpg",
   alignment: "/images/andrelopes/resultado-realinhamento-capilar.jpg",
   makeup: "/images/andrelopes/makeup-pele-perfeita.jpg",
+  podology: "/images/andrelopes/podologia-atendimento-profissional.png",
+  manicurePedicure: "/images/andrelopes/manicure-pedicure-atendimento.png",
+  colorimetria: "/images/andrelopes/colorimetria-mechas-loiro-cacheado.jpg",
+  botox: "/images/andrelopes/resultado-botox-capilar.jpg",
+  sobrancelhas: "/images/andrelopes/resultado-mechas-correcao-cor.jpg",
+  antesDepois1: "/images/andrelopes/antes-depois-correcao-de-cor.jpg",
+  antesDepois2: "/images/andrelopes/antes-depois-colorimetria-platinada.jpg",
+  atendimento: "/images/andrelopes/andre-lopes-atendimento-cliente.jpg",
 };
 
 const navItems = [
   { href: "#sobre", label: "Sobre" },
-  { href: "#servicos", label: "Servicos" },
+  { href: "#servicos", label: "Serviços" },
   { href: "#resultados", label: "Resultados" },
-  { href: "#espaco", label: "Espaco" },
+  { href: "#espaco", label: "Espaço" },
   { href: "#contato", label: "Agenda" },
 ];
 
 const hours = [
-  { days: "Terca a Sabado", time: "9h as 19h" },
-  { days: "Segunda-feira", time: "Agendamento previo" },
-  { days: "Feriados", time: "Agendamento previo" },
+  { days: "Terça a Sábado", time: "9h às 19h" },
+  { days: "Segunda-feira", time: "Agendamento prévio" },
+  { days: "Feriados", time: "Agendamento prévio" },
 ];
 
-const services = [
+const services: {
+  title: string;
+  text: string;
+  image: string | null;
+  position: string;
+  label: string;
+  cta: string;
+}[] = [
   {
     title: "Corte feminino",
-    text: "Corte tecnico pensado para valorizar o rosto, o cabelo e o estilo de cada cliente. Do classico ao arrojado — incluindo penteados e finalizacoes especiais.",
+    text: "Corte técnico pensado para valorizar o rosto, o cabelo e o estilo de cada cliente. Do clássico ao arrojado — incluindo penteados e finalizações especiais.",
     image: images.backstage,
     position: "center 15%",
     label: "Transformar",
@@ -55,15 +70,15 @@ const services = [
   },
   {
     title: "Colorimetria e mechas",
-    text: "Morena iluminada, mechas, loiro, correcao de cor — criacao de cor com leitura tecnica do fio e do desejo da cliente.",
-    image: images.hero,
-    position: "center 28%",
+    text: "Morena iluminada, mechas, loiro, correção de cor — criação de cor com leitura técnica do fio e do desejo da cliente.",
+    image: images.colorimetria,
+    position: "center top",
     label: "Iluminar",
     cta: "Quero iluminar meu cabelo",
   },
   {
     title: "Tratamentos e progressiva",
-    text: "Realinhamento capilar, progressiva, alisamento espelhado e tratamentos de brilho para cabelo saudavel e acabamento fotografavel.",
+    text: "Realinhamento capilar, progressiva, alisamento espelhado e tratamentos de brilho para cabelo saudável e acabamento fotografável.",
     image: images.alignment,
     position: "center top",
     label: "Tratar",
@@ -71,11 +86,51 @@ const services = [
   },
   {
     title: "Make e pele perfeita",
-    text: "Maquiagem profissional para realcar beleza, expressao e presenca — do dia a dia a ocasioes especiais.",
+    text: "Maquiagem profissional para realçar beleza, expressão e presença — do dia a dia a ocasiões especiais.",
     image: images.makeup,
     position: "center 20%",
-    label: "Realcar",
+    label: "Realçar",
     cta: "Quero fazer minha make",
+  },
+  {
+    title: "Botox capilar",
+    text: "Tratamento de choque que elimina frizz, restitui brilho e sela a cutícula — resultado imediato com duração prolongada para cabelos danificados ou opacos.",
+    image: images.botox,
+    position: "center 30%",
+    label: "Restaurar",
+    cta: "Quero fazer botox capilar",
+  },
+  {
+    title: "Design de sobrancelhas",
+    text: "Modelagem personalizada que enquadra o olhar, valoriza as feições e harmoniza o rosto — técnica precisa adaptada ao formato de cada cliente.",
+    image: images.sobrancelhas,
+    position: "center top",
+    label: "Definir",
+    cta: "Quero fazer design de sobrancelhas",
+  },
+  {
+    title: "Mega hair",
+    text: "Aplicação profissional de cabelo natural ou sintético para adicionar volume e comprimento — técnica personalizada para um resultado natural e deslumbrante.",
+    image: images.hero,
+    position: "center 28%",
+    label: "Transformar",
+    cta: "Quero fazer mega hair",
+  },
+  {
+    title: "Podologia",
+    text: "Cuidado especializado para a saúde e estética dos pés — tratamento técnico que alia bem-estar e beleza com higiene e conforto.",
+    image: images.podology,
+    position: "center 45%",
+    label: "Cuidar",
+    cta: "Quero agendar podologia",
+  },
+  {
+    title: "Manicure e pedicure",
+    text: "Cuidado completo das mãos e pés com acabamento impecável — esmaltação, hidratação e tratamento para unhas saudáveis e bonitas.",
+    image: images.manicurePedicure,
+    position: "center 45%",
+    label: "Caprichar",
+    cta: "Quero agendar manicure e pedicure",
   },
 ];
 
@@ -95,8 +150,8 @@ const WaIcon = ({ size = 17 }: { size?: number }) => (
 const credentials = [
   "L'Oreal Professionnel Education Brasil",
   "Catharine Hill Academy",
-  "Mirra Cosmeticos",
-  "Olenka Cosmeticos",
+  "Mirra Cosméticos",
+  "Olenka Cosméticos",
 ];
 
 
@@ -663,6 +718,28 @@ const css = `
     filter: saturate(1.04) contrast(1.03);
   }
 
+  .al-card-no-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: linear-gradient(135deg, #1a1410 0%, #0e0b08 100%);
+    border-bottom: 1px solid rgba(200, 149, 61, 0.18);
+  }
+
+  .al-card-no-photo svg { color: var(--gold); opacity: 0.7; }
+
+  .al-card-no-photo span {
+    color: rgba(255, 253, 249, 0.3);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
   .al-card-badge {
     position: absolute;
     left: 14px;
@@ -1056,6 +1133,59 @@ const css = `
     font-weight: 700;
   }
 
+  .al-antes-depois {
+    display: grid;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .al-antes-depois .al-result img {
+    aspect-ratio: 3 / 4;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .al-atendimento-foto {
+    margin-top: 42px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+
+  .al-atendimento-foto img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center 15%;
+    filter: saturate(1.03) contrast(1.04);
+  }
+
+  .al-atendimento-foto-caption {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 22px 28px;
+    background: linear-gradient(0deg, rgba(16, 12, 9, 0.78), transparent);
+    color: var(--white);
+  }
+
+  .al-atendimento-foto-caption strong {
+    display: block;
+    font-family: var(--al-heading, "Playfair Display", Georgia, serif);
+    font-size: 22px;
+    line-height: 1.1;
+  }
+
+  .al-atendimento-foto-caption span {
+    display: block;
+    margin-top: 5px;
+    color: rgba(255, 253, 249, 0.72);
+    font-size: 13px;
+  }
+
   @media (min-width: 760px) {
     .al-links { display: flex; }
     .al-menu-button { display: none; }
@@ -1068,7 +1198,10 @@ const css = `
     .al-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .al-espaco-grid { grid-template-columns: 1fr 1fr; gap: 56px; }
     .al-footer-body { grid-template-columns: 1.4fr 0.8fr 1fr; gap: 48px; }
-.al-hero-proof { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .al-hero-proof { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .al-antes-depois { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .al-atendimento-foto { max-width: 520px; margin-left: auto; margin-right: auto; }
+    .al-atendimento-foto img { aspect-ratio: 2 / 3; object-position: center 10%; }
   }
 
   @media (max-width: 759px) {
@@ -1125,7 +1258,7 @@ export default function AndreLopesProposalPage() {
       <div className="al-preview" aria-label="Aviso de proposta">
         <div className="al-preview-line1">
           <span aria-hidden="true" />
-          Previa Conceitual
+          Prévia Conceitual
         </div>
         <span className="al-preview-detail">
           Proposta comercial elaborada pela{" "}
@@ -1135,11 +1268,11 @@ export default function AndreLopesProposalPage() {
         </span>
       </div>
 
-      <nav className={`al-nav${scrolled ? " scrolled" : ""}`} aria-label="Navegacao principal">
+      <nav className={`al-nav${scrolled ? " scrolled" : ""}`} aria-label="Navegação principal">
         <div className="al-nav-inner">
           <a className="al-brand" href="#top" aria-label="Andre Lopes Hair Stylist">
             <strong>Andre Lopes</strong>
-            <small>Hair Stylist . Sao Paulo</small>
+            <small>Hair Stylist · São Paulo</small>
           </a>
 
           <div className="al-links">
@@ -1186,18 +1319,18 @@ export default function AndreLopesProposalPage() {
           </div>
           <div className="al-wrap">
             <div className="al-hero-content">
-              <span className="al-kicker">Hair Stylist em Sao Paulo</span>
+              <span className="al-kicker">Hair Stylist em São Paulo</span>
               <h1>
-                Muito alem de cor, corte e tratamentos: <span>autoestima para mulheres poderosas.</span>
+                Muito além de cor, corte e tratamentos: <span>autoestima para mulheres poderosas.</span>
               </h1>
               <p>
-                Venha viver uma experiencia de beleza completa — do cabelo a maquiagem, com tecnica e cuidado no
-                Espaco Andre Lopes, Bosque da Saude, Sao Paulo.
+                Venha viver uma experiência de beleza completa — do cabelo à maquiagem, com técnica e cuidado no
+                Espaço Andre Lopes, Bosque da Saúde, São Paulo.
               </p>
               <div className="al-actions">
                 <a className="al-button" href={whatsApp()} target="_blank" rel="noreferrer">
                   <WaIcon size={17} />
-                  Agendar horario
+                  Agendar horário
                 </a>
                 <a className="al-outline" href="https://www.instagram.com/andredlopes/" target="_blank" rel="noreferrer">
                   <Instagram size={17} />
@@ -1222,22 +1355,22 @@ export default function AndreLopesProposalPage() {
         <section id="sobre" className="al-section alt" aria-label="Sobre Andre Lopes">
           <div className="al-wrap al-two-col al-reveal">
             <div className="al-portrait">
-              <img src={images.portrait} alt="Andre Lopes, hair stylist em Sao Paulo" />
-              <div className="al-seal">CEO . Espaco Andre Lopes Hair Stylist</div>
+              <img src={images.portrait} alt="Andre Lopes, hair stylist em São Paulo" />
+              <div className="al-seal">CEO · Espaço Andre Lopes Hair Stylist</div>
             </div>
             <div className="al-copy">
               <span className="al-label">Sobre Andre</span>
-              <h2 className="al-h2">Uma historia de superacao transformada em autoridade de beleza.</h2>
+              <h2 className="al-h2">Uma história de superação transformada em autoridade de beleza.</h2>
               <p>
-                Andre Lopes construiu uma trajetoria marcada por resiliencia, tecnica apurada e sensibilidade humana.
-                Uma historia real que se tornou referencia em beleza feminina em Sao Paulo.
+                Andre Lopes construiu uma trajetória marcada por resiliência, técnica apurada e sensibilidade humana.
+                Uma história real que se tornou referência em beleza feminina em São Paulo.
               </p>
               <p>
-                Cada atendimento e uma experiencia completa: do cabelo a maquiagem, do cuidado a autoestima.
+                Cada atendimento é uma experiência completa: do cabelo à maquiagem, do cuidado à autoestima.
                 Mulheres que chegam para um corte saem se sentindo rainhas.
               </p>
               <div className="al-tags" aria-label="Especialidades">
-                {["Colorimetria", "Mechas", "Corte", "Make", "Progressiva", "Tratamentos"].map((tag) => (
+                {["Colorimetria", "Mechas", "Corte", "Make", "Progressiva", "Botox Capilar", "Sobrancelhas", "Manicure", "Mega Hair"].map((tag) => (
                   <span className="al-tag" key={tag}>
                     {tag}
                   </span>
@@ -1247,14 +1380,14 @@ export default function AndreLopesProposalPage() {
           </div>
         </section>
 
-        <section id="autoridade" className="al-section dark" aria-label="Autoridade e historia">
+        <section id="autoridade" className="al-section dark" aria-label="Autoridade e história">
           <div className="al-wrap al-story-grid al-reveal">
             <div>
               <span className="al-label">Autoridade</span>
-              <h2 className="al-h2">Mais de uma decada construindo historia, tecnica e confianca em beleza feminina.</h2>
+              <h2 className="al-h2">Mais de uma década construindo história, técnica e confiança em beleza feminina.</h2>
               <p className="al-lead">
-                Conta verificada, quase 22 mil seguidores, mais de 470 publicacoes e formacoes reconhecidas sustentam
-                uma narrativa de confianca para quem esta decidindo onde cuidar da propria imagem.
+                Conta verificada, quase 22 mil seguidores, mais de 470 publicações e formações reconhecidas sustentam
+                uma narrativa de confiança para quem está decidindo onde cuidar da própria imagem.
               </p>
               <div className="al-credentials">
                 {credentials.map((item) => (
@@ -1265,22 +1398,22 @@ export default function AndreLopesProposalPage() {
                 ))}
               </div>
               <blockquote className="al-quote">
-                "Nunca sera sobre o que a vida fez de voce, e sim o que voce faz com o que a vida fez de voce."
+                "Nunca será sobre o que a vida fez de você, e sim o que você faz com o que a vida fez de você."
               </blockquote>
             </div>
             <div className="al-story-image">
-              <img src={images.story} alt="Imagem institucional sobre quem e Andre Lopes" style={{ objectPosition: "left center" }} />
+              <img src={images.story} alt="Imagem institucional sobre quem é Andre Lopes" style={{ objectPosition: "left center" }} />
             </div>
           </div>
         </section>
 
-        <section id="servicos" className="al-section" aria-label="Servicos">
+        <section id="servicos" className="al-section" aria-label="Serviços">
           <div className="al-wrap">
             <div className="al-section-head al-reveal">
-              <span className="al-label">Transformacoes</span>
-              <h2 className="al-h2">O que voce quer sentir ao sair do salao?</h2>
+              <span className="al-label">Transformações</span>
+              <h2 className="al-h2">O que você quer sentir ao sair do salão?</h2>
               <p className="al-lead">
-                Cabelo, colorimetria, mechas, make e tratamentos — pensados pelo que voce quer ser, nao so pelo que
+                Cabelo, colorimetria, mechas, make, tratamentos, sobrancelhas e muito mais — pensados pelo que você quer ser, não só pelo que
                 quer fazer.
               </p>
             </div>
@@ -1289,13 +1422,20 @@ export default function AndreLopesProposalPage() {
               {services.map((service) => (
                 <article className="al-card" key={service.title}>
                   <div className="al-card-image">
-                    <img src={service.image} alt={service.title} style={{ objectPosition: service.position }} />
+                    {service.image ? (
+                      <img src={service.image} alt={service.title} style={{ objectPosition: service.position }} />
+                    ) : (
+                      <div className="al-card-no-photo">
+                        <Scissors size={44} />
+                        <span>Em breve</span>
+                      </div>
+                    )}
                     <span className="al-card-badge">{service.label}</span>
                   </div>
                   <div className="al-card-body">
                     <h3>{service.title}</h3>
                     <p>{service.text}</p>
-                    <a href={whatsApp(`Ola, Andre! ${service.cta}.`)} target="_blank" rel="noreferrer">
+                    <a href={whatsApp(`Olá, Andre! ${service.cta}.`)} target="_blank" rel="noreferrer">
                       {service.cta} <ChevronRight size={15} />
                     </a>
                   </div>
@@ -1308,47 +1448,39 @@ export default function AndreLopesProposalPage() {
         <section id="resultados" className="al-section alt" aria-label="Resultados">
           <div className="al-wrap">
             <div className="al-section-head al-reveal">
-              <span className="al-label">Resultados reais</span>
-              <h2 className="al-h2">Cada transformacao e unica. Cada resultado e real.</h2>
+              <span className="al-label">Antes e depois</span>
+              <h2 className="al-h2">Cada transformação é única. Cada resultado é real.</h2>
               <p className="al-lead">
-                Cada imagem e uma transformacao verdadeira. Cabelo, maquiagem e autoestima — capturados logo depois do
-                atendimento no espaco Andre Lopes.
+                Transformações verdadeiras capturadas logo depois do atendimento no espaço Andre Lopes.
               </p>
             </div>
 
-            <div className="al-results al-reveal al-reveal-delay-1">
-              <div className="al-result large">
-                <img src={images.hero} alt="Resultado de colorimetria morena iluminada" style={{ objectPosition: "center 28%" }} />
+            <div className="al-antes-depois al-reveal al-reveal-delay-1">
+              <div className="al-result">
+                <img src={images.antesDepois1} alt="Antes e depois — correção de cor loiro cinza" style={{ objectPosition: "center 40%" }} />
                 <div className="al-result-caption">
-                  <strong>Morena iluminada</strong>
-                  <span>Colorimetria e mechas com leitura tecnica do fio.</span>
+                  <strong>Correção de cor</strong>
+                  <span>Raiz escura com loiro antigo → loiro cinza uniforme.</span>
                 </div>
               </div>
-              <div className="al-result small">
-                <img src={images.alignment} alt="Resultado de realinhamento capilar" style={{ objectPosition: "center top" }} />
+              <div className="al-result">
+                <img src={images.antesDepois2} alt="Antes e depois — colorimetria platinada" style={{ objectPosition: "center 40%" }} />
                 <div className="al-result-caption">
-                  <strong>Tratamento</strong>
-                  <span>Brilho, alinhamento e saude capilar.</span>
-                </div>
-              </div>
-              <div className="al-result small al-result-hide-mobile">
-                <img src={images.makeup} alt="Resultado de maquiagem profissional" style={{ objectPosition: "center 20%" }} />
-                <div className="al-result-caption">
-                  <strong>Make</strong>
-                  <span>Pele, acabamento e presenca.</span>
+                  <strong>Colorimetria platinada</strong>
+                  <span>Castanho escuro → loiro platinado com corte.</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="experiencia" className="al-section" aria-label="Experiencia de atendimento">
+        <section id="experiencia" className="al-section" aria-label="Experiência de atendimento">
           <div className="al-wrap">
             <div className="al-section-head">
               <span className="al-label">Experiencia</span>
-              <h2 className="al-h2">Do primeiro contato ao resultado: uma experiencia pensada para voce.</h2>
+              <h2 className="al-h2">Do primeiro contato ao resultado: uma experiência pensada para você.</h2>
               <p className="al-lead">
-                Atendimento humano, tecnica profissional e agenda facil pelo WhatsApp. Simples assim, do inicio ao
+                Atendimento humano, técnica profissional e agenda fácil pelo WhatsApp. Simples assim, do início ao
                 fim.
               </p>
             </div>
@@ -1357,35 +1489,43 @@ export default function AndreLopesProposalPage() {
               <div className="al-step">
                 <span className="al-step-icon"><Heart size={18} /></span>
                 <div>
-                  <h3>Desejo e identificacao</h3>
-                  <p>Voce conta o que quer mudar. Corte novo, colorimetria especial, mechas dos sonhos ou maquiagem para uma ocasiao. Andre entende o seu desejo antes de comecar.</p>
+                  <h3>Desejo e identificação</h3>
+                  <p>Você conta o que quer mudar. Corte novo, colorimetria especial, mechas dos sonhos ou maquiagem para uma ocasião. Andre entende o seu desejo antes de começar.</p>
                 </div>
               </div>
               <div className="al-step">
                 <span className="al-step-icon"><Scissors size={18} /></span>
                 <div>
                   <h3>Consulta e cuidado</h3>
-                  <p>Andre analisa seu cabelo, entende sua rotina e define o melhor caminho tecnico. Cada detalhe do atendimento e personalizado para voce.</p>
+                  <p>Andre analisa seu cabelo, entende sua rotina e define o melhor caminho técnico. Cada detalhe do atendimento é personalizado para você.</p>
                 </div>
               </div>
               <div className="al-step">
                 <span className="al-step-icon"><CalendarCheck size={18} /></span>
                 <div>
                   <h3>Agendamento direto</h3>
-                  <p>Entre em contato pelo WhatsApp e garanta seu horario. Sem formulario, sem fila — so voce e o Andre, de forma direta e rapida.</p>
+                  <p>Entre em contato pelo WhatsApp e garanta seu horário. Sem formulário, sem fila — só você e o Andre, de forma direta e rápida.</p>
                 </div>
+              </div>
+            </div>
+
+            <div className="al-atendimento-foto al-reveal al-reveal-delay-2">
+              <img src={images.atendimento} alt="Andre Lopes com cliente satisfeita no salão" />
+              <div className="al-atendimento-foto-caption">
+                <strong>Cada cliente sai se sentindo uma rainha.</strong>
+                <span>Atendimento humanizado, resultado transformador.</span>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="espaco" className="al-section alt" aria-label="Espaco e localizacao">
+        <section id="espaco" className="al-section alt" aria-label="Espaço e localização">
           <div className="al-wrap">
             <div className="al-section-head">
-              <span className="al-label">Espaco</span>
-              <h2 className="al-h2">Venha ao espaco. Venha se sentir uma rainha.</h2>
+              <span className="al-label">Espaço</span>
+              <h2 className="al-h2">Venha ao espaço. Venha se sentir uma rainha.</h2>
               <p className="al-lead">
-                O Espaco Andre Lopes Hair Stylist fica na Av. Bosque da Saude, no coracao da Vila da Saude em Sao Paulo.
+                O Espaço Andre Lopes Hair Stylist fica na Av. Bosque da Saúde, no coração da Vila da Saúde em São Paulo.
               </p>
             </div>
 
@@ -1393,7 +1533,7 @@ export default function AndreLopesProposalPage() {
               <div className="al-map-wrap">
                 <iframe
                   src="https://maps.google.com/maps?q=Av.+Bosque+da+Saude,+336,+Vila+da+Saude,+Sao+Paulo,+SP&output=embed"
-                  title="Localizacao Espaco Andre Lopes Hair Stylist"
+                  title="Localização Espaço Andre Lopes Hair Stylist"
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -1402,15 +1542,15 @@ export default function AndreLopesProposalPage() {
 
               <div className="al-espaco-info">
                 <div className="al-address-block">
-                  <strong>Espaco Andre Lopes Hair Stylist</strong>
+                  <strong>Espaço Andre Lopes Hair Stylist</strong>
                   <p>
-                    Av. Bosque da Saude, 336<br />
-                    Vila da Saude — Sao Paulo, SP
+                    Av. Bosque da Saúde, 336<br />
+                    Vila da Saúde — São Paulo, SP
                   </p>
                 </div>
 
                 <div>
-                  <span className="al-label" style={{ display: "block", marginBottom: 14 }}>Horarios de atendimento</span>
+                  <span className="al-label" style={{ display: "block", marginBottom: 14 }}>Horários de atendimento</span>
                   <div className="al-hours">
                     {hours.map((row) => (
                       <div className="al-hours-row" key={row.days}>
@@ -1441,8 +1581,8 @@ export default function AndreLopesProposalPage() {
               <span className="al-label">Agenda via WhatsApp</span>
               <h2 className="al-h2">Pronta para se sentir uma rainha?</h2>
               <p className="al-lead">
-                O Espaco Andre Lopes Hair Stylist espera por voce. Agende pelo WhatsApp e venha viver a experiencia
-                de beleza que voce merece.
+                O Espaço Andre Lopes Hair Stylist espera por você. Agende pelo WhatsApp e venha viver a experiência
+                de beleza que você merece.
               </p>
               <div className="al-actions">
                 <a className="al-button" href={whatsApp()} target="_blank" rel="noreferrer">
@@ -1463,28 +1603,28 @@ export default function AndreLopesProposalPage() {
             <div className="al-footer-body">
               <div className="al-footer-brand">
                 <strong>Andre Lopes</strong>
-                <p>Hair stylist especializado em beleza feminina — corte, colorimetria, make e autoestima em Sao Paulo.</p>
+                <p>Hair stylist especializado em beleza feminina — corte, colorimetria, make e autoestima em São Paulo.</p>
                 <div className="al-footer-brand-tags">
-                  {["Colorimetria", "Mechas", "Corte", "Make", "Progressiva"].map((tag) => (
+                  {["Colorimetria", "Mechas", "Corte", "Make", "Progressiva", "Mega Hair", "Manicure"].map((tag) => (
                     <span className="al-footer-brand-tag" key={tag}>{tag}</span>
                   ))}
                 </div>
               </div>
 
               <div className="al-footer-col">
-                <h4>Navegacao</h4>
+                <h4>Navegação</h4>
                 <a href="#sobre">Sobre Andre</a>
-                <a href="#servicos">Servicos</a>
+                <a href="#servicos">Serviços</a>
                 <a href="#resultados">Resultados</a>
-                <a href="#espaco">Espaco</a>
-                <a href={whatsApp()} target="_blank" rel="noreferrer">Agendar horario</a>
+                <a href="#espaco">Espaço</a>
+                <a href={whatsApp()} target="_blank" rel="noreferrer">Agendar horário</a>
               </div>
 
               <div className="al-footer-col">
                 <h4>Contato</h4>
                 <div className="al-footer-contact-row">
                   <MapPin size={14} />
-                  <span>Av. Bosque da Saude, 336<br />Vila da Saude — Sao Paulo, SP</span>
+                  <span>Av. Bosque da Saúde, 336<br />Vila da Saúde — São Paulo, SP</span>
                 </div>
                 <div className="al-footer-contact-row">
                   <MessageCircle size={14} />
@@ -1496,7 +1636,7 @@ export default function AndreLopesProposalPage() {
                 </div>
                 <div className="al-footer-contact-row" style={{ marginTop: 8 }}>
                   <CalendarDays size={14} />
-                  <span>Ter a Sab: 9h as 19h<br />Seg e feriados: agendamento</span>
+                  <span>Ter a Sáb: 9h às 19h<br />Seg e feriados: agendamento</span>
                 </div>
               </div>
             </div>
@@ -1517,7 +1657,7 @@ export default function AndreLopesProposalPage() {
         href={whatsApp()}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Agendar horario via WhatsApp"
+        aria-label="Agendar horário via WhatsApp"
       >
         <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
