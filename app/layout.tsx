@@ -7,6 +7,7 @@ import { GlobalLoadingOverlay } from "@/components/GlobalLoadingOverlay";
 import { WhatsAppFloating } from "@/components/WhatsAppFloating";
 import { CursorGlow } from "@/components/CursorGlow";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const display = Cinzel({
@@ -97,6 +98,7 @@ export default function RootLayout({
           {children}
           <WhatsAppFloating />
         </SelectionProvider>
+        <Analytics />
 
         <script
           type="application/ld+json"
