@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { site } from "@/content/site";
 import { footerNavigation, servicePages } from "@/content/navigation";
-import { whatsappLink } from "@/utils/whatsapp";
-import { ArrowRight, MessageCircle, Mail, MapPin } from "lucide-react";
+import { reportIssueLink, whatsappLink } from "@/utils/whatsapp";
+import { ArrowRight, CircleAlert, MessageCircle, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -137,6 +137,24 @@ export function Footer() {
                 </a>
               </li>
             </ul>
+
+            <div className="mt-7 border-l-2 border-glow-cyan/35 bg-white/[0.025] px-3 py-3">
+              <div className="font-display text-[10px] uppercase tracking-[0.2em] text-glow-aqua">
+                Suporte
+              </div>
+              <p className="mt-1.5 text-xs leading-relaxed text-ink-muted">
+                Encontrou algo que não funciona corretamente?
+              </p>
+              <a
+                href={reportIssueLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2.5 inline-flex items-center gap-1.5 text-xs text-ink-secondary transition-colors hover:text-glow-aqua"
+              >
+                <CircleAlert size={13} />
+                Reportar problema
+              </a>
+            </div>
           </div>
         </div>
 

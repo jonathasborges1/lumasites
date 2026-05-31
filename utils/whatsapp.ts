@@ -35,6 +35,17 @@ export function whatsappLink(ctx?: WhatsAppContext): string {
   return `https://wa.me/${site.whatsapp.number}?text=${encoded}`;
 }
 
+export function reportIssueLink(): string {
+  const message = [
+    "Olá! Encontrei um possível problema no site da Luma Sites.",
+    "",
+    "Página ou endereço:",
+    "Problema encontrado:",
+  ].join("\n");
+
+  return `https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(message)}`;
+}
+
 export function openWhatsApp(ctx?: WhatsAppContext) {
   if (typeof window === "undefined") return;
   window.open(whatsappLink(ctx), "_blank", "noopener,noreferrer");
