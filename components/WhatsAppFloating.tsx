@@ -10,8 +10,6 @@ export function WhatsAppFloating() {
   const pathname = usePathname();
   const { selected, clear } = useSelection();
 
-  if (pathname.startsWith("/proposta-comercial")) return null;
-
   const href = useMemo(() => {
     if (selected.length === 0) {
       return whatsappLink();
@@ -28,6 +26,8 @@ export function WhatsAppFloating() {
       extras: extraServices,
     });
   }, [selected]);
+
+  if (pathname.startsWith("/proposta-comercial")) return null;
 
   const hasSelection = selected.length > 0;
 

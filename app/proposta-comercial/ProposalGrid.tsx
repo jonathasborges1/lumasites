@@ -150,7 +150,7 @@ function SortSelect({
         value={value}
         onChange={(e) => onChange(e.target.value as SortMode)}
         className="cursor-pointer appearance-none bg-transparent font-semibold text-inherit focus:outline-none"
-        aria-label="Ordenar propostas"
+        aria-label="Ordenar projetos"
       >
         <option value="date" className="bg-slate-900 text-white">
           Mais recentes
@@ -244,7 +244,7 @@ function ProposalCard({
             {dateLabel}
           </span>
           <span className="flex items-center gap-1 text-sm font-medium text-slate-400 transition-colors duration-200 group-hover:text-cyan-300">
-            Ver proposta
+            Ver projeto
             <ChevronRight
               size={15}
               className="transition-transform duration-200 group-hover:translate-x-0.5"
@@ -272,7 +272,7 @@ function EmptyState({
         <Search size={20} className="text-slate-500" />
       </div>
       <p className="mb-1 text-sm font-medium text-slate-400">
-        Nenhuma proposta encontrada
+        Nenhuma projeto encontrada
         {query && (
           <>
             {" "}
@@ -361,8 +361,8 @@ export function ProposalGrid({ proposals }: { proposals: ProposalWithSlug[] }) {
 
   const countLabel =
     filtered.length === proposals.length
-      ? `${proposals.length} proposta${proposals.length !== 1 ? "s" : ""}`
-      : `${filtered.length} de ${proposals.length} proposta${proposals.length !== 1 ? "s" : ""}`;
+      ? `${proposals.length} projeto${proposals.length !== 1 ? "s" : ""}`
+      : `${filtered.length} de ${proposals.length} projeto${proposals.length !== 1 ? "s" : ""}`;
 
   function clearAll() {
     setQuery("");
@@ -382,16 +382,16 @@ export function ProposalGrid({ proposals }: { proposals: ProposalWithSlug[] }) {
         <div className="relative border-b border-white/[0.07]">
           <div className="mx-auto max-w-6xl px-5 pb-9 pt-28 md:px-8 md:pt-32 lg:px-12">
             <div className="mb-4 inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 font-display text-[10px] uppercase tracking-[0.22em] text-cyan-200">
-              Área reservada
+              Portfólio
             </div>
             <h1
               className="mb-2 text-3xl font-bold text-white md:text-4xl"
               style={{ fontFamily: "var(--font-display, 'Cinzel', serif)" }}
             >
-              Propostas Comerciais
+              Sites Criados pela Luma Sites
             </h1>
             <p className="max-w-2xl text-sm leading-relaxed text-slate-400 md:text-base">
-              Todos os projetos desenvolvidos pela equipe Luma Sites
+              Exemplos reais de sites entregues para advogados, personal trainers, corretores e outros profissionais em todo o Brasil.
             </p>
           </div>
         </div>

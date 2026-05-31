@@ -2,16 +2,16 @@ import Link from "next/link";
 import { site } from "@/content/site";
 import { footerNavigation, servicePages } from "@/content/navigation";
 import { whatsappLink } from "@/utils/whatsapp";
-import { MessageCircle, Mail, MapPin } from "lucide-react";
+import { ArrowRight, MessageCircle, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="relative border-t border-white/10 bg-midnight/80">
-      <div className="container mx-auto px-5 md:px-8 lg:px-12 xl:px-20 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
-          <div>
+      <div className="container mx-auto px-5 py-12 md:px-8 lg:px-12 xl:px-20">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-9 md:gap-x-12 md:gap-y-10 lg:grid-cols-[1.45fr_0.9fr_1fr_1.15fr] lg:gap-8">
+          <div className="col-span-2 lg:col-span-1">
             <div
               className="font-display text-3xl uppercase tracking-[0.2em] text-ink-primary"
               style={{
@@ -25,9 +25,18 @@ export function Footer() {
               {site.tagline}. Criação de sites simples, rápidos e profissionais em{" "}
               {site.region}.
             </p>
+            <a
+              href={whatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 border border-glow-cyan/35 bg-glow-cyan/[0.06] px-4 py-2.5 font-display text-xs uppercase tracking-[0.16em] text-glow-aqua transition-colors hover:border-glow-cyan/60 hover:bg-glow-cyan/[0.12] hover:text-white"
+            >
+              Solicitar orçamento
+              <ArrowRight size={14} />
+            </a>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <div className="font-display uppercase tracking-[0.2em] text-sm text-glow-aqua mb-4">
               Navegação
             </div>
@@ -45,9 +54,9 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <div className="font-display uppercase tracking-[0.2em] text-sm text-glow-aqua mb-4">
-              Servicos
+              Serviços
             </div>
             <ul className="space-y-2 text-sm text-ink-secondary">
               {servicePages.map((l) => (
@@ -62,7 +71,10 @@ export function Footer() {
               ))}
             </ul>
 
-            <div className="mt-8 font-display uppercase tracking-[0.2em] text-sm text-glow-aqua mb-4">
+          </div>
+
+          <div className="col-span-2 lg:col-span-1">
+            <div className="font-display uppercase tracking-[0.2em] text-sm text-glow-aqua mb-4">
               Contato
             </div>
             <ul className="space-y-3 text-sm text-ink-secondary">
@@ -90,6 +102,12 @@ export function Footer() {
                 <MapPin size={14} />
                 {site.region}
               </li>
+            </ul>
+
+            <div className="mt-7 font-display uppercase tracking-[0.2em] text-xs text-glow-aqua mb-3">
+              Redes
+            </div>
+            <ul className="space-y-3 text-sm text-ink-secondary">
               <li>
                 <a
                   href="https://instagram.com/jonathasborges1"
@@ -122,11 +140,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-ink-muted">
+        <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 text-xs text-ink-muted lg:flex-row lg:items-center lg:pr-20">
           <p>
             © {year} {site.name}. Feito em Manaus para o mundo.
           </p>
-          <p className="uppercase tracking-[0.25em]">
+          <p className="max-w-3xl uppercase tracking-[0.2em] lg:text-right lg:tracking-[0.25em]">
             CNPJ sob consulta · Atendimento presencial mediante agendamento
           </p>
         </div>
