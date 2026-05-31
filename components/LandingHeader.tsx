@@ -85,16 +85,16 @@ export function LandingHeader() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setServicesOpen(false)}
-                      className={`block border px-4 py-3 transition-colors ${
+                      className={`group block border px-4 py-3 transition-colors duration-200 ${
                         pathname === item.href
                           ? "border-glow-cyan/35 bg-glow-cyan/[0.12] text-glow-aqua"
-                          : "border-transparent text-ink-primary hover:border-white/[0.12] hover:bg-white/[0.07]"
+                          : "border-transparent text-ink-primary hover:border-glow-cyan/30 hover:bg-glow-cyan/[0.10] hover:text-glow-aqua"
                       }`}
                     >
                       <span className="block font-display text-xs uppercase tracking-[0.16em] text-current">
                         {item.label}
                       </span>
-                      <span className="mt-1.5 block text-xs leading-relaxed text-ink-secondary">
+                      <span className="mt-1.5 block text-xs leading-relaxed text-ink-secondary transition-colors duration-200 group-hover:text-ink-primary">
                         {item.description}
                       </span>
                     </Link>
