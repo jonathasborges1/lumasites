@@ -2,35 +2,34 @@ export const servicePages = [
   {
     href: "/criar-site-em-manaus",
     label: "Criar site",
-    description: "Para quem quer entender valores, prazo e melhor formato.",
-  },
-  {
-    href: "/desenvolvimento-de-sites-manaus",
-    label: "Desenvolvimento de sites",
-    description: "Site técnico, rápido e otimizado para buscas locais.",
+    description: "Começa aqui — veja tipos, prazos e valores.",
   },
   {
     href: "/site-profissional-manaus",
-    label: "Site profissional",
-    description: "Uma página comercial com foco em credibilidade e contatos.",
-  },
-  {
-    href: "/site-institucional-manaus",
-    label: "Site institucional",
-    description: "Site com várias páginas para apresentar uma empresa completa.",
+    label: "Site de uma página",
+    description: "Para autônomos e prestadores que precisam de presença e contato.",
   },
   {
     href: "/landing-page-manaus",
-    label: "Landing page",
-    description: "Página focada em uma única ação: captar clientes pelo WhatsApp.",
+    label: "Página de captura",
+    description: "Uma única ação: transformar visita em mensagem no WhatsApp.",
+  },
+  {
+    href: "/site-institucional-manaus",
+    label: "Site completo",
+    description: "Várias páginas para apresentar empresa, equipe e serviços.",
+  },
+  {
+    href: "/desenvolvimento-de-sites-manaus",
+    label: "Site técnico / SEO",
+    description: "Performance, velocidade e posicionamento no Google local.",
   },
 ];
 
 export const mainNavigation = [
   { href: "/", label: "Início" },
-  { href: "/#como-funciona", label: "Como funciona" },
   { href: "/blog", label: "Blog" },
-  { href: "/proposta-comercial", label: "Propostas" },
+  { href: "/proposta-comercial", label: "Portfólio" },
 ];
 
 export const footerNavigation = [

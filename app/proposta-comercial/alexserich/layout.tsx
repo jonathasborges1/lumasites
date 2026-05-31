@@ -28,7 +28,6 @@ export const metadata: Metadata = {
       "O sistema de 4 pilares que corrige compensações, elimina dores e entrega o físico que você sempre quis em 8 semanas.",
     images: ["/images/alexserich/og-image.jpg"],
   },
-  robots: { index: false, follow: false },
 };
 
 export default function AlexSerichLayout({

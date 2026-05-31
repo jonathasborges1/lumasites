@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Proposta de Redesign | Markha Consultoria em Seguros",
-  robots: { index: false, follow: false },
 };
 
 export default function MarkhaProposalLayout({

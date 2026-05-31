@@ -29,7 +29,6 @@ export const metadata: Metadata = {
       "Treino com direção e evolução acompanhada. Aulas presenciais, assessoria online e soluções corporativas.",
     images: ["/images/thiagooliveira/og-image.jpg"],
   },
-  robots: { index: false, follow: false },
 };
 
 export default function ThiagoOliveiraLayout({

@@ -29,7 +29,6 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     type: "website",
   },
-  robots: { index: false, follow: false },
 };
 
 export default function LuandaOliveiraLayout({

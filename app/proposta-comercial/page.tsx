@@ -5,8 +5,7 @@ import type { ProposalMeta, ProposalWithSlug } from "./types";
 import { ProposalGrid } from "./ProposalGrid";
 
 export const metadata: Metadata = {
-  title: "Propostas Comerciais | Luma Sites",
-  robots: { index: false, follow: false },
+  title: "Portfólio de Sites | Luma Sites",
 };
 
 async function loadProposals(): Promise<ProposalWithSlug[]> {

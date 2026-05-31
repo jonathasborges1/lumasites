@@ -9,6 +9,7 @@ import { articleDates as dentistaDates } from "@/app/blog/site-para-dentista-em-
 
 const lastModified = {
   home: new Date("2026-04-25"),
+  portfolio: new Date("2026-05-30"),
   criarSiteManaus: new Date("2026-04-26"),
   desenvolvimentoDeSitesManaus: new Date("2026-04-28"),
   siteProfissionalManaus: new Date("2026-04-27"),
@@ -32,6 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: lastModified.home,
       changeFrequency: "monthly",
       priority: 1,
+    },
+    {
+      url: `${site.url}/proposta-comercial`,
+      lastModified: lastModified.portfolio,
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${site.url}/blog`,

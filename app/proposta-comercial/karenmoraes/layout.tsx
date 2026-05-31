@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   title: "Proposta | Dra. Karen Moraes — Família & Sucessões",
   description:
     "Proposta comercial do site institucional da Dra. Karen Moraes, advogada especialista em Direito de Família e Sucessões em Barra do Garças – MT.",
-  robots: { index: false, follow: false },
 };
 
 export default function KarenLayout({ children }: { children: React.ReactNode }) {
