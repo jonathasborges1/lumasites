@@ -459,8 +459,8 @@ export default function SiteParaMedicoEmManausPage() {
                   <MessageCircle size={18} />
                   Falar pelo WhatsApp
                 </GlowButton>
-                <GlowButton href="/blog" variant="ghost" size="lg">
-                  Ver mais artigos
+                <GlowButton href="/site-profissional-manaus" variant="ghost" size="lg">
+                  Ver opções de site
                   <ArrowRight size={16} />
                 </GlowButton>
               </div>
