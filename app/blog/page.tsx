@@ -24,6 +24,25 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "site-para-personal-trainer-em-manaus",
+    title: "Site para Personal Trainer em Manaus: presença digital para crescer além das redes sociais",
+    description:
+      "Como personal trainers e educadores físicos em Manaus podem fortalecer a presença no Google, conquistar novos alunos e não depender exclusivamente do Instagram.",
+    publishedAt: "2026-05-31",
+    publishedLabel: "31 de maio de 2026",
+    updatedAt: null,
+    updatedLabel: null,
+    readTime: "10 min",
+    tags: ["Fitness", "SEO Local", "Manaus"],
+    thumbnail: {
+      src: "/blog/site-para-personal-trainer-em-manaus.png",
+      alt: "Personal trainer em Manaus com notebook mostrando presença profissional no Google",
+      headline: "Site para Personal Trainer em Manaus",
+      subheadline: "Credibilidade, SEO local e mais alunos pelo Google",
+      hideTextOverlay: true,
+    },
+  },
+  {
     slug: "site-para-dentista-em-manaus",
     title: "Site para Dentista em Manaus: presença profissional para ser encontrado no Google",
     description:
