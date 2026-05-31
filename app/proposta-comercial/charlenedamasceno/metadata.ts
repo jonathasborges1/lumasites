@@ -3,7 +3,7 @@ import type { ProposalMeta } from "../types";
 const proposalMeta: ProposalMeta = {
   clientName: "Charlene Damasceno Advogada",
   tagline: "Direito Previdenciario · INSS e Beneficios",
-  category: "Juridico",
+  category: "Jurídico",
   categoryColor: "#C97E18",
   highlight: "Especialista em INSS · Presencial e Online",
   location: "Brasil",
