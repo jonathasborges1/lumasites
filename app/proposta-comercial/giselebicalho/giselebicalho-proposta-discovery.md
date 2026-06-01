@@ -299,7 +299,7 @@ Os arquivos mantidos para o prototipo estao em
 | Arquivo | Uso recomendado | Limitacao |
 |---|---|---|
 | `gisele-hero-ai-v3.png` | Retrato conceitual em alta resolucao para hero | Gerado por IA a partir da referencia publica; validar com a cliente |
-| `gisele-about-ai.png` | Retrato conceitual em alta resolucao para secao Sobre | Gerado por IA a partir da referencia publica; validar com a cliente |
+| `gisele-about-ai-v2.png` | Retrato conceitual em alta resolucao para secao Sobre | Gerado por IA a partir da referencia publica; validar com a cliente |
 | `post-cover-05.webp` | Card para bloco de conteudos | Usar como apoio editorial |
 | `carousel-slide-10.webp` a `carousel-slide-14.webp` | Cards para bloco de conteudos | Validar autorizacao antes da publicacao final |
 

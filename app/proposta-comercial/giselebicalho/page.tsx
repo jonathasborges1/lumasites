@@ -20,7 +20,7 @@ const IG = "https://www.instagram.com/psigiselebicalho/";
 
 const IMG = {
   profile: "/images/giselebicalho/gisele-hero-ai-v3.png",
-  postCover: "/images/giselebicalho/gisele-about-ai.png",
+  postCover: "/images/giselebicalho/gisele-about-ai-v2.png",
   card05: "/images/giselebicalho/post-cover-05.webp",
   slide10: "/images/giselebicalho/carousel-slide-10.webp",
   slide11: "/images/giselebicalho/carousel-slide-11.webp",
