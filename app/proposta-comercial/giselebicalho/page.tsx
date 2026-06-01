@@ -19,7 +19,7 @@ const WA = `https://wa.me/5537999986764?text=${encodeURIComponent(
 const IG = "https://www.instagram.com/psigiselebicalho/";
 
 const IMG = {
-  profile: "/images/giselebicalho/gisele-hero-ai.png",
+  profile: "/images/giselebicalho/gisele-hero-ai-v3.png",
   postCover: "/images/giselebicalho/gisele-about-ai.png",
   card05: "/images/giselebicalho/post-cover-05.webp",
   slide10: "/images/giselebicalho/carousel-slide-10.webp",
@@ -1041,15 +1041,24 @@ const css = `
     .hero h1 { font-size: clamp(34px, 9vw, 46px); }
     .hero-sub { font-size: 15px; }
     .hero-actions a { width: 100%; justify-content: center; }
+    .ident-grid,
+    .sobre-grid,
+    .tcc-grid { margin-top: 32px; }
     .dores-grid { grid-template-columns: 1fr; }
+    .dores-grid,
+    .faq-list { margin-top: 32px; }
     .ig-grid { grid-template-columns: repeat(3, 1fr); }
+    .steps-wrap { margin-top: 40px; }
     .steps-timeline { grid-template-columns: 1fr; }
     .steps-timeline .step-col { padding: 0 16px 32px; }
     .steps-line-track { display: none; }
+    .cta-actions a { width: 100%; justify-content: center; }
     .footer-body { grid-template-columns: 1fr; gap: 28px; padding: 44px 0 32px; }
+    .footer-col a { min-height: 44px; padding: 10px 0; }
     .section { padding: 64px 0; }
-    .creds-inner { grid-template-columns: repeat(2, 1fr); }
-    .pre-back { left: 6px; padding: 0 8px; }
+    .creds-inner { width: min(100% - 32px, 1200px); grid-template-columns: repeat(2, 1fr); }
+    .cred-cell { padding: 16px; }
+    .pre-back { left: 6px; min-width: 44px; min-height: 44px; padding: 0 8px; }
     .pre-back span { display: none; }
   }
 

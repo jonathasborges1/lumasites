@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/giselebicalho/gisele-hero-ai.png",
+        url: "/images/giselebicalho/gisele-hero-ai-v3.png",
         width: 1080,
         height: 1080,
         alt: "Gisele Bicalho - Psicoterapia online",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Gisele Bicalho | Psicóloga Clínica — Psicoterapia Online",
     description:
       "Psicoterapia online com TCC para adultos. Um espaço de cuidado para compreender emoções, vínculos e padrões de comportamento. CRP 04/31637.",
-    images: ["/images/giselebicalho/gisele-hero-ai.png"],
+    images: ["/images/giselebicalho/gisele-hero-ai-v3.png"],
   },
 };
 
