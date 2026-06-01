@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { PageTransition } from "./PageTransition";
+import { ProposalBackLink } from "./ProposalBackLink";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -35,6 +36,7 @@ export default function ProposalGroupLayout({ children }: { children: ReactNode 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
       />
+      <ProposalBackLink />
       <PageTransition>{children}</PageTransition>
       <a
         href={`https://wa.me/${waNumber}?text=${waMsg}`}
