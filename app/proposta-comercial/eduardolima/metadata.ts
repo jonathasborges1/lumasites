@@ -6,7 +6,7 @@ const proposalMeta: ProposalMeta = {
   category: "Jurídico",
   categoryColor: "#AA8136",
   highlight: "Trabalhista · Cível · Família · Previdenciário · Penal",
-  location: "Juiz de Fora, MG",
+  location: "Juiz de Fora, Lima Duarte e Brasil",
   createdAt: "2026-06-02",
   accentColor: "#AA8136",
 };

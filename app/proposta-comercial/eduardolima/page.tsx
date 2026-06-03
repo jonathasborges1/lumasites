@@ -68,7 +68,7 @@ const especialidades = [
   {
     Icon: Shield,
     titulo: "Previdenciário",
-    desc: "BPC, Auxílio Acidente, Salário Maternidade e outros benefícios do INSS.",
+    desc: "BPC, auxílio-acidente, salário-maternidade e outros benefícios do INSS.",
     cta: "Meu benefício foi negado",
     msg: "Olá, Eduardo! Meu benefício previdenciário foi negado e gostaria de saber se tenho direito de recorrer. Preciso de uma consulta.",
   },
@@ -90,16 +90,16 @@ const especialidades = [
 
 const faqs = [
   {
-    q: "Você atende presencialmente em Juiz de Fora e Lima Duarte?",
-    a: "Sim. O escritório Eduardo Lima está localizado na Rua Humberto Valério, 188, Bairro Progresso, em Juiz de Fora/MG. Eduardo também realiza atendimento presencial em Lima Duarte/MG. Para quem não pode se deslocar, o atendimento também é feito por videochamada ou WhatsApp.",
+    q: "Você atende em Juiz de Fora, Lima Duarte e no Brasil todo?",
+    a: "Sim. O escritório Eduardo Lima está localizado na Rua Humberto Valério, 188, Bairro Progresso, em Juiz de Fora/MG. Eduardo também realiza atendimento presencial em Lima Duarte/MG e atendimento remoto para o Brasil todo por videochamada ou WhatsApp.",
   },
   {
     q: "Tenho uma dúvida trabalhista. Como sei se tenho um processo válido?",
-    a: "O primeiro passo é relatar sua situação — demissão, horas não pagas, verbas não recebidas, assédio ou qualquer outra questão. Eduardo avalia os fatos e informa se há fundamento para ação e qual o caminho mais adequado. Entre em contato pelo WhatsApp para uma consulta inicial.",
+    a: "O primeiro passo é relatar sua situação: demissão, horas não pagas, verbas não recebidas, assédio ou qualquer outra questão. Eduardo avalia os fatos e informa se há fundamento para ação e qual o caminho mais adequado. Entre em contato pelo WhatsApp para uma consulta inicial.",
   },
   {
     q: "Meu benefício do INSS foi negado. Ainda tenho chance?",
-    a: "Sim. A negativa do INSS não é definitiva. Em muitos casos é possível recorrer administrativamente ou ingressar com ação judicial para garantir o benefício. Eduardo atua com BPC, Auxílio Acidente, Salário Maternidade e outros benefícios previdenciários. Conte sua situação e receba uma avaliação.",
+    a: "Sim. A negativa do INSS não é definitiva. Em muitos casos é possível recorrer administrativamente ou ingressar com ação judicial para garantir o benefício. Eduardo atua com BPC, auxílio-acidente, salário-maternidade e outros benefícios previdenciários. Conte sua situação e receba uma avaliação.",
   },
   {
     q: "O que é advocacia extrajudicial e quando ela se aplica?",
@@ -107,11 +107,11 @@ const faqs = [
   },
   {
     q: "Atende casos de família como divórcio e guarda?",
-    a: "Sim. Eduardo atua em questões de Direito de Família, incluindo divórcio consensual e litigioso, definição e revisão de guarda, fixação e revisão de alimentos, além de outras situações que envolvem relações familiares. O atendimento é presencial em Juiz de Fora e Lima Duarte ou por videochamada.",
+    a: "Sim. Eduardo atua em questões de Direito de Família, incluindo divórcio consensual e litigioso, definição e revisão de guarda, fixação e revisão de alimentos, além de outras situações que envolvem relações familiares. O atendimento é presencial em Juiz de Fora e Lima Duarte, ou remoto para o Brasil todo por videochamada.",
   },
   {
     q: "Como funciona o primeiro contato?",
-    a: "Basta enviar uma mensagem pelo WhatsApp descrevendo sua situação. Eduardo responde, esclarece as dúvidas iniciais e, se necessário, agenda uma consulta para aprofundar a análise do caso — presencial em Juiz de Fora ou Lima Duarte, ou por videochamada.",
+    a: "Basta enviar uma mensagem pelo WhatsApp descrevendo sua situação. Eduardo responde, esclarece as dúvidas iniciais e, se necessário, agenda uma consulta para aprofundar a análise do caso, presencial em Juiz de Fora ou Lima Duarte, ou remoto para o Brasil todo por videochamada.",
   },
 ];
 
@@ -153,7 +153,7 @@ const css = `
     --bar:       52px;
     --nav:       72px;
 
-    /* Paleta Eduardo Lima — extraída do logotipo */
+    /* Paleta Eduardo Lima, extraída do logotipo */
     --navy:      #0D1C33;
     --navy-alt:  #162540;
     --navy-dk:   #080F1C;
@@ -1194,17 +1194,17 @@ export default function EduardoLimaPropPage() {
         <section
           id="top"
           className={`hero${heroReady ? " hero-ready" : ""}`}
-          aria-label="Eduardo Lima — Advogado"
+          aria-label="Eduardo Lima, Advogado"
         >
           <div className="hero-left">
-            <span className="hero-kicker">Advogado · Juiz de Fora e Lima Duarte/MG</span>
+            <span className="hero-kicker">Advogado · Juiz de Fora, Lima Duarte e Brasil todo</span>
             <h1>
               Seu direito tem<br />
               nome e <em>endereço.</em>
             </h1>
             <p className="hero-sub">
               Atendimento em Direito Trabalhista, Cível, Família, Previdenciário,
-              Penal e Advocacia Extrajudicial — com clareza, compromisso e foco
+              Penal e Advocacia Extrajudicial, com clareza, compromisso e foco
               na resolução do seu caso.
             </p>
             <div className="hero-actions">
@@ -1219,7 +1219,7 @@ export default function EduardoLimaPropPage() {
             <div className="hero-trust">
               {[
                 { v: "OAB/MG 246.863", l: "Registro profissional" },
-                { v: "Juiz de Fora", l: "+ Lima Duarte/MG" },
+                { v: "Juiz de Fora", l: "Lima Duarte e Brasil" },
                 { v: "6 áreas", l: "Direito completo" },
                 { v: "Extrajudicial", l: "Sem processo judicial" },
               ].map((t) => (
@@ -1273,7 +1273,7 @@ export default function EduardoLimaPropPage() {
               </p>
               <p className="manifesto-text">
                 Muitas pessoas chegam sem saber exatamente o que pode ser feito
-                pela situação delas. O trabalho começa exatamente aí — ouvir,
+                pela situação delas. O trabalho começa exatamente aí, ouvir,
                 entender o problema e apresentar um caminho claro e resolutivo.
                 Trabalhista, cível, família, previdenciário, penal ou extrajudicial:
                 cada caso recebe atenção e dedicação desde o primeiro contato.
@@ -1316,7 +1316,7 @@ export default function EduardoLimaPropPage() {
                       href={`${WA_BASE}${encodeURIComponent(msg)}`}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label={`${cta} — falar com Eduardo pelo WhatsApp (abre em nova aba)`}
+                      aria-label={`${cta}, falar com Eduardo pelo WhatsApp (abre em nova aba)`}
                     >
                       <WaIcon size={13} /> {cta}
                       <span className="sr-only"> (abre em nova aba)</span>
@@ -1336,7 +1336,7 @@ export default function EduardoLimaPropPage() {
               <h2 className="sec-h2 on-light">Presencial ou online.<br />Você escolhe.</h2>
               <p className="sec-lead on-light">
                 Eduardo Lima atende de forma presencial em Juiz de Fora e Lima Duarte/MG
-                e também realiza consultas remotas para quem não pode comparecer ao escritório.
+                e também realiza consultas remotas para o Brasil todo.
               </p>
             </div>
             <div className="atend-grid">
@@ -1353,7 +1353,7 @@ export default function EduardoLimaPropPage() {
                   <div className="atend-row">
                     <MapPin size={16} className="atend-row-icon" aria-hidden="true" />
                     <div className="atend-row-text">
-                      <strong>Juiz de Fora — MG</strong>
+                      <strong>Juiz de Fora, MG</strong>
                       <span>
                         Rua Humberto Valério, 188<br />
                         Bairro Progresso · CEP 36050-280
@@ -1363,7 +1363,7 @@ export default function EduardoLimaPropPage() {
                   <div className="atend-row">
                     <MapPin size={16} className="atend-row-icon" aria-hidden="true" />
                     <div className="atend-row-text">
-                      <strong>Lima Duarte — MG</strong>
+                      <strong>Lima Duarte, MG</strong>
                       <span>Atendimento presencial também disponível na cidade.</span>
                     </div>
                   </div>
@@ -1402,7 +1402,7 @@ export default function EduardoLimaPropPage() {
             <div className="map-wrap" data-anim="up" data-delay="2">
               <iframe
                 src="https://maps.google.com/maps?q=Rua+Humberto+Val%C3%A9rio,+188,+Bairro+Progresso,+Juiz+de+Fora,+MG,+36050-280,+Brazil&output=embed&z=17&hl=pt-BR"
-                title="Localização do escritório Eduardo Lima — Rua Humberto Valério, 188, Bairro Progresso, Juiz de Fora/MG"
+                title="Localização do escritório Eduardo Lima, Rua Humberto Valério, 188, Bairro Progresso, Juiz de Fora/MG"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -1478,7 +1478,7 @@ export default function EduardoLimaPropPage() {
                 <h3 className="sobre-name">Eduardo Lima</h3>
                 <span className="sobre-role">Advogado</span>
                 <span className="sobre-oab">
-                  OAB/MG 246.863 · Faculdade Doctum — Juiz de Fora/MG
+                  OAB/MG 246.863 · Faculdade Doctum, Juiz de Fora/MG
                 </span>
                 <p>
                   Formado em Direito pela Faculdade Doctum de Juiz de Fora,
@@ -1487,7 +1487,7 @@ export default function EduardoLimaPropPage() {
                 </p>
                 <p>
                   Acredita que cada pessoa que chega com uma dúvida jurídica
-                  merece uma resposta clara, honesta e acessível — sem jargão,
+                  merece uma resposta clara, honesta e acessível, sem jargão,
                   sem enrolação. O objetivo é sempre o mesmo: entender a
                   situação real e encontrar o caminho mais eficiente para
                   resolver.
@@ -1515,7 +1515,7 @@ export default function EduardoLimaPropPage() {
               <h2 className="sec-h2 on-light">Perguntas frequentes.</h2>
               <p className="sec-lead on-light">
                 Respostas diretas sobre como funciona o atendimento em Juiz de Fora,
-                Lima Duarte e de forma remota.
+                Lima Duarte e no Brasil todo.
               </p>
             </div>
             <div className="faq-list" data-anim="up" data-delay="1">
@@ -1607,7 +1607,7 @@ export default function EduardoLimaPropPage() {
                 <span className="footer-role">Consultoria Jurídica e Advocacia</span>
                 <span className="footer-oab">OAB/MG 246.863</span>
                 <p>
-                  Atendimento presencial em Juiz de Fora e Lima Duarte/MG nas
+                  Atendimento presencial em Juiz de Fora e Lima Duarte/MG, e remoto para o Brasil todo, nas
                   áreas de Trabalhista, Cível, Família, Previdenciário, Penal
                   e Advocacia Extrajudicial.
                 </p>

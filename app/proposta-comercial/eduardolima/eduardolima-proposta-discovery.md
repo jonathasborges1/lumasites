@@ -65,7 +65,7 @@ Membro desde: **novembro de 2020**
 | Formação            | Faculdade Doctum — Juiz de Fora/MG                                                                  |
 | Tempo de atuação    | 6 meses (início de carreira — 2025/2026)                                                             |
 | Localização         | Juiz de Fora/MG e Lima Duarte/MG — atendimento presencial                                           |
-| Especialidades      | Trabalhista, Cível, Família, Previdenciário (BPC · Auxílio Acidente · Salário Maternidade), Penal (tráfico · Maria da Penha · menor potencial ofensivo), Advocacia Extrajudicial |
+| Especialidades      | Trabalhista, Cível, Família, Previdenciário (BPC · auxílio-acidente · salário-maternidade), Penal (tráfico · Maria da Penha · menor potencial ofensivo), Advocacia Extrajudicial |
 | Nome do escritório  | Eduardo Lima, Consultoria Jurídica e Advocacia                                                       |
 | OAB                 | OAB/MG 246.863                                                                                       |
 | Endereço físico     | Rua Humberto Valério, 188 — Bairro Progresso, Juiz de Fora/MG — CEP 36050-280                       |
@@ -83,7 +83,7 @@ As especialidades foram confirmadas diretamente pelo cliente com nível de detal
 - **Trabalhista**: rescisão, horas extras, verbas trabalhistas
 - **Cível**: demandas cíveis em geral
 - **Família**: divórcio, guarda, alimentos, questões familiares
-- **Previdenciário**: BPC (Benefício de Prestação Continuada), Auxílio Acidente, Salário Maternidade
+- **Previdenciário**: BPC (Benefício de Prestação Continuada), auxílio-acidente, salário-maternidade
 - **Penal**: crimes de tráfico, Lei Maria da Penha, infrações de menor potencial ofensivo
 - **Advocacia Extrajudicial**: contratos, notificações, acordos sem processo judicial
 

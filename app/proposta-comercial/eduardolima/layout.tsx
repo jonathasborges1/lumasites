@@ -17,15 +17,15 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Eduardo Lima | Advogado — Consultoria Jurídica e Advocacia",
+  title: "Eduardo Lima | Advogado, Consultoria Jurídica e Advocacia",
   description:
-    "Advogado em Juiz de Fora e Lima Duarte/MG. Atendimento em Direito Trabalhista, Cível, Família, Previdenciário (BPC, Auxílio Acidente, Salário Maternidade), Penal e Advocacia Extrajudicial. OAB/MG 246.863.",
+    "Advogado em Juiz de Fora, Lima Duarte/MG e no Brasil todo. Atendimento em Direito Trabalhista, Cível, Família, Previdenciário (BPC, auxílio-acidente, salário-maternidade), Penal e Advocacia Extrajudicial. OAB/MG 246.863.",
   keywords:
     "advogado Juiz de Fora, advogado Lima Duarte, advogado trabalhista Juiz de Fora, advogado cível Juiz de Fora, advogado família Juiz de Fora, advogado previdenciário, BPC advogado, advogado penal Juiz de Fora, consultoria jurídica Juiz de Fora, Eduardo Lima advogado OAB/MG 246.863",
   openGraph: {
-    title: "Eduardo Lima | Advogado — Consultoria Jurídica e Advocacia",
+    title: "Eduardo Lima | Advogado, Consultoria Jurídica e Advocacia",
     description:
-      "Advogado em Juiz de Fora/MG. Trabalhista, Cível, Família, Previdenciário, Penal e Extrajudicial. OAB/MG 246.863.",
+      "Advogado em Juiz de Fora, Lima Duarte/MG e no Brasil todo. Trabalhista, Cível, Família, Previdenciário, Penal e Extrajudicial. OAB/MG 246.863.",
     locale: "pt_BR",
     type: "website",
     images: [
@@ -33,15 +33,15 @@ export const metadata: Metadata = {
         url: "/images/eduardolima/eduardo-lima-advogado-juiz-de-fora-hero.jpeg",
         width: 853,
         height: 1280,
-        alt: "Eduardo Lima — Advogado em Juiz de Fora/MG",
+        alt: "Eduardo Lima, Advogado em Juiz de Fora/MG",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eduardo Lima | Advogado — Consultoria Jurídica e Advocacia",
+    title: "Eduardo Lima | Advogado, Consultoria Jurídica e Advocacia",
     description:
-      "Advogado em Juiz de Fora/MG. Trabalhista, Cível, Família, Previdenciário, Penal e Extrajudicial. OAB/MG 246.863.",
+      "Advogado em Juiz de Fora, Lima Duarte/MG e no Brasil todo. Trabalhista, Cível, Família, Previdenciário, Penal e Extrajudicial. OAB/MG 246.863.",
     images: ["/images/eduardolima/eduardo-lima-advogado-juiz-de-fora-hero.jpeg"],
   },
 };
