@@ -8,6 +8,11 @@ const INITIAL_MIN_MS = 200;
 const ROUTE_SHOW_DELAY_MS = 140;
 const NAV_MIN_MS = 180;
 const ROUTE_FAILSAFE_MS = 2500;
+const proposalDetailPath = /^\/proposta-comercial\/[^/]+\/?$/;
+
+function isProposalDetailPath(pathname: string) {
+  return proposalDetailPath.test(pathname);
+}
 
 export function GlobalLoadingOverlay() {
   const [visible, setVisible] = useState(true);
@@ -17,6 +22,8 @@ export function GlobalLoadingOverlay() {
   const bootHandledRef = useRef(false);
   const hideTimerRef = useRef<number | null>(null);
   const routeShowTimerRef = useRef<number | null>(null);
+  const settledRef = useRef(false);
+  const waitForSettledRef = useRef(false);
 
   const hideWithMinimum = (minimumMs: number) => {
     const elapsed = Date.now() - startedAtRef.current;
@@ -27,8 +34,12 @@ export function GlobalLoadingOverlay() {
     }
 
     hideTimerRef.current = window.setTimeout(() => {
-      setVisible(false);
       hideTimerRef.current = null;
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          setVisible(false);
+        });
+      });
     }, remaining);
   };
 
@@ -73,6 +84,8 @@ export function GlobalLoadingOverlay() {
       if (!isRouteChange) return;
 
       startedAtRef.current = Date.now();
+      settledRef.current = false;
+      waitForSettledRef.current = isProposalDetailPath(nextUrl.pathname);
 
       if (hideTimerRef.current) {
         window.clearTimeout(hideTimerRef.current);
@@ -94,6 +107,20 @@ export function GlobalLoadingOverlay() {
     return () => document.removeEventListener("click", handleClick, true);
   }, []);
 
+  // Listen for PageTransition signal that the new page content has been painted.
+  // This fires after React commits the new page to the DOM, which is after
+  // usePathname() updates — avoiding the flash of the old page content.
+  useEffect(() => {
+    const handleSettled = () => {
+      settledRef.current = true;
+      waitForSettledRef.current = false;
+      hideWithMinimum(NAV_MIN_MS);
+    };
+
+    window.addEventListener("navigation-settled", handleSettled);
+    return () => window.removeEventListener("navigation-settled", handleSettled);
+  }, []);
+
   useEffect(() => {
     if (!bootHandledRef.current) return;
 
@@ -102,11 +129,19 @@ export function GlobalLoadingOverlay() {
       routeShowTimerRef.current = null;
     }
 
+    // Proposal pages can be large client bundles. During navigation, Next may
+    // update the pathname before the new proposal has painted, so keep the
+    // overlay up until PageTransition confirms the destination committed.
+    if (mode === "route" && waitForSettledRef.current && !settledRef.current) {
+      return;
+    }
+
     hideWithMinimum(mode === "boot" ? INITIAL_MIN_MS : NAV_MIN_MS);
   }, [pathname]);
 
   useEffect(() => {
     if (!visible || mode !== "route") return;
+    if (waitForSettledRef.current && !settledRef.current) return;
 
     const failsafe = window.setTimeout(() => {
       setVisible(false);

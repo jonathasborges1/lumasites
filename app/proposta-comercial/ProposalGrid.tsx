@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { ArrowUpDown, ChevronRight, MapPin, Search, X, Zap } from "lucide-react";
 import { LandingHeader } from "@/components/LandingHeader";
 import { LandingFooter } from "@/components/LandingFooter";
@@ -180,7 +181,7 @@ function ProposalCard({
   );
 
   return (
-    <a
+    <Link
       href={`/proposta-comercial/${p.slug}`}
       aria-label={`Abrir prévia conceitual de ${p.clientName}`}
       className="group relative flex min-h-[286px] flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] shadow-[0_18px_70px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-white/[0.24] hover:bg-white/[0.065] hover:shadow-[0_24px_90px_rgba(0,0,0,0.34)]"
@@ -252,7 +253,7 @@ function ProposalCard({
           </span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 

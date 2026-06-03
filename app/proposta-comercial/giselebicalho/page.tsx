@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowLeft,
   ChevronRight,
@@ -1163,14 +1164,14 @@ export default function GiseleBicalhoPropPage() {
 
       {/* PREVIEW BAR */}
       <div className="pre-bar" role="note" aria-label="Aviso de proposta">
-        <a
+        <Link
           className="pre-back"
-          href="/proposta-comercial/"
+          href="/proposta-comercial"
           aria-label="Voltar para propostas comerciais"
         >
           <ArrowLeft size={16} aria-hidden="true" />
           <span>Voltar</span>
-        </a>
+        </Link>
         <div className="pre-line">
           <span className="pre-dot" aria-hidden="true" />
           Prévia Conceitual

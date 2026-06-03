@@ -1,33 +1,31 @@
 "use client";
 
 import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const proposalPath = /^\/proposta-comercial\/[^/]+\/?$/;
+const proposalPath = /^\/proposta-comercial\/[^/]+$/;
 
 export function ProposalBackLink() {
   const pathname = usePathname();
   const normalizedPathname = pathname.replace(/\/$/, "");
 
-  if (
-    !proposalPath.test(pathname) ||
-    normalizedPathname === "/proposta-comercial/giselebicalho"
-  ) {
+  if (!proposalPath.test(normalizedPathname)) {
     return null;
   }
 
   return (
     <>
-      <a
+      <Link
         className="proposal-back-link"
         href="/proposta-comercial/"
-        aria-label="Voltar para propostas comerciais"
+        aria-label="Voltar para a listagem de propostas comerciais"
       >
         <ArrowLeft size={18} aria-hidden="true" />
         <span>Voltar</span>
-      </a>
+      </Link>
       <style jsx>{`
-        .proposal-back-link {
+        :global(.proposal-back-link) {
           position: fixed;
           z-index: 2147483640;
           top: max(8px, env(safe-area-inset-top));
@@ -57,23 +55,23 @@ export function ProposalBackLink() {
             transform 0.2s ease;
         }
 
-        .proposal-back-link:hover {
+        :global(.proposal-back-link:hover) {
           background: rgba(10, 14, 26, 0.98);
           transform: translateY(-1px);
         }
 
-        .proposal-back-link:focus-visible {
+        :global(.proposal-back-link:focus-visible) {
           outline: 3px solid #fff;
           outline-offset: 3px;
         }
 
         @media (max-width: 640px) {
-          .proposal-back-link {
+          :global(.proposal-back-link) {
             width: 44px;
             padding: 0;
           }
 
-          .proposal-back-link span {
+          :global(.proposal-back-link span) {
             position: absolute;
             width: 1px;
             height: 1px;
