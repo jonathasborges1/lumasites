@@ -13,6 +13,16 @@ const nextConfig = {
   },
   images: {
     unoptimized: process.env.NODE_ENV === "development",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+      },
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
+      },
+    ],
   },
 
   async redirects() {
