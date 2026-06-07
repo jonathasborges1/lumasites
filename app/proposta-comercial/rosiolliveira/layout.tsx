@@ -12,6 +12,21 @@ export const metadata: Metadata = {
       "Transformamos números em decisões estratégicas. Ajudamos empresários a crescer com segurança e inteligência financeira.",
     locale: "pt_BR",
     type: "website",
+    images: [
+      {
+        url: "/images/rosiolliveira/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Olliveira & Contadoras Associadas — contabilidade que impulsiona decisões",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Olliveira & Contadoras Associadas | Estratégia que gera legado",
+    description:
+      "Transformamos números em decisões estratégicas. Ajudamos empresários a crescer com segurança e inteligência financeira.",
+    images: ["/images/rosiolliveira/og-image.jpg"],
   },
 };
 
