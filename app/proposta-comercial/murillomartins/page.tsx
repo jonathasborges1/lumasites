@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Activity,
   ArrowRight,
@@ -45,8 +45,8 @@ const FB_URL = "https://www.facebook.com/dr.murillomartins";
 
 const imgs = {
   logo:        "/images/murillomartins/logo-dr-murillo-martins.jpg",
-  retrato:     "/images/murillomartins/dr-murillo-martins-retrato-sem-texto-4x5.png",
-  consultorio: "/images/murillomartins/dr-murillo-martins-consultorio-sem-texto.png",
+  retrato:     "/images/murillomartins/dr-murillo-martins-retrato-sem-texto-4x5.jpg",
+  consultorio: "/images/murillomartins/dr-murillo-martins-consultorio-sem-texto.jpg",
   fachada:     "/images/murillomartins/fachada-consultorio-imbituba.jpg",
 };
 
@@ -950,12 +950,12 @@ const css = `
   .mrm-galeria-videos::-webkit-scrollbar { height: 4px }
   .mrm-galeria-videos::-webkit-scrollbar-thumb { background: rgba(184,162,112,.4); border-radius: 2px }
   .mrm-galeria-video {
-    flex: none; width: 220px; border-radius: 10px; overflow: hidden;
+    flex: none; width: 220px; aspect-ratio: 9/16; border-radius: 10px; overflow: hidden;
     background: #1E2730;
     box-shadow: 0 10px 30px rgba(0,0,0,.36);
   }
   .mrm-galeria-video video {
-    width: 100%; aspect-ratio: 9/16; object-fit: cover; display: block;
+    width: 100%; height: 100%; object-fit: cover; display: block;
   }
   .mrm-galeria-note {
     margin-top: 22px; text-align: center;
@@ -1114,7 +1114,7 @@ function Navbar() {
         <div className="mrm-wrap mrm-nav-inner">
           <a className="mrm-brand" href="#top" onClick={close}>
             <span className="mrm-brand-mark">
-              <img src={imgs.logo} alt="Logo Dr. Murillo Martins" />
+              <img src={imgs.logo} alt="Logo Dr. Murillo Martins" width={320} height={320} />
             </span>
             <span>
               <strong>Dr. Murillo Martins</strong>
@@ -1220,6 +1220,10 @@ function Hero() {
               className="mrm-doctor-photo"
               src={imgs.retrato}
               alt="Dr. Murillo Martins — Cirurgião-Dentista"
+              width={640}
+              height={800}
+              decoding="async"
+              fetchPriority="high"
             />
             <div className="mrm-doctor-meta">
               <strong>Dr. Murillo Martins</strong>
@@ -1310,6 +1314,10 @@ function About() {
           <img
             src={imgs.consultorio}
             alt="Dr. Murillo Martins no consultório — Imbituba SC"
+            width={640}
+            height={1136}
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
@@ -1480,6 +1488,46 @@ function Testimonials() {
   );
 }
 
+function LazyGalleryVideo({ src, label }: { src: string; label: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node || active) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setActive(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "420px 0px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [active]);
+
+  return (
+    <div className="mrm-galeria-video" ref={ref}>
+      {active && (
+        <video
+          src={src}
+          muted
+          autoPlay
+          loop
+          playsInline
+          preload="metadata"
+          controls={false}
+          aria-label={label}
+        />
+      )}
+    </div>
+  );
+}
+
 function Gallery() {
   return (
     <section className="mrm-section mrm-galeria">
@@ -1497,24 +1545,21 @@ function Gallery() {
               key={src}
               src={src}
               alt={`Registro do consultório Dr. Murillo Martins — foto ${i + 1}`}
+              width={320}
+              height={569}
               loading="lazy"
+              decoding="async"
             />
           ))}
         </div>
 
         <div className="mrm-galeria-videos">
           {galeriaVideos.map((src, i) => (
-            <div className="mrm-galeria-video" key={src}>
-              <video
-                src={src}
-                muted
-                autoPlay
-                loop
-                playsInline
-                controls={false}
-                aria-label={`Vídeo ${i + 1} — consultório Dr. Murillo Martins`}
-              />
-            </div>
+            <LazyGalleryVideo
+              key={src}
+              src={src}
+              label={`Vídeo ${i + 1} — consultório Dr. Murillo Martins`}
+            />
           ))}
         </div>
 
@@ -1562,6 +1607,10 @@ function Location() {
           <img
             src={imgs.fachada}
             alt="Fachada do Consultório Dr. Murillo Martins em Imbituba SC"
+            width={640}
+            height={800}
+            loading="lazy"
+            decoding="async"
             style={{ width: "100%", borderRadius: 12, marginBottom: 16, objectFit: "cover", maxHeight: 220 }}
           />
           <div className="mrm-map">
@@ -1668,7 +1717,7 @@ function Footer() {
           <div>
             <a href="#top" className="mrm-footer-brand">
               <span className="mrm-footer-logo">
-                <img src={imgs.logo} alt="Logo Dr. Murillo Martins" />
+                <img src={imgs.logo} alt="Logo Dr. Murillo Martins" width={320} height={320} />
               </span>
               <span className="mrm-footer-brand-text">
                 <strong>Dr. Murillo Martins</strong>
