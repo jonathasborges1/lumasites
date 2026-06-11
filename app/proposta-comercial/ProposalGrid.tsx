@@ -313,17 +313,17 @@ export function ProposalGrid({ proposals }: { proposals: ProposalWithSlug[] }) {
 
   /* derive unique categories with counts (always against full list) */
   const categories = useMemo(() => {
-    const map = new Map<string, { color: string; count: number }>();
+    const map = new Map<string, { name: string; color: string; count: number }>();
     for (const p of proposals) {
-      const existing = map.get(p.category);
+      const key = normalize(p.category);
+      const existing = map.get(key);
       if (existing) {
         existing.count++;
       } else {
-        map.set(p.category, { color: p.categoryColor, count: 1 });
+        map.set(key, { name: p.category, color: p.categoryColor, count: 1 });
       }
     }
-    return Array.from(map.entries())
-      .map(([name, data]) => ({ name, ...data }))
+    return Array.from(map.values())
       .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, "pt-BR"));
   }, [proposals]);
 
