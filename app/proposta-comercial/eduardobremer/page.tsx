@@ -29,9 +29,11 @@ const IG = "https://www.instagram.com/ehbremer.adv/";
 
 const IMG = {
   hero: "/images/eduardobremer/eduardo-bremer-advogado-08.jpg",
-  sobre: "/images/eduardobremer/eduardo-bremer-advogado-12.jpg",
+  sobre: "/images/eduardobremer/instagram-feed-selected/eduardo-bremer-feed-retrato-formal-05.jpg",
   portrait: "/images/eduardobremer/instagram-feed-selected/eduardo-bremer-feed-retrato-formal-05.jpg",
   logoTransparent: "/images/eduardobremer/eduardo-bremer-logo-gold-transparent.png",
+  logoHorizontal: "/images/eduardobremer/eduardo-bremer-logo-horizontal-gold.png",
+  atuacoes: "/images/eduardobremer/eduardo-bremer-advogado-lateral-limpo.png",
   fgts: "/images/eduardobremer/instagram-feed-selected/eduardo-bremer-feed-deposito-fgts-07.jpg",
   reuniao: "/images/eduardobremer/instagram-feed-selected/eduardo-bremer-feed-reuniao-advocacia-21.jpg",
 };
@@ -44,10 +46,10 @@ const nav = [
 ];
 
 const areas = [
-  { Icon: Shield, title: "Criminal", text: "Defesa, acompanhamento e orientação em situações criminais que exigem estratégia e discrição." },
-  { Icon: FileText, title: "Cível", text: "Demandas envolvendo contratos, responsabilidades, conflitos patrimoniais e relações do dia a dia." },
-  { Icon: BriefcaseBusiness, title: "Trabalhista", text: "FGTS, verbas rescisórias, vínculo, jornada, assédio e demais direitos de trabalhadores." },
-  { Icon: Landmark, title: "Previdenciário", text: "Análise de benefícios, revisões e demandas previdenciárias com clareza documental." },
+  { Icon: Shield, title: "Penal", text: "Tribunal do júri, execução penal, atuação estratégica em inquéritos e audiências." },
+  { Icon: FileText, title: "Direito Civil", text: "Direito das famílias, sucessões, curatela, responsabilidade civil, direito possessório, divórcio." },
+  { Icon: BriefcaseBusiness, title: "Trabalhista", text: "Atuação na defesa dos direitos dos trabalhadores, abrangendo reconhecimento de vínculo empregatício, verbas rescisórias, horas extras, indenizações, assédio moral, acidentes de trabalho, reversão de justa causa e demais demandas perante a Justiça do Trabalho." },
+  { Icon: Landmark, title: "Previdenciário", text: "Aposentadorias (idade, tempo de contribuição, especial e invalidez), revisão de benefícios, BPC/LOAS, auxílio-doença, auxílio-acidente, auxílio-reclusão, pensão por morte, análise de CNIS, regularização de vínculos, requerimentos no INSS e ações judiciais previdenciárias." },
 ];
 
 const process = [
@@ -83,12 +85,12 @@ const css = `
   img{max-width:100%;display:block}
   a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
   :root{
-    --navy:#070707;--navy2:#171717;--ink:#050505;--gold:#D6A933;
-    --gold2:#B8891F;--paper:#F7F4EC;--white:#fff;--muted:#7B8493;
+    --navy:#0E0E0E;--navy2:#171717;--ink:#050505;--gold:#C9A24A;
+    --gold2:#B8891F;--paper:#F4ECE6;--white:#fff;--muted:#7B8493;
     --line:rgba(255,255,255,.14);--line2:rgba(5,5,5,.12);--top:52px;--nav:74px;
   }
   section[id]{scroll-margin-top:calc(var(--top) + var(--nav) + 18px)}
-  .eb{min-height:100vh;background:var(--paper);font-family:var(--eb-body),Montserrat,system-ui,sans-serif;color:var(--ink);overflow-x:clip}
+  .eb{min-height:100vh;background:var(--paper);font-family:'Calibri','Calibri Body',Candara,Optima,sans-serif;color:var(--ink);overflow-x:clip}
   .wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
   .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 
@@ -98,6 +100,8 @@ const css = `
   .topbarDot{width:6px;height:6px;border-radius:999px;background:var(--gold);flex:none}
   .topbarText strong{color:#fff;font-weight:800}
   .topbarSub{text-transform:none;letter-spacing:.04em}
+  .topbarSub a{color:#22d3ee;font-weight:800;text-decoration:none}
+  .topbarSub a:hover{color:var(--gold)}
   .topbarSep{color:rgba(255,255,255,.28)}
   .back{position:absolute;left:12px;display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 10px;border-radius:6px;color:rgba(255,255,255,.62)}
   .back:hover{background:rgba(255,255,255,.08);color:#fff}
@@ -106,8 +110,8 @@ const css = `
   .nav{position:fixed;z-index:59;inset:var(--top) 0 auto;height:var(--nav);transition:.25s background,.25s box-shadow}
   .nav.on{background:rgba(5,5,5,.96);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
   .navin{height:100%;display:flex;align-items:center;justify-content:space-between;gap:22px;width:min(1180px,calc(100% - 40px));margin:0 auto}
-  .brand{display:flex;align-items:center;gap:10px;color:#fff;min-width:220px}
-  .brandLogo{position:relative;width:88px;height:50px;flex:none}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff;min-width:300px}
+  .brandLogo{position:relative;width:214px;height:54px;flex:none}
   .brandLogo img{object-fit:contain;object-position:left center}
   .brandMeta{display:flex;flex-direction:column;gap:3px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55);white-space:nowrap;line-height:1.25}
   .links{display:flex;align-items:center;gap:24px}
@@ -139,7 +143,7 @@ const css = `
   .heroCopy{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:54px 6vw 58px max(40px,calc((100vw - 1180px)/2 + 20px))}
   .eyebrow,.label{display:inline-flex;align-items:center;gap:12px;width:max-content;max-width:100%;color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;margin-bottom:18px}
   .eyebrow::before,.label::before{content:"";height:1px;background:var(--gold);width:28px;flex:none}
-  h1{font-family:var(--eb-heading),Georgia,serif;font-size:clamp(48px,6vw,92px);line-height:.94;font-weight:600;letter-spacing:0;margin:26px 0 0;max-width:770px}
+  h1{font-family:'Calibri','Calibri Body',Candara,Optima,sans-serif;font-size:clamp(48px,6vw,92px);line-height:.94;font-weight:600;letter-spacing:0;margin:26px 0 0;max-width:770px}
   h1 em{font-style:italic;color:var(--gold)}
   .heroLead{max-width:560px;margin:22px 0 0;color:rgba(255,255,255,.75);font-size:16px;line-height:1.75}
   .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
@@ -154,7 +158,7 @@ const css = `
   .heroCred{display:flex;flex-direction:column;gap:5px;padding:0 22px}
   .heroCred:first-child{padding-left:0}
   .heroCred:not(:last-child){border-right:1px solid rgba(255,255,255,.12)}
-  .heroCred strong{color:#fff;font-size:14px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+  .heroCred strong{color:#fff;font-size:15px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
   .heroCred span{color:rgba(255,255,255,.42);font-size:10px;text-transform:uppercase;letter-spacing:.13em;white-space:nowrap}
 
   /* sections */
@@ -162,7 +166,7 @@ const css = `
   .dark{background:#070707;color:#fff}
   .blue{background:#171717;color:#fff}
   .paper{background:var(--paper)}
-  .title{font-family:var(--eb-heading),Georgia,serif;font-size:clamp(36px,4.6vw,66px);line-height:1.02;font-weight:600;margin:0;letter-spacing:0}
+  .title{font-family:'Calibri','Calibri Body',Candara,Optima,sans-serif;font-size:clamp(36px,4.6vw,66px);line-height:1.02;font-weight:600;margin:0;letter-spacing:0}
   .lead{max-width:640px;margin:20px 0 0;font-size:16px;line-height:1.85;color:rgba(7,20,38,.68)}
   .dark .lead,.blue .lead{color:rgba(255,255,255,.68)}
   .sectionHead{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.58fr);gap:32px;align-items:end;margin-bottom:32px}
@@ -172,19 +176,25 @@ const css = `
 
   /* manifest */
   .manifest{display:grid;grid-template-columns:.82fr 1.18fr;gap:34px;align-items:center}
-  .manifestQuote{font-family:var(--eb-heading),Georgia,serif;font-size:clamp(36px,5vw,76px);line-height:.98;margin:0;color:#050505}
+  .manifestQuote{font-family:'Calibri','Calibri Body',Candara,Optima,sans-serif;font-size:clamp(36px,5vw,76px);line-height:.98;margin:0;color:#050505}
   .manifestQuote em{color:var(--gold);font-style:italic}
   .manifestPanel{border-left:2px solid var(--gold);padding-left:28px}
   .manifestPanel p{font-size:16px;line-height:1.9;color:#4B5563;margin:0}
 
+  /* especialidades */
+  .especialidadesWrap{display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,1fr);gap:0;align-items:stretch}
+  .especialidadesPhoto{position:relative;min-height:620px;overflow:hidden;background:#0a0a0a}
+  .especialidadesPhoto img{object-fit:cover;object-position:center top}
+  .especialidadesContent{padding-left:52px;display:flex;flex-direction:column;justify-content:center}
+  .especialidadesPhotoMobile{display:none}
   /* areas */
-  .areaGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.1)}
+  .areaGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.1)}
   .area{min-height:274px;background:#070707;padding:24px;display:flex;flex-direction:column;transition:.3s background,.3s transform,.3s border-color;border:1px solid transparent}
   .area:hover{background:#171717;transform:translateY(-4px);border-color:rgba(214,169,51,.55)}
   .areaIcon{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(214,169,51,.45);color:var(--gold);margin-bottom:28px;transition:.3s border-color}
   .area:hover .areaIcon{border-color:rgba(214,169,51,.9)}
-  .area h3{font-family:var(--eb-heading),Georgia,serif;font-size:30px;font-weight:600;margin:0;color:#fff}
-  .area p{margin:14px 0 0;color:rgba(255,255,255,.66);font-size:14px;line-height:1.7}
+  .area h3{font-family:'Calibri','Calibri Body',Candara,Optima,sans-serif;font-size:24px;font-weight:600;margin:0;color:#fff}
+  .area p{margin:14px 0 0;color:rgba(255,255,255,.66);font-size:15px;line-height:1.7}
   .area a{margin-top:auto;color:var(--gold);display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800}
 
   /* presence */
@@ -203,16 +213,16 @@ const css = `
   .insights{display:grid;gap:14px;margin-top:26px}
   .insight{display:flex;gap:14px;align-items:flex-start;border-top:1px solid rgba(7,20,38,.12);padding-top:16px;opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
   .insight svg{color:var(--gold);flex:none}
-  .insight strong{display:block;font-size:14px}
+  .insight strong{display:block;font-size:15px}
   .insight span{display:block;margin-top:4px;color:#667085;font-size:13px;line-height:1.55}
 
   /* process */
   .processGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:30px}
   .step{background:#171717;padding:26px;min-height:220px;transition:.25s background}
   .step:hover{background:#1e1e1e}
-  .stepNum{font-family:var(--eb-heading),Georgia,serif;color:var(--gold);font-size:54px;line-height:1}
-  .step h3{font-size:18px;margin:26px 0 0}
-  .step p{font-size:14px;line-height:1.75;color:rgba(255,255,255,.66);margin:12px 0 0}
+  .stepNum{font-family:'Calibri','Calibri Body',Candara,Optima,sans-serif;color:var(--gold);font-size:54px;line-height:1}
+  .step h3{font-size:20px;margin:26px 0 0}
+  .step p{font-size:15px;line-height:1.75;color:rgba(255,255,255,.66);margin:12px 0 0}
 
   /* about */
   .about{display:grid;grid-template-columns:1fr 1.1fr;gap:0;align-items:stretch}
@@ -221,6 +231,11 @@ const css = `
   .aboutContent{padding:56px 52px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid rgba(214,169,51,.18)}
   .aboutContent .title{color:#fff}
   .bio{margin-top:18px;color:rgba(255,255,255,.65);font-size:15px;line-height:1.85}
+  .formation{margin-top:24px}
+  .formationLabel{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--gold);margin-bottom:10px}
+  .formationList{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+  .formationList li{color:rgba(255,255,255,.6);font-size:13px;line-height:1.6;padding-left:14px;position:relative}
+  .formationList li::before{content:"—";position:absolute;left:0;color:rgba(214,169,51,.5)}
   .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
   .tag{border:1px solid rgba(214,169,51,.28);padding:7px 13px;border-radius:4px;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:rgba(255,255,255,.6);background:transparent;transition:.25s border-color,.25s color}
   .tag:hover{border-color:var(--gold);color:var(--gold)}
@@ -241,7 +256,7 @@ const css = `
   .mapCard:hover .mapCardOpen{opacity:1;transform:translateY(0)}
   .mapCardInfo{position:absolute;left:0;right:0;bottom:0;padding:24px 28px;z-index:2}
   .mapCardAccent{display:block;width:24px;height:2px;background:var(--gold);margin-bottom:12px}
-  .mapCardCity{display:block;font-family:var(--eb-heading),Georgia,serif;font-size:24px;font-weight:600;color:#fff;line-height:1.1;margin-bottom:6px}
+  .mapCardCity{display:block;font-family:'Calibri','Calibri Body',Candara,Optima,sans-serif;font-size:24px;font-weight:600;color:#fff;line-height:1.1;margin-bottom:6px}
   .mapCardAddr{display:block;color:rgba(255,255,255,.56);font-size:12px;line-height:1.6}
 
   /* final / footer */
@@ -314,8 +329,8 @@ const css = `
   .mapModalBox{position:relative;z-index:1;width:100%;max-width:880px;background:#0d0d0d;border:1px solid rgba(214,169,51,.22);transform:translateY(16px) scale(.98);transition:transform .3s cubic-bezier(.22,1,.36,1)}
   .mapModal.open .mapModalBox{transform:translateY(0) scale(1)}
   .mapModalHead{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid rgba(214,169,51,.14)}
-  .mapModalTitle{font-family:var(--eb-heading),Georgia,serif;font-size:16px;font-weight:600;color:#fff;display:flex;align-items:center;gap:10px}
-  .mapModalTitle span{color:rgba(255,255,255,.4);font-family:var(--eb-body),sans-serif;font-size:12px;font-weight:400}
+  .mapModalTitle{font-family:'Calibri','Calibri Body',Candara,Optima,sans-serif;font-size:16px;font-weight:600;color:#fff;display:flex;align-items:center;gap:10px}
+  .mapModalTitle span{color:rgba(255,255,255,.4);font-family:'Calibri','Calibri Body',Candara,Optima,sans-serif;font-size:12px;font-weight:400}
   .mapModalActions{display:flex;align-items:center;gap:8px}
   .mapModalLink{display:flex;align-items:center;gap:5px;color:var(--gold);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border:1px solid rgba(214,169,51,.3);transition:background .2s}
   .mapModalLink:hover{background:rgba(214,169,51,.1)}
@@ -334,7 +349,13 @@ const css = `
     .links{display:none}.menu{display:grid;place-items:center}
     .hero{grid-template-columns:1fr;min-height:auto}.heroMedia{display:none}.heroCopy{padding:42px 20px 54px}
     .heroStats,.areaGrid,.processGrid,.footerBody{grid-template-columns:1fr}
-    .manifest,.presence,.about{grid-template-columns:1fr}
+    .manifest,.presence,.about,.especialidadesWrap{grid-template-columns:1fr}
+    .especialidadesPhoto{display:none}.especialidadesContent{padding-left:0;padding-top:0}
+    .especialidadesPhotoMobile{display:block;position:relative;width:100%;max-width:420px;aspect-ratio:2/3;margin:24px auto 22px;overflow:hidden;background:#0a0a0a}
+    .especialidadesPhotoMobile img{object-fit:cover;object-position:center top}
+    .areaGrid{gap:2px;background:rgba(255,255,255,.08)}
+    .area{min-height:auto;padding:32px 28px}.areaIcon{margin-bottom:24px}
+    .area h3{margin-bottom:10px}.area p{margin-top:10px;line-height:1.8}.area a{margin-top:24px}
     .locationBar{flex-direction:column}.locationBarItem{justify-content:flex-start;border-right:0!important;border-bottom:1px solid rgba(255,255,255,.1)}.locationBarItem:last-child{border-bottom:0}
     .mapsCards{grid-template-columns:1fr}
     .sectionHead{display:block}.sectionHead .lead{margin-top:18px}
@@ -347,7 +368,7 @@ const css = `
   @media (max-width:560px){
     :root{--top:58px;--nav:68px}
     .topbar{padding:0 70px;text-align:center;font-size:9px}.back span{display:none}
-    .brand{min-width:0}.brandLogo{width:132px;height:44px}.brandMeta{display:none}
+    .brand{min-width:0}.brandLogo{width:168px;height:48px}.brandMeta{display:none}
     .wrap,.navin{width:min(100% - 28px,1180px)}
     h1{font-size:clamp(38px,12vw,48px);line-height:1;max-width:100%}
     .heroLead{font-size:14px;line-height:1.7}
@@ -360,6 +381,8 @@ const css = `
     .mosaic{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.shot::before,.shot.tall::before{aspect-ratio:4/5}.shot.brandLogoShot::before{aspect-ratio:16/10}.presence{gap:28px}
     .aboutPhoto{min-height:360px}.aboutContent{padding:36px 24px;border-left:0;border-top:1px solid rgba(214,169,51,.18)}
     .processGrid{margin-top:24px}.step{min-height:auto}
+    .especialidadesPhotoMobile{max-width:100%;margin:22px auto 20px}
+    .area{padding:28px 22px}.areaIcon{margin-bottom:20px}.area h3{font-size:20px}.area p{font-size:14px;margin-top:10px}.area a{margin-top:20px}
     .desktopOnly{display:none}.mobileOnly{display:inline}
     .sectionHead{margin-bottom:24px}
     .sectionHead .lead{padding-left:0;border-left:0;font-size:14px;line-height:1.7}
@@ -441,7 +464,12 @@ export default function EduardoBremerPage() {
             <span className="topbarDot" aria-hidden="true" />
             <strong>Proposta comercial</strong>
             <span className="topbarSep">·</span>
-            <span className="topbarSub">Prévia conceitual desenvolvida pela LumaSites.com.br</span>
+            <span className="topbarSub">
+              Prévia conceitual desenvolvida pela{" "}
+              <a href="https://lumasites.com.br" target="_blank" rel="noreferrer">
+                lumasites.com.br<span className="sr"> (abre em nova aba)</span>
+              </a>
+            </span>
           </span>
         </div>
 
@@ -449,7 +477,7 @@ export default function EduardoBremerPage() {
           <div className="navin">
             <a className="brand" href="#inicio" aria-label="Ir para o início">
               <span className="brandLogo" aria-hidden="true">
-                <Image src={IMG.logoTransparent} alt="" fill sizes="164px" priority />
+                <Image src={IMG.logoHorizontal} alt="" fill sizes="214px" priority />
               </span>
               <span className="brandMeta">
                 <span>OAB/ES 37.747</span>
@@ -556,8 +584,16 @@ export default function EduardoBremerPage() {
                 Atendimento presencial em Mucuri/BA e Vitória/ES, e online para
                 todo o Brasil.
               </p>
+              <div className="formation">
+                <span className="formationLabel">Formação</span>
+                <ul className="formationList">
+                  <li>Bacharel em Direito — IESFAVI (2014–2018)</li>
+                  <li>Especialista em Direito e Prática Trabalhista / Latu Sensu — Instituto IMADEC (2023)</li>
+                  <li>Pós-graduado em Direito do Trabalho — Faculdade Regional de Filosofia, Ciências e Letras de Candeias Bahia (2024)</li>
+                </ul>
+              </div>
               <div className="tags">
-                {["OAB/ES 37.747", "OAB/BA 83.916", "Criminal", "Cível", "Trabalhista", "Previdenciário"].map((tag) => (
+                {["OAB/ES 37.747", "OAB/BA 83.916", "Professor Universitário", "Criminal", "Cível", "Trabalhista", "Previdenciário"].map((tag) => (
                   <span className="tag" key={tag}>{tag}</span>
                 ))}
               </div>
@@ -567,33 +603,51 @@ export default function EduardoBremerPage() {
 
         {/* ── ESPECIALIDADES ── */}
         <section id="especialidades" className="section dark" aria-label="Especialidades">
-          <div className="wrap">
-            <div className="sectionHead" data-reveal="">
-              <div className="sectionHeadText">
-                <span className="label">Especialidades</span>
-                <h2 className="title">Problemas reais pedem resposta jurídica clara.</h2>
-              </div>
-              <p className="lead">
-                Atuação em áreas que exigem atenção, estratégia e acompanhamento
-                profissional desde o primeiro contato.
-              </p>
+          <div className="wrap especialidadesWrap">
+            <div className="especialidadesPhoto" data-reveal="left">
+              <Image
+                src={IMG.atuacoes}
+                alt="Dr. Eduardo Bremer — áreas de atuação"
+                fill
+                sizes="(max-width: 980px) 100vw, 36vw"
+              />
             </div>
-            <div className="areaGrid">
-              {areas.map(({ Icon, title, text }, i) => (
-                <article
-                  className="area"
-                  key={title}
-                  data-reveal=""
-                  data-delay={String(i * 80)}
-                >
-                  <div className="areaIcon"><Icon size={24} /></div>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                  <a href={WA} target="_blank" rel="noreferrer">
-                    Solicitar orientação <ChevronRight size={14} />
-                  </a>
-                </article>
-              ))}
+            <div className="especialidadesContent">
+              <div className="sectionHead" data-reveal="">
+                <div className="sectionHeadText">
+                  <span className="label">Especialidades</span>
+                  <h2 className="title">Problemas reais pedem resposta jurídica clara.</h2>
+                </div>
+                <p className="lead">
+                  Atuação em áreas que exigem atenção, estratégia e acompanhamento
+                  profissional desde o primeiro contato.
+                </p>
+              </div>
+              <div className="especialidadesPhotoMobile" aria-hidden="true">
+                <Image
+                  src={IMG.atuacoes}
+                  alt=""
+                  fill
+                  sizes="(max-width: 980px) calc(100vw - 28px), 1px"
+                />
+              </div>
+              <div className="areaGrid">
+                {areas.map(({ Icon, title, text }, i) => (
+                  <article
+                    className="area"
+                    key={title}
+                    data-reveal=""
+                    data-delay={String(i * 80)}
+                  >
+                    <div className="areaIcon"><Icon size={24} /></div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                    <a href={WA} target="_blank" rel="noreferrer">
+                      Solicitar orientação <ChevronRight size={14} />
+                    </a>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </section>

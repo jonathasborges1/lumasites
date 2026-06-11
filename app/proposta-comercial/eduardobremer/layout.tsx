@@ -1,20 +1,4 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Montserrat } from "next/font/google";
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--eb-heading",
-  display: "swap",
-});
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--eb-body",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Dr. Eduardo Bremer | Advocacia Criminal, Cível, Trabalhista e Previdenciária",
@@ -50,7 +34,7 @@ export default function EduardoBremerLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`${cormorant.variable} ${montserrat.variable}`}>
+    <div>
       <style>{`[aria-label="Criar meu site com a Luma Sites"]{display:none!important}`}</style>
       {children}
     </div>
