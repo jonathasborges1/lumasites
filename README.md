@@ -22,7 +22,13 @@ npm install
 npm run dev
 ```
 
-Abra http://localhost:3000.
+Abra http://localhost:3001.
+
+Se o servidor local ficar estranho depois de muitas mudanças, rode uma limpeza manual:
+
+```bash
+npm run dev:clean
+```
 
 Build de produção:
 

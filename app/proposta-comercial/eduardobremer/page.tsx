@@ -29,13 +29,17 @@ const IG = "https://www.instagram.com/ehbremer.adv/";
 
 const IMG = {
   hero: "/images/eduardobremer/eduardo-bremer-advogado-08.jpg",
-  sobre: "/images/eduardobremer/instagram-feed-selected/eduardo-bremer-feed-retrato-formal-05.jpg",
-  portrait: "/images/eduardobremer/instagram-feed-selected/eduardo-bremer-feed-retrato-formal-05.jpg",
-  logoTransparent: "/images/eduardobremer/eduardo-bremer-logo-gold-transparent.png",
-  logoHorizontal: "/images/eduardobremer/eduardo-bremer-logo-horizontal-gold.png",
+  sobre: "/images/eduardobremer/instagram-feed/ehbremer-instagram-feed-05.jpg",
+  portrait:
+    "/images/eduardobremer/instagram-feed/ehbremer-instagram-feed-05.jpg",
+  logoTransparent:
+    "/images/eduardobremer/eduardo-bremer-logo-gold-transparent.png",
+  logoHorizontal:
+    "/images/eduardobremer/eduardo-bremer-logo-horizontal-gold.png",
   atuacoes: "/images/eduardobremer/eduardo-bremer-advogado-lateral-limpo.png",
   fgts: "/images/eduardobremer/instagram-feed-selected/eduardo-bremer-feed-deposito-fgts-07.jpg",
-  reuniao: "/images/eduardobremer/instagram-feed-selected/eduardo-bremer-feed-reuniao-advocacia-21.jpg",
+  reuniao:
+    "/images/eduardobremer/instagram-feed-selected/eduardo-bremer-feed-reuniao-advocacia-21.jpg",
 };
 
 const nav = [
@@ -46,21 +50,55 @@ const nav = [
 ];
 
 const areas = [
-  { Icon: Shield, title: "Penal", text: "Tribunal do júri, execução penal, atuação estratégica em inquéritos e audiências." },
-  { Icon: FileText, title: "Direito Civil", text: "Direito das famílias, sucessões, curatela, responsabilidade civil, direito possessório, divórcio." },
-  { Icon: BriefcaseBusiness, title: "Trabalhista", text: "Atuação na defesa dos direitos dos trabalhadores, abrangendo reconhecimento de vínculo empregatício, verbas rescisórias, horas extras, indenizações, assédio moral, acidentes de trabalho, reversão de justa causa e demais demandas perante a Justiça do Trabalho." },
-  { Icon: Landmark, title: "Previdenciário", text: "Aposentadorias (idade, tempo de contribuição, especial e invalidez), revisão de benefícios, BPC/LOAS, auxílio-doença, auxílio-acidente, auxílio-reclusão, pensão por morte, análise de CNIS, regularização de vínculos, requerimentos no INSS e ações judiciais previdenciárias." },
+  {
+    Icon: Shield,
+    title: "Penal",
+    text: "Tribunal do júri, execução penal e atuação estratégica em inquéritos e audiências.",
+  },
+  {
+    Icon: FileText,
+    title: "Direito Civil",
+    text: "Direito das famílias, sucessões, curatela, responsabilidade civil, direito possessório e divórcio.",
+  },
+  {
+    Icon: BriefcaseBusiness,
+    title: "Trabalhista",
+    text: "Atuação na defesa dos direitos dos trabalhadores, abrangendo reconhecimento de vínculo empregatício, verbas rescisórias, horas extras, indenizações, assédio moral, acidentes de trabalho, reversão de justa causa e demais demandas perante a Justiça do Trabalho.",
+  },
+  {
+    Icon: Landmark,
+    title: "Previdenciário",
+    text: "Aposentadorias (idade, tempo de contribuição, especial e invalidez), revisão de benefícios, BPC/LOAS, auxílio-doença, auxílio-acidente, auxílio-reclusão, pensão por morte, análise de CNIS, regularização de vínculos, requerimentos no INSS e ações judiciais previdenciárias.",
+  },
 ];
 
 const process = [
-  ["01", "Primeiro contato", "Você entra em contato pelo WhatsApp e relata sua situação com clareza e segurança."],
-  ["02", "Análise inicial", "Os documentos, a urgência e a área jurídica envolvida são avaliados para definir o melhor caminho."],
-  ["03", "Encaminhamento", "Com a estratégia definida, o atendimento segue com orientação técnica e acompanhamento responsável."],
+  [
+    "01",
+    "Primeiro contato",
+    "Você entra em contato pelo WhatsApp e relata sua situação com clareza e segurança.",
+  ],
+  [
+    "02",
+    "Análise inicial",
+    "Os documentos, a urgência e a área jurídica envolvida são avaliados para definir o melhor caminho.",
+  ],
+  [
+    "03",
+    "Encaminhamento",
+    "Com a estratégia definida, o atendimento segue com orientação técnica e acompanhamento responsável.",
+  ],
 ];
 
 function WaIcon({ size = 18 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
     </svg>
   );
@@ -85,8 +123,8 @@ const css = `
   img{max-width:100%;display:block}
   a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
   :root{
-    --navy:#0E0E0E;--navy2:#171717;--ink:#050505;--gold:#C9A24A;
-    --gold2:#B8891F;--paper:#F4ECE6;--white:#fff;--muted:#7B8493;
+    --navy:#0E0E0E;--navy2:#171717;--ink:#050505;--gold:#D4A017;
+    --gold2:#9B6A16;--goldLight:#7A5412;--paper:#BDB7BA  ;--white:#fff;--muted:#7B8493;
     --line:rgba(255,255,255,.14);--line2:rgba(5,5,5,.12);--top:52px;--nav:74px;
   }
   section[id]{scroll-margin-top:calc(var(--top) + var(--nav) + 18px)}
@@ -143,6 +181,8 @@ const css = `
   .heroCopy{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:54px 6vw 58px max(40px,calc((100vw - 1180px)/2 + 20px))}
   .eyebrow,.label{display:inline-flex;align-items:center;gap:12px;width:max-content;max-width:100%;color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;margin-bottom:18px}
   .eyebrow::before,.label::before{content:"";height:1px;background:var(--gold);width:28px;flex:none}
+  #sobre .label,#como-funciona .label{color:var(--goldLight)}
+  #sobre .label::before,#como-funciona .label::before{background:var(--goldLight)}
   h1{font-family:'Calibri','Calibri Body',Candara,Optima,sans-serif;font-size:clamp(48px,6vw,92px);line-height:.94;font-weight:600;letter-spacing:0;margin:26px 0 0;max-width:770px}
   h1 em{font-style:italic;color:var(--gold)}
   .heroLead{max-width:560px;margin:22px 0 0;color:rgba(255,255,255,.75);font-size:16px;line-height:1.75}
@@ -163,12 +203,14 @@ const css = `
 
   /* sections */
   .section{padding:78px 0}
-  .dark{background:#070707;color:#fff}
-  .blue{background:#171717;color:#fff}
+  .dark{background:var(--paper);color:var(--ink)}
+  .blue{background:var(--paper);color:var(--ink)}
   .paper{background:var(--paper)}
+  #especialidades{background:#070707;color:#fff}
   .title{font-family:'Calibri','Calibri Body',Candara,Optima,sans-serif;font-size:clamp(36px,4.6vw,66px);line-height:1.02;font-weight:600;margin:0;letter-spacing:0}
   .lead{max-width:640px;margin:20px 0 0;font-size:16px;line-height:1.85;color:rgba(7,20,38,.68)}
-  .dark .lead,.blue .lead{color:rgba(255,255,255,.68)}
+  .dark .lead,.blue .lead{color:rgba(5,5,5,.68)}
+  #especialidades .lead{color:rgba(255,255,255,.68)}
   .sectionHead{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.58fr);gap:32px;align-items:end;margin-bottom:32px}
   .sectionHead .lead{margin:0;padding-left:18px;border-left:1px solid rgba(214,169,51,.35);text-align:left}
   .final .sectionHead .lead{text-align:left;margin:0}
@@ -200,12 +242,12 @@ const css = `
   /* presence */
   .presence{display:grid;grid-template-columns:1.02fr .98fr;gap:36px;align-items:center}
   .mosaic{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .shot{position:relative;overflow:hidden;background:#fff;border:1px solid rgba(5,5,5,.08);display:grid;place-items:center}
+  .shot{position:relative;overflow:hidden;background:var(--paper);border:1px solid rgba(5,5,5,.08);display:grid;place-items:center}
   .shot::before{content:"";display:block;width:100%;aspect-ratio:4/5}
   .shot.tall{grid-row:span 2}
   .shot.tall::before{aspect-ratio:4/5}
   .shot img{object-fit:contain;object-position:center}
-  .shot.photo{background:#f0ece4}
+  .shot.photo{background:#C9CBCB}
   .shot.photo img{object-fit:contain}
   .shot.brandLogoShot{background:#070707}
   .shot.brandLogoShot::before{aspect-ratio:16/10}
@@ -218,26 +260,27 @@ const css = `
 
   /* process */
   .processGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:30px}
-  .step{background:#171717;padding:26px;min-height:220px;transition:.25s background}
+  .step{background:#171717;color:#fff;padding:26px;min-height:220px;transition:.25s background}
   .step:hover{background:#1e1e1e}
   .stepNum{font-family:'Calibri','Calibri Body',Candara,Optima,sans-serif;color:var(--gold);font-size:54px;line-height:1}
-  .step h3{font-size:20px;margin:26px 0 0}
+  .step h3{font-size:20px;margin:26px 0 0;color:#fff}
   .step p{font-size:15px;line-height:1.75;color:rgba(255,255,255,.66);margin:12px 0 0}
 
   /* about */
   .about{display:grid;grid-template-columns:1fr 1.1fr;gap:0;align-items:stretch}
-  .aboutPhoto{position:relative;min-height:580px;overflow:hidden;background:#0a0a0a}
-  .aboutPhoto img{object-fit:cover;object-position:center top}
+  .aboutPhoto{position:relative;min-height:580px;overflow:hidden;background:var(--paper)}
+  .aboutPhoto img{object-fit:contain;object-position:center center}
   .aboutContent{padding:56px 52px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid rgba(214,169,51,.18)}
-  .aboutContent .title{color:#fff}
-  .bio{margin-top:18px;color:rgba(255,255,255,.65);font-size:15px;line-height:1.85}
+  .aboutContent .title{color:#050505}
+  .bio{margin-top:18px;color:rgba(5,5,5,.68);font-size:15px;line-height:1.85}
   .formation{margin-top:24px}
   .formationLabel{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--gold);margin-bottom:10px}
+  #sobre .formationLabel{color:var(--goldLight)}
   .formationList{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
-  .formationList li{color:rgba(255,255,255,.6);font-size:13px;line-height:1.6;padding-left:14px;position:relative}
+  .formationList li{color:rgba(5,5,5,.62);font-size:13px;line-height:1.6;padding-left:14px;position:relative}
   .formationList li::before{content:"—";position:absolute;left:0;color:rgba(214,169,51,.5)}
   .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
-  .tag{border:1px solid rgba(214,169,51,.28);padding:7px 13px;border-radius:4px;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:rgba(255,255,255,.6);background:transparent;transition:.25s border-color,.25s color}
+  .tag{border:1px solid rgba(122,84,18,.38);padding:7px 13px;border-radius:4px;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:rgba(5,5,5,.68);background:transparent;transition:.25s border-color,.25s color}
   .tag:hover{border-color:var(--gold);color:var(--gold)}
 
   /* location */
@@ -416,7 +459,11 @@ export default function EduardoBremerPage() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [parallaxY, setParallaxY] = useState(0);
-  const [mapModal, setMapModal] = useState<null | { src: string; title: string; mapsUrl: string }>(null);
+  const [mapModal, setMapModal] = useState<null | {
+    src: string;
+    title: string;
+    mapsUrl: string;
+  }>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -446,7 +493,9 @@ export default function EduardoBremerPage() {
   }, []);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setMapModal(null); };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMapModal(null);
+    };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, []);
@@ -466,7 +515,11 @@ export default function EduardoBremerPage() {
             <span className="topbarSep">·</span>
             <span className="topbarSub">
               Prévia conceitual desenvolvida pela{" "}
-              <a href="https://lumasites.com.br" target="_blank" rel="noreferrer">
+              <a
+                href="https://lumasites.com.br"
+                target="_blank"
+                rel="noreferrer"
+              >
                 lumasites.com.br<span className="sr"> (abre em nova aba)</span>
               </a>
             </span>
@@ -477,7 +530,13 @@ export default function EduardoBremerPage() {
           <div className="navin">
             <a className="brand" href="#inicio" aria-label="Ir para o início">
               <span className="brandLogo" aria-hidden="true">
-                <Image src={IMG.logoHorizontal} alt="" fill sizes="214px" priority />
+                <Image
+                  src={IMG.logoHorizontal}
+                  alt=""
+                  fill
+                  sizes="214px"
+                  priority
+                />
               </span>
               <span className="brandMeta">
                 <span>OAB/ES 37.747</span>
@@ -486,7 +545,9 @@ export default function EduardoBremerPage() {
             </a>
             <nav className="links" aria-label="Navegação principal">
               {nav.map((item) => (
-                <a key={item.href} href={item.href}>{item.label}</a>
+                <a key={item.href} href={item.href}>
+                  {item.label}
+                </a>
               ))}
               <a className="cta" href={WA} target="_blank" rel="noreferrer">
                 <WaIcon size={15} /> WhatsApp
@@ -512,9 +573,20 @@ export default function EduardoBremerPage() {
             aria-label="Navegação mobile"
           >
             {nav.map((item) => (
-              <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </a>
             ))}
-            <a href={WA} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>
+            <a
+              href={WA}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setOpen(false)}
+            >
               Falar no WhatsApp
             </a>
           </nav>
@@ -541,9 +613,18 @@ export default function EduardoBremerPage() {
               </a>
             </div>
             <div className="heroCreds" aria-label="Credenciais">
-              <div className="heroCred"><strong>OAB/ES 37.747</strong><span>OAB/BA 83.916</span></div>
-              <div className="heroCred"><strong>Criminal · Cível</strong><span>Trabalhista · Prev.</span></div>
-              <div className="heroCred"><strong>Presencial · Online</strong><span>Mucuri/BA · Vitória/ES</span></div>
+              <div className="heroCred">
+                <strong>OAB/ES 37.747</strong>
+                <span>OAB/BA 83.916</span>
+              </div>
+              <div className="heroCred">
+                <strong>Criminal · Cível</strong>
+                <span>Trabalhista · Prev.</span>
+              </div>
+              <div className="heroCred">
+                <strong>Presencial · Online</strong>
+                <span>Mucuri/BA · Vitória/ES</span>
+              </div>
             </div>
           </div>
           <div className="heroMedia" aria-hidden="true">
@@ -560,7 +641,11 @@ export default function EduardoBremerPage() {
         </section>
 
         {/* ── SOBRE ── */}
-        <section id="sobre" className="section dark" aria-label="Sobre Dr. Eduardo Bremer">
+        <section
+          id="sobre"
+          className="section dark"
+          aria-label="Sobre Dr. Eduardo Bremer"
+        >
           <div className="wrap about">
             <div className="aboutPhoto" data-reveal="left">
               <Image
@@ -587,14 +672,33 @@ export default function EduardoBremerPage() {
               <div className="formation">
                 <span className="formationLabel">Formação</span>
                 <ul className="formationList">
-                  <li>Bacharel em Direito — IESFAVI (2014–2018)</li>
-                  <li>Especialista em Direito e Prática Trabalhista / Latu Sensu — Instituto IMADEC (2023)</li>
-                  <li>Pós-graduado em Direito do Trabalho — Faculdade Regional de Filosofia, Ciências e Letras de Candeias Bahia (2024)</li>
+                  <li>
+                    Bacharel em Direito — IESFAVI - Instituto de Ensino Superior
+                    e Formação Avançada de Vitória (2014–2018)
+                  </li>
+                  <li>
+                    Especialista em Direito e Prática Trabalhista / Latu Sensu —
+                    Instituto IMADEC (2023)
+                  </li>
+                  <li>
+                    Pós-graduado em Direito do Trabalho — Faculdade Regional de
+                    Filosofia, Ciências e Letras de Candeias Bahia (2024)
+                  </li>
                 </ul>
               </div>
               <div className="tags">
-                {["OAB/ES 37.747", "OAB/BA 83.916", "Professor Universitário", "Criminal", "Cível", "Trabalhista", "Previdenciário"].map((tag) => (
-                  <span className="tag" key={tag}>{tag}</span>
+                {[
+                  "OAB/ES 37.747",
+                  "OAB/BA 83.916",
+                  "Professor Universitário",
+                  "Criminal",
+                  "Cível",
+                  "Trabalhista",
+                  "Previdenciário",
+                ].map((tag) => (
+                  <span className="tag" key={tag}>
+                    {tag}
+                  </span>
                 ))}
               </div>
             </div>
@@ -602,7 +706,11 @@ export default function EduardoBremerPage() {
         </section>
 
         {/* ── ESPECIALIDADES ── */}
-        <section id="especialidades" className="section dark" aria-label="Especialidades">
+        <section
+          id="especialidades"
+          className="section dark"
+          aria-label="Especialidades"
+        >
           <div className="wrap especialidadesWrap">
             <div className="especialidadesPhoto" data-reveal="left">
               <Image
@@ -616,11 +724,13 @@ export default function EduardoBremerPage() {
               <div className="sectionHead" data-reveal="">
                 <div className="sectionHeadText">
                   <span className="label">Especialidades</span>
-                  <h2 className="title">Problemas reais pedem resposta jurídica clara.</h2>
+                  <h2 className="title">
+                    Problemas reais pedem resposta jurídica clara.
+                  </h2>
                 </div>
                 <p className="lead">
-                  Atuação em áreas que exigem atenção, estratégia e acompanhamento
-                  profissional desde o primeiro contato.
+                  Atuação em áreas que exigem atenção, estratégia e
+                  acompanhamento profissional desde o primeiro contato.
                 </p>
               </div>
               <div className="especialidadesPhotoMobile" aria-hidden="true">
@@ -639,7 +749,9 @@ export default function EduardoBremerPage() {
                     data-reveal=""
                     data-delay={String(i * 80)}
                   >
-                    <div className="areaIcon"><Icon size={24} /></div>
+                    <div className="areaIcon">
+                      <Icon size={24} />
+                    </div>
                     <h3>{title}</h3>
                     <p>{text}</p>
                     <a href={WA} target="_blank" rel="noreferrer">
@@ -653,12 +765,18 @@ export default function EduardoBremerPage() {
         </section>
 
         {/* ── COMO FUNCIONA ── */}
-        <section id="como-funciona" className="section dark" aria-label="Como funciona o atendimento">
+        <section
+          id="como-funciona"
+          className="section dark"
+          aria-label="Como funciona o atendimento"
+        >
           <div className="wrap">
             <div className="sectionHead" data-reveal="">
               <div className="sectionHeadText">
                 <span className="label">Como funciona</span>
-                <h2 className="title">Um caminho simples para entender o seu caso.</h2>
+                <h2 className="title">
+                  Um caminho simples para entender o seu caso.
+                </h2>
               </div>
               <p className="lead">
                 Do primeiro contato ao encaminhamento, o atendimento segue com
@@ -667,7 +785,12 @@ export default function EduardoBremerPage() {
             </div>
             <div className="processGrid">
               {process.map(([n, title, text], i) => (
-                <article className="step" key={n} data-reveal="" data-delay={String(i * 120)}>
+                <article
+                  className="step"
+                  key={n}
+                  data-reveal=""
+                  data-delay={String(i * 120)}
+                >
                   <div className="stepNum">{n}</div>
                   <h3>{title}</h3>
                   <p>{text}</p>
@@ -680,14 +803,17 @@ export default function EduardoBremerPage() {
         {/* ── CONTATO / FOOTER ── */}
         <section id="contato" className="final" aria-label="Contato">
           <div className="wrap">
-
             {/* Localização */}
             <div className="sectionHead locationHead" data-reveal="">
               <div className="sectionHeadText">
                 <span className="label">Localização</span>
                 <h2 className="title">
-                  <span className="desktopOnly">Atendimento em Mucuri/BA, Vitória/ES e online.</span>
-                  <span className="mobileOnly">Atendimento presencial e online</span>
+                  <span className="desktopOnly">
+                    Atendimento em Mucuri/BA, Vitória/ES e online.
+                  </span>
+                  <span className="mobileOnly">
+                    Atendimento presencial e online
+                  </span>
                 </h2>
               </div>
               <p className="lead">
@@ -696,18 +822,27 @@ export default function EduardoBremerPage() {
               </p>
             </div>
             <div className="locationBar" data-reveal="" data-delay="120">
-              <div className="locationBarItem"><Smartphone size={14} /> +55 73 9811-7194</div>
-              <div className="locationBarItem"><Building2 size={14} /> Presencial · Online</div>
-              <div className="locationBarItem"><MapPin size={14} /> Mucuri/BA · Vitória/ES</div>
+              <div className="locationBarItem">
+                <Smartphone size={14} /> +55 73 9811-7194
+              </div>
+              <div className="locationBarItem">
+                <Building2 size={14} /> Presencial · Online
+              </div>
+              <div className="locationBarItem">
+                <MapPin size={14} /> Mucuri/BA · Vitória/ES
+              </div>
             </div>
             <div className="mapsCards">
               <button
                 className="mapCard"
-                onClick={() => setMapModal({
-                  src: "https://maps.google.com/maps?q=Rua%20Severino%20Vieira%2C%2083%2C%20Mucuri%2C%20BA%2C%2045930000%2C%20Brasil&output=embed&z=16&hl=pt-BR",
-                  title: "Mucuri / BA",
-                  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Severino+Vieira,+83,+Mucuri,+BA,+45930-000",
-                })}
+                onClick={() =>
+                  setMapModal({
+                    src: "https://maps.google.com/maps?q=Rua%20Severino%20Vieira%2C%2083%2C%20Mucuri%2C%20BA%2C%2045930000%2C%20Brasil&output=embed&z=16&hl=pt-BR",
+                    title: "Mucuri / BA",
+                    mapsUrl:
+                      "https://www.google.com/maps/search/?api=1&query=Rua+Severino+Vieira,+83,+Mucuri,+BA,+45930-000",
+                  })
+                }
                 data-reveal=""
                 data-delay="0"
               >
@@ -718,20 +853,27 @@ export default function EduardoBremerPage() {
                   referrerPolicy="no-referrer-when-downgrade"
                   allowFullScreen
                 />
-                <span className="mapCardOpen"><ExternalLink size={10} /> Ver no mapa</span>
+                <span className="mapCardOpen">
+                  <ExternalLink size={10} /> Ver no mapa
+                </span>
                 <div className="mapCardInfo">
                   <span className="mapCardAccent" />
                   <span className="mapCardCity">Mucuri / BA</span>
-                  <span className="mapCardAddr">Rua Severino Vieira, 83 · CEP 45.930-000</span>
+                  <span className="mapCardAddr">
+                    Rua Severino Vieira, 83 · CEP 45.930-000
+                  </span>
                 </div>
               </button>
               <button
                 className="mapCard"
-                onClick={() => setMapModal({
-                  src: "https://maps.google.com/maps?q=Avenida%20Scherrer%20Souza%2C%202230%2C%20Edificio%20Essencial%20Escritorios%2C%20Sala%20401%2C%20Vitoria%2C%20ES%2C%20Brasil&output=embed&z=16&hl=pt-BR",
-                  title: "Vitória / ES",
-                  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Avenida+Scherrer+Souza,+2230,+Vitória,+ES",
-                })}
+                onClick={() =>
+                  setMapModal({
+                    src: "https://maps.google.com/maps?q=Avenida%20Scherrer%20Souza%2C%202230%2C%20Edificio%20Essencial%20Escritorios%2C%20Sala%20401%2C%20Vitoria%2C%20ES%2C%20Brasil&output=embed&z=16&hl=pt-BR",
+                    title: "Vitória / ES",
+                    mapsUrl:
+                      "https://www.google.com/maps/search/?api=1&query=Avenida+Scherrer+Souza,+2230,+Vitória,+ES",
+                  })
+                }
                 data-reveal=""
                 data-delay="120"
               >
@@ -742,11 +884,16 @@ export default function EduardoBremerPage() {
                   referrerPolicy="no-referrer-when-downgrade"
                   allowFullScreen
                 />
-                <span className="mapCardOpen"><ExternalLink size={10} /> Ver no mapa</span>
+                <span className="mapCardOpen">
+                  <ExternalLink size={10} /> Ver no mapa
+                </span>
                 <div className="mapCardInfo">
                   <span className="mapCardAccent" />
                   <span className="mapCardCity">Vitória / ES</span>
-                  <span className="mapCardAddr">Av. Scherrer Souza, 2230 · Ed. Essencial Escritórios · Sala 401</span>
+                  <span className="mapCardAddr">
+                    Av. Scherrer Souza, 2230 · Ed. Essencial Escritórios · Sala
+                    401
+                  </span>
                 </div>
               </button>
             </div>
@@ -759,7 +906,12 @@ export default function EduardoBremerPage() {
                 orientação sobre o melhor caminho para o seu caso.
               </p>
               <div className="finalActions">
-                <a className="btnGold" href={WA} target="_blank" rel="noreferrer">
+                <a
+                  className="btnGold"
+                  href={WA}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <WaIcon size={20} /> Iniciar conversa
                 </a>
               </div>
@@ -769,30 +921,49 @@ export default function EduardoBremerPage() {
               <div className="footerBody">
                 <div className="footerBrand" data-reveal="" data-delay="0">
                   <div className="footerLogo">
-                    <Image src={IMG.logoTransparent} alt="Dr. Eduardo Bremer Advocacia" fill sizes="230px" />
+                    <Image
+                      src={IMG.logoTransparent}
+                      alt="Dr. Eduardo Bremer Advocacia"
+                      fill
+                      sizes="230px"
+                    />
                   </div>
                   <span className="footerRole">Advocacia estratégica</span>
-                  <span className="footerOab">OAB/ES 37.747 · OAB/BA 83.916</span>
+                  <span className="footerOab">
+                    OAB/ES 37.747 · OAB/BA 83.916
+                  </span>
                   <p>
                     Atendimento jurídico presencial em Mucuri/BA e Vitória/ES,
                     com orientação online nas áreas Criminal, Cível, Trabalhista
                     e Previdenciária.
                   </p>
                   <p className="footerAddr">
-                    Rua Severino Vieira, 83 · Mucuri/BA<br />
+                    Rua Severino Vieira, 83 · Mucuri/BA
+                    <br />
                     Av. Scherrer Souza, 2230 · Sala 401 · Vitória/ES
                   </p>
                   <div className="footerTags">
-                    {["Criminal", "Cível", "Trabalhista", "Previdenciário"].map((tag) => (
-                      <span className="footerTag" key={tag}>{tag}</span>
-                    ))}
+                    {["Criminal", "Cível", "Trabalhista", "Previdenciário"].map(
+                      (tag) => (
+                        <span className="footerTag" key={tag}>
+                          {tag}
+                        </span>
+                      ),
+                    )}
                   </div>
                 </div>
 
-                <nav className="footerCol" aria-label="Navegação no rodapé" data-reveal="" data-delay="120">
+                <nav
+                  className="footerCol"
+                  aria-label="Navegação no rodapé"
+                  data-reveal=""
+                  data-delay="120"
+                >
                   <h4>Navegação</h4>
                   {nav.map((item) => (
-                    <a key={item.href} href={item.href}>{item.label}</a>
+                    <a key={item.href} href={item.href}>
+                      {item.label}
+                    </a>
                   ))}
                   <a href={WA} target="_blank" rel="noreferrer">
                     Falar com Eduardo
@@ -815,10 +986,17 @@ export default function EduardoBremerPage() {
 
               <hr className="footerLine" />
               <div className="footerBottom">
-                <span>© 2026 Dr. Eduardo Bremer · Advocacia · OAB/ES 37.747 · OAB/BA 83.916</span>
+                <span>
+                  © 2026 Dr. Eduardo Bremer · Advocacia · OAB/ES 37.747 · OAB/BA
+                  83.916
+                </span>
                 <span>
                   Site por{" "}
-                  <a href="https://lumasites.com.br" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://lumasites.com.br"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     LumaSites<span className="sr"> (abre em nova aba)</span>
                   </a>
                 </span>
@@ -862,7 +1040,11 @@ export default function EduardoBremerPage() {
               >
                 <ExternalLink size={11} /> Abrir no Google Maps
               </a>
-              <button className="mapModalClose" onClick={() => setMapModal(null)} aria-label="Fechar">
+              <button
+                className="mapModalClose"
+                onClick={() => setMapModal(null)}
+                aria-label="Fechar"
+              >
                 <X size={16} />
               </button>
             </div>
