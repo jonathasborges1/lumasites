@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { LoadingScreen } from "@/components/LoadingScreen";
 
 const INITIAL_MIN_MS = 200;
-const ROUTE_SHOW_DELAY_MS = 140;
-const NAV_MIN_MS = 180;
+const ROUTE_SHOW_DELAY_MS = 160;
+const NAV_MIN_MS = 50;
 const ROUTE_FAILSAFE_MS = 2500;
 const proposalDetailPath = /^\/proposta-comercial\/[^/]+\/?$/;
 
@@ -14,9 +14,35 @@ function isProposalDetailPath(pathname: string) {
   return proposalDetailPath.test(pathname);
 }
 
+function NavProgressBar({ completing }: { completing: boolean }) {
+  return (
+    <div
+      aria-hidden="true"
+      className="fixed inset-x-0 top-0 z-[200] h-[2px] pointer-events-none"
+    >
+      <div
+        className={completing ? "h-full origin-left" : "h-full origin-left animate-nav-progress"}
+        style={{
+          background: "linear-gradient(90deg, #4FC8FF 0%, #7FE5FF 50%, #FFD54F 100%)",
+          boxShadow: "0 0 8px rgba(79,200,255,.7)",
+          willChange: "transform, opacity",
+          ...(completing
+            ? {
+                transform: "scaleX(1)",
+                opacity: 0,
+                transition: "transform 0.15s ease, opacity 0.2s ease 0.05s",
+              }
+            : {}),
+        }}
+      />
+    </div>
+  );
+}
+
 export function GlobalLoadingOverlay() {
   const [visible, setVisible] = useState(true);
   const [mode, setMode] = useState<"boot" | "route">("boot");
+  const [completing, setCompleting] = useState(false);
   const pathname = usePathname();
   const startedAtRef = useRef<number>(Date.now());
   const bootHandledRef = useRef(false);
@@ -24,6 +50,11 @@ export function GlobalLoadingOverlay() {
   const routeShowTimerRef = useRef<number | null>(null);
   const settledRef = useRef(false);
   const waitForSettledRef = useRef(false);
+  const modeRef = useRef<"boot" | "route">("boot");
+
+  useEffect(() => {
+    modeRef.current = mode;
+  }, [mode]);
 
   const hideWithMinimum = (minimumMs: number) => {
     const elapsed = Date.now() - startedAtRef.current;
@@ -35,11 +66,19 @@ export function GlobalLoadingOverlay() {
 
     hideTimerRef.current = window.setTimeout(() => {
       hideTimerRef.current = null;
-      window.requestAnimationFrame(() => {
-        window.requestAnimationFrame(() => {
+      if (modeRef.current === "route") {
+        setCompleting(true);
+        window.setTimeout(() => {
           setVisible(false);
+          setCompleting(false);
+        }, 220);
+      } else {
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(() => {
+            setVisible(false);
+          });
         });
-      });
+      }
     }, remaining);
   };
 
@@ -98,6 +137,7 @@ export function GlobalLoadingOverlay() {
 
       routeShowTimerRef.current = window.setTimeout(() => {
         routeShowTimerRef.current = null;
+        setCompleting(false);
         setMode("route");
         setVisible(true);
       }, ROUTE_SHOW_DELAY_MS);
@@ -107,9 +147,6 @@ export function GlobalLoadingOverlay() {
     return () => document.removeEventListener("click", handleClick, true);
   }, []);
 
-  // Listen for PageTransition signal that the new page content has been painted.
-  // This fires after React commits the new page to the DOM, which is after
-  // usePathname() updates — avoiding the flash of the old page content.
   useEffect(() => {
     const handleSettled = () => {
       settledRef.current = true;
@@ -129,9 +166,6 @@ export function GlobalLoadingOverlay() {
       routeShowTimerRef.current = null;
     }
 
-    // Proposal pages can be large client bundles. During navigation, Next may
-    // update the pathname before the new proposal has painted, so keep the
-    // overlay up until PageTransition confirms the destination committed.
     if (mode === "route" && waitForSettledRef.current && !settledRef.current) {
       return;
     }
@@ -163,15 +197,15 @@ export function GlobalLoadingOverlay() {
 
   if (!visible) return null;
 
+  if (mode === "route") {
+    return <NavProgressBar completing={completing} />;
+  }
+
   return (
     <LoadingScreen
       fullScreen
-      label={mode === "boot" ? "Preparando a experiência" : "Trocando de página"}
-      hint={
-        mode === "boot"
-          ? "Carregando interface, recursos visuais e interações."
-          : "Atualizando conteúdo e finalizando a navegação."
-      }
+      label="Preparando a experiência"
+      hint="Carregando interface, recursos visuais e interações."
     />
   );
 }

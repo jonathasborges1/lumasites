@@ -127,6 +127,10 @@ const config: Config = {
           "0%": { transform: "scale(1)", opacity: "0.6" },
           "100%": { transform: "scale(2.4)", opacity: "0" },
         },
+        "nav-progress": {
+          "0%": { transform: "scaleX(0)" },
+          "100%": { transform: "scaleX(0.88)" },
+        },
       },
       animation: {
         "pulse-glow": "pulse-glow 3s ease-in-out infinite",
@@ -147,6 +151,7 @@ const config: Config = {
         "glow-breath": "glow-breath 4s ease-in-out infinite",
         "slide-in-right": "slide-in-right .6s cubic-bezier(.22,.61,.36,1) both",
         ripple: "ripple 2s ease-out infinite",
+        "nav-progress": "nav-progress 2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards",
       },
     },
   },
