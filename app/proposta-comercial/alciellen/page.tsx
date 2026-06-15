@@ -150,8 +150,8 @@ const css = `
   .alc-proof span{display:block;margin-top:5px;color:#767a80;font-size:12px;line-height:1.45}
   .alc-visual{position:relative;min-height:530px;border-radius:10px;overflow:hidden;background:#191d22;box-shadow:0 28px 80px rgba(27,31,36,.18)}
   .alc-visual::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,15,.12),rgba(10,12,15,.64)),url("${assets.concreto}") center/cover no-repeat}
-  .alc-portrait-card{position:absolute;right:22px;bottom:22px;width:min(280px,calc(100% - 44px));padding:10px;background:rgba(244,241,235,.95);border-radius:8px;box-shadow:0 20px 50px rgba(0,0,0,.26)}
-  .alc-portrait-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:6px}
+  .alc-portrait-card{position:absolute;right:22px;bottom:22px;width:min(260px,calc(100% - 44px));padding:10px;background:rgba(244,241,235,.95);border-radius:8px;box-shadow:0 20px 50px rgba(0,0,0,.26)}
+  .alc-portrait-card img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 38%;border-radius:6px}
   .alc-portrait-meta{padding:13px 4px 2px}
   .alc-portrait-meta strong{display:block;color:#17191c;font-size:18px;font-weight:850}
   .alc-portrait-meta span{display:block;margin-top:4px;color:#a93728;font-size:11px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
@@ -173,7 +173,7 @@ const css = `
   .alc-checks span{display:flex;gap:10px;align-items:flex-start;color:#fff;font-size:13px;font-weight:720;line-height:1.45}
   .alc-checks svg{margin-top:1px;color:#d6a12b;flex:none}
   .alc-about-img{border-radius:10px;overflow:hidden;background:#d8d1c4;box-shadow:0 18px 50px rgba(27,31,36,.12)}
-  .alc-about-img img{width:100%;aspect-ratio:1/1;object-fit:contain;background:#d8d1c4}
+  .alc-about-img img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:50% 42%;background:#d8d1c4}
 
   .alc-products{background:#17191c;color:#fff}
   .alc-products .alc-eyebrow{color:#d6a12b}
@@ -277,9 +277,9 @@ const css = `
     .alc-hero h1{font-size:clamp(34px,10vw,44px);line-height:1.02}
     .alc-hero-sub{font-size:15px;line-height:1.68}
     .alc-hero-actions .alc-btn{width:100%}
-    .alc-visual{min-height:470px}
+    .alc-visual{min-height:660px}
     .alc-visual-label{left:16px;right:16px;top:16px;max-width:none}
-    .alc-portrait-card{left:16px;right:16px;bottom:16px;width:auto}
+    .alc-portrait-card{left:50%;right:auto;bottom:16px;width:min(320px,calc(100% - 32px));transform:translateX(-50%)}
     .alc-metrics{padding:16px 0;background:#f4f1eb;border-block:0}
     .alc-metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
     .alc-metric{padding:16px 14px;border:1px solid rgba(23,25,28,.08);border-radius:9px;background:#fff;box-shadow:0 10px 24px rgba(34,33,28,.045)}
@@ -396,7 +396,7 @@ function Hero() {
             <span>Uma experiencia comercial mais clara para comprar concreto, laje, vigotas e bombeamento.</span>
           </div>
           <div className="alc-portrait-card">
-            <img src={assets.portrait} alt="Alciellen, consultora comercial da J&R Concretos" />
+            <img src={assets.portrait} alt="Alciellen, consultora comercial da J&R Concretos" decoding="async" />
             <div className="alc-portrait-meta">
               <strong>Alciellen</strong>
               <span>Vendedora - J&R Concretos</span>
@@ -460,7 +460,7 @@ function About() {
           </div>
         </div>
         <div className="alc-about-img">
-          <img src={assets.portrait} alt="Alciellen em foto pessoal" />
+          <img src={assets.portrait} alt="Alciellen, consultora comercial" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>
@@ -483,7 +483,7 @@ function Products() {
             return (
               <article className="alc-product" key={product.title}>
                 <div className="alc-product-img">
-                  <img src={product.image} alt={product.title} />
+                  <img src={product.image} alt={product.title} loading="lazy" decoding="async" />
                 </div>
                 <div className="alc-product-body">
                   <div className="alc-product-icon">
@@ -608,7 +608,7 @@ function Gallery() {
         <div className="alc-gallery-grid">
           {shots.map(([src, label]) => (
             <figure className="alc-shot" key={src}>
-              <img src={src} alt={label} />
+              <img src={src} alt={label} loading="lazy" decoding="async" />
               <figcaption>{label}</figcaption>
             </figure>
           ))}

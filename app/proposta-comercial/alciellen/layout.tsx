@@ -14,12 +14,19 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/alciellen/concreto-usinado-jr-concretos-manaus.jpg",
-        width: 738,
-        height: 424,
-        alt: "J&R Concretos - concreto usinado em Manaus",
+        url: "/images/alciellen/alciellen-consultora-comercial.png",
+        width: 1000,
+        height: 1500,
+        alt: "Alciellen, consultora comercial da J&R Concretos",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alciellen | Concreto Usinado e Lajes Pre-Moldadas em Manaus",
+    description:
+      "Atendimento especializado para concreto usinado, lajes pre-moldadas, vigotas e bombeamento em Manaus.",
+    images: ["/images/alciellen/alciellen-consultora-comercial.png"],
   },
 };
 
