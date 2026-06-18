@@ -12,6 +12,7 @@ const nextConfig = {
     optimizePackageImports: ["lucide-react"],
   },
   images: {
+    qualities: [75, 90],
     unoptimized: process.env.NODE_ENV === "development",
     remotePatterns: [
       {
