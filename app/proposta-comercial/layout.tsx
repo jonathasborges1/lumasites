@@ -5,12 +5,9 @@ import { ProposalBackLink } from "./ProposalBackLink";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
-  openGraph: {
-    images: [],
-  },
-  twitter: {
-    card: "summary",
-    images: [],
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

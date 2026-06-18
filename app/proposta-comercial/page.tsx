@@ -6,9 +6,31 @@ import { ProposalGrid } from "./ProposalGrid";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Portfólio de Sites | Luma Sites",
+  title: "Projetos de Sites Profissionais | Luma Sites",
   description:
-    "Veja exemplos reais de sites criados pela Luma Sites para advogados, personal trainers, corretores e outros profissionais. Criação de sites em Manaus e todo o Brasil.",
+    "Conheça projetos de sites profissionais criados pela Luma Sites com estratégia, design e foco em transmitir confiança.",
+  openGraph: {
+    type: "website",
+    url: "/proposta-comercial",
+    title: "Presença digital que inspira confiança | Luma Sites",
+    description:
+      "Estratégia, design e desenvolvimento para apresentar o seu negócio com a qualidade que ele merece.",
+    images: [
+      {
+        url: "/og-proposta-comercial.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Luma Sites — Presença digital que inspira confiança",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Presença digital que inspira confiança | Luma Sites",
+    description:
+      "Estratégia, design e desenvolvimento para apresentar o seu negócio com a qualidade que ele merece.",
+    images: ["/og-proposta-comercial.jpg"],
+  },
 };
 
 async function loadProposals(): Promise<ProposalWithSlug[]> {
