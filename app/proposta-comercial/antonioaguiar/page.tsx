@@ -25,10 +25,13 @@ const whatsApp = (
 ) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 
 const navItems = [
+  { href: "#top", label: "Início" },
   { href: "#atuacao", label: "Atuação" },
   { href: "#sobre", label: "Sobre" },
   { href: "#processo", label: "Como Funciona" },
-  { href: "#contato", label: "Contato" },
+  { href: "#duvidas", label: "Dúvidas Frequentes" },
+  { href: "#onde-atuamos", label: "Onde Atuamos" },
+  { href: "#contato", label: "Fale Conosco" },
 ];
 
 const problems = [
@@ -88,8 +91,8 @@ const steps = [
 
 const faqs: { q: string; a: string }[] = [
   {
-    q: "Preciso ir pessoalmente ao escritório?",
-    a: "Não. Todo o atendimento pode ser feito online, por WhatsApp, e-mail ou videochamada. Trabalhamos com clientes em qualquer estado do Brasil.",
+    q: "Preciso de atendimento presencial?",
+    a: "Não. Todo o atendimento pode ser feito online, por WhatsApp, e-mail ou videochamada. Encontros presenciais, quando necessários, são realizados mediante disponibilidade e agendamento prévio.",
   },
   {
     q: "O banco já bloqueou minha conta. Ainda tem solução?",
@@ -109,28 +112,21 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const offices = [
+const serviceRegions = [
   {
-    label: "ESCRITÓRIO PRINCIPAL",
-    city: "Rio Branco · AC",
-    address:
-      "Rua Silvio Antônio Araújo de Oliveira, QD 207, n.208\nPortal da Amazônia · CEP 69915-720",
-    mapsUrl:
-      "https://maps.google.com/?q=Rua+Silvio+Antonio+Araujo+de+Oliveira+QD+207+Portal+da+Amazonia+Rio+Branco+AC",
+    state: "Acre",
+    acronym: "AC",
+    city: "Rio Branco",
   },
   {
-    label: "ESCRITÓRIO AMAZONAS",
-    city: "Boca do Acre · AM",
-    address: "Br. 317, Km 04, n.7.250\nBairro Platô do Piquiá · CEP 69850-000",
-    mapsUrl: "https://maps.google.com/?q=BR+317+Km+04+Boca+do+Acre+AM",
+    state: "Amazonas",
+    acronym: "AM",
+    city: "Boca do Acre",
   },
   {
-    label: "ESCRITÓRIO SANTA CATARINA",
-    city: "Florianópolis · SC",
-    address:
-      "Servidão Corujas do Sul, n.126, apt.203\nBairro Campeche · CEP 88063-082",
-    mapsUrl:
-      "https://maps.google.com/?q=Servidao+Corujas+do+Sul+126+Campeche+Florianopolis+SC",
+    state: "Santa Catarina",
+    acronym: "SC",
+    city: "Florianópolis",
   },
 ];
 
@@ -160,7 +156,10 @@ const EditorialMenuIcon = ({ open = false }: { open?: boolean }) => (
 const css = `
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; }
 img { display: block; max-width: 100%; }
@@ -170,17 +169,17 @@ button { font: inherit; }
 :root {
   --aa-bar-height: 52px;
   --aa-nav-height: 72px;
-  --aa-black: #09100e;
-  --aa-petrol: #162622;
-  --aa-gold: #C9A84C;
-  --aa-gold-light: #dfc070;
-  --aa-gold-dark: #9a7f38;
-  --aa-cream: #F5F0E8;
-  --aa-warm: #ECE7DC;
-  --aa-ink: #1a1a14;
-  --aa-soft-ink: #3d3a2e;
-  --aa-muted: #6b6655;
-  --aa-white: #FDFAF4;
+  --aa-black: #18302a;
+  --aa-petrol: #28473f;
+  --aa-gold: #b99452;
+  --aa-gold-light: #cba866;
+  --aa-gold-dark: #8f7139;
+  --aa-cream: #f7f4ed;
+  --aa-warm: #eee9df;
+  --aa-ink: #292b29;
+  --aa-soft-ink: #414743;
+  --aa-muted: #686d68;
+  --aa-white: #fffdf8;
   --aa-line-dark: rgba(245,240,232,0.1);
   --aa-line-light: rgba(26,26,20,0.12);
 }
@@ -253,17 +252,17 @@ button { font: inherit; }
   z-index: 1000;
   inset: var(--aa-bar-height) 0 auto 0;
   height: var(--aa-nav-height);
-  border-bottom: 1px solid var(--aa-line-dark);
-  background: rgba(23,27,26,0.82);
+  border-bottom: 1px solid rgba(40,71,63,0.12);
+  background: rgba(247,244,237,0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
   font-family: Montserrat, system-ui, sans-serif;
 }
 .aa-nav.scrolled {
-  background: rgba(23,27,26,0.72);
-  border-color: rgba(204,166,121,0.18);
-  box-shadow: 0 12px 38px rgba(6,13,11,0.2);
+  background: rgba(247,244,237,0.88);
+  border-color: rgba(40,71,63,0.14);
+  box-shadow: 0 12px 38px rgba(24,48,42,0.1);
 }
 .aa-nav-inner {
   width: min(1160px, calc(100% - 40px));
@@ -285,21 +284,43 @@ button { font: inherit; }
   height: auto;
   object-fit: contain;
   object-position: left center;
+  filter: brightness(0) saturate(100%) invert(24%) sepia(13%)
+    saturate(1050%) hue-rotate(113deg) brightness(88%) contrast(89%);
+  opacity: 0.9;
 }
 .aa-links {
   display: none;
   align-items: center;
-  gap: 24px;
+  gap: 17px;
 }
 .aa-links a {
-  color: rgba(245,240,232,0.72);
-  font-size: 11px;
+  position: relative;
+  color: rgba(41,43,41,0.68);
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   transition: color 0.15s;
 }
 .aa-links a:hover { color: var(--aa-gold); }
+.aa-links a:not(.aa-nav-cta)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  left: 0;
+  height: 1px;
+  background: var(--aa-gold);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+.aa-links a.active {
+  color: var(--aa-gold);
+}
+.aa-links a.active::after {
+  transform: scaleX(1);
+}
 .aa-nav-cta {
   min-height: 44px;
   display: inline-flex;
@@ -330,17 +351,17 @@ button { font: inherit; }
   cursor: pointer;
   font-family: Montserrat, system-ui, sans-serif;
   border-radius: 4px;
-  color: var(--aa-white);
-  background: rgba(245,240,232,0.1);
+  color: var(--aa-petrol);
+  background: rgba(40,71,63,0.08);
   transition: color 0.2s, background 0.2s, border-color 0.2s;
 }
 .aa-nav.scrolled .aa-menu-btn {
-  color: var(--aa-white);
-  background: rgba(245,240,232,0.08);
+  color: var(--aa-petrol);
+  background: rgba(40,71,63,0.08);
 }
 .aa-nav.menu-open {
-  background: rgba(23,27,26,0.98);
-  border-color: rgba(204,166,121,0.2);
+  background: rgba(247,244,237,0.98);
+  border-color: rgba(40,71,63,0.14);
 }
 .aa-nav.menu-open .aa-menu-btn {
   color: var(--aa-gold);
@@ -486,6 +507,18 @@ button { font: inherit; }
   transition: transform 0.2s;
 }
 .aa-mobile-link:active svg { transform: translateX(4px); }
+.aa-mobile-link.active {
+  color: var(--aa-gold);
+}
+.aa-mobile-link.active::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  width: 3px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--aa-gold);
+}
 .aa-mobile-cta {
   min-height: 56px;
   margin-top: 28px;
@@ -551,15 +584,15 @@ button { font: inherit; }
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--aa-petrol);
+  background: var(--aa-cream);
 }
 .aa-hero-bg {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 60% at 15% 55%, rgba(201,168,76,0.09) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 80% at 0% 0%, rgba(201,168,76,0.06) 0%, transparent 60%),
-    linear-gradient(155deg, #162622 0%, #1e3430 55%, #0d1f1b 100%);
+    radial-gradient(ellipse 55% 65% at 85% 50%, rgba(40,71,63,0.09) 0%, transparent 68%),
+    radial-gradient(ellipse 45% 60% at 5% 10%, rgba(185,148,82,0.1) 0%, transparent 65%),
+    linear-gradient(145deg, #f8f6f0 0%, #f2eee5 58%, #ebe6dc 100%);
 }
 .aa-hero-grid {
   position: relative;
@@ -569,9 +602,9 @@ button { font: inherit; }
   padding: 128px 0 64px;
   display: grid;
   align-items: center;
-  gap: 52px;
+  gap: 36px;
 }
-.aa-hero-copy { color: var(--aa-white); }
+.aa-hero-copy { color: var(--aa-ink); }
 .aa-kicker {
   display: inline-flex;
   align-items: center;
@@ -595,7 +628,7 @@ button { font: inherit; }
   line-height: 1.06;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: var(--aa-white);
+  color: var(--aa-petrol);
 }
 .aa-hero h1 em {
   font-style: italic;
@@ -604,7 +637,7 @@ button { font: inherit; }
 .aa-hero-sub {
   max-width: 540px;
   margin: 26px 0 0;
-  color: rgba(245,240,232,0.72);
+  color: var(--aa-muted);
   font-size: 15px;
   line-height: 1.85;
 }
@@ -647,10 +680,10 @@ button { font: inherit; }
   cursor: pointer;
   font-family: Montserrat, system-ui, sans-serif;
   padding: 0 22px;
-  border: 1px solid rgba(245,240,232,0.24);
+  border: 1px solid rgba(40,71,63,0.2);
   border-radius: 4px;
-  color: var(--aa-white);
-  background: rgba(245,240,232,0.06);
+  color: var(--aa-petrol);
+  background: rgba(255,255,255,0.52);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -658,8 +691,8 @@ button { font: inherit; }
   transition: background 0.15s, border-color 0.15s;
 }
 .aa-btn-outline:hover {
-  background: rgba(245,240,232,0.12);
-  border-color: rgba(245,240,232,0.4);
+  background: rgba(255,255,255,0.9);
+  border-color: rgba(40,71,63,0.34);
 }
 .aa-proof-bar {
   display: grid;
@@ -671,7 +704,7 @@ button { font: inherit; }
 .aa-proof-item {
   padding: 16px 16px;
   border: 1px solid rgba(201,168,76,0.22);
-  background: rgba(201,168,76,0.06);
+  background: rgba(255,255,255,0.58);
   border-radius: 2px;
 }
 .aa-proof-item strong {
@@ -679,13 +712,13 @@ button { font: inherit; }
   font-family: "Playfair Display", Georgia, serif;
   font-size: 20px;
   font-weight: 700;
-  color: var(--aa-white);
+  color: var(--aa-petrol);
   line-height: 1;
 }
 .aa-proof-item span {
   display: block;
   margin-top: 6px;
-  color: rgba(245,240,232,0.72);
+  color: var(--aa-muted);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -694,22 +727,39 @@ button { font: inherit; }
 
 /* Hero photo column */
 .aa-hero-photo-wrap {
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  padding: 34px 30px 28px;
+  background:
+    linear-gradient(145deg, rgba(40,71,63,0.08), rgba(255,255,255,0.34));
+  border: 1px solid rgba(40,71,63,0.08);
+  box-shadow: 0 28px 70px rgba(40,71,63,0.1);
+}
+.aa-hero-photo-wrap::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 76px;
+  height: 76px;
+  border-top: 1px solid rgba(185,148,82,0.52);
+  border-right: 1px solid rgba(185,148,82,0.52);
+  pointer-events: none;
 }
 .aa-hero-photo-frame {
   position: relative;
-  max-width: 400px;
+  max-width: 450px;
   width: 100%;
 }
 .aa-hero-photo-accent {
   position: absolute;
-  top: -18px;
-  right: -18px;
-  bottom: 18px;
-  left: 18px;
-  border: 1px solid rgba(201,168,76,0.3);
+  top: -12px;
+  right: -12px;
+  bottom: 12px;
+  left: 12px;
+  border: 1px solid rgba(185,148,82,0.38);
   border-radius: 2px;
   pointer-events: none;
 }
@@ -722,20 +772,24 @@ button { font: inherit; }
   object-position: center top;
   border-radius: 2px;
   filter: saturate(0.88) contrast(1.05);
+  box-shadow: 0 18px 44px rgba(24,48,42,0.14);
 }
 .aa-hero-photo-badge {
   position: absolute;
   z-index: 2;
-  left: -14px;
-  bottom: 28px;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 16px 18px;
-  background: rgba(9,16,14,0.95);
-  border: 1px solid rgba(201,168,76,0.32);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 15px 18px;
+  background: rgba(24,48,42,0.94);
+  border: 1px solid rgba(185,148,82,0.34);
   border-radius: 2px;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
 }
 .aa-hero-photo-badge strong {
   color: var(--aa-white);
@@ -750,6 +804,7 @@ button { font: inherit; }
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  text-align: right;
 }
 
 /* ── SECTIONS ─────────────────────────────────────── */
@@ -757,14 +812,17 @@ button { font: inherit; }
   padding: 96px 0;
   background: var(--aa-cream);
 }
+.aa-page section[id] {
+  scroll-margin-top: calc(var(--aa-bar-height) + var(--aa-nav-height) + 18px);
+}
 .aa-section.alt { background: var(--aa-warm); }
 .aa-section.dark {
   background: var(--aa-petrol);
   color: var(--aa-white);
 }
 .aa-section.black {
-  background: var(--aa-black);
-  color: var(--aa-white);
+  background: var(--aa-cream);
+  color: var(--aa-ink);
 }
 .aa-section.gold-bg {
   background: var(--aa-gold);
@@ -782,7 +840,7 @@ button { font: inherit; }
   text-transform: uppercase;
 }
 .aa-section.dark .aa-label  { color: var(--aa-gold); }
-.aa-section.black .aa-label { color: var(--aa-gold); }
+.aa-section.black .aa-label { color: var(--aa-gold-dark); }
 .aa-section.gold-bg .aa-label { color: rgba(26,26,20,0.55); }
 .aa-h2 {
   margin: 0;
@@ -793,7 +851,7 @@ button { font: inherit; }
   color: var(--aa-ink);
 }
 .aa-section.dark .aa-h2    { color: var(--aa-white); }
-.aa-section.black .aa-h2   { color: var(--aa-white); }
+.aa-section.black .aa-h2   { color: var(--aa-ink); }
 .aa-section.gold-bg .aa-h2 { color: var(--aa-black); }
 .aa-lead {
   margin: 18px 0 0;
@@ -802,7 +860,7 @@ button { font: inherit; }
   color: var(--aa-muted);
 }
 .aa-section.dark .aa-lead    { color: rgba(245,240,232,0.68); }
-.aa-section.black .aa-lead   { color: rgba(245,240,232,0.68); }
+.aa-section.black .aa-lead   { color: var(--aa-muted); }
 .aa-section.gold-bg .aa-lead { color: rgba(26,26,20,0.7); }
 
 /* ── PROBLEMS ─────────────────────────────────────── */
@@ -812,14 +870,15 @@ button { font: inherit; }
 }
 .aa-problem-card {
   padding: 28px 22px;
-  border: 1px solid rgba(201,168,76,0.16);
-  background: rgba(245,240,232,0.04);
+  border: 1px solid rgba(40,71,63,0.1);
+  background: rgba(255,255,255,0.72);
   border-radius: 2px;
+  box-shadow: 0 12px 32px rgba(40,71,63,0.06);
   transition: border-color 0.2s, background 0.2s, transform 0.2s;
 }
 .aa-problem-card:hover {
-  border-color: rgba(201,168,76,0.42);
-  background: rgba(201,168,76,0.07);
+  border-color: rgba(185,148,82,0.38);
+  background: var(--aa-white);
   transform: translateY(-2px);
 }
 .aa-problem-icon {
@@ -828,7 +887,7 @@ button { font: inherit; }
   place-items: center;
   border-radius: 4px;
   background: rgba(201,168,76,0.12);
-  color: var(--aa-gold);
+  color: var(--aa-gold-dark);
   margin-bottom: 16px;
 }
 .aa-problem-card h3 {
@@ -836,11 +895,11 @@ button { font: inherit; }
   font-family: "Playfair Display", Georgia, serif;
   font-size: 17px;
   font-weight: 700;
-  color: var(--aa-white);
+  color: var(--aa-petrol);
 }
 .aa-problem-card p {
   margin: 0;
-  color: rgba(245,240,232,0.6);
+  color: var(--aa-muted);
   font-size: 13px;
   line-height: 1.7;
 }
@@ -997,12 +1056,14 @@ button { font: inherit; }
 .aa-faq-list {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--aa-line-dark);
+  border: 1px solid var(--aa-line-light);
+  background: rgba(255,255,255,0.62);
+  box-shadow: 0 18px 42px rgba(40,71,63,0.06);
   border-radius: 2px;
   overflow: hidden;
   margin-top: 40px;
 }
-.aa-faq-item { border-bottom: 1px solid var(--aa-line-dark); }
+.aa-faq-item { border-bottom: 1px solid var(--aa-line-light); }
 .aa-faq-item:last-child { border-bottom: 0; }
 .aa-faq-btn {
   width: 100%;
@@ -1015,15 +1076,15 @@ button { font: inherit; }
   background: transparent;
   border: 0;
   cursor: pointer;
-  color: var(--aa-white);
+  color: var(--aa-ink);
   font-family: "Playfair Display", Georgia, serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.4;
   transition: background 0.15s;
 }
-.aa-faq-btn:hover { background: rgba(245,240,232,0.04); }
-.aa-faq-btn.open  { color: var(--aa-gold); }
+.aa-faq-btn:hover { background: rgba(40,71,63,0.035); }
+.aa-faq-btn.open  { color: var(--aa-gold-dark); }
 .aa-faq-icon {
   flex: 0 0 auto;
   color: var(--aa-gold);
@@ -1032,7 +1093,7 @@ button { font: inherit; }
 .aa-faq-btn.open .aa-faq-icon { transform: rotate(180deg); }
 .aa-faq-body {
   padding: 0 24px 22px;
-  color: rgba(245,240,232,0.68);
+  color: var(--aa-muted);
   font-size: 14px;
   line-height: 1.85;
 }
@@ -1041,7 +1102,7 @@ button { font: inherit; }
   align-items: center;
   gap: 6px;
   margin-top: 32px;
-  color: var(--aa-gold);
+  color: var(--aa-gold-dark);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -1062,11 +1123,24 @@ button { font: inherit; }
   gap: 14px;
 }
 .aa-office-card {
-  padding: 22px 22px 22px 20px;
+  padding: 20px 22px 20px 20px;
   border-left: 3px solid var(--aa-gold-dark);
   background: var(--aa-white, #fff);
   border-radius: 0 2px 2px 0;
   box-shadow: 0 2px 16px rgba(26,26,20,0.06);
+  display: grid;
+  grid-template-columns: 42px 1fr auto;
+  align-items: center;
+  gap: 14px;
+}
+.aa-office-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--aa-gold-dark);
+  background: rgba(204,166,121,0.12);
 }
 .aa-office-label {
   display: block;
@@ -1075,7 +1149,7 @@ button { font: inherit; }
   font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  margin-bottom: 7px;
+  margin-bottom: 5px;
 }
 .aa-office-city {
   display: block;
@@ -1083,30 +1157,66 @@ button { font: inherit; }
   font-family: "Playfair Display", Georgia, serif;
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 7px;
 }
-.aa-office-address {
-  margin: 0;
-  color: var(--aa-muted);
-  font-size: 13px;
-  line-height: 1.65;
-  white-space: pre-line;
+.aa-office-acronym {
+  color: rgba(26,26,20,0.24);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 30px;
+  font-weight: 700;
 }
-.aa-map-wrap {
+.aa-presence-panel {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  border: 1px solid var(--aa-line-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(28px, 5vw, 52px);
+  border: 1px solid rgba(204,166,121,0.18);
   border-radius: 2px;
+  color: var(--aa-white);
+  background:
+    radial-gradient(circle at 72% 24%, rgba(204,166,121,0.2), transparent 28%),
+    linear-gradient(145deg, #365a51 0%, #28473f 58%, #203b34 100%);
 }
-.aa-map-wrap iframe {
+.aa-presence-panel::before {
+  content: "BR";
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  filter: saturate(0.75) contrast(1.05);
+  top: 10px;
+  right: 24px;
+  color: rgba(204,166,121,0.08);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(100px, 17vw, 210px);
+  font-weight: 700;
+  line-height: 1;
+}
+.aa-presence-icon {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 24px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(204,166,121,0.42);
+  border-radius: 50%;
+  color: var(--aa-gold);
+}
+.aa-presence-panel h3 {
+  position: relative;
+  max-width: 430px;
+  margin: 0 0 14px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(27px, 3.4vw, 42px);
+  line-height: 1.08;
+}
+.aa-presence-panel p {
+  position: relative;
+  max-width: 470px;
+  margin: 0;
+  color: rgba(245,240,232,0.68);
+  font-size: 14px;
+  line-height: 1.75;
 }
 .aa-location-note {
   margin-top: 20px;
@@ -1153,7 +1263,7 @@ button { font: inherit; }
 
 /* ── FOOTER ───────────────────────────────────────── */
 .aa-footer {
-  background: #060d0b;
+  background: #18302a;
   color: rgba(245,240,232,0.48);
   font-size: 13px;
   line-height: 1.7;
@@ -1289,11 +1399,13 @@ button { font: inherit; }
 .aa-delay-5 { transition-delay: 0.40s; }
 
 /* ── RESPONSIVE ───────────────────────────────────── */
-@media (min-width: 768px) {
+@media (min-width: 1120px) {
   .aa-links { display: flex; }
   .aa-menu-btn { display: none; }
   .aa-mobile { display: none; }
-  .aa-hero-grid { grid-template-columns: 1fr 0.72fr; }
+}
+@media (min-width: 768px) {
+  .aa-hero-grid { grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr); }
   .aa-two-col { grid-template-columns: 1fr 1fr; }
   .aa-steps { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .aa-location-grid { grid-template-columns: 0.8fr 1fr; gap: 52px; }
@@ -1303,6 +1415,7 @@ button { font: inherit; }
   .aa-problems { grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 1024px) {
+  .aa-hero-grid { width: min(1280px, calc(100% - 56px)); }
   .aa-problems { grid-template-columns: repeat(5, 1fr); }
   .aa-steps { grid-template-columns: repeat(4, 1fr); gap: 20px; }
 }
@@ -1336,12 +1449,48 @@ export default function AntonioAguiarPropPage() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number>(0);
+  const [activeSection, setActiveSection] = useState("top");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = navItems
+      .map((item) => document.getElementById(item.href.slice(1)))
+      .filter((section): section is HTMLElement => Boolean(section));
+
+    const updateActiveSection = () => {
+      const navigationOffset = 150;
+      let current = sections[0]?.id ?? "top";
+
+      sections.forEach((section) => {
+        if (section.getBoundingClientRect().top <= navigationOffset) {
+          current = section.id;
+        }
+      });
+
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 4
+      ) {
+        current = sections.at(-1)?.id ?? current;
+      }
+
+      setActiveSection(current);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
   }, []);
 
   useEffect(() => {
@@ -1443,7 +1592,16 @@ export default function AntonioAguiarPropPage() {
 
           <div className="aa-links">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href}>
+              <a
+                className={
+                  activeSection === item.href.slice(1) ? "active" : undefined
+                }
+                key={item.href}
+                href={item.href}
+                aria-current={
+                  activeSection === item.href.slice(1) ? "location" : undefined
+                }
+              >
                 {item.label}
               </a>
             ))}
@@ -1484,9 +1642,16 @@ export default function AntonioAguiarPropPage() {
             <div className="aa-mobile-nav">
               {navItems.map((item, index) => (
                 <a
-                  className="aa-mobile-link"
+                  className={`aa-mobile-link${
+                    activeSection === item.href.slice(1) ? " active" : ""
+                  }`}
                   key={item.href}
                   href={item.href}
+                  aria-current={
+                    activeSection === item.href.slice(1)
+                      ? "location"
+                      : undefined
+                  }
                   onClick={() => setMenuOpen(false)}
                 >
                   <span className="aa-mobile-link-index">
@@ -1601,7 +1766,7 @@ export default function AntonioAguiarPropPage() {
         {/* ── PROBLEMAS ── */}
         <section
           id="atuacao"
-          className="aa-section dark"
+          className="aa-section"
           aria-label="Áreas de atuação"
         >
           <div className="aa-wrap">
@@ -1643,7 +1808,7 @@ export default function AntonioAguiarPropPage() {
               <Image
                 className="aa-about-photo"
                 src="/images/antonioaguiar/office/antonio-aguiar-escritorio-hq.webp"
-                alt="Antonio Aguiar em seu escritório de advocacia"
+                alt="Antonio Aguiar em ambiente profissional"
                 width={1448}
                 height={1086}
                 sizes="(min-width: 900px) 520px, calc(100vw - 40px)"
@@ -1665,7 +1830,7 @@ export default function AntonioAguiarPropPage() {
                 Advogado especializado em Direito Bancário, Antonio Aguiar atua
                 na defesa de produtores rurais, agropecuaristas e pessoas
                 físicas que sofrem abusos de instituições financeiras. Com
-                escritórios no Acre, no Amazonas e em Santa Catarina, com
+                presença no Acre, no Amazonas e em Santa Catarina, oferece
                 atendimento online para qualquer estado do Brasil.
               </p>
               <p>
@@ -1743,7 +1908,11 @@ export default function AntonioAguiarPropPage() {
         </section>
 
         {/* ── FAQ ── */}
-        <section className="aa-section black" aria-label="Perguntas frequentes">
+        <section
+          id="duvidas"
+          className="aa-section black"
+          aria-label="Perguntas frequentes"
+        >
           <div className="aa-wrap">
             <div className="aa-section-head center aa-reveal">
               <span className="aa-label">Dúvidas</span>
@@ -1787,64 +1956,69 @@ export default function AntonioAguiarPropPage() {
 
         {/* ── LOCALIZACAO ── */}
         <section
-          id="contato"
+          id="onde-atuamos"
           className="aa-section alt"
-          aria-label="Localização e contato"
+          aria-label="Estados onde atua"
         >
           <div className="aa-wrap">
             <div className="aa-section-head center aa-reveal">
-              <span className="aa-label">Escritórios</span>
-              <h2 className="aa-h2">Onde nos encontrar.</h2>
+              <span className="aa-label">Onde Atuamos</span>
+              <h2 className="aa-h2">Presença jurídica em três estados.</h2>
               <p className="aa-lead">
-                Atendimento presencial em três estados. Online para todo o
-                Brasil.
+                Atuação com presença no Acre, Amazonas e Santa Catarina, além
+                de atendimento online em todo o Brasil.
               </p>
             </div>
             <div className="aa-location-grid aa-reveal aa-delay-1">
               <div>
                 <div className="aa-offices">
-                  {offices.map((office) => (
-                    <a
-                      key={office.label}
-                      className="aa-office-card"
-                      href={office.mapsUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <span className="aa-office-label">{office.label}</span>
-                      <span className="aa-office-city">{office.city}</span>
-                      <p className="aa-office-address">{office.address}</p>
-                    </a>
+                  {serviceRegions.map((region) => (
+                    <div className="aa-office-card" key={region.acronym}>
+                      <span className="aa-office-icon" aria-hidden="true">
+                        <MapPin size={18} />
+                      </span>
+                      <span>
+                        <span className="aa-office-label">{region.state}</span>
+                        <span className="aa-office-city">{region.city}</span>
+                      </span>
+                      <span className="aa-office-acronym" aria-hidden="true">
+                        {region.acronym}
+                      </span>
+                    </div>
                   ))}
                 </div>
                 <div className="aa-location-note">
                   <Globe size={14} />
-                  <span>Atendimento online para qualquer estado do Brasil</span>
+                  <span>
+                    Atendimento presencial mediante disponibilidade e
+                    agendamento prévio
+                  </span>
                 </div>
               </div>
-              <div className="aa-map-wrap">
-                <iframe
-                  src="https://maps.google.com/maps?q=Rua+Silvio+Antonio+Araujo+de+Oliveira+Portal+da+Amazonia+Rio+Branco+AC+69915-720&output=embed"
-                  title="Localização escritório Antonio Aguiar, Rio Branco, AC"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
+              <div className="aa-presence-panel">
+                <span className="aa-presence-icon" aria-hidden="true">
+                  <Globe size={24} />
+                </span>
+                <h3>Atendimento sem fronteiras.</h3>
+                <p>
+                  Orientação jurídica próxima e acessível, com atendimento
+                  online para clientes de qualquer região do Brasil.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
         {/* ── CTA FINAL ── */}
-        <section className="aa-section gold-bg" aria-label="Contato">
+        <section id="contato" className="aa-section gold-bg" aria-label="Contato">
           <div className="aa-wrap">
             <div className="aa-cta-inner aa-reveal">
               <span className="aa-label">Fale Agora</span>
               <h2 className="aa-h2">Seu problema bancário tem solução.</h2>
               <p className="aa-lead">
-                Atendemos em Rio Branco/AC, Boca do Acre/AM e Florianópolis/SC,
-                e em todo o Brasil de forma online. Entre em contato agora
-                para uma análise sem compromisso.
+                Atuação no Acre, Amazonas e Santa Catarina, com atendimento
+                online para todo o Brasil. Entre em contato agora para uma
+                análise sem compromisso.
               </p>
               <div className="aa-actions">
                 <a
@@ -1895,10 +2069,13 @@ export default function AntonioAguiarPropPage() {
 
               <div className="aa-footer-col">
                 <h4>Navegação</h4>
+                <a href="#top">Início</a>
                 <a href="#atuacao">Atuação</a>
                 <a href="#sobre">Sobre</a>
                 <a href="#processo">Como Funciona</a>
-                <a href="#contato">Escritórios</a>
+                <a href="#duvidas">Dúvidas Frequentes</a>
+                <a href="#onde-atuamos">Onde Atuamos</a>
+                <a href="#contato">Fale Conosco</a>
                 <a href={whatsApp()} target="_blank" rel="noreferrer">
                   Falar pelo WhatsApp
                 </a>
