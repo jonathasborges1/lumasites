@@ -18,7 +18,7 @@ const INSTAGRAM = "https://www.instagram.com/adv.rodriguesecastro";
 
 /* ─── IMAGENS ──────────────────────────────────────────────── */
 const IMG = {
-  logo: "/images/rodriguesecastroadvocacia/logo-v2.svg",
+  logo: "/images/rodriguesecastroadvocacia/logo-v3-light.svg",
   heroBg: "/images/rodriguesecastroadvocacia/hero-v2.png",
   aboutOffice: "/images/rodriguesecastroadvocacia/quem-somos-v2.png",
   anne: "/images/rodriguesecastroadvocacia/anne-castro.png",
@@ -143,19 +143,19 @@ const css = `
     --bar:        52px;
     --nav:        70px;
     /* palette */
-    --black:      #0A0A0A;
-    --black-mid:  #111111;
-    --black-lt:   #1A1A1A;
-    --gold:       #D4A017;
-    --gold-dk:    #B8860B;
-    --gold-lt:    #F0C040;
-    --gold-pale:  rgba(212,160,23,.12);
-    --gold-line:  rgba(212,160,23,.25);
-    --white:      #FFFFFF;
-    --off-white:  #F5F0E8;
-    --muted:      #9CA3AF;
-    --slate:      #6B7280;
-    --line:       rgba(255,255,255,.08);
+    --black:      #FFFFFF;
+    --black-mid:  #F5F6F7;
+    --black-lt:   #E9EDF1;
+    --gold:       #132B45;
+    --gold-dk:    #0D2034;
+    --gold-lt:    #244E78;
+    --gold-pale:  rgba(19,43,69,.08);
+    --gold-line:  rgba(19,43,69,.2);
+    --white:      #132B45;
+    --off-white:  #FFFFFF;
+    --muted:      #626262;
+    --slate:      #626262;
+    --line:       rgba(19,43,69,.1);
     --wa:         #25D366;
   }
 
@@ -1036,6 +1036,240 @@ const css = `
     .gold-strip-item span { font-size: 9px; letter-spacing: .12em; }
   }
 
+  /* ══ IDENTIDADE 2026 — AZUL, CINZAS E BRANCO ══════════════ */
+  .rc {
+    background: #fff;
+    color: #626262;
+    font-family: var(--rc-body), 'Geometria', 'Montserrat', system-ui, sans-serif;
+  }
+  .pre-bar {
+    background: #132B45;
+    border-bottom-color: rgba(210,210,210,.2);
+  }
+  .pre-back, .pre-sub { color: rgba(255,255,255,.62); }
+  .pre-back:hover { color: #fff; background: rgba(255,255,255,.08); }
+  .pre-dot { background: #D2D2D2; animation: none; }
+  .pre-sub a { color: #fff; }
+  .pre-sub a:hover { color: #D2D2D2; }
+
+  .nav {
+    background: rgba(19,43,69,.78);
+    border-bottom-color: rgba(210,210,210,.18);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+  }
+  .nav.scrolled {
+    background: rgba(19,43,69,.92);
+    border-bottom-color: rgba(210,210,210,.28);
+    box-shadow: 0 12px 32px rgba(19,43,69,.16);
+  }
+  .nav-links a { color: rgba(255,255,255,.72); }
+  .nav-links a:hover { color: #fff; }
+  .nav-links a::after { background: #D2D2D2; }
+  .nav-links .nav-cta {
+    background: #fff;
+    color: #132B45;
+    box-shadow: none;
+  }
+  .nav-links .nav-cta:hover { background: #D2D2D2; color: #132B45; }
+  .menu-btn {
+    background: rgba(255,255,255,.08);
+    border-color: rgba(255,255,255,.26);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+  }
+  .menu-btn:hover, .menu-btn.open {
+    background: rgba(255,255,255,.14);
+    border-color: rgba(255,255,255,.46);
+  }
+  .menu-icon span { background: #fff; }
+  .mob-menu {
+    background: rgba(19,43,69,.98);
+    border-bottom-color: rgba(210,210,210,.22);
+  }
+  .mob-menu a { color: rgba(255,255,255,.72); border-bottom-color: rgba(255,255,255,.1); }
+  .mob-menu a:hover, .mob-menu a:last-child { color: #fff; }
+
+  .hero-bg {
+    opacity: .82;
+    filter: grayscale(.22) saturate(.62) contrast(1.02);
+  }
+  .hero-overlay {
+    background:
+      linear-gradient(90deg, rgba(19,43,69,.98) 0%, rgba(19,43,69,.9) 35%, rgba(19,43,69,.48) 66%, rgba(19,43,69,.18) 100%),
+      linear-gradient(0deg, rgba(19,43,69,.72) 0%, transparent 36%);
+  }
+  .hero-kicker { color: #D2D2D2; }
+  .hero-kicker::before { background: #D2D2D2; }
+  .hero h1 {
+    color: #fff;
+    font-family: var(--rc-heading), 'Argue', 'Cormorant Garamond', Georgia, serif;
+  }
+  .hero h1 em { color: #D2D2D2; }
+  .hero-sub { color: rgba(255,255,255,.74); }
+  .hero-trust { border-top-color: rgba(255,255,255,.16); }
+  .trust-item strong { color: #fff; }
+  .trust-item span { color: rgba(255,255,255,.58); }
+
+  .btn-gold {
+    background: #132B45;
+    color: #fff;
+    box-shadow: 0 10px 28px rgba(19,43,69,.2);
+  }
+  .btn-gold:hover {
+    background: #244E78;
+    box-shadow: 0 12px 30px rgba(19,43,69,.25);
+  }
+  .hero .btn-gold { background: #fff; color: #132B45; box-shadow: none; }
+  .hero .btn-gold:hover { background: #D2D2D2; }
+  .btn-outline { border-color: rgba(255,255,255,.42); color: #fff; }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+
+  .gold-strip {
+    background: #fff;
+    border-bottom: 1px solid #D2D2D2;
+  }
+  .gold-strip-item strong { color: #132B45; }
+  .gold-strip-item span { color: #626262; }
+
+  .section.bg-dark { background: #fff; }
+  .section.bg-mid { background: #F5F6F7; }
+  .section.bg-light { background: #E9EDF1; }
+  .sec-label { color: #132B45; }
+  .sec-h2,
+  .area-titulo,
+  .membro-nome,
+  .contato-card-title,
+  .location-copy h3 {
+    color: #132B45;
+    font-family: var(--rc-heading), 'Argue', 'Cormorant Garamond', Georgia, serif;
+  }
+  .sec-lead,
+  .sobre-text p,
+  .area-lista li,
+  .membro-areas,
+  .membro-missao p,
+  .faq-answer p,
+  .contato-card-sub,
+  .location-copy p,
+  .location-note {
+    color: #626262;
+  }
+
+  .sobre-img-col { border-color: #D2D2D2; background: #E9EDF1; }
+  .sobre-img-col img { opacity: .9; filter: grayscale(.18) saturate(.7); }
+  .sobre-img-col::after {
+    background: linear-gradient(180deg, transparent 40%, rgba(19,43,69,.58) 100%);
+  }
+  .sobre-badge {
+    background: rgba(255,255,255,.9);
+    border-color: rgba(19,43,69,.18);
+  }
+  .sobre-badge strong { color: #132B45; }
+  .sobre-badge span { color: #626262; }
+  .sobre-monogram { color: #fff; opacity: .34; }
+  .sobre-text strong { color: #132B45 !important; }
+  .sobre-tag { color: #626262; border-color: #D2D2D2; }
+  .sobre-tag:hover { color: #132B45; border-color: #132B45; background: rgba(19,43,69,.05); }
+
+  .area-card,
+  .membro-card,
+  .faq-item,
+  .contato-card,
+  .location-card {
+    background: #fff;
+    border-color: #D2D2D2;
+    box-shadow: 0 12px 36px rgba(19,43,69,.05);
+  }
+  .area-card:hover,
+  .membro-card:hover,
+  .faq-item.open,
+  .contato-card:hover,
+  .location-card:hover {
+    border-color: rgba(19,43,69,.42);
+    box-shadow: 0 16px 42px rgba(19,43,69,.09);
+  }
+  .area-card::before { background: #132B45; }
+  .area-icon,
+  .contato-item-icon,
+  .location-icon {
+    background: rgba(19,43,69,.07);
+    border-color: rgba(19,43,69,.16);
+  }
+  .area-icon img {
+    filter: brightness(0) saturate(100%) invert(16%) sepia(23%) saturate(1556%) hue-rotate(169deg) brightness(91%) contrast(92%);
+  }
+  .area-lista li::before { background: #132B45; }
+  .membro-foto-col { background: #F5F6F7; }
+  .membro-foto { filter: grayscale(.08) saturate(.82); }
+  .membro-foto-col::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    left: 50%; bottom: 0;
+    width: min(280px, 78%);
+    aspect-ratio: 1;
+    border: 4px solid #132B45;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+  .membro-inicial { color: #132B45; opacity: .1; }
+  .membro-oab { color: #132B45; background: rgba(19,43,69,.07); border-color: rgba(19,43,69,.18); }
+  .membro-missao { border-top-color: #D2D2D2; }
+  .membro-missao-label { color: #132B45; }
+
+  .quote-banner { background: #132B45; }
+  .quote-banner::before { background: rgba(255,255,255,.06); }
+  .quote-mark { color: rgba(255,255,255,.16); }
+  .quote-text { color: #fff; }
+  .quote-line { background: rgba(255,255,255,.32); }
+  .quote-author { color: rgba(255,255,255,.66); }
+
+  .faq-btn { color: #132B45; }
+  .faq-item.open .faq-btn, .faq-icon { color: #132B45; }
+  .contato-item { border-bottom-color: #D2D2D2; }
+  .contato-item-label { color: #626262; }
+  .contato-item-value { color: #132B45; }
+  .location-copy h3 em { color: #626262; }
+  .location-link { color: #132B45; border-color: rgba(19,43,69,.24); }
+  .location-link:hover { background: rgba(19,43,69,.06); border-color: #132B45; }
+  .location-map iframe {
+    filter: grayscale(1) contrast(.88) brightness(.96) sepia(.08) hue-rotate(165deg);
+  }
+  .location-map::after { box-shadow: inset 30px 0 45px rgba(19,43,69,.14); }
+
+  .cta-final { background: #132B45; }
+  .cta-final::before {
+    background:
+      radial-gradient(ellipse 60% 70% at 20% 50%, rgba(255,255,255,.07) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 80% 30%, rgba(210,210,210,.08) 0%, transparent 60%);
+  }
+  .cta-content .sec-h2 { color: #fff; }
+  .cta-content .sec-lead { color: rgba(255,255,255,.7); }
+  .cta-gold-line { background: linear-gradient(to right, transparent, #D2D2D2, transparent); }
+  .cta-final .btn-gold { background: #fff; color: #132B45; box-shadow: none; }
+  .cta-final .btn-gold:hover { background: #D2D2D2; }
+
+  .footer { background: #132B45; border-top-color: rgba(255,255,255,.12); }
+  .footer-brand p,
+  .footer-col a,
+  .footer-bottom { color: rgba(255,255,255,.62); }
+  .footer-col h4 { color: #fff; }
+  .footer-col a:hover, .footer-bottom a { color: #fff; }
+  .footer-line { border-top-color: rgba(255,255,255,.12); }
+
+  @media (max-width: 767px) {
+    .hero-overlay {
+      background:
+        linear-gradient(90deg, rgba(19,43,69,.96) 0%, rgba(19,43,69,.82) 72%, rgba(19,43,69,.58) 100%),
+        linear-gradient(0deg, rgba(19,43,69,.76), rgba(19,43,69,.18));
+    }
+    .gold-strip-item {
+      border-right-color: #D2D2D2;
+      border-bottom-color: #D2D2D2;
+    }
+    .location-map::after { box-shadow: inset 0 25px 40px rgba(19,43,69,.12); }
+  }
+
   /* ══ REDUCED MOTION ═══════════════════════════════════════ */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -1229,7 +1463,7 @@ export default function RodriguesCastroProposalPage() {
               </p>
               <div className="hero-actions">
                 <a className="btn-gold" href={WA_PRIMARY} target="_blank" rel="noreferrer">
-                  <WaIcon size={16} color="#0A0A0A" /> Agendar consulta
+                  <WaIcon size={16} color="#132B45" /> Agendar consulta
                   <span className="sr-only"> (abre em nova aba)</span>
                 </a>
                 <a className="btn-outline" href="#atuacao">
@@ -1494,7 +1728,7 @@ export default function RodriguesCastroProposalPage() {
                 <p className="contato-card-sub">Atendimento direto com as advogadas</p>
                 <div className="contato-item">
                   <div className="contato-item-icon">
-                    <WaIcon size={18} color="#D4A017" />
+                    <WaIcon size={18} color="#132B45" />
                   </div>
                   <div>
                     <p className="contato-item-label">Anne Castro</p>
@@ -1505,7 +1739,7 @@ export default function RodriguesCastroProposalPage() {
                 </div>
                 <div className="contato-item">
                   <div className="contato-item-icon">
-                    <WaIcon size={18} color="#D4A017" />
+                    <WaIcon size={18} color="#132B45" />
                   </div>
                   <div>
                     <p className="contato-item-label">Juliana Rodrigues</p>
@@ -1515,7 +1749,7 @@ export default function RodriguesCastroProposalPage() {
                   </div>
                 </div>
                 <a className="btn-gold" href={WA_PRIMARY} target="_blank" rel="noreferrer" style={{ marginTop: 24 }}>
-                  <WaIcon size={16} color="#0A0A0A" /> Iniciar conversa
+                  <WaIcon size={16} color="#FFFFFF" /> Iniciar conversa
                   <span className="sr-only"> (abre em nova aba)</span>
                 </a>
               </div>
@@ -1526,7 +1760,7 @@ export default function RodriguesCastroProposalPage() {
                 <p className="contato-card-sub">E-mail e localização</p>
                 <div className="contato-item">
                   <div className="contato-item-icon">
-                    <Mail size={16} color="#D4A017" />
+                    <Mail size={16} color="#132B45" />
                   </div>
                   <div>
                     <p className="contato-item-label">E-mail</p>
@@ -1537,7 +1771,7 @@ export default function RodriguesCastroProposalPage() {
                 </div>
                 <div className="contato-item">
                   <div className="contato-item-icon">
-                    <MapPin size={16} color="#D4A017" />
+                    <MapPin size={16} color="#132B45" />
                   </div>
                   <div>
                     <p className="contato-item-label">Localização</p>
@@ -1546,7 +1780,7 @@ export default function RodriguesCastroProposalPage() {
                 </div>
                 <div className="contato-item">
                   <div className="contato-item-icon">
-                    <Clock size={16} color="#D4A017" />
+                    <Clock size={16} color="#132B45" />
                   </div>
                   <div>
                     <p className="contato-item-label">Horário</p>
@@ -1566,11 +1800,11 @@ export default function RodriguesCastroProposalPage() {
                   Dois endereços<br /><em>em Manaus.</em>
                 </h3>
                 <p style={{ marginBottom: 10 }}>
-                  <strong style={{ color: "rgba(255,255,255,.75)", fontSize: 12, letterSpacing: ".06em", textTransform: "uppercase" }}>Escritório</strong><br />
+                  <strong style={{ color: "#132B45", fontSize: 12, letterSpacing: ".06em", textTransform: "uppercase" }}>Escritório</strong><br />
                   Av. Timbiras, 35 — Cidade Nova, Manaus/AM · CEP 69095-001
                 </p>
                 <p>
-                  <strong style={{ color: "rgba(255,255,255,.75)", fontSize: 12, letterSpacing: ".06em", textTransform: "uppercase" }}>OAB/AM</strong><br />
+                  <strong style={{ color: "#132B45", fontSize: 12, letterSpacing: ".06em", textTransform: "uppercase" }}>OAB/AM</strong><br />
                   Av. Humberto Calderaro Filho, 2000 — Adrianópolis, Manaus/AM · CEP 69057-021
                 </p>
                 <div className="location-note">
@@ -1626,7 +1860,7 @@ export default function RodriguesCastroProposalPage() {
               </p>
               <div className="cta-actions">
                 <a className="btn-gold" href={WA_PRIMARY} target="_blank" rel="noreferrer">
-                  <WaIcon size={16} color="#0A0A0A" /> Agendar consulta pelo WhatsApp
+                  <WaIcon size={16} color="#132B45" /> Agendar consulta pelo WhatsApp
                   <span className="sr-only"> (abre em nova aba)</span>
                 </a>
                 <a className="btn-outline" href={`mailto:${EMAIL}`}>

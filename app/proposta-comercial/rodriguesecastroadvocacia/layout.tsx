@@ -1,7 +1,9 @@
-import { Montserrat, Playfair_Display } from "next/font/google";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import type { Metadata } from "next";
 
-const playfair = Playfair_Display({
+// Substitutos temporários até o recebimento dos arquivos licenciados
+// de Argue e Geometria em formato web (.woff2).
+const argueFallback = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
@@ -9,7 +11,7 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const montserrat = Montserrat({
+const geometriaFallback = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--rc-body",
@@ -65,7 +67,7 @@ export default function RodriguesCastroLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`${playfair.variable} ${montserrat.variable}`}>
+    <div className={`${argueFallback.variable} ${geometriaFallback.variable}`}>
       <style>{`[aria-label="Criar meu site com a Luma Sites"]{display:none!important}`}</style>
       {children}
     </div>

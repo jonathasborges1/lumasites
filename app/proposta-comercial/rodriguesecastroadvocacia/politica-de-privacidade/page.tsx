@@ -66,31 +66,31 @@ export default function RodriguesCastroPrivacyPage() {
     <main
       style={{
         minHeight: "100vh",
-        background: "#0A0A0A",
-        color: "#F5F0E8",
-        fontFamily: "var(--rc-body), Montserrat, system-ui, sans-serif",
+        background: "#F5F6F7",
+        color: "#626262",
+        fontFamily: "var(--rc-body), Geometria, Montserrat, system-ui, sans-serif",
       }}
     >
       <style>{`[aria-label="Falar no WhatsApp"]{display:none!important}`}</style>
       <header
         style={{
           padding: "80px 24px 64px",
-          borderBottom: "1px solid rgba(212,160,23,.25)",
+          borderBottom: "1px solid rgba(210,210,210,.3)",
           background:
-            "radial-gradient(circle at 80% 20%, rgba(212,160,23,.12), transparent 34%), #0A0A0A",
+            "radial-gradient(circle at 80% 20%, rgba(255,255,255,.08), transparent 34%), #132B45",
         }}
       >
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <Link
             href="/proposta-comercial/rodriguesecastroadvocacia"
-            style={{ color: "#D4A017", fontSize: 13, textDecoration: "none" }}
+            style={{ color: "#D2D2D2", fontSize: 13, textDecoration: "none" }}
           >
             ← Voltar para a prévia
           </Link>
           <p
             style={{
               margin: "34px 0 12px",
-              color: "#D4A017",
+              color: "#D2D2D2",
               fontSize: 11,
               fontWeight: 700,
               letterSpacing: ".18em",
@@ -102,7 +102,8 @@ export default function RodriguesCastroPrivacyPage() {
           <h1
             style={{
               margin: 0,
-              fontFamily: "var(--rc-heading), Georgia, serif",
+              color: "#FFFFFF",
+              fontFamily: "var(--rc-heading), Argue, 'Cormorant Garamond', Georgia, serif",
               fontSize: "clamp(38px, 7vw, 62px)",
               lineHeight: 1.06,
             }}
@@ -130,15 +131,16 @@ export default function RodriguesCastroPrivacyPage() {
             maxWidth: 900,
             margin: "0 auto",
             padding: "clamp(26px, 5vw, 52px)",
-            border: "1px solid rgba(255,255,255,.08)",
+            border: "1px solid #D2D2D2",
             borderRadius: 16,
-            background: "#111111",
+            background: "#FFFFFF",
+            boxShadow: "0 18px 48px rgba(19,43,69,.06)",
           }}
         >
           <p
             style={{
               margin: "0 0 36px",
-              color: "rgba(255,255,255,.42)",
+              color: "#626262",
               fontSize: 13,
             }}
           >
@@ -150,8 +152,8 @@ export default function RodriguesCastroPrivacyPage() {
               <h2
                 style={{
                   margin: "0 0 14px",
-                  color: "#F0C040",
-                  fontFamily: "var(--rc-heading), Georgia, serif",
+                  color: "#132B45",
+                  fontFamily: "var(--rc-heading), Argue, 'Cormorant Garamond', Georgia, serif",
                   fontSize: 24,
                 }}
               >
@@ -162,7 +164,7 @@ export default function RodriguesCastroPrivacyPage() {
                   key={paragraph}
                   style={{
                     margin: "0 0 12px",
-                    color: "rgba(255,255,255,.58)",
+                    color: "#626262",
                     fontSize: 15,
                     lineHeight: 1.85,
                   }}
@@ -176,7 +178,7 @@ export default function RodriguesCastroPrivacyPage() {
           <div
             style={{
               paddingTop: 28,
-              borderTop: "1px solid rgba(255,255,255,.08)",
+              borderTop: "1px solid #D2D2D2",
             }}
           >
             <Link
@@ -187,8 +189,8 @@ export default function RodriguesCastroPrivacyPage() {
                 padding: "0 18px",
                 alignItems: "center",
                 borderRadius: 8,
-                background: "#D4A017",
-                color: "#0A0A0A",
+                background: "#132B45",
+                color: "#FFFFFF",
                 fontSize: 12,
                 fontWeight: 700,
                 textDecoration: "none",

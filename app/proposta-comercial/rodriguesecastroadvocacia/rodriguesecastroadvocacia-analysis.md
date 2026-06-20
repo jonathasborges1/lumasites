@@ -17,17 +17,20 @@
 - **Atendimento presencial:** sede da OAB Amazonas, somente com agendamento antecipado
 - **Endereço de atendimento:** Avenida Umberto Calderaro Filho, nº 2000, Adrianópolis, Manaus/AM — CEP 69057-021
 
-### Paleta de Cores (identidade já estabelecida)
+### Paleta de Cores (identidade atualizada)
 | Token | Valor | Uso |
 |---|---|---|
-| Fundo principal | `#000000` (preto) | Background geral |
-| Accent | `yellow-500` (#EAB308) | Bordas, destaques, hover |
-| Texto | `#FFFFFF` (branco) | Textos sobre fundo escuro |
-| Subtexto | `gray-400` | Textos secundários |
+| Azul institucional | `#132B45` | Navbar, hero, CTA e rodapé |
+| Cinza principal | `#626262` | Textos e informações secundárias |
+| Cinza claro | `#D2D2D2` | Bordas, divisores e fundos auxiliares |
+| Fundo principal | `#FFFFFF` | Seções principais |
+| Fundo alternativo | `#F5F6F7` | Seções e cards alternados |
 
 ### Tipografia
-- **Fonte:** Montserrat (300, 400, 500, 600, 700) — Google Fonts
-- Elegante, profissional, boa leitura em fundo escuro
+- **Headlines:** Argue
+- **Textos e interface:** Geometria
+- Os arquivos licenciados `.woff2` ainda precisam ser fornecidos.
+- Enquanto isso, a prévia utiliza Cormorant Garamond e Montserrat como equivalentes temporários.
 
 ### Advogadas da Equipe
 
@@ -185,15 +188,13 @@ lumasites/public/images/rodriguesecastroadvocacia/
 7. **Contato** — WhatsApp (2 números), email, horário, localização
 8. **Footer** — Logo, copyright, redes sociais
 
-### Paleta para a prévia (mantendo identidade)
+### Paleta atualizada para a prévia
 ```css
---bg:        #0A0A0A   /* preto principal */
---accent:    #D4A017   /* dourado refinado (evolução do yellow-500) */
---accent-dk: #B8860B   /* dourado escuro para texto sobre fundo claro */
---accent-lt: #F0C040   /* dourado claro para texto sobre fundo escuro */
---text:      #FFFFFF
---muted:     #9CA3AF   /* gray-400 */
---line:      rgba(212,160,23,.2)
+--navy:      #132B45
+--gray:      #626262
+--gray-light:#D2D2D2
+--paper:     #FFFFFF
+--paper-alt: #F5F6F7
 ```
 
 ---
@@ -202,6 +203,6 @@ lumasites/public/images/rodriguesecastroadvocacia/
 
 - O **Hero atual** está incompleto — não há título visível, apenas dois botões. A prévia deve corrigir isso com uma headline impactante.
 - O **Direito do Consumidor** tem conteúdo errado no código original (placeholder) — aguardar resposta da cliente.
-- A identidade visual **preto + dourado** é forte e adequada para advocacia premium. Manter e refinar na prévia.
-- A fonte **Montserrat** combina bem com o perfil do escritório. Para a prévia podemos combinar com **Playfair Display** (serifada) nas headlines para dar mais autoridade, seguindo o padrão da lumasites.
+- A identidade visual foi atualizada para **azul-marinho, cinzas e branco**, com uma leitura mais institucional e contemporânea.
+- As fontes oficiais são **Argue** e **Geometria**; substituir os fallbacks assim que os arquivos licenciados forem entregues.
 - Ambas as advogadas têm OAB/AM — localização Amazonas está confirmada.
