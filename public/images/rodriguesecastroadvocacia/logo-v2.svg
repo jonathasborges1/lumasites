@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" role="img" aria-labelledby="title desc">
+  <title id="title">Rodrigues e Castro Advocacia</title>
+  <desc id="desc">Monograma RC em dourado acompanhado do nome Rodrigues e Castro Advocacia.</desc>
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(18 14)">
+      <text x="0" y="145" fill="#D6A927" font-family="Georgia, 'Times New Roman', serif" font-size="158" font-weight="400">R</text>
+      <text x="57" y="151" fill="#F0C85A" font-family="Georgia, 'Times New Roman', serif" font-size="142" font-weight="400">C</text>
+      <path d="M18 166h151" stroke="#D6A927" stroke-width="3"/>
+      <path d="M91 150v32" stroke="#D6A927" stroke-width="3"/>
+      <path d="M69 182h44" stroke="#D6A927" stroke-width="3"/>
+    </g>
+    <g transform="translate(225 45)">
+      <text x="0" y="74" fill="#F8F3E9" font-family="Georgia, 'Times New Roman', serif" font-size="55" letter-spacing="1">RODRIGUES E CASTRO</text>
+      <path d="M4 101h112M568 101h112" stroke="#D6A927" stroke-width="2"/>
+      <text x="177" y="116" fill="#D6A927" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="600" letter-spacing="13">ADVOCACIA</text>
+    </g>
+  </g>
+</svg>
