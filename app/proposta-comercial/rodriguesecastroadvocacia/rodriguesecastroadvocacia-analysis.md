@@ -14,8 +14,9 @@
 - **WhatsApp (Anne):** +55 92 98230-1415
 - **WhatsApp (Juliana):** +55 92 98171-6233
 - **Cidade confirmada:** Manaus/AM
-- **Atendimento presencial:** sede da OAB Amazonas, somente com agendamento antecipado
-- **Endereço de atendimento:** Avenida Umberto Calderaro Filho, nº 2000, Adrianópolis, Manaus/AM — CEP 69057-021
+- **Modalidades de atendimento:** online e presencial
+- **Atendimento presencial:** somente após confirmação pelo WhatsApp
+- **Endereço de atendimento:** Rua Luis Lopes, nº 32, Parque 10 de Novembro, Manaus/AM — CEP 69055-755
 
 ### Paleta de Cores (identidade atualizada)
 | Token | Valor | Uso |
@@ -117,7 +118,7 @@
 | 12 | **Números/estatísticas** | Ex: "X casos atendidos", "X anos de atuação", "X clientes satisfeitos". |
 | 13 | **Foto de perfil profissional adicional** | Foto das advogadas em ambiente de escritório (além das circulares já existentes). |
 | 14 | **OG Image** | Imagem 1200×630px para compartilhamento em redes sociais. |
-| 15 | **Endereço físico** | ✅ Atendimento confirmado na sede da OAB/AM, mediante agendamento antecipado. |
+| 15 | **Endereço físico** | ✅ Rua Luis Lopes, nº 32, Parque 10 de Novembro, Manaus/AM — atendimento presencial somente após confirmação pelo WhatsApp. |
 
 ---
 
@@ -145,7 +146,7 @@ Lista das perguntas a enviar para a cliente em ordem de prioridade:
 
 7. Vocês têm Instagram, LinkedIn ou outras redes sociais oficiais do escritório?
 
-8. Qual a disponibilidade de horários para agendamento na sede da OAB/AM?
+8. Qual a disponibilidade de horários para atendimento presencial?
 
 9. Vocês têm depoimentos de clientes que possam ser usados no site?
 

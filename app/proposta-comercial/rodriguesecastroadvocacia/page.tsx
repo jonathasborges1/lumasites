@@ -111,7 +111,7 @@ const faqs = [
   },
   {
     q: "Vocês atendem em quais cidades?",
-    a: "O escritório atende presencialmente em dois endereços em Manaus: Av. Timbiras, 35 — Cidade Nova, e na sede da OAB/AM. O horário de funcionamento é de segunda a sexta, das 08h às 17h. O agendamento é obrigatório e deve ser feito pelo WhatsApp.",
+    a: "O escritório realiza atendimentos online e presenciais. O atendimento presencial ocorre em Manaus, na Rua Luis Lopes, 32 — Parque 10 de Novembro, somente após confirmação pelo WhatsApp. O horário de funcionamento é de segunda a sexta, das 08h às 17h.",
   },
   {
     q: "Quais documentos preciso levar para a consulta?",
@@ -1464,8 +1464,8 @@ export default function RodriguesCastroProposalPage() {
               </h1>
               <p className="hero-sub">
                 Escritório com atuação em Direito Civil, Trabalhista e do
-                Consumidor. Atendimento transparente, célere e comprometido com
-                a melhor solução para o seu caso.
+                Consumidor. Atendimento online e presencial, com transparência,
+                celeridade e comprometimento com a melhor solução para o seu caso.
               </p>
               <div className="hero-actions">
                 <a className="btn-gold" href={WA_PRIMARY} target="_blank" rel="noreferrer">
@@ -1725,8 +1725,8 @@ export default function RodriguesCastroProposalPage() {
               <span className="sec-label">Contato</span>
               <h2 className="sec-h2">Entre em contato</h2>
               <p className="sec-lead">
-                Dois endereços em Manaus, atendimento de segunda a sexta das
-                08h às 17h, exclusivamente mediante agendamento pelo WhatsApp.
+                Atendimento online ou presencial, de segunda a sexta, das 08h às 17h.
+                Em Manaus, o atendimento presencial ocorre somente após confirmação pelo WhatsApp.
               </p>
             </div>
             <div className="contato-grid">
@@ -1783,7 +1783,7 @@ export default function RodriguesCastroProposalPage() {
                   </div>
                   <div>
                     <p className="contato-item-label">Localização</p>
-                    <p className="contato-item-value">2 endereços em Manaus/AM</p>
+                    <p className="contato-item-value">Parque 10 de Novembro, Manaus/AM</p>
                   </div>
                 </div>
                 <div className="contato-item">
@@ -1803,42 +1803,29 @@ export default function RodriguesCastroProposalPage() {
                 <div className="location-icon" aria-hidden="true">
                   <MapPin size={22} />
                 </div>
-                <span className="sec-label">Atendimento presencial</span>
+                <span className="sec-label">Atendimento online e presencial</span>
                 <h3>
-                  Dois endereços<br /><em>em Manaus.</em>
+                  Nosso endereço<br /><em>em Manaus.</em>
                 </h3>
-                <p style={{ marginBottom: 10 }}>
-                  <strong style={{ color: "#132B45", fontSize: 12, letterSpacing: ".06em", textTransform: "uppercase" }}>Escritório</strong><br />
-                  Av. Timbiras, 35 — Cidade Nova, Manaus/AM · CEP 69095-001
-                </p>
                 <p>
-                  <strong style={{ color: "#132B45", fontSize: 12, letterSpacing: ".06em", textTransform: "uppercase" }}>OAB/AM</strong><br />
-                  Av. Humberto Calderaro Filho, 2000 — Adrianópolis, Manaus/AM · CEP 69057-021
+                  <strong style={{ color: "#132B45", fontSize: 12, letterSpacing: ".06em", textTransform: "uppercase" }}>Escritório</strong><br />
+                  Rua Luis Lopes, 32 — Parque 10 de Novembro, Manaus/AM · CEP 69055-755
                 </p>
                 <div className="location-note">
                   <Clock size={14} aria-hidden="true" />
                   <span>
                     Seg–Sex: 08h–17h · Sáb e Dom: Fechado.
-                    Atendimento exclusivamente com agendamento prévio pelo WhatsApp.
+                    Atendimento presencial somente após confirmação pelo WhatsApp.
                   </span>
                 </div>
                 <div className="location-actions">
                   <a
                     className="location-link"
-                    href="https://www.google.com/maps/search/?api=1&query=Av.%20Timbiras%2C%2035%2C%20Cidade%20Nova%2C%20Manaus%2C%20AM"
+                    href="https://www.google.com/maps/search/?api=1&query=Rua%20Luis%20Lopes%2C%2032%2C%20Parque%2010%20de%20Novembro%2C%20Manaus%2C%20AM%2C%2069055-755"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <ExternalLink size={14} /> Ver escritório
-                    <span className="sr-only"> (abre em nova aba)</span>
-                  </a>
-                  <a
-                    className="location-link"
-                    href="https://www.google.com/maps/search/?api=1&query=OAB%20Amazonas%2C%20Av.%20Humberto%20Calderaro%20Filho%2C%202000%2C%20Manaus%2C%20AM"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <ExternalLink size={14} /> Ver OAB/AM
+                    <ExternalLink size={14} /> Ver no Google Maps
                     <span className="sr-only"> (abre em nova aba)</span>
                   </a>
                 </div>
@@ -1846,7 +1833,7 @@ export default function RodriguesCastroProposalPage() {
               <div className="location-map">
                 <iframe
                   title="Mapa do escritório Rodrigues e Castro Advocacia em Manaus"
-                  src="https://www.google.com/maps?q=Av.+Timbiras,+35,+Cidade+Nova,+Manaus,+AM,+69095-001&z=16&output=embed"
+                  src="https://www.google.com/maps?q=Rua+Luis+Lopes,+32,+Parque+10+de+Novembro,+Manaus,+AM,+69055-755&z=16&output=embed"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   allowFullScreen

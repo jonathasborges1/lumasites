@@ -21,7 +21,7 @@ const geometriaFallback = Montserrat({
 export const metadata: Metadata = {
   title: "Rodrigues e Castro Advocacia | Direito Civil, Trabalhista e do Consumidor — AM",
   description:
-    "Escritório de advocacia com atuação em Direito Civil, Trabalhista e do Consumidor. Anne Castro (OAB/AM-11421) e Juliana Rodrigues (OAB/AM-10547). Atendimento em Manaus mediante agendamento.",
+    "Escritório de advocacia com atuação em Direito Civil, Trabalhista e do Consumidor. Anne Castro (OAB/AM-11421) e Juliana Rodrigues (OAB/AM-10547). Atendimento online e presencial em Manaus.",
   keywords:
     "advocacia Amazonas, advogado Manaus, direito civil AM, direito trabalhista AM, direito consumidor AM, Rodrigues e Castro Advocacia, OAB AM",
   alternates: {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Rodrigues e Castro Advocacia | Direito Civil · Trabalhista · Consumidor",
     description:
-      "Advocacia com atuação em Direito Civil, Trabalhista e do Consumidor em Manaus. Atendimento transparente e mediante agendamento.",
+      "Advocacia com atuação em Direito Civil, Trabalhista e do Consumidor. Atendimento online e presencial em Manaus.",
     url: "/proposta-comercial/rodriguesecastroadvocacia",
     locale: "pt_BR",
     type: "website",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rodrigues e Castro Advocacia",
     description:
-      "Advocacia com atuação em Direito Civil, Trabalhista e do Consumidor em Manaus.",
+      "Advocacia com atendimento online e presencial nas áreas Civil, Trabalhista e do Consumidor.",
     images: ["/images/rodriguesecastroadvocacia/og-rodrigues-e-castro.png"],
   },
 };
