@@ -42,11 +42,9 @@ const areas = [
     icon: IMG.iconCivil,
     itens: [
       "Indenização por dano moral e material",
-      "Contratos e revisão contratual",
       "Ações de cobrança",
       "Locação de imóveis",
-      "Condomínios",
-      "Mudança de nome e retificação de registro",
+      "Negativa de procedimentos por planos de saúde",
     ],
   },
   {
@@ -56,9 +54,13 @@ const areas = [
       "Verbas trabalhistas",
       "Reconhecimento de vínculo empregatício",
       "Verbas rescisórias indevidas",
+      "Rescisão indireta",
       "Desvio e acúmulo de funções",
       "Acidente de trabalho",
       "Assédio moral e dispensa irregular",
+      "Doença laboral",
+      "Horas extras",
+      "Reversão de justa causa",
     ],
   },
   {
@@ -69,8 +71,12 @@ const areas = [
       "Cancelamento e suspensão indevida de serviços",
       "Vícios e defeitos em produtos e serviços",
       "Práticas abusivas por fornecedores",
-      "Revisão de contratos abusivos",
       "Ressarcimento por danos ao consumidor",
+      "Anulação de multa por irregularidades em energia e água",
+      "Desvio de produto em entregas por aplicativo",
+      "Venda casada",
+      "Overbooking",
+      "Atraso de voo",
     ],
   },
 ];
@@ -1591,11 +1597,13 @@ export default function RodriguesCastroProposalPage() {
                     <Image src={area.icon} alt={area.titulo} width={32} height={32} />
                   </div>
                   <h3 className="area-titulo">{area.titulo}</h3>
-                  <ul className="area-lista">
-                    {area.itens.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
+                  {area.itens.length > 0 && (
+                    <ul className="area-lista">
+                      {area.itens.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
                 </article>
               ))}
             </div>

@@ -56,9 +56,9 @@
 
 | Área | Itens | Ícone |
 |---|---|---|
-| Direito Civil | Indenização por dano moral e material · Contratos · Ações de cobrança · Locação de Imóveis · Condomínios · Mudança de nome e retificação de registro | `/icons/direito-civil.png` ✅ |
-| Direito do Trabalho | Verbas trabalhistas · Vínculo empregatício · Verbas rescisórias indevidas · Desvio/acúmulo de funções · Acidente de trabalho | `/icons/direito-trabalho.png` ✅ |
-| Direito do Consumidor | ⚠️ **PLACEHOLDER** — itens copiados do Trabalhista no código | `/icons/direito-consumidor.png` ✅ |
+| Direito Civil | Indenização por dano moral e material · Ações de cobrança · Locação de imóveis · Negativa de procedimentos por planos de saúde | `/icons/direito-civil.png` ✅ |
+| Direito do Trabalho | Verbas trabalhistas · Vínculo empregatício · Verbas rescisórias indevidas · Rescisão indireta · Desvio/acúmulo de funções · Acidente de trabalho · Assédio moral e dispensa irregular · Doença laboral · Horas extras · Reversão de justa causa | `/icons/direito-trabalho.png` ✅ |
+| Direito do Consumidor | Cobranças indevidas e negativação de crédito · Cancelamento e suspensão indevida de serviços · Vícios e defeitos em produtos e serviços · Práticas abusivas por fornecedores · Ressarcimento por danos ao consumidor · Anulação de multa por irregularidades em energia e água · Desvio de produto em entregas por aplicativo · Venda casada · Overbooking · Atraso de voo | `/icons/direito-consumidor.png` ✅ |
 
 ### Assets de Imagem Disponíveis
 ```
