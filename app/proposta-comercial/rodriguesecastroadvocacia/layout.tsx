@@ -45,10 +45,11 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/rodriguesecastroadvocacia/hero-v2.png",
-        width: 1672,
-        height: 941,
-        alt: "Rodrigues e Castro Advocacia",
+        url: "/images/rodriguesecastroadvocacia/og-rodrigues-e-castro.png",
+        width: 1200,
+        height: 630,
+        alt: "Rodrigues e Castro Advocacia — Direito Civil, Trabalhista e do Consumidor",
+        type: "image/png",
       },
     ],
   },
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
     title: "Rodrigues e Castro Advocacia",
     description:
       "Advocacia com atuação em Direito Civil, Trabalhista e do Consumidor em Manaus.",
-    images: ["/images/rodriguesecastroadvocacia/hero-v2.png"],
+    images: ["/images/rodriguesecastroadvocacia/og-rodrigues-e-castro.png"],
   },
 };
 
