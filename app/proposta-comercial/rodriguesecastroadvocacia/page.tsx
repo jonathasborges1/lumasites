@@ -21,8 +21,8 @@ const IMG = {
   logo: "/images/rodriguesecastroadvocacia/logo-v3-light.svg",
   heroBg: "/images/rodriguesecastroadvocacia/hero-v2.png",
   aboutOffice: "/images/rodriguesecastroadvocacia/quem-somos-v2.png",
-  anne: "/images/rodriguesecastroadvocacia/anne-castro.png",
-  juliana: "/images/rodriguesecastroadvocacia/juliana-rodrigues.png",
+  anne: "/images/rodriguesecastroadvocacia/anne-castro-hd.png",
+  juliana: "/images/rodriguesecastroadvocacia/juliana-rodrigues-hd.png",
   iconCivil: "/images/rodriguesecastroadvocacia/icon-civil.png",
   iconTrabalho: "/images/rodriguesecastroadvocacia/icon-trabalho.png",
   iconConsumidor: "/images/rodriguesecastroadvocacia/icon-consumidor.png",
@@ -101,7 +101,7 @@ const equipe = [
 const faqs = [
   {
     q: "Como funciona a primeira consulta?",
-    a: "A primeira consulta é realizada para entendermos o seu caso e apresentar as melhores alternativas jurídicas disponíveis. Entre em contato pelo WhatsApp para agendar e receber todas as orientações necessárias.",
+    a: "A primeira consulta é realizada para que possamos entender o seu caso e apresentar as alternativas jurídicas disponíveis. Entre em contato pelo WhatsApp para agendar e receber todas as orientações necessárias.",
   },
   {
     q: "Vocês atendem em quais cidades?",
@@ -109,7 +109,7 @@ const faqs = [
   },
   {
     q: "Quais documentos preciso levar para a consulta?",
-    a: "Os documentos variam conforme o tipo de caso. No agendamento, nossa equipe orienta quais materiais trazer para que a consulta seja o mais produtiva possível.",
+    a: "Os documentos variam conforme o tipo de caso. No agendamento, nossa equipe orienta quais documentos apresentar para que a consulta seja a mais produtiva possível.",
   },
   {
     q: "Vocês cobram pela consulta inicial?",
@@ -117,7 +117,7 @@ const faqs = [
   },
   {
     q: "Quanto tempo dura um processo?",
-    a: "O prazo varia de acordo com a natureza e complexidade de cada caso. Nossa equipe fornece uma estimativa realista após análise das particularidades da sua situação.",
+    a: "O prazo varia de acordo com a natureza e a complexidade de cada caso. Nossa equipe fornece uma estimativa realista após a análise das particularidades da sua situação.",
   },
 ];
 
@@ -1533,11 +1533,11 @@ export default function RodriguesCastroProposalPage() {
               </div>
               <div className="sobre-text" data-anim="right">
                 <p>
-                  O escritório <strong style={{ color: "#fff" }}>Rodrigues e Castro Advocacia</strong> é
+                  O escritório <strong style={{ color: "#fff" }}>Rodrigues e Castro Advocacia</strong>{" "}
                   atua na prestação de serviços jurídicos voltados às
                   necessidades dos nossos clientes. Com uma equipe experiente e comprometida,
-                  atuamos nas áreas Cível, Trabalhista e do Consumidor, sempre buscando a
-                  melhor solução para cada caso.
+                  atuamos nas áreas do Direito Civil, Trabalhista e do Consumidor, sempre em
+                  busca da melhor solução para cada caso.
                 </p>
                 <p>
                   Nossa prática é guiada por valores que não negociamos: ética, eficiência e
@@ -1572,10 +1572,10 @@ export default function RodriguesCastroProposalPage() {
             <div data-anim="up">
               <span className="sec-label">Áreas de atuação</span>
               <h2 className="sec-h2">
-                Três áreas, uma só<br />missão: seu direito.
+                Três áreas, uma só<br />missão: seus direitos.
               </h2>
               <p className="sec-lead">
-                Cobrimos as principais demandas jurídicas do cidadão com
+                Atuamos nas principais demandas jurídicas do cidadão com
                 profundidade técnica e atendimento personalizado.
               </p>
             </div>
