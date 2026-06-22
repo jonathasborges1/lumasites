@@ -1963,7 +1963,7 @@ export default function JuraciNunesPropPage() {
                 width={1086}
                 height={1448}
                 sizes="(min-width: 900px) 480px, calc(100vw - 40px)"
-                quality={88}
+                quality={90}
               />
               <div className="jn-about-badge">
                 <strong>Dr. Juraci Nunes</strong>
