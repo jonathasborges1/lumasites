@@ -3,7 +3,7 @@ import type { ProposalMeta } from "../types";
 const proposalMeta: ProposalMeta = {
   clientName: "Rodrigues e Castro Advocacia",
   tagline: "Direito Civil · Trabalhista · Consumidor",
-  category: "Advocacia",
+  category: "Jurídico",
   categoryColor: "#132B45",
   highlight: "Cível · Trabalhista · Consumidor",
   location: "Manaus/AM",

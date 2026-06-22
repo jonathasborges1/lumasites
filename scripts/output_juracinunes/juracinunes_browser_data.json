@@ -1,0 +1,64 @@
+{
+  "scraped_at": "2026-06-21T16:07:17.268342",
+  "profile": {
+    "display_name": "advogadojuraci",
+    "bio": "Juraci Nunes | Advogado Eleitoral",
+    "posts": "6",
+    "seguidores": "362m",
+    "seguindo": "7.411",
+    "destaques": 1,
+    "profile_pic_url": "https://instagram.fpll8-2.fna.fbcdn.net/v/t51.82787-19/722768835_18461398153128889_6070200895419194515_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby45NDYuYzIifQ&_nc_ht=instagram.fpll8-2.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2gEVSsnVwb0izxgpm4lfTEiOHvrzCFFIuIgG8HILxyX0qe2sgYFH4m_ZTdThr3G4hKSJrZvW0N92bf8rkswp-l-F&_nc_ohc=-2DvuyudXg4Q7kNvwEueVMR&_nc_gid=HRyKa-ohg08jNl63ZlNKqg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af80VZa2F5N_Vl2Gm-lNYsdOs1NIXAqdIsAUoNyU8J6zbw&oe=6A3E278D&_nc_sid=8b3546"
+  },
+  "posts": [
+    {
+      "url": "https://www.instagram.com/advogadojuraci/reel/DTiwW5iktfU/",
+      "index": 1,
+      "screenshot": "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_juracinunes\\screenshots\\post_01.png"
+    },
+    {
+      "url": "https://www.instagram.com/advogadojuraci/reel/C-03ZpFvcsQ/",
+      "index": 2,
+      "screenshot": "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_juracinunes\\screenshots\\post_02.png"
+    },
+    {
+      "url": "https://www.instagram.com/advogadojuraci/p/C9--rINvhrU/",
+      "index": 3,
+      "screenshot": "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_juracinunes\\screenshots\\post_03.png"
+    },
+    {
+      "url": "https://www.instagram.com/advogadojuraci/p/C6y7CilLaQB/",
+      "index": 4,
+      "screenshot": "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_juracinunes\\screenshots\\post_04.png"
+    },
+    {
+      "url": "https://www.instagram.com/advogadojuraci/reel/C3cMQtIAy_m/",
+      "index": 5,
+      "screenshot": "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_juracinunes\\screenshots\\post_05.png"
+    },
+    {
+      "url": "https://www.instagram.com/advogadojuraci/p/CrcajkBNt1_/",
+      "index": 6,
+      "screenshot": "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_juracinunes\\screenshots\\post_06.png"
+    }
+  ],
+  "colors": {
+    "profile_pic": [
+      "#3B3840",
+      "#BD926C",
+      "#8C6E5C",
+      "#8F909F",
+      "#97948C"
+    ],
+    "posts": []
+  },
+  "screenshots": [
+    "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_juracinunes\\screenshots\\profile_top.png",
+    "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_juracinunes\\screenshots\\profile_grid.png",
+    "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_juracinunes\\screenshots\\post_01.png",
+    "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_juracinunes\\screenshots\\post_02.png",
+    "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_juracinunes\\screenshots\\post_03.png",
+    "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_juracinunes\\screenshots\\post_04.png",
+    "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_juracinunes\\screenshots\\post_05.png",
+    "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_juracinunes\\screenshots\\post_06.png"
+  ]
+}

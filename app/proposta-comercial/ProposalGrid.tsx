@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowUpDown, ChevronRight, MapPin, Search, X, Zap } from "lucide-react";
+import { ArrowUpDown, ChevronLeft, ChevronRight, MapPin, Search, X, Zap } from "lucide-react";
 import { LandingHeader } from "@/components/LandingHeader";
 import { LandingFooter } from "@/components/LandingFooter";
 import type { ProposalWithSlug } from "./types";
@@ -64,18 +64,94 @@ function CategoryFilters({
   total: number;
   onSelect: (cat: string | null) => void;
 }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const isMobile = window.innerWidth < 640;
+    if (!isMobile) return;
+
+    const updateEdges = () => {
+      setAtStart(el.scrollLeft <= 4);
+      setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 4);
+    };
+    updateEdges();
+    el.addEventListener("scroll", updateEdges, { passive: true });
+
+    // peek: desliza levemente e volta
+    const timer = setTimeout(() => {
+      el.scrollTo({ left: 72, behavior: "smooth" });
+      setTimeout(() => el.scrollTo({ left: 0, behavior: "smooth" }), 500);
+    }, 600);
+
+    return () => {
+      el.removeEventListener("scroll", updateEdges);
+      clearTimeout(timer);
+    };
+  }, []);
+
+  const scroll = (dir: "left" | "right") => {
+    scrollRef.current?.scrollBy({ left: dir === "right" ? 120 : -120, behavior: "smooth" });
+  };
+
   return (
-    <div
-      className="flex flex-wrap gap-2"
-      role="group"
-      aria-label="Filtrar por categoria"
-    >
+    <div className="relative">
+      {/* fade direita */}
+      <div
+        className={[
+          "pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-[#0b1220] to-transparent transition-opacity duration-300 sm:hidden",
+          atEnd ? "opacity-0" : "opacity-100",
+        ].join(" ")}
+      />
+      {/* seta direita — clicável */}
+      <button
+        type="button"
+        aria-label="Ver mais filtros"
+        onClick={() => scroll("right")}
+        className={[
+          "absolute right-0 top-1/2 z-10 -translate-y-1/2 flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-[#0b1220]/90 shadow transition-opacity duration-300 sm:hidden",
+          atEnd ? "pointer-events-none opacity-0" : "opacity-100",
+        ].join(" ")}
+      >
+        <ChevronRight size={15} className="animate-[scroll-hint_1s_ease-in-out_infinite] text-white/70" />
+      </button>
+
+      {/* fade esquerda */}
+      <div
+        className={[
+          "pointer-events-none absolute inset-y-0 left-0 w-14 bg-gradient-to-r from-[#0b1220] to-transparent transition-opacity duration-300 sm:hidden",
+          atStart ? "opacity-0" : "opacity-100",
+        ].join(" ")}
+      />
+      {/* seta esquerda — clicável */}
+      <button
+        type="button"
+        aria-label="Ver filtros anteriores"
+        onClick={() => scroll("left")}
+        className={[
+          "absolute left-0 top-1/2 z-10 -translate-y-1/2 flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-[#0b1220]/90 shadow transition-opacity duration-300 sm:hidden",
+          atStart ? "pointer-events-none opacity-0" : "opacity-100",
+        ].join(" ")}
+      >
+        <ChevronLeft size={15} className="animate-[scroll-hint-left_1s_ease-in-out_infinite] text-white/70" />
+      </button>
+      <div
+        ref={scrollRef}
+        className="grid grid-rows-2 grid-flow-col gap-2 overflow-x-auto pb-1
+          sm:flex sm:flex-wrap sm:overflow-visible sm:pb-0
+          [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        role="group"
+        aria-label="Filtrar por categoria"
+      >
       {/* "Todos" pill */}
       <button
         type="button"
         onClick={() => onSelect(null)}
         className={[
-          "inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] transition-all",
+          "shrink-0 inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] transition-all",
           active === null
             ? "border-cyan-400/40 bg-cyan-400/15 text-cyan-300"
             : "border-white/[0.10] bg-white/[0.04] text-slate-400 hover:border-white/[0.20] hover:text-white",
@@ -102,7 +178,7 @@ function CategoryFilters({
             key={cat.name}
             type="button"
             onClick={() => onSelect(isActive ? null : cat.name)}
-            className="inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] transition-all"
+            className="shrink-0 inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] transition-all"
             style={
               isActive
                 ? {
@@ -132,6 +208,7 @@ function CategoryFilters({
           </button>
         );
       })}
+      </div>
     </div>
   );
 }
@@ -410,18 +487,23 @@ export function ProposalGrid({ proposals }: { proposals: ProposalWithSlug[] }) {
             />
           </div>
 
-          <div className="mt-4 flex items-center justify-between pb-2">
-            <div className="flex items-center gap-3">
-              <p className="text-xs tabular-nums text-slate-500">
-                {countLabel} encontrada{filtered.length !== 1 ? "s" : ""}
-              </p>
+          <div className="mt-4 flex items-center justify-between gap-3 rounded-lg border border-white/[0.06] bg-white/[0.03] px-3 py-2">
+            <div className="flex items-center gap-2 min-w-0">
+              <span className="shrink-0 tabular-nums text-xs font-semibold text-white/80">
+                {filtered.length}
+              </span>
+              <span className="text-xs text-slate-500 truncate">
+                {filtered.length !== proposals.length
+                  ? `de ${proposals.length} projetos`
+                  : "projetos"}
+              </span>
               {hasActiveFilter && (
                 <button
                   type="button"
                   onClick={clearAll}
-                  className="inline-flex items-center gap-1 text-xs text-slate-500 transition-colors hover:text-slate-300"
+                  className="shrink-0 inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.05] px-2 py-0.5 text-[10px] font-medium text-slate-400 transition-colors hover:border-white/20 hover:text-white"
                 >
-                  <X size={11} /> Limpar filtros
+                  <X size={10} /> Limpar
                 </button>
               )}
             </div>

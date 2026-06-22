@@ -131,6 +131,14 @@ const config: Config = {
           "0%": { transform: "scaleX(0)" },
           "100%": { transform: "scaleX(0.88)" },
         },
+        "scroll-hint": {
+          "0%, 100%": { transform: "translateX(0)", opacity: "0.5" },
+          "50%": { transform: "translateX(5px)", opacity: "1" },
+        },
+        "scroll-hint-left": {
+          "0%, 100%": { transform: "translateX(0)", opacity: "0.5" },
+          "50%": { transform: "translateX(-5px)", opacity: "1" },
+        },
       },
       animation: {
         "pulse-glow": "pulse-glow 3s ease-in-out infinite",
@@ -152,6 +160,8 @@ const config: Config = {
         "slide-in-right": "slide-in-right .6s cubic-bezier(.22,.61,.36,1) both",
         ripple: "ripple 2s ease-out infinite",
         "nav-progress": "nav-progress 2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards",
+        "scroll-hint": "scroll-hint 1s ease-in-out infinite",
+        "scroll-hint-left": "scroll-hint-left 1s ease-in-out infinite",
       },
     },
   },
