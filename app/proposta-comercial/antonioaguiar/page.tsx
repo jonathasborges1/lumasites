@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
   Ban,
+  BookOpen,
   Car,
   ChevronDown,
   ChevronRight,
@@ -17,6 +18,7 @@ import {
   Scale,
   Search,
   ShieldCheck,
+  Users,
 } from "lucide-react";
 
 const WA_NUMBER = "5548988464514";
@@ -59,6 +61,16 @@ const problems = [
     icon: IdCard,
     title: "CNH Suspensa",
     desc: "CNH suspensa por dívida bancária?",
+  },
+  {
+    icon: BookOpen,
+    title: "Direito Civil",
+    desc: "Contratos irregulares, rescisões abusivas ou cobranças indevidas?",
+  },
+  {
+    icon: Users,
+    title: "Direito do Consumidor",
+    desc: "Produto, serviço ou cláusula que viola seus direitos como consumidor?",
   },
 ];
 
@@ -154,8 +166,6 @@ const EditorialMenuIcon = ({ open = false }: { open?: boolean }) => (
 );
 
 const css = `
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700;800&display=swap');
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 0;
@@ -188,7 +198,7 @@ button { font: inherit; }
   overflow-x: clip;
   color: var(--aa-ink);
   background: var(--aa-cream);
-  font-family: Montserrat, system-ui, sans-serif;
+  font-family: var(--font-antonio-body), system-ui, sans-serif;
   min-height: 100vh;
 }
 
@@ -207,7 +217,7 @@ button { font: inherit; }
   text-align: center;
   background: #060d0b;
   color: rgba(245,240,232,0.65);
-  font-family: Montserrat, system-ui, sans-serif;
+  font-family: var(--font-antonio-body), system-ui, sans-serif;
 }
 .aa-preview-line1 {
   display: flex;
@@ -252,17 +262,17 @@ button { font: inherit; }
   z-index: 1000;
   inset: var(--aa-bar-height) 0 auto 0;
   height: var(--aa-nav-height);
-  border-bottom: 1px solid rgba(40,71,63,0.12);
-  background: rgba(247,244,237,0.94);
+  border-bottom: 1px solid rgba(204,166,121,0.18);
+  background: rgba(7,9,8,0.96);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
-  font-family: Montserrat, system-ui, sans-serif;
+  font-family: var(--font-antonio-body), system-ui, sans-serif;
 }
 .aa-nav.scrolled {
-  background: rgba(247,244,237,0.88);
-  border-color: rgba(40,71,63,0.14);
-  box-shadow: 0 12px 38px rgba(24,48,42,0.1);
+  background: rgba(5,7,6,0.93);
+  border-color: rgba(204,166,121,0.24);
+  box-shadow: 0 12px 38px rgba(0,0,0,0.34);
 }
 .aa-nav-inner {
   width: min(1160px, calc(100% - 40px));
@@ -284,9 +294,8 @@ button { font: inherit; }
   height: auto;
   object-fit: contain;
   object-position: left center;
-  filter: brightness(0) saturate(100%) invert(24%) sepia(13%)
-    saturate(1050%) hue-rotate(113deg) brightness(88%) contrast(89%);
-  opacity: 0.9;
+  filter: none;
+  opacity: 1;
 }
 .aa-links {
   display: none;
@@ -295,14 +304,14 @@ button { font: inherit; }
 }
 .aa-links a {
   position: relative;
-  color: rgba(41,43,41,0.68);
+  color: rgba(245,240,232,0.72);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   transition: color 0.15s;
 }
-.aa-links a:hover { color: var(--aa-gold); }
+.aa-links a:hover { color: var(--aa-gold-light); }
 .aa-links a:not(.aa-nav-cta)::after {
   content: "";
   position: absolute;
@@ -327,20 +336,24 @@ button { font: inherit; }
   align-items: center;
   justify-content: center;
   gap: 9px;
-  border: 0;
+  border: 1px solid var(--aa-gold);
   cursor: pointer;
-  font-family: Montserrat, system-ui, sans-serif;
+  font-family: var(--font-antonio-body), system-ui, sans-serif;
   padding: 0 18px;
   border-radius: 4px;
-  background: var(--aa-gold);
-  color: var(--aa-black) !important;
+  background: transparent;
+  color: var(--aa-gold-light) !important;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  transition: background 0.15s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
-.aa-nav-cta:hover { background: var(--aa-gold-light); }
+.aa-nav-cta:hover {
+  border-color: var(--aa-gold-light);
+  background: var(--aa-gold-light);
+  color: #090b0a !important;
+}
 .aa-menu-btn {
   min-height: 44px;
   width: 44px;
@@ -349,19 +362,19 @@ button { font: inherit; }
   justify-content: center;
   border: 0;
   cursor: pointer;
-  font-family: Montserrat, system-ui, sans-serif;
+  font-family: var(--font-antonio-body), system-ui, sans-serif;
   border-radius: 4px;
-  color: var(--aa-petrol);
-  background: rgba(40,71,63,0.08);
+  color: var(--aa-gold-light);
+  background: rgba(204,166,121,0.08);
   transition: color 0.2s, background 0.2s, border-color 0.2s;
 }
 .aa-nav.scrolled .aa-menu-btn {
-  color: var(--aa-petrol);
-  background: rgba(40,71,63,0.08);
+  color: var(--aa-gold-light);
+  background: rgba(204,166,121,0.08);
 }
 .aa-nav.menu-open {
-  background: rgba(247,244,237,0.98);
-  border-color: rgba(40,71,63,0.14);
+  background: rgba(5,7,6,0.99);
+  border-color: rgba(204,166,121,0.24);
 }
 .aa-nav.menu-open .aa-menu-btn {
   color: var(--aa-gold);
@@ -429,7 +442,7 @@ button { font: inherit; }
     radial-gradient(circle at 95% 12%, rgba(204,166,121,0.13), transparent 34%),
     linear-gradient(145deg, #171b1a 0%, #10201c 58%, #09110f 100%);
   color: var(--aa-white);
-  font-family: Montserrat, system-ui, sans-serif;
+  font-family: var(--font-antonio-body), system-ui, sans-serif;
   animation: aa-menu-enter 0.38s cubic-bezier(.22,.8,.28,1) both;
 }
 .aa-mobile::before {
@@ -438,7 +451,7 @@ button { font: inherit; }
   right: -18px;
   top: calc(var(--aa-bar-height) + var(--aa-nav-height) + 16px);
   color: rgba(204,166,121,0.035);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-antonio-display), Georgia, serif;
   font-size: min(76vw, 360px);
   line-height: 0.9;
   pointer-events: none;
@@ -497,7 +510,7 @@ button { font: inherit; }
   letter-spacing: 0.12em;
 }
 .aa-mobile-link-label {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-antonio-display), Georgia, serif;
   font-size: clamp(18px, 5.4vw, 23px);
   font-weight: 600;
   letter-spacing: 0;
@@ -623,7 +636,7 @@ button { font: inherit; }
 }
 .aa-hero h1 {
   margin: 0;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-antonio-display), Georgia, serif;
   font-size: clamp(32px, 5vw, 66px);
   line-height: 1.06;
   font-weight: 700;
@@ -655,7 +668,7 @@ button { font: inherit; }
   gap: 9px;
   border: 0;
   cursor: pointer;
-  font-family: Montserrat, system-ui, sans-serif;
+  font-family: var(--font-antonio-body), system-ui, sans-serif;
   padding: 0 24px;
   border-radius: 4px;
   background: var(--aa-gold);
@@ -678,7 +691,7 @@ button { font: inherit; }
   justify-content: center;
   gap: 9px;
   cursor: pointer;
-  font-family: Montserrat, system-ui, sans-serif;
+  font-family: var(--font-antonio-body), system-ui, sans-serif;
   padding: 0 22px;
   border: 1px solid rgba(40,71,63,0.2);
   border-radius: 4px;
@@ -709,7 +722,7 @@ button { font: inherit; }
 }
 .aa-proof-item strong {
   display: block;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-antonio-display), Georgia, serif;
   font-size: 20px;
   font-weight: 700;
   color: var(--aa-petrol);
@@ -793,7 +806,7 @@ button { font: inherit; }
 }
 .aa-hero-photo-badge strong {
   color: var(--aa-white);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-antonio-display), Georgia, serif;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.3;
@@ -844,7 +857,7 @@ button { font: inherit; }
 .aa-section.gold-bg .aa-label { color: rgba(26,26,20,0.55); }
 .aa-h2 {
   margin: 0;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-antonio-display), Georgia, serif;
   font-size: clamp(26px, 3.4vw, 44px);
   line-height: 1.1;
   font-weight: 700;
@@ -892,7 +905,7 @@ button { font: inherit; }
 }
 .aa-problem-card h3 {
   margin: 0 0 8px;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-antonio-display), Georgia, serif;
   font-size: 17px;
   font-weight: 700;
   color: var(--aa-petrol);
@@ -938,7 +951,7 @@ button { font: inherit; }
 }
 .aa-about-badge strong {
   color: var(--aa-white);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-antonio-display), Georgia, serif;
   font-size: 15px;
   font-weight: 700;
   line-height: 1.3;
@@ -1017,7 +1030,7 @@ button { font: inherit; }
   gap: 10px;
 }
 .aa-step-num {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-antonio-display), Georgia, serif;
   font-size: 34px;
   font-weight: 700;
   color: rgba(201,168,76,0.28);
@@ -1033,7 +1046,7 @@ button { font: inherit; }
 }
 .aa-step h3 {
   margin: 0 0 10px;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-antonio-display), Georgia, serif;
   font-size: 20px;
   font-weight: 700;
   color: var(--aa-white);
@@ -1077,7 +1090,7 @@ button { font: inherit; }
   border: 0;
   cursor: pointer;
   color: var(--aa-ink);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-antonio-display), Georgia, serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.4;
@@ -1154,13 +1167,13 @@ button { font: inherit; }
 .aa-office-city {
   display: block;
   color: var(--aa-ink);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-antonio-display), Georgia, serif;
   font-size: 16px;
   font-weight: 700;
 }
 .aa-office-acronym {
   color: rgba(26,26,20,0.24);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-antonio-display), Georgia, serif;
   font-size: 30px;
   font-weight: 700;
 }
@@ -1186,7 +1199,7 @@ button { font: inherit; }
   top: 10px;
   right: 24px;
   color: rgba(204,166,121,0.08);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-antonio-display), Georgia, serif;
   font-size: clamp(100px, 17vw, 210px);
   font-weight: 700;
   line-height: 1;
@@ -1206,7 +1219,7 @@ button { font: inherit; }
   position: relative;
   max-width: 430px;
   margin: 0 0 14px;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-antonio-display), Georgia, serif;
   font-size: clamp(27px, 3.4vw, 42px);
   line-height: 1.08;
 }
@@ -1244,7 +1257,7 @@ button { font: inherit; }
   gap: 9px;
   border: 0;
   cursor: pointer;
-  font-family: Montserrat, system-ui, sans-serif;
+  font-family: var(--font-antonio-body), system-ui, sans-serif;
   padding: 0 28px;
   border-radius: 4px;
   background: var(--aa-black);
@@ -1267,7 +1280,7 @@ button { font: inherit; }
   color: rgba(245,240,232,0.48);
   font-size: 13px;
   line-height: 1.7;
-  font-family: Montserrat, system-ui, sans-serif;
+  font-family: var(--font-antonio-body), system-ui, sans-serif;
 }
 .aa-footer-body {
   padding: 60px 0 48px;
@@ -1776,8 +1789,9 @@ export default function AntonioAguiarPropPage() {
                 Cada problema bancário tem uma solução jurídica.
               </h2>
               <p className="aa-lead">
-                Atuação especializada em cinco frentes críticas do direito
-                bancário, com foco em quem produz e precisa de orientação jurídica especializada.
+                Atuação em Direito Bancário, Direito Civil e Direito do
+                Consumidor, com foco em quem produz e precisa de orientação
+                jurídica especializada.
               </p>
             </div>
             <div className="aa-problems">
@@ -1846,6 +1860,8 @@ export default function AntonioAguiarPropPage() {
               <div className="aa-tags" aria-label="Áreas de atuação">
                 {[
                   "Direito Bancário",
+                  "Direito Civil",
+                  "Direito do Consumidor",
                   "Contratos",
                   "Conta Bloqueada",
                   "Busca e Apreensão",
@@ -2055,10 +2071,10 @@ export default function AntonioAguiarPropPage() {
                 <div className="aa-footer-brand-tags">
                   {[
                     "Direito Bancário",
+                    "Direito Civil",
+                    "Direito do Consumidor",
                     "Contratos",
-                    "Conta Bloqueada",
                     "Agronegócio",
-                    "CNH",
                   ].map((tag) => (
                     <span className="aa-footer-brand-tag" key={tag}>
                       {tag}

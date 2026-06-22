@@ -1,4 +1,20 @@
 import type { Metadata } from "next";
+import { Montserrat, Playfair_Display } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-antonio-body",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-antonio-display",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Antonio Aguiar | Advogado Bancário, Rio Branco AC",
@@ -35,5 +51,9 @@ export default function AntonioAguiarPropLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <div className={`${montserrat.variable} ${playfair.variable}`}>
+      {children}
+    </div>
+  );
 }
