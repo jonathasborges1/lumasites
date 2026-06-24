@@ -12,6 +12,7 @@ import {
   FileX,
   Globe,
   IdCard,
+  Landmark,
   Mail,
   MapPin,
   MessageCircle,
@@ -23,7 +24,7 @@ import {
 
 const WA_NUMBER = "5548988464514";
 const whatsApp = (
-  message = "Olá, Antonio! Quero tirar uma dúvida sobre meu caso bancário.",
+  message = "Olá, Antonio! Quero tirar uma dúvida sobre meu caso.",
 ) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 
 const navItems = [
@@ -72,6 +73,11 @@ const problems = [
     title: "Direito do Consumidor",
     desc: "Produto, serviço ou cláusula que viola seus direitos como consumidor?",
   },
+  {
+    icon: Landmark,
+    title: "Direito Previdenciário",
+    desc: "Orientação em demandas previdenciárias com suporte especializado.",
+  },
 ];
 
 const steps = [
@@ -115,11 +121,11 @@ const faqs: { q: string; a: string }[] = [
     a: "Em muitos casos, sim. Analisamos o contrato, verificamos irregularidades e atuamos para recuperar o bem ou reverter os efeitos da busca e apreensão. Cada caso é avaliado individualmente.",
   },
   {
-    q: "Quanto tempo leva para resolver um caso bancário?",
-    a: "Depende da complexidade. Medidas urgentes como liminares podem surtir efeito em dias. Ações revisionais completas levam alguns meses, mas agimos sempre com a máxima agilidade possível.",
+    q: "Quanto tempo leva para resolver um caso?",
+    a: "Depende da complexidade. Medidas urgentes como liminares podem surtir efeito em dias. Ações revisionais completas levam alguns meses, mas agimos sempre com a máxima rapidez possível.",
   },
   {
-    q: "Qual o custo para contratar um advogado bancário?",
+    q: "Qual o custo para contratar um advogado?",
     a: "Cada caso é avaliado individualmente. Entre em contato para uma análise sem compromisso. A consulta inicial é gratuita.",
   },
 ];
@@ -1786,12 +1792,12 @@ export default function AntonioAguiarPropPage() {
             <div className="aa-section-head center aa-reveal">
               <span className="aa-label">Você está passando por isso?</span>
               <h2 className="aa-h2">
-                Cada problema bancário tem uma solução jurídica.
+                Cada caso pede uma solução jurídica.
               </h2>
               <p className="aa-lead">
-                Atuação em Direito Bancário, Direito Civil e Direito do
-                Consumidor, com foco em quem produz e precisa de orientação
-                jurídica especializada.
+                Atuação em Direito Bancário, Direito Civil, Direito do
+                Consumidor, Direito Previdenciário e Direito do Agronegócio,
+                com foco em quem precisa de orientação jurídica especializada.
               </p>
             </div>
             <div className="aa-problems">
@@ -1848,10 +1854,11 @@ export default function AntonioAguiarPropPage() {
                 atendimento online para qualquer estado do Brasil.
               </p>
               <p>
-                Cada caso bancário carrega um impacto real na vida de quem
-                produz: o trator parado, a conta bloqueada no meio da colheita,
-                a CNH que trava a operação. O foco é o seu caso, com clareza,
-                estratégia e presença do primeiro contato até a resolução.
+                Cada caso carrega um impacto real na vida de quem busca
+                orientação: o trator parado, a conta bloqueada no meio da
+                colheita, a CNH que trava a operação ou uma demanda que exige
+                análise cuidadosa. O foco é o seu caso, com clareza, estratégia
+                e presença do primeiro contato até a resolução.
               </p>
               <div className="aa-about-oab">
                 <ShieldCheck size={14} />
@@ -1862,12 +1869,13 @@ export default function AntonioAguiarPropPage() {
                   "Direito Bancário",
                   "Direito Civil",
                   "Direito do Consumidor",
+                  "Direito Previdenciário",
                   "Contratos",
                   "Conta Bloqueada",
                   "Busca e Apreensão",
                   "CNH",
                   "Negativação",
-                  "Agronegócio",
+                  "Direito do Agronegócio",
                 ].map((tag) => (
                   <span className="aa-tag" key={tag}>
                     {tag}
@@ -2030,7 +2038,7 @@ export default function AntonioAguiarPropPage() {
           <div className="aa-wrap">
             <div className="aa-cta-inner aa-reveal">
               <span className="aa-label">Fale Agora</span>
-              <h2 className="aa-h2">Seu problema bancário tem solução.</h2>
+              <h2 className="aa-h2">Seu problema jurídico tem solução.</h2>
               <p className="aa-lead">
                 Atuação no Acre, Amazonas e Santa Catarina, com atendimento
                 online para todo o Brasil. Entre em contato agora para uma
@@ -2073,8 +2081,9 @@ export default function AntonioAguiarPropPage() {
                     "Direito Bancário",
                     "Direito Civil",
                     "Direito do Consumidor",
+                    "Direito Previdenciário",
                     "Contratos",
-                    "Agronegócio",
+                    "Direito do Agronegócio",
                   ].map((tag) => (
                     <span className="aa-footer-brand-tag" key={tag}>
                       {tag}
