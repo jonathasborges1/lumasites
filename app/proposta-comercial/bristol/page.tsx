@@ -41,7 +41,7 @@ const whatsappUrl = `https://wa.me/5592988410440?text=${encodeURIComponent(
 const navItems = [
   { href: "#diferenciais", label: "Diferenciais" },
   { href: "#plantas", label: "Plantas" },
-  { href: "#unificacao", label: "Unificacao" },
+  { href: "#unificacao", label: "Unificação" },
   { href: "#acabamentos", label: "Acabamentos" },
 ];
 
@@ -54,57 +54,57 @@ const MenuGlyph = ({ open = false }: { open?: boolean }) => (
 );
 
 const highlights = [
-  ["97m2 a 253m2", "Plantas amplas e funcionais"],
+  ["97m² a 253m²", "Plantas amplas e funcionais"],
   ["+22", "Itens de lazer"],
-  ["Ponta Negra", "Localizacao em Manaus"],
+  ["Ponta Negra", "Localização em Manaus"],
   ["Duplex", "Coberturas exclusivas"],
 ];
 
 const differentials = [
   {
     icon: Gem,
-    title: "Exclusividade no endereco",
-    text: "Uma comunicacao posicionada para valorizar conforto, sofisticacao e presenca em uma das regioes mais desejadas de Manaus.",
+    title: "Exclusividade no endereço",
+    text: "Uma comunicação posicionada para valorizar conforto, sofisticação e presença em uma das regiões mais desejadas de Manaus.",
   },
   {
     icon: Ruler,
-    title: "Plantas flexiveis",
-    text: "Opcoes de 97m2 a 253m2, com plantas tipo, unidade decorada, coberturas duplex e possibilidades de unificacao.",
+    title: "Plantas flexíveis",
+    text: "Opções de 97m² a 253m², com plantas tipo, unidade decorada, coberturas duplex e possibilidades de unificação.",
   },
   {
     icon: Paintbrush,
     title: "Autonomia nos acabamentos",
-    text: "Conceito de entrega pensado para que o cliente escolha materiais, padroes e estilo conforme seu planejamento.",
+    text: "Conceito de entrega pensado para que o cliente escolha materiais, padrões e estilo conforme seu planejamento.",
   },
   {
     icon: Trees,
     title: "Vida com respiro",
-    text: "O material destaca area verde, entorno qualificado e uma narrativa visual voltada para familia, bem-estar e permanencia.",
+    text: "O material destaca área verde, entorno qualificado e uma narrativa visual voltada para família, bem-estar e permanência.",
   },
 ];
 
 const plants = [
   {
     name: "Decorado",
-    area: "121m2",
+    area: "121m²",
     detail: "UN final 02",
     image: assets.decorated,
   },
   {
-    name: "Tipo 1o ao 17o",
-    area: "117m2",
+    name: "Tipo 1º ao 17º",
+    area: "117m²",
     detail: "UN final 01",
     image: assets.plant117,
   },
   {
-    name: "Tipo 1o ao 17o",
-    area: "97m2",
+    name: "Tipo 1º ao 17º",
+    area: "97m²",
     detail: "UN final 03",
     image: assets.plant97,
   },
   {
-    name: "Tipo 18o ao 23o",
-    area: "127m2",
+    name: "Tipo 18º ao 23º",
+    area: "127m²",
     detail: "UN final 02",
     image: assets.plant127,
   },
@@ -113,21 +113,21 @@ const plants = [
 const covers = [
   {
     name: "Cobertura 2401",
-    area: "242m2",
+    area: "242m²",
     image: assets.cover242,
   },
   {
     name: "Cobertura 2402",
-    area: "253m2",
+    area: "253m²",
     image: assets.cover253,
   },
 ];
 
 const unified = [
-  ["1o ao 17o", "117m2 + 121m2", "238m2"],
-  ["1o ao 17o", "97m2 + 101m2", "198m2"],
-  ["18o ao 23o", "121m2 + 127m2", "248m2"],
-  ["18o ao 23o", "101m2 + 106m2", "207m2"],
+  ["1º ao 17º", "117m² + 121m²", "238m²"],
+  ["1º ao 17º", "97m² + 101m²", "198m²"],
+  ["18º ao 23º", "121m² + 127m²", "248m²"],
+  ["18º ao 23º", "101m² + 106m²", "207m²"],
 ];
 
 const css = `
@@ -340,7 +340,7 @@ export default function BristolProposalPage() {
       streetAddress: "Ponta Negra",
     },
     description:
-      "Empreendimento em pre-venda na Ponta Negra, com plantas de 97m2 a 253m2, coberturas duplex e mais de 22 itens de lazer.",
+      "Empreendimento em pré-venda na Ponta Negra, com plantas de 97m² a 253m², coberturas duplex e mais de 22 itens de lazer.",
   };
 
   return (
@@ -370,7 +370,7 @@ export default function BristolProposalPage() {
 
       <header
         className={`br-nav${menuOpen ? " menu-open" : ""}`}
-        aria-label="Navegacao principal"
+        aria-label="Navegação principal"
       >
         <div className="br-wrap br-nav-inner">
           <a
@@ -388,7 +388,7 @@ export default function BristolProposalPage() {
               priority
             />
           </a>
-          <nav className="br-nav-links" aria-label="Secoes">
+          <nav className="br-nav-links" aria-label="Seções">
             {navItems.map((item) => (
               <a href={item.href} key={item.href}>
                 {item.label}
@@ -414,11 +414,11 @@ export default function BristolProposalPage() {
           id="br-mobile-menu"
           role="dialog"
           aria-modal="true"
-          aria-label="Menu de navegacao"
+          aria-label="Menu de navegação"
         >
           <div className="br-mobile-inner">
-            <span className="br-mobile-eyebrow">Navegacao</span>
-            <nav className="br-mobile-nav" aria-label="Navegacao mobile">
+            <span className="br-mobile-eyebrow">Navegação</span>
+            <nav className="br-mobile-nav" aria-label="Navegação mobile">
               {navItems.map((item, index) => (
                 <a
                   className="br-mobile-link"
@@ -467,7 +467,7 @@ export default function BristolProposalPage() {
             </span>
             <h1>Bristol Reserva Inglesa</h1>
             <p>
-              Exclusividade, conforto e sofisticacao em um novo endereco, com
+              Exclusividade, conforto e sofisticação em um novo endereço, com
               plantas amplas, coberturas duplex e uma proposta pensada para
               quem deseja morar com liberdade de escolha.
             </p>
@@ -515,18 +515,18 @@ export default function BristolProposalPage() {
             />
           </div>
           <div className="br-copy-panel">
-            <span className="br-kicker">Pre-venda</span>
-            <h2 className="br-h2">Um produto imobiliario com leitura premium desde o primeiro contato.</h2>
+            <span className="br-kicker">Pré-venda</span>
+            <h2 className="br-h2">Um produto imobiliário com leitura premium desde o primeiro contato.</h2>
             <p className="br-lead">
-              A comunicacao do Bristol combina arquitetura vertical, entorno
+              A comunicação do Bristol combina arquitetura vertical, entorno
               verde e atributos comerciais objetivos. A proposta prioriza uma
               leitura elegante, com dados claros para o comprador comparar
-              metragens, tipologias e possibilidades de personalizacao.
+              metragens, tipologias e possibilidades de personalização.
             </p>
             <div className="br-checks">
               <span className="br-check">
                 <CheckCircle2 size={18} />
-                Plantas amplas e funcionais de 97m2 a 253m2.
+                Plantas amplas e funcionais de 97m² a 253m².
               </span>
               <span className="br-check">
                 <CheckCircle2 size={18} />
@@ -534,7 +534,7 @@ export default function BristolProposalPage() {
               </span>
               <span className="br-check">
                 <CheckCircle2 size={18} />
-                Localizacao comercialmente posicionada em Ponta Negra.
+                Localização comercialmente posicionada em Ponta Negra.
               </span>
             </div>
           </div>
@@ -544,10 +544,10 @@ export default function BristolProposalPage() {
       <section id="diferenciais" className="br-section alt">
         <div className="br-wrap">
           <span className="br-kicker">Diferenciais</span>
-          <h2 className="br-h2">A proposta traduz o Bristol como escolha de endereco, planta e estilo.</h2>
+          <h2 className="br-h2">A proposta traduz o Bristol como escolha de endereço, planta e estilo.</h2>
           <p className="br-lead">
-            O foco e apresentar o empreendimento com sofisticação, sem perder a
-            precisao das informacoes que influenciam a decisao de compra.
+            O foco é apresentar o empreendimento com sofisticação, sem perder a
+            precisão das informações que influenciam a decisão de compra.
           </p>
           <div className="br-diff-grid">
             {differentials.map((item) => (
@@ -571,11 +571,11 @@ export default function BristolProposalPage() {
               <h2 className="br-h2">Tipologias para diferentes momentos de vida.</h2>
               <p className="br-lead">
                 Unidade decorada, plantas tipo e coberturas duplex foram
-                organizadas para facilitar a leitura comercial das opcoes.
+                organizadas para facilitar a leitura comercial das opções.
               </p>
             </div>
             <a className="br-btn dark" href="#unificacao">
-              Ver unificacao
+              Ver unificação
               <Combine size={16} />
             </a>
           </div>
@@ -608,10 +608,10 @@ export default function BristolProposalPage() {
           <div className="br-gallery-head">
             <div>
               <span className="br-kicker">Coberturas duplex</span>
-              <h2 className="br-h2">Metragens superiores para uma experiencia mais reservada.</h2>
+              <h2 className="br-h2">Metragens superiores para uma experiência mais reservada.</h2>
               <p className="br-lead">
                 O material apresenta quatro coberturas duplex, com destaque para
-                as unidades de 242m2, 253m2, 197m2 e 209m2.
+                as unidades de 242m², 253m², 197m² e 209m².
               </p>
             </div>
           </div>
@@ -643,19 +643,19 @@ export default function BristolProposalPage() {
           <div className="br-photo">
             <Image
               src={assets.unifiedA}
-              alt="Tabela de unificacao de unidades do 1o ao 17o pavimento"
+              alt="Tabela de unificação de unidades do 1º ao 17º pavimento"
               width={2160}
               height={1215}
               sizes="(min-width: 980px) 54vw, 100vw"
             />
           </div>
           <div>
-            <span className="br-kicker">Unificacao de unidades</span>
-            <h2 className="br-h2">Mais area privativa para quem busca amplitude.</h2>
+            <span className="br-kicker">Unificação de unidades</span>
+            <h2 className="br-h2">Mais área privativa para quem busca amplitude.</h2>
             <p className="br-lead">
-              A unificacao amplia o argumento comercial do empreendimento,
-              permitindo apresentar opcoes de area privativa entre 198m2 e
-              248m2, conforme pavimento e combinacao de finais.
+              A unificação amplia o argumento comercial do empreendimento,
+              permitindo apresentar opções de área privativa entre 198m² e
+              248m², conforme pavimento e combinação de finais.
             </p>
             <div className="br-unified">
               {unified.map(([floor, combo, total]) => (
@@ -674,17 +674,17 @@ export default function BristolProposalPage() {
         <div className="br-wrap br-finish">
           <div>
             <span className="br-kicker">Acabamentos</span>
-            <h2 className="br-h2">Personalizacao como argumento central de valor.</h2>
+            <h2 className="br-h2">Personalização como argumento central de valor.</h2>
             <p className="br-lead">
               O material posiciona a entrega com flexibilidade para que o
-              adquirente defina materiais, padroes e estilo. Essa promessa
+              adquirente defina materiais, padrões e estilo. Essa promessa
               precisa aparecer de forma clara e juridicamente cuidadosa.
             </p>
             <div className="br-finish-list">
               <div className="br-finish-item">
                 <Home size={18} />
-                Living, circulacao, cozinha, area de servicos, suites, closets,
-                area tecnica e varandas com piso em concreto desempenado.
+                Living, circulação, cozinha, área de serviços, suítes, closets,
+                área técnica e varandas com piso em concreto desempenado.
               </div>
               <div className="br-finish-item">
                 <Landmark size={18} />
@@ -692,7 +692,7 @@ export default function BristolProposalPage() {
               </div>
               <div className="br-finish-item">
                 <Sparkles size={18} />
-                Um banheiro em cada unidade sera entregue com revestimento no
+                Um banheiro em cada unidade será entregue com revestimento no
                 piso, parede e forro, conforme ressalva do material.
               </div>
             </div>
@@ -701,17 +701,17 @@ export default function BristolProposalPage() {
             <div className="br-photo">
               <Image
                 src={assets.finishes}
-                alt="Informacoes de acabamento do Bristol Reserva Inglesa"
+                alt="Informações de acabamento do Bristol Reserva Inglesa"
                 width={2160}
                 height={1215}
                 sizes="(min-width: 980px) 52vw, 100vw"
               />
             </div>
             <p className="br-note">
-              Imagens e plantas sao meramente ilustrativas e podem sofrer
-              variacoes em relacao ao produto final. Bancadas de granito e
-              acabamentos exibidos nas pecas de divulgacao nao fazem parte da
-              entrega padrao, exceto itens previstos na planta contratual.
+              Imagens e plantas são meramente ilustrativas e podem sofrer
+              variações em relação ao produto final. Bancadas de granito e
+              acabamentos exibidos nas peças de divulgação não fazem parte da
+              entrega padrão, exceto itens previstos na planta contratual.
             </p>
           </div>
         </div>
@@ -725,13 +725,13 @@ export default function BristolProposalPage() {
           </span>
           <h2>Uma proposta pronta para vender o empreendimento com clareza.</h2>
           <p>
-            A pagina organiza o conteudo de pre-venda em uma experiencia
+            A página organiza o conteúdo de pré-venda em uma experiência
             comercial: posicionamento, diferenciais, plantas, coberturas,
-            unificacao e acabamentos em uma leitura fluida para o comprador.
+            unificação e acabamentos em uma leitura fluida para o comprador.
           </p>
           <div className="br-hero-actions">
             <a className="br-btn primary" href="#top">
-              Voltar ao inicio
+              Voltar ao início
               <ArrowRight size={16} />
             </a>
             <a className="br-btn light" href="#plantas">
@@ -753,7 +753,7 @@ export default function BristolProposalPage() {
       <footer className="br-footer">
         <div className="br-wrap br-footer-inner">
           <strong>Bristol Reserva Inglesa</strong>
-          <span>Proposta comercial baseada no material de pre-venda analisado.</span>
+          <span>Proposta comercial baseada no material de pré-venda analisado.</span>
           <span>
             Desenvolvido por{" "}
             <a

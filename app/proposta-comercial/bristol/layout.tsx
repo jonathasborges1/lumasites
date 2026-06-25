@@ -19,11 +19,11 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Bristol Reserva Inglesa | Proposta Comercial",
   description:
-    "Proposta comercial para o Bristol Reserva Inglesa, empreendimento em Ponta Negra com plantas de 97m2 a 253m2, coberturas duplex e mais de 22 itens de lazer.",
+    "Proposta comercial para o Bristol Reserva Inglesa, empreendimento em Ponta Negra com plantas de 97m² a 253m², coberturas duplex e mais de 22 itens de lazer.",
   openGraph: {
     title: "Bristol Reserva Inglesa | Ponta Negra - Manaus",
     description:
-      "Exclusividade, conforto e sofisticacao em um novo endereco na Ponta Negra.",
+      "Exclusividade, conforto e sofisticação em um novo endereço na Ponta Negra.",
     type: "website",
     images: [
       {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bristol Reserva Inglesa | Ponta Negra - Manaus",
     description:
-      "Plantas amplas, coberturas duplex e uma proposta premium para pre-venda imobiliaria.",
+      "Plantas amplas, coberturas duplex e uma proposta premium para pré-venda imobiliária.",
     images: ["/images/bristol/bristol-torres-destaques.jpg"],
   },
 };
