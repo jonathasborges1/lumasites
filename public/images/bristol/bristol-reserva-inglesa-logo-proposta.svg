@@ -1,0 +1,23 @@
+<svg width="520" height="126" viewBox="0 0 520 126" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Bristol Reserva Inglesa</title>
+  <desc id="desc">Logotipo vetorial conceitual do empreendimento Bristol Reserva Inglesa</desc>
+  <g stroke="#D8B46E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 54H118"/>
+    <path d="M32 54V88"/>
+    <path d="M110 54V88"/>
+    <path d="M43 54V38H99V54"/>
+    <path d="M55 38V28H87V38"/>
+    <path d="M64 88V70C64 62.2 67.8 57 71 57C74.2 57 78 62.2 78 70V88"/>
+    <path d="M43 68H58"/>
+    <path d="M84 68H99"/>
+    <path d="M43 79H58"/>
+    <path d="M84 79H99"/>
+    <path d="M18 88H124"/>
+  </g>
+  <g fill="#D8B46E">
+    <path d="M139 58L145 64L139 70L133 64L139 58Z"/>
+    <path d="M463 58L469 64L463 70L457 64L463 58Z"/>
+  </g>
+  <text x="158" y="61" fill="#FFFFFF" font-family="Montserrat, Arial, sans-serif" font-size="43" font-weight="800" letter-spacing="13">BRISTOL</text>
+  <text x="160" y="89" fill="#D8B46E" font-family="Montserrat, Arial, sans-serif" font-size="13" font-weight="800" letter-spacing="7">RESERVA INGLESA</text>
+</svg>
