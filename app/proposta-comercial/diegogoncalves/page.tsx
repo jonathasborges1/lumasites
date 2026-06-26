@@ -151,7 +151,7 @@ a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; }
 
 :root {
-  --dg-bar:      48px;
+  --dg-bar:      88px;
   --dg-nav:      72px;
 
   --dg-dark:     #101418;
@@ -171,6 +171,10 @@ button { font: inherit; cursor: pointer; }
   --dg-muted:    #7A7066;
   --dg-line-l:   rgba(20,16,12,.09);
   --dg-line-d:   rgba(255,255,255,.08);
+}
+
+@media (min-width: 640px) {
+  :root { --dg-bar: 48px; }
 }
 
 /* ── page shell ─────────────────────────────────────────── */
@@ -193,7 +197,7 @@ button { font: inherit; cursor: pointer; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1001;
-  min-height: var(--dg-bar);
+  height: var(--dg-bar);
   padding: 7px 16px;
   display: flex;
   align-items: center;
@@ -259,6 +263,25 @@ button { font: inherit; cursor: pointer; }
 .dg-preview-link:hover {
   border-color: rgba(199,143,95,.5);
   color: var(--dg-copper2);
+}
+
+@media (max-width: 639px) {
+  .dg-preview {
+    padding: 8px 14px;
+  }
+  .dg-preview-title {
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 10px;
+    letter-spacing: .1em;
+  }
+  .dg-preview-sub {
+    font-size: 10px;
+    line-height: 1.35;
+  }
+  .dg-preview-link {
+    display: none;
+  }
 }
 
 /* ── nav ─────────────────────────────────────────────────── */
