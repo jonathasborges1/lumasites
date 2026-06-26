@@ -1,0 +1,167 @@
+{
+  "scraped_at": "2026-06-26T11:40:59.019422",
+  "site": {
+    "page_title": "Diego Gonçalves Advocacia",
+    "headings": [
+      {
+        "tag": "h2",
+        "text": "Advocacia Criminal Especializada"
+      },
+      {
+        "tag": "h2",
+        "text": "Como Podemos te Ajudar?"
+      },
+      {
+        "tag": "h2",
+        "text": "Perguntas Frequentes"
+      }
+    ],
+    "paragraphs": [
+      "O seu assunto é urgente para nós, clique no botão abaixo:",
+      "Nossa equipe especializada é hábil em lidar com uma ampla gama de casos, com vasta experiência em diversas áreas do direito criminal, estamos aqui para defesa de excelência aos nossos clientes.",
+      "Sim, você pode e deve contratar um advogado criminalista para o representar e defender desde a fase de inquérito policial, para que possa aumentar as chances de arquivamento ou, pelo menos, produzir provas para auxiliar sua defesa no processo criminal que virá a seguir.",
+      "Definitivamente não! Atuar no tribunal do júri requer uma série de conhecimentos e habilidades específicas, como oratória, persuasão, profundo conhecimento técnico de direito penal, processual, constitucional, direitos humanos, bem como, ainda, conhecimentos sobre perícias criminais, medicina legal, dentre outras coisas que não estão presentes em outras áreas do Direito.",
+      "Diego Gonçalves Advocacia © TODOS OS DIREITOS RESERVADOS",
+      "Esse site não faz parte do Google LLC nem do Facebook Inc. e não oferecemos nenhum tipo de serviço oficial do governo. Trabalhamos exclusivamente com serviços jurídicos."
+    ],
+    "ctas": [
+      {
+        "text": "Quero falar com um advogado",
+        "href": "https://wa.me/5592981333333?text=Ol%C3%A1%21+Vi+seu+an%C3%BAncio+e+gostaria+de+falar+com+um+especialista+em+Direito+Crim"
+      }
+    ],
+    "css_variables": {
+      "wp--preset--aspect-ratio--square": "1",
+      "wp--preset--aspect-ratio--4-3": "4/3",
+      "wp--preset--aspect-ratio--3-4": "3/4",
+      "wp--preset--aspect-ratio--3-2": "3/2",
+      "wp--preset--aspect-ratio--2-3": "2/3",
+      "wp--preset--aspect-ratio--16-9": "16/9",
+      "wp--preset--aspect-ratio--9-16": "9/16",
+      "wp--preset--color--black": "#000000",
+      "wp--preset--color--cyan-bluish-gray": "#abb8c3",
+      "wp--preset--color--white": "#ffffff",
+      "wp--preset--color--pale-pink": "#f78da7",
+      "wp--preset--color--vivid-red": "#cf2e2e",
+      "wp--preset--color--luminous-vivid-orange": "#ff6900",
+      "wp--preset--color--luminous-vivid-amber": "#fcb900",
+      "wp--preset--color--light-green-cyan": "#7bdcb5",
+      "wp--preset--color--vivid-green-cyan": "#00d084",
+      "wp--preset--color--pale-cyan-blue": "#8ed1fc",
+      "wp--preset--color--vivid-cyan-blue": "#0693e3",
+      "wp--preset--color--vivid-purple": "#9b51e0",
+      "wp--preset--gradient--vivid-cyan-blue-to-vivid-purple": "linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%)",
+      "wp--preset--gradient--light-green-cyan-to-vivid-green-cyan": "linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)",
+      "wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange": "linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%)",
+      "wp--preset--gradient--luminous-vivid-orange-to-vivid-red": "linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%)",
+      "wp--preset--gradient--very-light-gray-to-cyan-bluish-gray": "linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%)",
+      "wp--preset--gradient--cool-to-warm-spectrum": "linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%)",
+      "wp--preset--gradient--blush-light-purple": "linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%)",
+      "wp--preset--gradient--blush-bordeaux": "linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%)",
+      "wp--preset--gradient--luminous-dusk": "linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%)",
+      "wp--preset--gradient--pale-ocean": "linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%)",
+      "wp--preset--gradient--electric-grass": "linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%)",
+      "wp--preset--gradient--midnight": "linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%)",
+      "wp--preset--font-size--small": "13px",
+      "wp--preset--font-size--medium": "20px",
+      "wp--preset--font-size--large": "36px",
+      "wp--preset--font-size--x-large": "42px",
+      "wp--preset--spacing--20": "0.44rem",
+      "wp--preset--spacing--30": "0.67rem",
+      "wp--preset--spacing--40": "1rem",
+      "wp--preset--spacing--50": "1.5rem",
+      "wp--preset--spacing--60": "2.25rem",
+      "wp--preset--spacing--70": "3.38rem",
+      "wp--preset--spacing--80": "5.06rem",
+      "wp--preset--shadow--natural": "6px 6px 9px rgba(0, 0, 0, 0.2)",
+      "wp--preset--shadow--deep": "12px 12px 50px rgba(0, 0, 0, 0.4)",
+      "wp--preset--shadow--sharp": "6px 6px 0px rgba(0, 0, 0, 0.2)",
+      "wp--preset--shadow--outlined": "6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0)",
+      "wp--preset--shadow--crisp": "6px 6px 0px rgb(0, 0, 0)",
+      "direction-multiplier": "1",
+      "page-title-display": "block"
+    },
+    "fonts": [
+      "Times New Roman",
+      "-apple-system",
+      "Poppins"
+    ],
+    "images": [
+      {
+        "src": "https://causacriminal.com.br/wp-content/uploads/2025/06/Ensaio-6-1024x681.jpg",
+        "alt": "",
+        "colors": [
+          "#877362",
+          "#252E36",
+          "#C7C5BF",
+          "#552C14",
+          "#C78F5F"
+        ],
+        "saved": "site_img_00.jpg"
+      },
+      {
+        "src": "https://causacriminal.com.br/wp-content/uploads/2025/06/Ensaio-41-1024x681.jpg",
+        "alt": "",
+        "colors": [
+          "#BFB5A9",
+          "#292726",
+          "#9D6941",
+          "#6D3C22",
+          "#777774"
+        ],
+        "saved": "site_img_01.jpg"
+      },
+      {
+        "src": "https://causacriminal.com.br/wp-content/uploads/2025/06/Ensaio-44-1024x681.jpg",
+        "alt": "",
+        "colors": [
+          "#B6A594",
+          "#392A20",
+          "#E3E1DC",
+          "#7D462D",
+          "#A76D39"
+        ],
+        "saved": "site_img_02.jpg"
+      }
+    ],
+    "bg_images": [
+      {
+        "url": "https://causacriminal.com.br/wp-content/uploads/2024/05/Design-sem-nome-2023-09-14T092407.630.png",
+        "saved": "bg_img_00.jpg",
+        "colors": [
+          "#573023",
+          "#E0CEB9",
+          "#AEAAA5",
+          "#9F6240",
+          "#828B9C"
+        ]
+      }
+    ]
+  },
+  "all_colors": [
+    "#877362",
+    "#252E36",
+    "#C7C5BF",
+    "#552C14",
+    "#C78F5F",
+    "#BFB5A9",
+    "#292726",
+    "#9D6941",
+    "#6D3C22",
+    "#777774",
+    "#B6A594",
+    "#392A20",
+    "#E3E1DC",
+    "#7D462D",
+    "#A76D39",
+    "#573023",
+    "#E0CEB9",
+    "#AEAAA5",
+    "#9F6240",
+    "#828B9C"
+  ],
+  "screenshots": [
+    "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_diegogoncalves\\screenshots\\site_hero.png",
+    "C:\\Users\\jonathas.000\\Desktop\\projetos-x\\lumasites\\scripts\\output_diegogoncalves\\screenshots\\site_full.png"
+  ]
+}
