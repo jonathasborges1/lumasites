@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import {
-  Activity,
   Camera,
   ChevronDown,
   ChevronRight,
@@ -380,20 +379,52 @@ button { font: inherit; cursor: pointer; }
   background: var(--gs-orange-bg);
 }
 .gs-nav-client::after { display: none !important; }
+.gs-mobile-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gs-nav-client-mobile {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 3px;
+  background: rgba(255,255,255,.08);
+  color: var(--gs-white);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 28px rgba(0,0,0,.22);
+}
+.gs-nav-client-mobile svg {
+  color: var(--gs-white);
+  flex-shrink: 0;
+}
 .gs-mobile-client {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 8px;
-  border-bottom: 1px solid rgba(255,255,255,.05);
-  color: rgba(255,255,255,.45);
+  margin-top: 10px;
+  padding: 15px 16px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 4px;
+  background: rgba(255,255,255,.08);
+  color: var(--gs-white);
   font-size: 13px;
-  font-weight: 600;
-  letter-spacing: .06em;
+  font-weight: 800;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  transition: color .15s, padding-left .15s;
+  transition: border-color .15s, background .15s;
 }
-.gs-mobile-client:hover { color: var(--gs-orange2); padding-left: 16px; }
+.gs-mobile-client:hover {
+  border-color: rgba(255,255,255,.32);
+  background: rgba(255,255,255,.12);
+  color: var(--gs-white);
+}
 .gs-menu-btn {
   width: 44px; height: 44px;
   display: inline-flex;
@@ -483,7 +514,19 @@ button { font: inherit; cursor: pointer; }
 }
 @media (min-width: 900px) {
   .gs-links { display: flex; }
+  .gs-mobile-actions { display: none; }
   .gs-menu-btn { display: none; }
+}
+@media (max-width: 480px) {
+  .gs-nav-inner {
+    width: min(100% - 28px, 1160px);
+    gap: 10px;
+  }
+  .gs-brand-logo { width: 142px; }
+  .gs-nav-client-mobile {
+    padding: 0 10px;
+    letter-spacing: .08em;
+  }
 }
 
 /* ── sections ─────────────────────────────────────────── */
@@ -541,23 +584,23 @@ button { font: inherit; cursor: pointer; }
   min-height: 100svh;
   display: flex;
   align-items: center;
-  background: var(--gs-dark);
+  background: #EEF1F6;
   overflow: hidden;
 }
 .gs-hero-bg {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 65% 70% at 70% 55%, rgba(167,169,172,.14) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 50% at 5% 80%, rgba(255,255,255,.05) 0%, transparent 55%),
-    linear-gradient(155deg, #08101E 0%, #101927 55%, #192135 100%);
+    radial-gradient(ellipse 65% 70% at 72% 50%, rgba(35,35,35,.05) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 50% at 5% 80%, rgba(35,35,35,.03) 0%, transparent 55%),
+    linear-gradient(155deg, #E8ECF3 0%, #F2F5FA 50%, #F9FAFB 100%);
 }
 .gs-hero-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    linear-gradient(rgba(8,16,30,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8,16,30,.045) 1px, transparent 1px);
   background-size: 48px 48px;
   pointer-events: none;
 }
@@ -578,14 +621,14 @@ button { font: inherit; cursor: pointer; }
   align-items: center;
   gap: 10px;
   padding: 6px 14px 6px 10px;
-  border: 1px solid rgba(167,169,172,.32);
+  border: 1px solid rgba(8,16,30,.13);
   border-radius: 2px;
-  background: rgba(255,255,255,.08);
+  background: rgba(8,16,30,.05);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--gs-orange2);
+  color: var(--gs-orange3);
   margin-bottom: 28px;
   animation: gs-hero-in .5s cubic-bezier(.22,.8,.28,1) .1s both;
 }
@@ -597,22 +640,22 @@ button { font: inherit; cursor: pointer; }
   animation: gs-pulse-dot 1.6s ease-out infinite;
 }
 .gs-hero h1 {
-  font-size: clamp(40px, 5.5vw, 62px);
+  font-size: clamp(34px, 8vw, 62px);
   font-weight: 800;
   line-height: 1.06;
   letter-spacing: -.03em;
-  color: var(--gs-white);
+  color: var(--gs-ink);
   margin: 0 0 24px;
   animation: gs-hero-in .65s cubic-bezier(.22,.8,.28,1) .2s both;
 }
 .gs-hero h1 em {
   font-style: normal;
-  color: var(--gs-silver);
+  color: var(--gs-muted);
 }
 .gs-hero-sub {
   font-size: clamp(15px, 1.8vw, 18px);
   line-height: 1.7;
-  color: rgba(255,255,255,.52);
+  color: var(--gs-muted);
   margin: 0 0 40px;
   animation: gs-hero-in .65s cubic-bezier(.22,.8,.28,1) .32s both;
 }
@@ -648,16 +691,16 @@ button { font: inherit; cursor: pointer; }
   gap: 10px;
   padding: 15px 24px;
   border-radius: 3px;
-  border: 1px solid rgba(255,255,255,.16);
-  color: rgba(255,255,255,.7);
+  border: 1px solid rgba(8,16,30,.2);
+  color: var(--gs-ink);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: .04em;
   transition: border-color .15s, color .15s;
 }
 .gs-btn-outline:hover {
-  border-color: var(--gs-orange-br);
-  color: var(--gs-orange2);
+  border-color: var(--gs-orange);
+  color: var(--gs-orange3);
 }
 .gs-hero-pills {
   display: flex;
@@ -671,15 +714,109 @@ button { font: inherit; cursor: pointer; }
   align-items: center;
   gap: 7px;
   padding: 8px 14px;
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid rgba(8,16,30,.11);
   border-radius: 2px;
-  background: rgba(255,255,255,.04);
+  background: rgba(8,16,30,.04);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: .04em;
-  color: rgba(255,255,255,.6);
+  color: var(--gs-muted);
 }
-.gs-hero-pill svg { color: var(--gs-orange2); flex-shrink: 0; }
+.gs-hero-pill svg { color: var(--gs-orange3); flex-shrink: 0; }
+.gs-hero-side {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .gs-hero-inner {
+    grid-template-columns: minmax(0, 620px) minmax(300px, 420px);
+    justify-content: space-between;
+    gap: 44px;
+  }
+  .gs-hero-side {
+    display: grid;
+    gap: 14px;
+    animation: gs-hero-in .75s cubic-bezier(.22,.8,.28,1) .36s both;
+  }
+}
+.gs-hero-side-card {
+  border: 1px solid rgba(8,16,30,.11);
+  border-radius: 7px;
+  background: rgba(255,255,255,.62);
+  box-shadow: 0 22px 70px rgba(8,16,30,.08);
+  backdrop-filter: blur(12px);
+  padding: 22px;
+}
+.gs-hero-side-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gs-orange3);
+}
+.gs-hero-side-title {
+  margin: 0;
+  font-family: var(--font-gs-display), system-ui, sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--gs-ink);
+}
+.gs-hero-side-text {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--gs-muted);
+}
+.gs-hero-side-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 0 16px;
+  border-radius: 3px;
+  background: var(--gs-orange3);
+  color: var(--gs-white);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.gs-hero-side-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.gs-hero-side-metric {
+  min-height: 116px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(8,16,30,.1);
+  border-radius: 6px;
+  background: rgba(255,255,255,.52);
+  padding: 16px 14px;
+}
+.gs-hero-side-metric svg { color: var(--gs-orange3); }
+.gs-hero-side-value {
+  font-family: var(--font-gs-display), system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--gs-ink);
+}
+.gs-hero-side-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gs-muted);
+}
 
 @keyframes gs-hero-in {
   from { opacity: 0; transform: translateY(24px); }
@@ -690,6 +827,11 @@ button { font: inherit; cursor: pointer; }
 .gs-hero-visual {
   position: relative;
   animation: gs-hero-in .8s cubic-bezier(.22,.8,.28,1) .3s both;
+}
+@media (max-width: 899px) {
+  .gs-hero-visual {
+    display: none;
+  }
 }
 .gs-dashboard {
   position: relative;
@@ -893,12 +1035,6 @@ button { font: inherit; cursor: pointer; }
 .gs-db-vehicle-status.online { background: #22D3A1; box-shadow: 0 0 6px rgba(34,211,161,.4); }
 .gs-db-vehicle-status.idle   { background: #FBBF24; box-shadow: 0 0 6px rgba(251,191,36,.3); }
 
-@media (min-width: 900px) {
-  .gs-hero-inner {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 /* ── trust bar ───────────────────────────────────────────── */
 .gs-trust {
   background: var(--gs-dark2);
@@ -1066,12 +1202,17 @@ button { font: inherit; cursor: pointer; }
 .gs-about-visual {
   position: relative;
 }
+@media (max-width: 899px) {
+  .gs-about-visual {
+    display: none;
+  }
+}
 .gs-about-card {
-  background: var(--gs-dark2);
+  background: #FFFFFF;
   border-radius: 8px;
-  border: 1px solid rgba(167,169,172,.22);
+  border: 1px solid rgba(35,35,35,.1);
   padding: 32px 28px;
-  box-shadow: 0 24px 64px rgba(0,0,0,.2);
+  box-shadow: 0 24px 64px rgba(0,0,0,.07);
   position: relative;
   overflow: hidden;
 }
@@ -1081,7 +1222,7 @@ button { font: inherit; cursor: pointer; }
   top: -60px; right: -60px;
   width: 240px; height: 240px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(35,35,35,.04) 0%, transparent 70%);
   pointer-events: none;
 }
 .gs-about-badge {
@@ -1096,7 +1237,7 @@ button { font: inherit; cursor: pointer; }
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--gs-orange2);
+  color: var(--gs-orange);
   margin-bottom: 20px;
 }
 .gs-about-metrics {
@@ -1106,8 +1247,8 @@ button { font: inherit; cursor: pointer; }
   margin-top: 24px;
 }
 .gs-about-metric {
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.06);
+  background: var(--gs-light);
+  border: 1px solid var(--gs-line-l);
   border-radius: 6px;
   padding: 16px 14px;
 }
@@ -1115,14 +1256,14 @@ button { font: inherit; cursor: pointer; }
   font-family: var(--font-gs-display), system-ui, sans-serif;
   font-size: 28px;
   font-weight: 800;
-  color: var(--gs-orange2);
+  color: var(--gs-orange3);
   line-height: 1;
   letter-spacing: -.02em;
 }
 .gs-about-metric-label {
   font-size: 11px;
   font-weight: 600;
-  color: rgba(255,255,255,.4);
+  color: var(--gs-muted);
   margin-top: 5px;
   text-transform: uppercase;
   letter-spacing: .05em;
@@ -1139,7 +1280,7 @@ button { font: inherit; cursor: pointer; }
   gap: 10px;
   font-size: 13px;
   font-weight: 600;
-  color: rgba(255,255,255,.65);
+  color: var(--gs-muted);
 }
 .gs-about-diff-item::before {
   content: "";
@@ -1183,10 +1324,79 @@ button { font: inherit; cursor: pointer; }
   line-height: 1.25;
   letter-spacing: -.01em;
 }
-@media (min-width: 900px) {
-  .gs-about-grid { grid-template-columns: 1fr 1fr; }
+.gs-location-panel {
+  display: grid;
+  gap: 24px;
+  align-items: stretch;
 }
-
+.gs-location-card {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+  border: 1px solid var(--gs-line-l);
+  border-radius: 7px;
+  background: rgba(255,255,255,.82);
+}
+.gs-location-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.gs-location-icon {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: var(--gs-orange-bg);
+  color: var(--gs-orange3);
+}
+.gs-location-kicker {
+  margin: 0 0 4px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gs-orange3);
+}
+.gs-location-address {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--gs-muted);
+}
+.gs-location-link {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 0 16px;
+  border-radius: 3px;
+  background: var(--gs-orange3);
+  color: var(--gs-white);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.gs-location-map {
+  display: none;
+  width: 100%;
+  min-height: 320px;
+  border: 0;
+  border-radius: 7px;
+  filter: grayscale(1) contrast(1.05);
+}
+@media (min-width: 768px) {
+  .gs-location-panel {
+    grid-template-columns: minmax(260px, .68fr) minmax(360px, 1.32fr);
+  }
+  .gs-location-map { display: block; }
+}
 /* ── process ─────────────────────────────────────────────── */
 .gs-process-grid {
   display: grid;
@@ -1664,14 +1874,26 @@ export default function GeralSegPage() {
               </a>
             </div>
 
-            <button
-              className="gs-menu-btn"
-              onClick={() => setMenuOpen((v) => !v)}
-              aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
-              aria-expanded={menuOpen}
-            >
-              <MenuIcon open={menuOpen} />
-            </button>
+            <div className="gs-mobile-actions">
+              <a
+                href="https://www16.itrack.com.br/itrackmon"
+                target="_blank"
+                rel="noreferrer"
+                className="gs-nav-client-mobile"
+                aria-label="Acessar área do cliente GeraSeg"
+              >
+                <LogIn size={14} />
+                Cliente
+              </a>
+              <button
+                className="gs-menu-btn"
+                onClick={() => setMenuOpen((v) => !v)}
+                aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+                aria-expanded={menuOpen}
+              >
+                <MenuIcon open={menuOpen} />
+              </button>
+            </div>
           </div>
         </nav>
 
@@ -1711,9 +1933,9 @@ export default function GeralSegPage() {
               </div>
 
               <h1 id="gs-hero-h1">
-                Seu veículo.<br />
-                Sua operação.<br />
-                Sob <em>controle — 24h.</em>
+                Tranquilidade para você,<br />
+                sua família<br />
+                ou seu <em>negócio!</em>
               </h1>
 
               <p className="gs-hero-sub">
@@ -1754,66 +1976,45 @@ export default function GeralSegPage() {
               </div>
             </div>
 
-            {/* dashboard visual */}
-            <div className="gs-hero-visual" aria-hidden="true">
-              <div className="gs-dashboard">
-                <div className="gs-db-header">
-                  <span className="gs-db-title">Painel de Monitoramento</span>
-                  <span className="gs-db-live">
-                    <span className="gs-db-live-dot" />
-                    Ao vivo
-                  </span>
+            <aside className="gs-hero-side" aria-label="Destaques da GeraSeg">
+              <div className="gs-hero-side-card">
+                <p className="gs-hero-side-kicker">
+                  <ShieldCheck size={15} />
+                  Segurança eletrônica desde 2010
+                </p>
+                <h2 className="gs-hero-side-title">Base em Caçador. Cobertura nacional.</h2>
+                <p className="gs-hero-side-text">
+                  Atendimento para veículos pessoais, famílias e operações comerciais,
+                  com rastreamento, monitoramento e suporte técnico.
+                </p>
+                <a
+                  href="https://www16.itrack.com.br/itrackmon"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="gs-hero-side-link"
+                >
+                  Acessar área do cliente
+                  <LogIn size={14} />
+                </a>
+              </div>
+              <div className="gs-hero-side-grid" aria-hidden="true">
+                <div className="gs-hero-side-metric">
+                  <Truck size={18} />
+                  <span className="gs-hero-side-value">500+</span>
+                  <span className="gs-hero-side-label">Veículos</span>
                 </div>
-
-                <div className="gs-map-area">
-                  <div className="gs-map-grid-inner" />
-                  <div className="gs-map-route">
-                    <div className="gs-route-line" />
-                    <div className="gs-map-pin gs-pin-a">
-                      <div className="gs-map-pin-dot" />
-                      <span className="gs-map-pin-label">Origem</span>
-                    </div>
-                    <div className="gs-map-pin gs-pin-b">
-                      <div className="gs-map-pin-dot" />
-                      <span className="gs-map-pin-label">Destino</span>
-                    </div>
-                  </div>
+                <div className="gs-hero-side-metric">
+                  <Clock size={18} />
+                  <span className="gs-hero-side-value">24h</span>
+                  <span className="gs-hero-side-label">Central ativa</span>
                 </div>
-
-                <div className="gs-db-stats">
-                  {[
-                    { icon: <Truck size={15} />, value: "12", label: "Veículos" },
-                    { icon: <Activity size={15} />, value: "9", label: "Online" },
-                    { icon: <Navigation size={15} />, value: "3", label: "Em rota" },
-                  ].map((s, i) => (
-                    <div key={i} className="gs-db-stat">
-                      <span className="gs-db-stat-icon">{s.icon}</span>
-                      <span className="gs-db-stat-value">{s.value}</span>
-                      <span className="gs-db-stat-label">{s.label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="gs-db-vehicle-list">
-                  {[
-                    { plate: "ABC-1D23", route: "Av. Brasil → Centro", speed: "72 km/h", status: "online" as const },
-                    { plate: "XYZ-5E78", route: "Parado · Garagem Principal", speed: "0 km/h",  status: "idle" as const },
-                  ].map((v, i) => (
-                    <div key={i} className="gs-db-vehicle">
-                      <div className="gs-db-vehicle-icon">
-                        <Truck size={15} />
-                      </div>
-                      <div className="gs-db-vehicle-info">
-                        <div className="gs-db-vehicle-plate">{v.plate}</div>
-                        <div className="gs-db-vehicle-route">{v.route}</div>
-                      </div>
-                      <span className="gs-db-vehicle-speed">{v.speed}</span>
-                      <span className={`gs-db-vehicle-status ${v.status}`} />
-                    </div>
-                  ))}
+                <div className="gs-hero-side-metric">
+                  <MapPin size={18} />
+                  <span className="gs-hero-side-value">SC</span>
+                  <span className="gs-hero-side-label">Sede</span>
                 </div>
               </div>
-            </div>
+            </aside>
           </div>
         </section>
 
@@ -1897,66 +2098,37 @@ export default function GeralSegPage() {
             <p className="gs-section-label gs-reveal">Quem somos</p>
             <div className="gs-about-grid">
 
-              <div className="gs-about-visual gs-reveal">
-                <div className="gs-about-card">
-                  <div className="gs-about-badge">
-                    <Shield size={14} />
-                    GeraSeg · Segurança Veicular
-                  </div>
-                  <div className="gs-about-metrics">
-                    {[
-                      { value: "500+", label: "Veículos monitorados" },
-                      { value: "24h",  label: "Central ativa" },
-                      { value: "150+", label: "Clientes atendidos" },
-                      { value: "100%", label: "Cobertura nacional" },
-                    ].map((m) => (
-                      <div key={m.label} className="gs-about-metric">
-                        <div className="gs-about-metric-value">{m.value}</div>
-                        <div className="gs-about-metric-label">{m.label}</div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="gs-about-diff">
-                    {[
-                      "Plataforma própria de monitoramento",
-                      "Suporte técnico especializado",
-                      "Instalação por técnicos certificados",
-                      "Atendimento ágil via WhatsApp",
-                    ].map((d) => (
-                      <div key={d} className="gs-about-diff-item">{d}</div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
               <div>
                 <h2 className="gs-h2 gs-reveal gs-d1" id="gs-sobre-h2">
-                  Segurança que não<br />depende da sorte
+                  Quem Somos
                 </h2>
                 <div className="gs-divider gs-reveal gs-d1" />
 
                 <p className="gs-about-text gs-reveal gs-d2">
-                  A <strong>GeraSeg</strong> nasceu da necessidade real de empresas e pessoas físicas
-                  que não podiam se dar ao luxo de não saber onde seus veículos estavam. Desenvolvemos
-                  soluções práticas, acessíveis e confiáveis para rastrear, monitorar e proteger
-                  qualquer frota — do veículo pessoal à operação logística completa.
+                  Fundada em <strong>2 de outubro de 2010</strong>, na cidade de{" "}
+                  <strong>Caçador (SC)</strong>, a Geralseg consolidou-se como referência no setor
+                  de segurança. Com uma trajetória de mais de 15 anos de dedicação, evoluímos para
+                  oferecer soluções completas que vão além das estruturas físicas.
                 </p>
                 <p className="gs-about-text gs-reveal gs-d3">
-                  Nossa plataforma foi construída com foco na experiência real do cliente: interface
-                  simples, alertas instantâneos, suporte ágil e instalação rápida. Aqui,{" "}
-                  <strong>tecnologia não é complicação — é controle.</strong>
+                  Hoje, somos especialistas não apenas em segurança eletrônica residencial e
+                  comercial, mas também em <strong>rastreamento veicular e telemetria por
+                  videomonitoramento</strong>, garantindo que seu patrimônio esteja protegido
+                  onde quer que ele esteja.
                 </p>
                 <p className="gs-about-text gs-reveal gs-d4">
-                  Mais de 500 veículos monitorados e 150 clientes ativos comprovam que a GeraSeg
-                  entrega o que promete: visibilidade total, resposta rápida e tranquilidade operacional.
+                  Nossa missão é entregar tranquilidade através de serviços de alta qualidade e
+                  produtos que se destacam pela durabilidade. Na Geralseg,{" "}
+                  <strong>o compromisso com o cliente é a base de cada solução tecnológica
+                  que entregamos.</strong>
                 </p>
 
                 <div className="gs-about-info-grid gs-reveal gs-d4">
                   {[
-                    { label: "Especialidade",    value: "Rastreamento & Frotas" },
-                    { label: "Atendimento",      value: "WhatsApp + Suporte 24h" },
-                    { label: "Cobertura",        value: "Todo o Brasil" },
-                    { label: "Plataforma",       value: "App iOS & Android" },
+                    { label: "Fundação",         value: "2 de outubro de 2010" },
+                    { label: "Sede",             value: "Caçador, SC" },
+                    { label: "Atuação",          value: "+15 anos no mercado" },
+                    { label: "Especialidades",   value: "Eletrônica · Rastreamento" },
                   ].map((c) => (
                     <div key={c.label} className="gs-about-info-card">
                       <div className="gs-about-info-label">{c.label}</div>
@@ -1970,6 +2142,53 @@ export default function GeralSegPage() {
         </section>
 
         {/* ── processo ── */}
+        <section className="gs-section" id="sede" aria-labelledby="gs-sede-h2">
+          <div className="gs-wrap">
+            <p className="gs-section-label gs-reveal">Nossa sede</p>
+            <h2 className="gs-h2 gs-reveal gs-d1" id="gs-sede-h2">
+              Presença local,<br />atendimento nacional
+            </h2>
+            <div className="gs-divider gs-reveal gs-d1" />
+
+            <div className="gs-location-panel gs-reveal gs-d2">
+              <div className="gs-location-card">
+                <div className="gs-location-head">
+                  <span className="gs-location-icon" aria-hidden="true">
+                    <MapPin size={18} />
+                  </span>
+                  <div>
+                    <p className="gs-location-kicker">GeraSeg em Caçador</p>
+                    <p className="gs-location-address">
+                      Rua Dr. Altamiro Guimarães, 26, Sala 02 - Centro,
+                      Caçador - SC, 89500-025.
+                    </p>
+                  </div>
+                </div>
+                <p className="gs-about-text">
+                  A sede reforça a origem e a estrutura da operação. O atendimento pode ser feito
+                  em todo o Brasil, com foco em rastreamento, monitoramento e suporte.
+                </p>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Rua%20Dr.%20Altamiro%20Guimaraes%2026%20Sala%2002%20Centro%20Cacador%20SC%2089500-025"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="gs-location-link"
+                >
+                  Abrir no Google Maps
+                  <ChevronRight size={14} />
+                </a>
+              </div>
+              <iframe
+                className="gs-location-map"
+                title="Mapa da sede da GeraSeg em Caçador, SC"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Rua%20Dr.%20Altamiro%20Guimaraes%2026%20Sala%2002%20Centro%20Cacador%20SC%2089500-025&output=embed"
+              />
+            </div>
+          </div>
+        </section>
+
         <section className="gs-section dark" id="processo" aria-labelledby="gs-processo-h2">
           <div className="gs-wrap">
             <p className="gs-section-label gs-reveal">Como Funciona</p>
