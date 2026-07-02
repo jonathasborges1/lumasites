@@ -27,8 +27,8 @@ const body = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
   title: {
     default: site.seo.title,
