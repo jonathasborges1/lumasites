@@ -11,7 +11,6 @@ import {
   MessageCircle,
   Navigation,
   Shield,
-  ShieldCheck,
   Truck,
   Zap,
 } from "lucide-react";
@@ -300,7 +299,7 @@ button { font: inherit; cursor: pointer; }
   line-height: 1;
 }
 .gs-brand-logo {
-  width: 156px;
+  width: 172px;
   height: auto;
   filter: invert(1) grayscale(1) contrast(1.1);
 }
@@ -521,7 +520,7 @@ button { font: inherit; cursor: pointer; }
     width: min(100% - 28px, 1160px);
     gap: 10px;
   }
-  .gs-brand-logo { width: 142px; }
+  .gs-brand-logo { width: clamp(158px, 40vw, 182px); }
   .gs-nav-client-mobile {
     padding: 0 10px;
     letter-spacing: .08em;
@@ -615,7 +614,11 @@ button { font: inherit; cursor: pointer; }
   padding: 80px 0 64px;
   align-items: center;
 }
-.gs-hero-copy { max-width: 600px; }
+.gs-hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
 .gs-hero-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -724,100 +727,81 @@ button { font: inherit; cursor: pointer; }
 }
 .gs-hero-pill svg { color: var(--gs-orange3); flex-shrink: 0; }
 .gs-hero-side {
-  display: none;
+  position: relative;
+  width: min(100%, 620px);
+  margin: 0;
+  justify-self: center;
+  animation: gs-hero-in .75s cubic-bezier(.22,.8,.28,1) .36s both;
+}
+.gs-hero-image-frame {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border: 1px solid rgba(8,16,30,.14);
+  border-radius: 8px;
+  background: rgba(255,255,255,.45);
+  box-shadow: 0 28px 80px rgba(8,16,30,.16);
+  overflow: hidden;
+}
+.gs-hero-image-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(238,241,246,.18) 0%, transparent 24%),
+    linear-gradient(180deg, rgba(8,16,30,0) 62%, rgba(8,16,30,.14) 100%);
+}
+.gs-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+@media (max-width: 1023px) {
+  .gs-hero-inner {
+    gap: 0;
+    padding-top: 96px;
+  }
+  .gs-hero-side {
+    position: absolute;
+    z-index: 1;
+    top: 28px;
+    left: -20px;
+    right: -20px;
+    width: auto;
+    max-width: none;
+    pointer-events: none;
+  }
+  .gs-hero-image-frame {
+    height: min(520px, 68vh);
+    aspect-ratio: auto;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+  .gs-hero-image-frame::after {
+    background:
+      linear-gradient(90deg, rgba(238,241,246,.72) 0%, rgba(238,241,246,.5) 48%, rgba(238,241,246,.22) 100%),
+      linear-gradient(180deg, rgba(238,241,246,.2) 0%, rgba(238,241,246,.72) 70%, #EEF1F6 100%);
+  }
+  .gs-hero-image {
+    object-position: center top;
+  }
 }
 @media (min-width: 1024px) {
   .gs-hero-inner {
-    grid-template-columns: minmax(0, 620px) minmax(300px, 420px);
+    grid-template-columns: minmax(0, 560px) minmax(360px, 520px);
     justify-content: space-between;
     gap: 44px;
   }
   .gs-hero-side {
-    display: grid;
-    gap: 14px;
-    animation: gs-hero-in .75s cubic-bezier(.22,.8,.28,1) .36s both;
+    justify-self: end;
+  }
+  .gs-hero-image-frame {
+    aspect-ratio: 1.55 / 1;
   }
 }
-.gs-hero-side-card {
-  border: 1px solid rgba(8,16,30,.11);
-  border-radius: 7px;
-  background: rgba(255,255,255,.62);
-  box-shadow: 0 22px 70px rgba(8,16,30,.08);
-  backdrop-filter: blur(12px);
-  padding: 22px;
-}
-.gs-hero-side-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 0 14px;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--gs-orange3);
-}
-.gs-hero-side-title {
-  margin: 0;
-  font-family: var(--font-gs-display), system-ui, sans-serif;
-  font-size: 30px;
-  font-weight: 800;
-  line-height: 1;
-  color: var(--gs-ink);
-}
-.gs-hero-side-text {
-  margin: 10px 0 0;
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--gs-muted);
-}
-.gs-hero-side-link {
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 18px;
-  padding: 0 16px;
-  border-radius: 3px;
-  background: var(--gs-orange3);
-  color: var(--gs-white);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.gs-hero-side-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-.gs-hero-side-metric {
-  min-height: 116px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid rgba(8,16,30,.1);
-  border-radius: 6px;
-  background: rgba(255,255,255,.52);
-  padding: 16px 14px;
-}
-.gs-hero-side-metric svg { color: var(--gs-orange3); }
-.gs-hero-side-value {
-  font-family: var(--font-gs-display), system-ui, sans-serif;
-  font-size: 24px;
-  font-weight: 800;
-  line-height: 1;
-  color: var(--gs-ink);
-}
-.gs-hero-side-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--gs-muted);
-}
-
 @keyframes gs-hero-in {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: none; }
@@ -1910,55 +1894,30 @@ export default function GeralSegPage() {
                   GPS em tempo real
                 </span>
                 <span className="gs-hero-pill">
-                  <Clock size={13} />
-                  Monitoramento 24h/7
-                </span>
-                <span className="gs-hero-pill">
                   <Shield size={13} />
                   Bloqueio remoto
+                </span>
+                <span className="gs-hero-pill">
+                  <Navigation size={13} />
+                  Via satélite
+                </span>
+                <span className="gs-hero-pill">
+                  <Clock size={13} />
+                  Vídeo rastreamento
                 </span>
               </div>
             </div>
 
-            <aside className="gs-hero-side" aria-label="Destaques da GeraSeg">
-              <div className="gs-hero-side-card">
-                <p className="gs-hero-side-kicker">
-                  <ShieldCheck size={15} />
-                  Segurança eletrônica desde 2010
-                </p>
-                <h2 className="gs-hero-side-title">Base em Caçador. Cobertura nacional.</h2>
-                <p className="gs-hero-side-text">
-                  Atendimento para veículos pessoais, famílias e operações comerciais,
-                  com rastreamento, monitoramento e suporte técnico.
-                </p>
-                <a
-                  href="https://www16.itrack.com.br/itrackmon"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="gs-hero-side-link"
-                >
-                  Acessar área do cliente
-                  <LogIn size={14} />
-                </a>
+            <figure className="gs-hero-side" aria-label="Rastreamento e monitoramento de frotas">
+              <div className="gs-hero-image-frame">
+                <img
+                  src="/images/geralseg/hero-rastreamento-frotas-hq.jpg"
+                  alt="Caminhão verde em rodovia ao lado de uma tela com sistema de rastreamento e videomonitoramento veicular"
+                  className="gs-hero-image"
+                  loading="eager"
+                />
               </div>
-              <div className="gs-hero-side-grid" aria-hidden="true">
-                <div className="gs-hero-side-metric">
-                  <Truck size={18} />
-                  <span className="gs-hero-side-value">500+</span>
-                  <span className="gs-hero-side-label">Veículos</span>
-                </div>
-                <div className="gs-hero-side-metric">
-                  <Clock size={18} />
-                  <span className="gs-hero-side-value">24h</span>
-                  <span className="gs-hero-side-label">Central ativa</span>
-                </div>
-                <div className="gs-hero-side-metric">
-                  <MapPin size={18} />
-                  <span className="gs-hero-side-value">SC</span>
-                  <span className="gs-hero-side-label">Sede</span>
-                </div>
-              </div>
-            </aside>
+            </figure>
           </div>
         </section>
 
@@ -2052,7 +2011,7 @@ export default function GeralSegPage() {
                     { label: "Fundação",         value: "2 de outubro de 2010" },
                     { label: "Sede",             value: "Caçador, SC" },
                     { label: "Atuação",          value: "+15 anos no mercado" },
-                    { label: "Especialidades",   value: "Eletrônica · Rastreamento" },
+                    { label: "Especialidades",   value: "Segurança eletrônica e rastreamento" },
                   ].map((c) => (
                     <div key={c.label} className="gs-about-info-card">
                       <div className="gs-about-info-label">{c.label}</div>
