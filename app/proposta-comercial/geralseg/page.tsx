@@ -13,7 +13,6 @@ import {
   Shield,
   ShieldCheck,
   Truck,
-  Users,
   Zap,
 } from "lucide-react";
 
@@ -530,11 +529,11 @@ button { font: inherit; cursor: pointer; }
 }
 
 /* ── sections ─────────────────────────────────────────── */
-.gs-section { padding: 96px 20px; }
+.gs-section { padding: 96px 20px; border-top: 1px solid var(--gs-line-l); }
 .gs-section.alt { background: var(--gs-light); }
 .gs-section.slate { background: var(--gs-slate); }
-.gs-section.dark { background: var(--gs-dark2); color: var(--gs-white); }
-.gs-section.darker { background: var(--gs-dark); color: var(--gs-white); }
+.gs-section.dark { background: var(--gs-dark2); color: var(--gs-white); border-top: none; }
+.gs-section.darker { background: var(--gs-dark); color: var(--gs-white); border-top: none; }
 .gs-wrap { width: min(1120px, 100%); margin: 0 auto; }
 .gs-section-label {
   display: inline-flex;
@@ -586,6 +585,7 @@ button { font: inherit; cursor: pointer; }
   align-items: center;
   background: #EEF1F6;
   overflow: hidden;
+  border-bottom: 1px solid rgba(13,17,23,.12);
 }
 .gs-hero-bg {
   position: absolute;
@@ -1034,62 +1034,6 @@ button { font: inherit; cursor: pointer; }
 }
 .gs-db-vehicle-status.online { background: #22D3A1; box-shadow: 0 0 6px rgba(34,211,161,.4); }
 .gs-db-vehicle-status.idle   { background: #FBBF24; box-shadow: 0 0 6px rgba(251,191,36,.3); }
-
-/* ── trust bar ───────────────────────────────────────────── */
-.gs-trust {
-  background: var(--gs-dark2);
-  border-top: 1px solid rgba(167,169,172,.14);
-  border-bottom: 1px solid rgba(167,169,172,.14);
-  padding: 0 20px;
-}
-.gs-trust-grid {
-  width: min(1120px, 100%);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-.gs-trust-item {
-  padding: 28px 24px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  border-right: 1px solid rgba(255,255,255,.05);
-  border-bottom: 1px solid rgba(255,255,255,.05);
-}
-.gs-trust-item:nth-child(2n) { border-right: none; }
-.gs-trust-item:nth-last-child(-n+2) { border-bottom: none; }
-.gs-trust-icon {
-  width: 44px; height: 44px;
-  border-radius: 8px;
-  background: var(--gs-orange-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gs-orange2);
-  flex-shrink: 0;
-}
-.gs-trust-num {
-  font-family: var(--font-gs-display), system-ui, sans-serif;
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--gs-white);
-  line-height: 1;
-  letter-spacing: -.02em;
-}
-.gs-trust-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .04em;
-  color: rgba(255,255,255,.38);
-  margin-top: 4px;
-  text-transform: uppercase;
-}
-@media (min-width: 768px) {
-  .gs-trust-grid { grid-template-columns: repeat(4, 1fr); }
-  .gs-trust-item { border-bottom: none; }
-  .gs-trust-item:nth-child(2n) { border-right: 1px solid rgba(255,255,255,.05); }
-  .gs-trust-item:last-child { border-right: none; }
-}
 
 /* ── services ────────────────────────────────────────────── */
 .gs-services-grid {
@@ -2017,26 +1961,6 @@ export default function GeralSegPage() {
             </aside>
           </div>
         </section>
-
-        {/* ── trust bar ── */}
-        <div className="gs-trust" role="complementary" aria-label="Indicadores de confiança">
-          <div className="gs-trust-grid">
-            {[
-              { icon: <Truck size={20} />,       num: "500+",  label: "Veículos rastreados" },
-              { icon: <Clock size={20} />,        num: "24h",   label: "Monitoramento ativo" },
-              { icon: <Users size={20} />,        num: "150+",  label: "Clientes ativos" },
-              { icon: <ShieldCheck size={20} />,  num: "98%",   label: "Satisfação dos clientes" },
-            ].map((item, i) => (
-              <div key={i} className={`gs-trust-item gs-reveal gs-d${i + 1}`}>
-                <div className="gs-trust-icon">{item.icon}</div>
-                <div>
-                  <div className="gs-trust-num">{item.num}</div>
-                  <div className="gs-trust-label">{item.label}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* ── services ── */}
         <section className="gs-section" id="solucoes" aria-labelledby="gs-solucoes-h2">
