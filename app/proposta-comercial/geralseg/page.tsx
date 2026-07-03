@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 /* ── constants ─────────────────────────────────────────── */
-const WA_NUMBER = "5500000000000"; // Aguardando número do cliente
+const WA_NUMBER = "5549988010695";
 const wa = (msg = "Olá, GeraSeg! Vi a proposta e gostaria de saber mais sobre rastreamento veicular.") =>
   `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
 
@@ -1812,7 +1812,7 @@ export default function GeralSegPage() {
                 </a>
               ))}
               <a
-                href="https://www16.itrack.com.br/itrackmon"
+                href="https://www.itrack.com.br/geralseg"
                 target="_blank"
                 rel="noreferrer"
                 className="gs-nav-client"
@@ -1828,7 +1828,7 @@ export default function GeralSegPage() {
 
             <div className="gs-mobile-actions">
               <a
-                href="https://www16.itrack.com.br/itrackmon"
+                href="https://www.itrack.com.br/geralseg"
                 target="_blank"
                 rel="noreferrer"
                 className="gs-nav-client-mobile"
@@ -1857,7 +1857,7 @@ export default function GeralSegPage() {
             </a>
           ))}
           <a
-            href="https://www16.itrack.com.br/itrackmon"
+            href="https://www.itrack.com.br/geralseg"
             target="_blank"
             rel="noreferrer"
             className="gs-mobile-client"
