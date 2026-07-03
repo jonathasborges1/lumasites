@@ -623,16 +623,19 @@ button { font: inherit; cursor: pointer; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 6px 14px 6px 10px;
-  border: 1px solid rgba(8,16,30,.13);
-  border-radius: 2px;
-  background: rgba(8,16,30,.05);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .16em;
+  padding: 10px 18px 10px 12px;
+  border: 1px solid rgba(8,16,30,.16);
+  border-radius: 4px;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 14px 36px rgba(8,16,30,.1);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--gs-orange3);
+  color: #0A0A0A;
   margin-bottom: 28px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   animation: gs-hero-in .5s cubic-bezier(.22,.8,.28,1) .1s both;
 }
 .gs-hero-eyebrow-dot {
@@ -761,6 +764,27 @@ button { font: inherit; cursor: pointer; }
   .gs-hero-inner {
     gap: 0;
     padding-top: 96px;
+  }
+  .gs-hero-eyebrow {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 14px;
+    font-size: 11px;
+    line-height: 1.25;
+    letter-spacing: .11em;
+    text-align: center;
+  }
+  .gs-hero-pills {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 32px;
+  }
+  .gs-hero-pill {
+    justify-content: center;
+    min-height: 38px;
+    padding: 8px 10px;
+    text-align: center;
   }
   .gs-hero-side {
     position: absolute;
