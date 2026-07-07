@@ -41,8 +41,8 @@ export type Mistake = {
 export const articleDates = {
   publishedAt: "2026-04-28",
   publishedLabel: "28 de abril de 2026",
-  updatedAt: null,
-  updatedLabel: null,
+  updatedAt: "2026-07-07",
+  updatedLabel: "7 de julho de 2026",
 };
 
 // ─── SEO ─────────────────────────────────────────────────────────────────────
@@ -137,6 +137,14 @@ export const faqs: Faq[] = [
   {
     q: "O que é SEO local e por que importa para negócios em Manaus?",
     a: "SEO local são as técnicas que fazem seu site ou perfil aparecer quando alguém busca por um serviço em uma região específica — por exemplo, 'dentista em Manaus' ou 'advocacia Manaus'. Para negócios locais, é mais importante do que aparecer para buscas genéricas do Brasil inteiro.",
+  },
+  {
+    q: "Vale a pena mencionar bairros de Manaus no site?",
+    a: "Vale, desde que reflita a realidade do atendimento. Buscas como 'salão de beleza na Cidade Nova' ou 'oficina no Distrito Industrial' têm menos concorrência do que as buscas gerais da cidade. Se você atende ou está localizado em bairros específicos, dizer isso no site ajuda o Google a te mostrar exatamente para quem busca ali — Manaus é grande, e a distância pesa na escolha do cliente.",
+  },
+  {
+    q: "Concorrentes maiores sempre vão aparecer na minha frente?",
+    a: "Não. Na busca local, o Google prioriza proximidade e relevância específica, não o tamanho da empresa. Um negócio de bairro com perfil completo, avaliações consistentes e site que descreve bem o serviço aparece à frente de marcas grandes em buscas da sua região. A vantagem do pequeno é a especificidade — o erro é tentar parecer genérico como os grandes.",
   },
   {
     q: "Anúncios pagos no Google são necessários para aparecer?",

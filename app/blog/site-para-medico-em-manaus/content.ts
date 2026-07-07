@@ -390,8 +390,8 @@ export const internalLinks: InternalLink[] = [
     text: "Veja como um site profissional transmite credibilidade antes do primeiro contato com o cliente.",
   },
   {
-    href: "/blog/criacao-de-sites-em-manaus",
-    label: "Criação de Sites em Manaus",
-    text: "Guia completo sobre como funciona a criação de sites profissionais em Manaus para pequenos negócios.",
+    href: "/blog/quanto-custa-um-site-em-manaus",
+    label: "Quanto Custa um Site em Manaus",
+    text: "Guia de preços real: faixas de valor por tipo de site, custos fixos e como comparar orçamentos.",
   },
 ];

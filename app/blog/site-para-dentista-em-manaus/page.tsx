@@ -105,7 +105,7 @@ export default function SiteParaDentistaEmManausPage() {
                 Site para dentista
                 <span className="text-glow-aqua"> em Manaus</span>
                 <br />
-                presença profissional para ser encontrado no Google
+                como consultórios independentes competem no Google
               </h1>
 
               <div className="mb-10 flex flex-wrap items-center gap-5 text-sm text-ink-muted">
@@ -125,15 +125,15 @@ export default function SiteParaDentistaEmManausPage() {
 
               <div className="max-w-3xl space-y-4 border-l-2 border-glow-cyan/30 pl-6 text-base leading-relaxed text-ink-secondary md:text-lg">
                 <p>
-                  Manaus tem muitos consultórios odontológicos. Em bairros como Adrianópolis, Dom
-                  Pedro e Chapada, a concorrência entre clínicas particulares é real — e boa parte
-                  dela acontece antes do paciente sequer pegar o telefone.
+                  O consultório odontológico independente de Manaus disputa paciente com franquias
+                  e grandes redes instaladas na Djalma Batista, na Torquato e nos shoppings — redes
+                  que têm equipe de marketing alimentando site e Google todos os dias.
                 </p>
                 <p>
-                  Quando alguém pesquisa por dentista em Manaus, ortodontista no Dom Pedro ou
-                  implante dentário em Manaus, a primeira impressão já aconteceu. Um site para
-                  dentista em Manaus organiza essa presença com clareza, credibilidade e estrutura
-                  para ser encontrado no Google.
+                  Este guia mostra como virar esse jogo no território onde a busca local nivela a
+                  disputa: o comportamento real do paciente (dor, preço e confiança), o tripé mapa
+                  + avaliações + site, páginas por procedimento e o que a Resolução CFO-196/2019
+                  permite publicar.
                 </p>
               </div>
             </div>

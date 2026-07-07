@@ -127,16 +127,16 @@ export default function SiteParaAdvogadosEmManausPage() {
 
             <div className="space-y-4 border-l-2 border-glow-cyan/30 pl-6 text-base leading-relaxed text-ink-secondary md:text-lg">
               <p>
-                Quando alguém recebe uma indicação ou pesquisa por um advogado em Manaus, uma das
-                primeiras ações é procurar o nome do profissional no Google. Se encontra um site
-                claro, sóbrio e objetivo, a percepção de confiança sobe. Se não encontra nada, ou
-                encontra uma página fraca, a dúvida aparece antes mesmo do primeiro contato.
+                A advocacia é uma das poucas profissões com regras próprias para presença digital:
+                o Provimento 205/2021 da OAB define o que pode e o que não pode ser publicado — e
+                um site mal escrito pode gerar tanto problema ético quanto um site inexistente
+                gera perda de indicações.
               </p>
               <p>
-                Um bom site jurídico não precisa ser chamativo. Ele precisa explicar bem, transmitir
-                seriedade, facilitar o contato e mostrar que o escritório sabe o que faz. Neste
-                guia, você vai ver como estruturar um site para advogados em Manaus e o que vale
-                analisar antes de contratar.
+                Este guia trata dos dois lados: como estruturar um site para advogados em Manaus
+                que gere contatos qualificados (formatos, valores, SEO local) e como fazer isso
+                dentro das normas — do uso correto da palavra especialista à obrigatoriedade do
+                número da OAB na publicidade.
               </p>
             </div>
           </div>

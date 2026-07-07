@@ -24,7 +24,7 @@ import {
 
 export const metadata: Metadata = pageMetadata;
 
-export default function CriacaoDeSitesEmManausPage() {
+export default function QuantoCustaUmSiteEmManausPage() {
   return (
     <>
       <script
@@ -40,7 +40,7 @@ export default function CriacaoDeSitesEmManausPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             breadcrumbSchema(
-              [{ label: "Blog", href: "/blog" }, { label: "Criação de Sites em Manaus" }],
+              [{ label: "Blog", href: "/blog" }, { label: "Quanto Custa um Site em Manaus" }],
               site.url,
             ),
           ),
@@ -72,7 +72,7 @@ export default function CriacaoDeSitesEmManausPage() {
                 </li>
                 <li><ChevronRight size={13} className="text-ink-muted/40" /></li>
                 <li className="text-glow-aqua/80" aria-current="page">
-                  Criação de Sites em Manaus
+                  Quanto Custa um Site em Manaus
                 </li>
               </ol>
             </nav>
@@ -80,15 +80,15 @@ export default function CriacaoDeSitesEmManausPage() {
             <div className="flex items-center gap-3 mb-6">
               <span className="h-px w-8 bg-glow-cyan/70" />
               <span className="font-display text-xs uppercase tracking-[0.35em] text-glow-aqua">
-                Guia completo
+                Guia de preços 2026
               </span>
               <span className="h-px w-8 bg-glow-cyan/70" />
             </div>
 
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] uppercase text-ink-primary leading-[1.1] mb-8">
-              Criação de Sites{" "}
-              <span className="text-glow-aqua">em Manaus</span>
-              <br />o que saber antes de contratar
+              Quanto custa um site{" "}
+              <span className="text-glow-aqua">em Manaus?</span>
+              <br />valores reais, sem enrolação
             </h1>
 
             <div className="flex flex-wrap items-center gap-5 text-sm text-ink-muted mb-10">
@@ -114,16 +114,16 @@ export default function CriacaoDeSitesEmManausPage() {
 
             <div className="border-l-2 border-glow-cyan/30 pl-6 space-y-4 text-ink-secondary text-base md:text-lg leading-relaxed">
               <p>
-                Se você tem um negócio em Manaus e ainda não está na internet com um site
-                próprio, existe uma chance real de que seus concorrentes estejam capturando
-                clientes que poderiam ser seus. Toda vez que alguém pesquisa no Google por
-                um serviço na cidade, os negócios com site levam vantagem: aparecem, transmitem
-                credibilidade e recebem o contato.
+                Vamos direto ao ponto: em Manaus, uma landing page profissional parte de
+                R$ 497, um site institucional completo fica entre R$ 800 e R$ 2.000, e uma
+                loja virtual começa em torno de R$ 3.000. Manter o site no ar custa menos de
+                R$ 100 por ano nos projetos simples.
               </p>
               <p>
-                Neste guia, você vai entender como funciona o processo de criação de um site
-                profissional, quais são os tipos disponíveis, o que avaliar antes de contratar
-                qualquer fornecedor — e por que faz sentido escolher uma empresa local em Manaus.
+                Mas o número sozinho engana — dois orçamentos com o mesmo valor podem descrever
+                projetos completamente diferentes. Este guia explica o que faz o preço variar,
+                quais cobranças escondidas evitar e como comparar propostas de igual para igual
+                antes de fechar com qualquer fornecedor, inclusive nós.
               </p>
             </div>
           </div>
@@ -134,29 +134,24 @@ export default function CriacaoDeSitesEmManausPage() {
           <div className="max-w-4xl mx-auto px-5 md:px-8">
             <ScrollReveal>
               <h2 className="font-display text-2xl md:text-3xl lg:text-4xl uppercase text-ink-primary mb-8">
-                Por que ter um site profissional faz diferença{" "}
-                <span className="text-glow-aqua">para negócios em Manaus</span>
+                O que faz o preço de um site{" "}
+                <span className="text-glow-aqua">variar tanto</span>
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
               <div className="space-y-5 text-ink-secondary text-base leading-relaxed mb-10">
                 <p>
-                  Mais de 70% dos consumidores pesquisam online antes de contratar qualquer
-                  serviço local — mesmo quando a intenção é ir presencialmente ao
-                  estabelecimento. Em Manaus, esse comportamento cresce a cada ano: clientes
-                  comparam fornecedores, leem avaliações e procuram informações antes de fazer
-                  o primeiro contato. Negócios sem site ficam invisíveis nessa etapa.
+                  &quot;Site&quot; é uma palavra que descreve produtos muito diferentes — como
+                  &quot;reforma&quot; pode significar pintar uma parede ou derrubar três. Por
+                  isso os orçamentos em Manaus vão de R$ 400 a R$ 10.000: cada fornecedor está
+                  precificando um escopo diferente, e quem compara só o número final compara
+                  coisas que não são equivalentes.
                 </p>
                 <p>
-                  Ter um site profissional equivale a ter uma loja bem sinalizada na avenida
-                  mais movimentada da cidade — disponível 24 horas por dia, sete dias por semana,
-                  sem depender do alcance de uma postagem nas redes sociais.
-                </p>
-                <p>
-                  Diferente do Instagram ou do Facebook — plataformas que você não controla e
-                  que mudam as regras sem avisar —, seu site é um ativo digital próprio. O
-                  conteúdo está lá, o endereço é seu e qualquer pessoa pode encontrá-lo no Google.
+                  Antes de olhar as faixas de preço por tipo de projeto, vale entender os quatro
+                  fatores que realmente movem o valor. São eles que você deve verificar em
+                  qualquer proposta:
                 </p>
               </div>
             </ScrollReveal>
@@ -168,9 +163,9 @@ export default function CriacaoDeSitesEmManausPage() {
                   Ponto de atenção
                 </p>
                 <p className="text-ink-primary text-base md:text-lg leading-relaxed">
-                  Não ter um site não significa que você está ausente da internet — significa
-                  que quando alguém pesquisa pelo seu serviço em Manaus, quem aparece é o
-                  seu concorrente.
+                  A pergunta certa não é &quot;quanto custa um site?&quot; — é &quot;o que
+                  exatamente está incluído neste valor?&quot;. A diferença entre um orçamento
+                  bom e um problema caro está quase sempre no que a proposta não diz.
                 </p>
               </div>
             </ScrollReveal>
@@ -203,11 +198,11 @@ export default function CriacaoDeSitesEmManausPage() {
           <div className="max-w-4xl mx-auto px-5 md:px-8">
             <ScrollReveal>
               <h2 className="font-display text-2xl md:text-3xl lg:text-4xl uppercase text-ink-primary mb-4">
-                Como funciona a criação de um site profissional
+                Como um orçamento sério é construído
               </h2>
               <p className="text-ink-secondary text-base leading-relaxed mb-12 max-w-2xl">
-                Quando existe um processo bem definido, criar um site é simples e previsível.
-                Nada de surpresa no meio do caminho. Veja cada etapa:
+                O processo de contratação diz muito sobre o preço final. Estas cinco etapas
+                mostram onde o valor é definido — e onde os problemas de orçamento nascem:
               </p>
             </ScrollReveal>
 
@@ -267,13 +262,13 @@ export default function CriacaoDeSitesEmManausPage() {
           <div className="max-w-4xl mx-auto px-5 md:px-8">
             <ScrollReveal>
               <h2 className="font-display text-2xl md:text-3xl lg:text-4xl uppercase text-ink-primary mb-4">
-                Qual tipo de site é ideal{" "}
-                <span className="text-glow-aqua">para o seu negócio em Manaus?</span>
+                Preços por tipo de site{" "}
+                <span className="text-glow-aqua">em Manaus (2026)</span>
               </h2>
               <p className="text-ink-secondary text-base leading-relaxed mb-12 max-w-2xl">
-                Antes de contratar, é importante entender que &quot;site&quot; não é uma solução única.
-                O tipo certo depende do seu objetivo, do seu público e do que você quer que o
-                visitante faça ao acessar a página.
+                As faixas abaixo refletem o mercado de Manaus e os valores praticados pela Luma
+                Sites. Use-as como referência para saber se uma proposta está dentro da
+                realidade — para cima ou para baixo.
               </p>
             </ScrollReveal>
 
@@ -318,13 +313,12 @@ export default function CriacaoDeSitesEmManausPage() {
           <div className="max-w-4xl mx-auto px-5 md:px-8">
             <ScrollReveal>
               <h2 className="font-display text-2xl md:text-3xl lg:text-4xl uppercase text-ink-primary mb-4">
-                Por que contratar uma empresa de criação de sites{" "}
-                <span className="text-glow-aqua">em Manaus?</span>
+                Onde o barato{" "}
+                <span className="text-glow-aqua">sai caro</span>
               </h2>
               <p className="text-ink-secondary text-base leading-relaxed mb-12 max-w-2xl">
-                Com plataformas automáticas e agências de outros estados disponíveis online, é
-                natural perguntar: por que contratar localmente? A resposta é prática, não só
-                regional.
+                As armadilhas de orçamento mais comuns que vemos em Manaus — situações em que o
+                menor preço do mercado se transforma no maior custo em um ou dois anos:
               </p>
             </ScrollReveal>
 
@@ -375,12 +369,12 @@ export default function CriacaoDeSitesEmManausPage() {
           <div className="max-w-4xl mx-auto px-5 md:px-8">
             <ScrollReveal>
               <h2 className="font-display text-2xl md:text-3xl lg:text-4xl uppercase text-ink-primary mb-4">
-                O que avaliar antes de contratar{" "}
-                <span className="text-glow-aqua">desenvolvimento de sites em Manaus</span>
+                Como comparar orçamentos{" "}
+                <span className="text-glow-aqua">de igual para igual</span>
               </h2>
               <p className="text-ink-secondary text-base leading-relaxed mb-12 max-w-2xl">
-                Independente de quem você contratar — inclusive nós —, existem perguntas que
-                todo contratante deve fazer antes de fechar negócio.
+                Independente de quem você contratar — inclusive nós —, este é o checklist para
+                colocar duas ou três propostas lado a lado e enxergar o que o número esconde.
               </p>
             </ScrollReveal>
 
@@ -423,7 +417,7 @@ export default function CriacaoDeSitesEmManausPage() {
                   <span className="h-px w-8 bg-glow-cyan/70" />
                 </div>
                 <h2 className="font-display text-2xl md:text-3xl lg:text-4xl uppercase text-ink-primary">
-                  Perguntas frequentes sobre criação de sites em Manaus
+                  Perguntas frequentes sobre preços de sites em Manaus
                 </h2>
               </div>
             </ScrollReveal>

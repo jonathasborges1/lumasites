@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpDown, ChevronLeft, ChevronRight, MapPin, Search, X, Zap } from "lucide-react";
@@ -380,7 +381,13 @@ function EmptyState({
 }
 
 /* ─── ProposalGrid ─────────────────────────────────────────── */
-export function ProposalGrid({ proposals }: { proposals: ProposalWithSlug[] }) {
+export function ProposalGrid({
+  proposals,
+  children,
+}: {
+  proposals: ProposalWithSlug[];
+  children?: ReactNode;
+}) {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [sortMode, setSortMode] = useState<SortMode>("date");
@@ -531,6 +538,8 @@ export function ProposalGrid({ proposals }: { proposals: ProposalWithSlug[] }) {
             )}
           </div>
         </div>
+
+        {children}
       </main>
       <LandingFooter />
     </>

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
 import { articleDates as medicoEmManausDates } from "@/app/blog/site-para-medico-em-manaus/content";
-import { articleDates as criacaoDeSitesDates } from "@/app/blog/criacao-de-sites-em-manaus/content";
+import { articleDates as quantoCustaDates } from "@/app/blog/quanto-custa-um-site-em-manaus/content";
 import { articleDates as comoAparecerNoGoogleDates } from "@/app/blog/como-aparecer-no-google-em-manaus/content";
 import { articleDates as advogadosDates } from "@/app/blog/site-para-advogados-em-manaus/content";
 import { articleDates as psicologoDates } from "@/app/blog/site-para-psicologo-em-manaus/content";
@@ -18,7 +18,7 @@ const lastModified = {
   landingPageManaus: new Date("2026-05-16"),
   blog: new Date("2026-05-12"),
   medicoEmManaus: new Date(medicoEmManausDates.updatedAt ?? medicoEmManausDates.publishedAt),
-  criacaoDeSites: new Date(criacaoDeSitesDates.updatedAt ?? criacaoDeSitesDates.publishedAt),
+  quantoCusta: new Date(quantoCustaDates.updatedAt ?? quantoCustaDates.publishedAt),
   comoAparecerNoGoogle: new Date(
     comoAparecerNoGoogleDates.updatedAt ?? comoAparecerNoGoogleDates.publishedAt,
   ),
@@ -85,8 +85,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${site.url}/blog/criacao-de-sites-em-manaus`,
-      lastModified: lastModified.criacaoDeSites,
+      url: `${site.url}/blog/quanto-custa-um-site-em-manaus`,
+      lastModified: lastModified.quantoCusta,
       changeFrequency: "monthly",
       priority: 0.8,
     },

@@ -131,6 +131,12 @@ export default function ComoAparecerNoGoogleEmManausPage() {
                   de mercado — é presença digital configurada corretamente.
                 </p>
                 <p>
+                  Manaus tem mais de 2 milhões de habitantes espalhados por zonas com dinâmicas
+                  próprias — quem está na Cidade Nova raramente cruza a cidade para um serviço que
+                  existe no bairro. É por isso que a busca local decide tanto por aqui: o Google
+                  mostra primeiro quem está perto e configurado corretamente.
+                </p>
+                <p>
                   Neste guia, você vai entender o que o Google leva em conta para decidir quem
                   aparece nas buscas locais, quais erros impedem negócios de serem encontrados e
                   quais ações concretas aplicar hoje para mudar isso.
@@ -354,7 +360,7 @@ export default function ComoAparecerNoGoogleEmManausPage() {
                 <span className="text-glow-aqua">para aparecer no Google em Manaus</span>
               </h2>
               <p className="text-ink-secondary text-base leading-relaxed mb-12 max-w-2xl">
-                Um checklist prático e na ordem certa. Cada passo constói sobre o anterior.
+                Um checklist prático e na ordem certa. Cada passo constrói sobre o anterior.
                 Comece pelo primeiro e avance — qualquer ação já coloca você à frente de
                 negócios que não fizeram nada.
               </p>

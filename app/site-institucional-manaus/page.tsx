@@ -464,7 +464,7 @@ export default function SiteInstitucionalManausPage() {
                   Falar agora no WhatsApp
                 </GlowButton>
                 <Link
-                  href="/blog/criacao-de-sites-em-manaus"
+                  href="/blog/quanto-custa-um-site-em-manaus"
                   className="font-display text-sm uppercase tracking-[0.2em] text-ink-muted hover:text-glow-aqua"
                 >
                   Ler guia completo

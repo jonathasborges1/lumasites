@@ -65,14 +65,14 @@ const articleUrl = `${site.url}/blog/${slug}`;
 export const articleDates = {
   publishedAt: "2026-04-23",
   publishedLabel: "23 de abril de 2026",
-  updatedAt: "2026-04-26",
-  updatedLabel: "26 de abril de 2026",
+  updatedAt: "2026-07-07",
+  updatedLabel: "7 de julho de 2026",
 };
 
 export const pageMetadata: Metadata = {
-  title: "Site para Advogados em Manaus | Captação com Credibilidade",
+  title: "Site para Advogados em Manaus | Estrutura e Regras da OAB",
   description:
-    "Entenda como deve ser um site para advogados em Manaus: estrutura ideal, regras de comunicação, SEO local, investimento e o que avaliar antes de contratar.",
+    "Guia para escritórios de Manaus: formatos e valores de site jurídico, SEO local e o que o Provimento 205/2021 da OAB permite publicar — de tráfego pago a depoimentos.",
   keywords: [
     "site para advogados em Manaus",
     "site para escritório de advocacia em Manaus",
@@ -148,32 +148,32 @@ export const wppLink = whatsappLink({
 
 export const faqs: Faq[] = [
   {
-    q: "Quanto custa um site para advogados em Manaus?",
-    a: "O valor depende da estrutura. Uma landing page para uma área específica de atuação costuma ser a opção mais enxuta. Um site institucional com páginas para o escritório, sócios, áreas atendidas, contato e blog exige mais planejamento. Em Manaus, o ponto principal não é apenas o preço, mas sim se o site transmite sobriedade, é rápido no celular e facilita o primeiro contato sem parecer amador.",
+    q: "O que o Provimento 205/2021 da OAB permite em um site de advocacia?",
+    a: "O provimento consolidou o que a advocacia pode fazer na internet: manter site, publicar conteúdo jurídico informativo, usar tráfego pago para divulgar conteúdo e informar áreas de atuação, títulos e formas de contato. O que segue vedado é a captação direta de clientela: prometer resultado, usar expressões como especialista sem o registro correspondente, divulgar valores de honorários como chamariz e mencionar casos concretos de clientes sem autorização.",
   },
   {
-    q: "Um escritório pequeno realmente precisa de site?",
-    a: "Sim. Mesmo escritórios que vivem de indicação ganham quando a pessoa procura o nome do advogado no Google e encontra um site claro, profissional e com informações objetivas. Esse momento de validação pesa muito antes de uma ligação ou mensagem.",
+    q: "Advogado pode anunciar no Google (tráfego pago)?",
+    a: "Pode, com limites. O Provimento 205/2021 permite impulsionar conteúdo informativo e institucional, mas veda anúncios com promessa de resultado, referência a valores ou expressões de mercantilização como o melhor advogado. Na prática, campanhas que levam a uma página institucional sóbria com conteúdo explicativo estão dentro da regra — e o site é justamente o destino que torna o anúncio compatível com a norma.",
   },
   {
-    q: "Qual a diferença entre um site institucional e uma landing page jurídica?",
-    a: "O site institucional apresenta o escritório como um todo, com posicionamento, equipe, áreas de atuação e canais de atendimento. A landing page é focada em uma única demanda, como direito previdenciário, trabalhista ou família. Para campanhas específicas, a landing page costuma converter melhor. Para construir marca e autoridade, o site institucional é mais completo.",
+    q: "Posso usar a palavra 'especialista' no meu site?",
+    a: "Somente se houver especialização formal registrada, como pós-graduação reconhecida na área. Sem isso, o termo pode caracterizar publicidade irregular perante o Tribunal de Ética da OAB. Alternativas seguras: atuação em, com foco em, experiência em. Um site jurídico bem escrito posiciona a atuação sem criar risco disciplinar.",
   },
   {
-    q: "O site ajuda a aparecer no Google em buscas locais de Manaus?",
-    a: "Ajuda muito quando o projeto nasce com SEO local: páginas otimizadas por área de atuação, velocidade alta, títulos corretos, endereço de atendimento, contexto geográfico de Manaus e integração com o perfil da empresa no Google. Sem isso, o escritório depende mais de indicação e tráfego pago.",
+    q: "Como cliente encontra advogado no Google em Manaus?",
+    a: "As buscas jurídicas locais mais comuns são por problema, não por nome: advogado trabalhista em Manaus, pensão alimentícia, inventário, aposentadoria negada, defesa em ação de cobrança. Cada área de atuação do escritório pode virar uma página no site respondendo essas dúvidas — é assim que o Google conecta o problema do cliente ao escritório certo.",
   },
   {
-    q: "O marketing jurídico permite ter site e captar contatos?",
-    a: "Sim, desde que o site seja pensado com comunicação informativa, institucional e ética. O importante é evitar promessas de resultado, linguagem apelativa ou elementos que comprometam a sobriedade da advocacia. O site deve orientar, explicar serviços e facilitar o contato, não vender como uma página agressiva de varejo.",
+    q: "Site de escritório precisa mostrar o número da OAB?",
+    a: "Sim. A identificação do advogado com nome e número de inscrição na OAB é obrigatória em qualquer publicidade, incluindo o site. Para sociedades de advogados, o registro da sociedade na seccional também deve constar. Esses dados normalmente ficam no rodapé e na página sobre o escritório.",
   },
   {
-    q: "Quais páginas não podem faltar em um site para advogado?",
-    a: "As mais importantes são: página inicial clara, sobre o escritório ou profissional, áreas de atuação, página de contato com WhatsApp e formulário, informações de localização e, quando fizer sentido, conteúdo educativo em blog. Também vale incluir perguntas frequentes para reduzir dúvidas antes da consulta.",
+    q: "Depoimentos de clientes são permitidos em site jurídico?",
+    a: "É uma zona delicada. O Código de Ética veda a divulgação de casos concretos que exponham clientes ou insinuem promessa de resultado. Avaliações espontâneas no Google (perfil da empresa) são do cliente, não do advogado — mas reproduzi-las no site com destaque comercial pode ser questionado. O caminho seguro é investir em conteúdo que demonstre competência, não em promessas indiretas.",
   },
   {
-    q: "Vale a pena manter blog jurídico no site?",
-    a: "Vale quando existe consistência. Um blog bem feito ajuda a responder dúvidas que o cliente pesquisa antes de procurar um advogado, amplia a presença orgânica no Google e fortalece autoridade. O segredo é publicar conteúdo útil, objetivo e alinhado ao perfil do escritório.",
+    q: "Escritório que vive de indicação precisa de site?",
+    a: "Precisa, porque a indicação hoje passa pelo Google. Quando alguém recebe o nome de um advogado, o primeiro passo é pesquisar esse nome. Se a busca retorna um site sóbrio com áreas de atuação, OAB e formas de contato, a indicação se confirma. Se não retorna nada, parte das indicações se perde em silêncio — e o escritório nunca fica sabendo.",
   },
 ];
 

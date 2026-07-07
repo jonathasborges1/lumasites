@@ -28,6 +28,12 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // Post reposicionado para intenção de preço (evita canibalização com /criar-site-em-manaus).
+      {
+        source: "/blog/criacao-de-sites-em-manaus",
+        destination: "/blog/quanto-custa-um-site-em-manaus",
+        statusCode: 301,
+      },
       // HTTP to HTTPS on the canonical non-www origin.
       {
         source: "/:path*",

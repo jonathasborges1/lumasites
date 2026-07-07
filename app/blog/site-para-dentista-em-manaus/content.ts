@@ -71,16 +71,16 @@ export const thumbnail = {
 export const articleDates = {
   publishedAt: "2026-05-13",
   publishedLabel: "13 de maio de 2026",
-  updatedAt: null,
-  updatedLabel: null,
+  updatedAt: "2026-07-07",
+  updatedLabel: "7 de julho de 2026",
 };
 
 // ─── SEO ─────────────────────────────────────────────────────────────────────
 
 export const pageMetadata: Metadata = {
-  title: "Site para Dentista em Manaus | Mais Pacientes pelo Google",
+  title: "Site para Dentista em Manaus | Guia para Consultórios e Clínicas",
   description:
-    "Entenda como um site para dentista em Manaus ajuda a transmitir credibilidade, aparecer em buscas locais e gerar agendamentos qualificados sem depender só do Instagram.",
+    "Como consultórios e clínicas odontológicas de Manaus competem com as grandes redes no Google: mapa, avaliações, páginas por procedimento e comunicação dentro das normas do CFO.",
   keywords: [
     "site para dentista em Manaus",
     "criação de site para dentista em Manaus",
@@ -123,9 +123,9 @@ export const articleSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   headline:
-    "Site para Dentista em Manaus: como fortalecer sua presença no Google e atrair mais pacientes",
+    "Site para Dentista em Manaus: como consultórios independentes competem com as grandes redes no Google",
   description:
-    "Artigo sobre criação de site para dentistas e clínicas odontológicas em Manaus, SEO local, presença digital ética e como transformar buscas no Google em agendamentos qualificados.",
+    "Guia para dentistas e clínicas odontológicas de Manaus: comportamento de busca do paciente, tripé mapa + avaliações + site, páginas por procedimento e publicidade dentro da Resolução CFO-196/2019.",
   author: {
     "@type": "Person",
     name: "Jonathas Borges",
@@ -163,28 +163,28 @@ export const wppLink = whatsappLink({
 
 export const faqs: Faq[] = [
   {
-    q: "Quanto custa um site para dentista em Manaus?",
-    a: "O investimento varia conforme a estrutura. Um site simples com página principal, especialidades, sobre e contato é mais enxuto. Projetos com múltiplas especialidades, blog, SEO local aprofundado e integração com agendamento exigem escopo maior. O ideal é definir os objetivos antes de fechar qualquer proposta.",
+    q: "Dentista pode publicar fotos de antes e depois no site?",
+    a: "A Resolução CFO-196/2019 passou a permitir imagens de antes e depois, desde que com autorização expressa do paciente, sem promessa de resultado e sem manipulação que induza o público a erro. No site, o mais seguro é usar essas imagens com contexto clínico e termo de autorização arquivado — e nunca como argumento principal de venda.",
   },
   {
-    q: "Dentista pode fazer marketing digital?",
-    a: "Sim. O CFO permite que dentistas tenham site profissional e usem marketing digital, desde que a comunicação respeite o Código de Ética Odontológica. Isso significa evitar fotos de antes e depois sem autorização, não prometer resultados estéticos específicos e manter linguagem informativa. O site pode apresentar formação, especialidades, local de atendimento e canais de contato.",
+    q: "Preciso colocar os preços dos procedimentos no site?",
+    a: "Não é obrigatório e, na maioria dos casos, não é recomendado. Valores de implante, aparelho ou clareamento dependem de avaliação clínica. O que funciona é explicar de quais fatores o valor depende e direcionar para uma avaliação — isso filtra curiosos e atrai pacientes com intenção real.",
   },
   {
-    q: "Um site ajuda dentista a conseguir mais pacientes?",
-    a: "Ajuda quando é bem estruturado. O site precisa ter conteúdo claro, SEO local, boa velocidade, funcionamento no celular e informações relevantes para quem pesquisa por dentista em Manaus, ortodontista no Dom Pedro, clínica odontológica no Adrianópolis ou implante dentário em Manaus.",
+    q: "Como faço meu consultório aparecer no mapa do Google?",
+    a: "Criando e verificando o Perfil da Empresa no Google (antigo Google Meu Negócio) com categoria correta, endereço, horários e fotos reais do consultório. O site potencializa o perfil: o Google cruza as informações dos dois, e consultórios com site tendem a ocupar posições melhores no bloco do mapa.",
   },
   {
-    q: "Instagram substitui um site para consultório odontológico?",
-    a: "Não substitui. O Instagram é útil para relacionamento e conteúdo educativo, mas o site é a base indexável pelo Google. Pacientes que pesquisam ativamente por um dentista querem encontrar uma página organizada com especialidades, localização e formas de contato, não um feed de posts.",
+    q: "Tenho uma clínica com vários dentistas. O site muda alguma coisa?",
+    a: "Muda a estrutura. Cada profissional pode ter sua apresentação com CRO e especialidade, e cada especialidade vira uma página própria — o que multiplica as portas de entrada pelo Google. Uma clínica com páginas de ortodontia, implante e odontopediatria pode aparecer em três tipos de busca diferentes.",
   },
   {
-    q: "O que deve ter em um site para dentista?",
-    a: "Apresentação do profissional ou clínica, especialidades oferecidas, CRO, endereço, formas de contato, dúvidas frequentes sobre os procedimentos e orientações gerais sobre cuidados bucais. A linguagem deve ser clara e respeitosa com as normas do CFO.",
+    q: "Em quanto tempo o site começa a trazer pacientes pelo Google?",
+    a: "Buscas pelo nome do dentista ou da clínica melhoram em poucas semanas. Buscas competitivas como implante dentário em Manaus levam de 3 a 6 meses para ganhar tração, dependendo da concorrência e da consistência do conteúdo. O Perfil da Empresa no Google costuma gerar resultado antes do orgânico.",
   },
   {
-    q: "Site para dentista precisa de blog?",
-    a: "Não é obrigatório, mas amplia bastante a presença orgânica. Artigos respondendo dúvidas comuns como quando fazer aparelho, quanto tempo dura um implante ou como cuidar da saúde bucal ajudam o Google a entender a autoridade do profissional e aumentam as chances de aparecer em buscas relacionadas.",
+    q: "Atendo por convênio odontológico. Devo listar isso no site?",
+    a: "Sim. Convênios aceitos são um dos primeiros filtros que o paciente aplica. Listar os planos atendidos — ou deixar claro que o atendimento é particular — evita contatos desalinhados e melhora a qualidade dos agendamentos que chegam pelo site.",
   },
 ];
 
@@ -234,67 +234,59 @@ export const benefits: Benefit[] = [
 
 export const articleSections: SectionBlock[] = [
   {
-    h2: "Como o paciente encontra um dentista antes de agendar",
+    h2: "O paciente de odontologia decide por três gatilhos: dor, preço e confiança",
     paragraphs: [
-      "O caminho começa no Google. Uma dor de dente leva à busca por dentista de urgência em Manaus. A decisão de colocar aparelho gera pesquisas por ortodontista no Adrianópolis ou clínica de ortodontia em Manaus. Quem considera um implante provavelmente já pesquisou valores, clínicas e profissionais antes de fazer qualquer contato.",
-      "O dentista que não aparece nessas buscas não existe para esse paciente. Não importa a qualidade do atendimento ou o tempo de experiência — se a presença digital é inexistente ou fraca, o paciente escolhe quem aparece. Em Manaus, onde os bairros têm dinâmicas próprias e a mobilidade urbana influencia muito a decisão de onde se consultar, isso é ainda mais relevante.",
-      "Um site para dentista em Manaus cumpre a função de ser encontrado antes que o paciente escolha outra opção. Não é sobre parecer moderno. É sobre estar presente no momento certo, com a informação certa.",
+      "Poucas áreas da saúde têm um comportamento de busca tão dividido quanto a odontologia. Existe o paciente de urgência, que digita dentista 24 horas em Manaus com o celular na mão e o rosto inchado — ele escolhe em minutos, quase sempre pelo mapa do Google. Existe o paciente de orçamento, que pesquisa quanto custa um implante dentário durante semanas e compara três ou quatro clínicas antes de agendar uma avaliação. E existe o paciente de confiança, que quer saber quem é o profissional antes de entregar o próprio sorriso a ele.",
+      "Cada um desses perfis exige uma resposta diferente do consultório na internet. O de urgência precisa achar endereço, horário e um botão de WhatsApp em cinco segundos. O de orçamento precisa entender de que fatores o valor depende — número de implantes, enxerto, tipo de prótese — antes de aceitar que só a avaliação clínica define o preço. O de confiança quer ver CRO, formação, tempo de atuação e fotos reais do consultório.",
+      "Um site para dentista em Manaus que trata esses três pacientes do mesmo jeito não converte nenhum deles direito. A estrutura certa separa os caminhos: página de urgência com contato imediato, páginas de procedimento com conteúdo educativo e uma apresentação profissional que resolve a checagem de credibilidade.",
     ],
   },
   {
-    h2: "Consultório sem site perde para quem tem",
+    h2: "Concorrer com as grandes redes odontológicas exige presença própria",
     paragraphs: [
-      "Manaus tem um número alto de consultórios odontológicos por bairro. Em regiões como Adrianópolis, Dom Pedro, Chapada e Parque 10, a concorrência entre clínicas e consultórios particulares é real. Quando um paciente pesquisa no Google, ele vê uma lista de resultados. Quem tem site profissional e SEO local tende a aparecer antes.",
-      "Perfis no Google Meu Negócio ajudam, mas não substituem o site. O perfil mostra endereço, telefone e avaliações. O site apresenta especialidades, transmite credibilidade, organiza o conteúdo e cria múltiplos pontos de entrada pelo Google. Um consultório com site bem estruturado aparece tanto no mapa quanto nas buscas orgânicas.",
-      "Não é questão de tamanho — clínica grande ou consultório individual. É questão de presença. O paciente que pesquisa por implante dentário em Manaus ou tratamento de canal no Adrianópolis vai encontrar quem tem o conteúdo mais organizado para essa busca.",
+      "Manaus concentra unidades de grandes redes e franquias odontológicas em avenidas de alto fluxo como a Djalma Batista e a Torquato Tapajós, além dos shoppings. Essas redes têm orçamento de mídia, fachadas visíveis e — o que muita gente esquece — sites e perfis do Google alimentados por equipes de marketing centralizadas. Quando um consultório particular não tem presença digital, o paciente que pesquisa no Google só enxerga as redes.",
+      "A boa notícia é que a busca local nivela mais do que a mídia paga. O Google prioriza proximidade, relevância e proeminência — e um consultório de bairro com site bem estruturado, perfil do Google completo e avaliações consistentes pode aparecer acima de uma franquia na busca por dentista no Parque 10 ou ortodontista na Cidade Nova. A rede tem escala; o consultório independente tem especificidade local, e o algoritmo valoriza isso.",
+      "O ponto de virada é parar de competir em generalidade. A franquia vende tudo para todo mundo. O consultório independente ganha quando o site comunica com precisão o que o diferencia: a especialidade dominante, o atendimento pelo mesmo profissional em todas as consultas, o bairro, os convênios aceitos. Essa especificidade é exatamente o que o Google usa para decidir quem aparece em cada busca.",
     ],
   },
   {
-    h2: "Como um site transmite credibilidade antes da consulta",
+    h2: "Mapa, avaliações e site: o tripé que sustenta o consultório no Google",
     paragraphs: [
-      "Odontologia envolve procedimentos invasivos, anestesia e, em muitos casos, investimentos altos. O paciente precisa confiar antes de colocar a saúde bucal nas mãos de alguém. Essa confiança começa na busca, não no consultório.",
-      "Um site profissional apresenta o dentista com clareza: formação, CRO, especialidades, tempo de experiência e local de atendimento. Quando há mais de um profissional na clínica, cada um pode ter sua apresentação individual. Isso ajuda o paciente a entender com quem vai se consultar antes mesmo de ligar.",
-      "O design também comunica. Um site lento, com layout desorganizado ou informações incompletas gera desconfiança antes da primeira palavra. Já um site limpo, rápido e com informações claras transmite o mesmo padrão de cuidado que o paciente espera encontrar no atendimento.",
+      "Para buscas odontológicas em Manaus, o Google quase sempre mostra primeiro o bloco do mapa com três resultados. Entrar nesse bloco depende do Perfil da Empresa no Google — mas permanecer nele e converter o clique depende dos outros dois pés do tripé: as avaliações e o site.",
+      "As avaliações são o fator de desempate mais visível. Entre um consultório com 4,9 estrelas e oitenta avaliações e outro sem nenhuma, o paciente nem compara. A rotina que funciona é simples: pedir a avaliação logo após a consulta, com o link direto enviado pelo WhatsApp. Dez avaliações reais por mês mudam a posição no mapa em poucos meses.",
+      "O site fecha o ciclo. É para ele que o Google aponta quando o paciente clica em “Visitar site”, e é dele que o algoritmo extrai contexto sobre especialidades e área de atendimento. Perfil sem site é cartão de visita sem consultório: o paciente encontra, mas não tem para onde ir. Site sem perfil é consultório sem placa: existe, mas ninguém passa na frente. Os dois juntos, com as mesmas informações de nome, endereço e telefone, é o que o Google entende como um negócio confiável.",
     ],
   },
   {
-    h2: "SEO local para odontologia em Manaus",
+    h2: "Cada procedimento é uma porta de entrada diferente",
     paragraphs: [
-      "SEO local é o conjunto de sinais que fazem um site aparecer quando alguém pesquisa por um serviço em uma cidade ou região específica. Para dentistas, isso envolve termos como ortodontista em Manaus, clínica de implante no Centro, dentista perto do Dom Pedro, clareamento dental em Manaus e dezenas de variações por especialidade e bairro.",
-      "Para o Google ranquear um site odontológico localmente, ele precisa entender contexto: cidade, especialidade, área de atendimento e consistência com outros canais digitais como o Perfil da Empresa no Google. Um site genérico, sem menção clara a Manaus e às especialidades oferecidas, compete em desvantagem contra clínicas com presença digital estruturada.",
-      "Na prática, isso significa que a criação de site para dentista em Manaus precisa considerar desde o início como os pacientes pesquisam. Títulos de página, conteúdo das especialidades e estrutura técnica do site são os elementos que determinam se aquele consultório aparece ou não quando um paciente abre o Google.",
+      "Ninguém pesquisa apenas dentista em Manaus. As buscas reais são específicas: aparelho ortodôntico em Manaus, implante dentário preço, clareamento dental em Manaus, extração de siso, lente de contato dental. Cada uma dessas buscas é uma intenção diferente, feita por um paciente diferente, em um momento diferente da decisão.",
+      "É por isso que o site de um consultório não deveria ser uma página única com uma lista de serviços. Cada procedimento relevante merece uma página própria, explicando o que é, para quem é indicado, como funciona a avaliação e quais fatores influenciam o investimento. Uma clínica com oito páginas de procedimento tem oito chances de aparecer no Google — uma clínica com uma página genérica tem uma.",
+      "Esse formato também melhora a conversa no consultório. O paciente que leu a página sobre implante chega à avaliação sabendo que existe análise de massa óssea, que o tratamento tem etapas e que o valor depende do caso. A consulta começa mais adiantada e a taxa de fechamento sobe, porque a página fez o trabalho de educação que antes consumia o tempo do dentista.",
     ],
   },
   {
-    h2: "Instagram não substitui o site do consultório",
+    h2: "O que o Código de Ética Odontológica permite — e o que derruba CRO no site",
     paragraphs: [
-      "O Instagram é uma ferramenta de relacionamento. O site é um ativo de busca. No feed, o conteúdo aparece para quem já segue o perfil. No Google, o site aparece para quem ainda não conhece o consultório mas está procurando atendimento.",
-      "Há também uma questão de controle. No Instagram, o alcance depende de algoritmo, frequência de publicação e formato do conteúdo. No site, o que foi publicado continua disponível e pode ser encontrado meses depois. Uma página sobre tratamento de canal em Manaus pode gerar visitas orgânicas por anos sem precisar ser atualizada com frequência.",
-      "Para consultórios com foco em estética dental, clareamento ou ortodontia, o Instagram é uma vitrine de resultados. Mas o site é onde o paciente vai quando quer entender o processo, checar as credenciais do profissional e decidir se vai entrar em contato. São funções diferentes que se complementam, não se substituem.",
+      "A comunicação odontológica é regulada pelo Código de Ética Odontológica e pela Resolução CFO-196/2019, que modernizou as regras de publicidade. Hoje o dentista pode divulgar especialidades registradas, equipamentos, títulos e até imagens de antes e depois — desde que com autorização expressa do paciente, sem manipulação e sem promessa de resultado. O que segue proibido: anunciar preço como isca sensacionalista, prometer resultados, usar expressões como “o melhor da cidade” e divulgar especialidade não registrada no CRO.",
+      "No site, isso se traduz em escolhas concretas de texto. Em vez de “transforme seu sorriso em 7 dias”, descreve-se o procedimento, suas indicações e o processo de avaliação. Em vez de comparativos com outros profissionais, apresenta-se formação e casuística. O curioso é que a comunicação ética também é a que melhor converte o paciente de maior valor: quem busca implante ou reabilitação oral desconfia justamente das promessas milagrosas.",
+      "Para clínicas, há um detalhe a mais: o nome fantasia deve estar acompanhado do nome e CRO do responsável técnico em toda comunicação — incluindo o rodapé do site. É um item pequeno, frequentemente esquecido por quem monta site sem conhecer o setor, e que pode gerar notificação do conselho regional.",
     ],
   },
   {
-    h2: "Comunicação odontológica dentro das normas do CFO",
+    h2: "Convênio, particular ou os dois: o site como filtro de agendamento",
     paragraphs: [
-      "O Código de Ética Odontológica tem regras específicas para a comunicação profissional. Sites e materiais de marketing não podem usar comparativos de resultados entre pacientes, imagens de antes e depois sem o contexto adequado, promessas estéticas específicas ou linguagem sensacionalista sobre procedimentos.",
-      "Isso não impede o dentista de ter uma presença digital forte. Significa que a comunicação precisa ser informativa, objetiva e respeitosa. Um site pode detalhar cada especialidade, explicar como funciona o procedimento, tirar dúvidas frequentes e apresentar o profissional com clareza — tudo dentro das diretrizes do CFO.",
-      "Na prática, um site odontológico ético educa o paciente antes de vender. Explica o que é uma endodontia, quando o aparelho é indicado, como funciona a consulta de avaliação de implante e o que esperar em cada etapa. Esse tipo de conteúdo gera confiança e ainda contribui para o SEO local.",
+      "Uma parte significativa dos contatos que chegam a consultórios odontológicos começa com a mesma pergunta: aceita meu plano? Quando o site não responde isso, a recepção vira um call center de triagem — e o dentista paga em tempo de secretária o que economizou na comunicação.",
+      "Listar os convênios aceitos, ou declarar com clareza que o atendimento é particular, muda a qualidade do agendamento. O paciente de convênio confirma a cobertura antes de ligar. O paciente particular chega sabendo que vai investir. Os contatos que sobram são os certos, e a agenda para de encher com avaliações que não se convertem em tratamento.",
+      "Para consultórios que atendem os dois públicos, o site pode ir além: explicar o que os planos costumam cobrir (limpeza, restaurações, extrações) e o que geralmente fica fora (estética, ortodontia em muitos casos, implantes). Esse conteúdo responde exatamente as dúvidas que o paciente digita no Google e posiciona o consultório como referência honesta — antes mesmo da primeira consulta.",
     ],
   },
   {
-    h2: "Especialidades odontológicas e presença digital",
+    h2: "A busca de urgência acontece no celular — e não perdoa site lento",
     paragraphs: [
-      "Clínicas que oferecem múltiplas especialidades têm uma vantagem: cada especialidade pode ser um ponto de entrada diferente no Google. Uma página dedicada à ortodontia em Manaus, outra para implantes dentários e outra para odontopediatria ampliam significativamente as chances de aparecer em buscas específicas.",
-      "Pacientes que buscam por ortodontista em Manaus têm intenção diferente de quem pesquisa por dentista de emergência em Manaus ou clínica de estética dental em Manaus. Um site estruturado por especialidade atende cada uma dessas intenções com conteúdo adequado, em vez de forçar o visitante a deduzir o que o consultório faz a partir de uma página genérica.",
-      "Para consultórios com uma especialidade principal, o foco funciona a favor. Um endodontista pode construir uma presença forte para tratamento de canal em Manaus. Um ortodontista pode ranquear bem para aparelho dentário em Manaus e bairros específicos. A profundidade de conteúdo numa especialidade é mais eficaz do que páginas genéricas que tentam cobrir tudo ao mesmo tempo.",
-    ],
-  },
-  {
-    h2: "Como o site influencia o agendamento de novos pacientes",
-    paragraphs: [
-      "Aparecer no Google é o primeiro passo. O segundo é converter esse visitante em um paciente que entra em contato. Isso depende de como o site está organizado depois que o paciente chega.",
-      "Um botão de WhatsApp acessível, um telefone visível e instruções claras de como agendar reduzem a fricção. Não é necessário nenhuma chamada agressiva. O paciente que chegou pelo Google já tem intenção. O site só precisa não atrapalhar essa decisão com informações confusas, navegação lenta ou ausência de informações básicas como endereço e horário de funcionamento.",
-      "A velocidade também importa. Uma página que demora para carregar no celular — onde a maioria das buscas locais acontece — perde o paciente para quem carrega em dois segundos. Performance não é detalhe técnico: é o tempo que o visitante aguenta esperar antes de fechar a aba e tentar o próximo resultado.",
+      "Dor de dente não espera. As buscas por dentista urgente em Manaus, dor de dente o que fazer e extração de siso urgência acontecem majoritariamente à noite e nos fins de semana, sempre pelo celular. Nesse cenário, cada segundo de carregamento é um paciente a menos: quem está com dor não espera um site pesado abrir — volta para o Google e toca no próximo resultado.",
+      "Um site de consultório precisa carregar em menos de três segundos numa conexão móvel mediana, com o botão de WhatsApp e o telefone visíveis sem rolar a página. Endereço com link direto para o mapa e horário de atendimento completam o mínimo. Se o consultório atende urgências, isso deve estar dito com destaque — é um diferencial de busca que a maioria não explora.",
+      "Esse mesmo requisito técnico beneficia todas as outras páginas: o Google usa velocidade e experiência mobile como critério de ranqueamento local. Um site rápido não é estética de desenvolvedor — é a diferença entre receber ou não o paciente que decidiria em trinta segundos.",
     ],
   },
 ];
