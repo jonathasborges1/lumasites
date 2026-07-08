@@ -12,6 +12,7 @@ import {
   CheckCircle2,
   ChevronDown,
   ClipboardCheck,
+  ExternalLink,
   FileSearch,
   Gavel,
   HeartHandshake,
@@ -276,6 +277,15 @@ export default function DouglasFeitosaPage() {
             LumaSites.com.br
           </a>
         </span>
+        <a
+          className="df-preview-site"
+          href="https://advogadodouglasfeitosa.com.br/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Site oficial</span>
+          <ExternalLink size={13} aria-hidden="true" />
+        </a>
       </div>
 
       <header className="df-header">
@@ -716,6 +726,30 @@ const css = `
   }
   .df-preview-back:hover {
     background: rgba(255,255,255,.08);
+    color: white;
+  }
+  .df-preview-site {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 10px;
+    border: 1px solid rgba(185,154,91,.45);
+    border-radius: 6px;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transform: translateY(-50%);
+  }
+  .df-preview-site:hover {
+    background: rgba(185,154,91,.14);
     color: white;
   }
   .df-preview-line {
@@ -1502,8 +1536,17 @@ const css = `
     .df-wrap { width: min(100% - 28px, 1160px); }
     .df-preview-bar {
       min-height: 52px;
-      padding: 8px 56px;
+      padding: 8px 100px;
     }
+    .df-preview-site {
+      right: 8px;
+      min-height: 34px;
+      gap: 0;
+      padding: 0 9px;
+      font-size: 10px;
+      letter-spacing: .04em;
+    }
+    .df-preview-site svg { display: none; }
     .df-preview-back {
       width: 40px;
       min-width: 40px;
