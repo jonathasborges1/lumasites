@@ -72,7 +72,7 @@ export const pageMetadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "/blog/cliente-no-google-manaus.png",
+        url: "/blog/cliente-no-google-manaus.webp",
         width: 1680,
         height: 960,
         alt: "Guia sobre como aparecer no Google para pequenos negócios em Manaus",
@@ -84,7 +84,7 @@ export const pageMetadata: Metadata = {
     title: "Como Aparecer no Google em Manaus | Guia para Pequenos Negócios",
     description:
       "Seu cliente está no Google — mas ele encontra você? Aprenda o que fazer para aparecer nas buscas locais de Manaus.",
-    images: ["/blog/cliente-no-google-manaus.png"],
+    images: ["/blog/cliente-no-google-manaus.webp"],
   },
 };
 
@@ -103,7 +103,7 @@ export const articleSchema = {
   publisher: { "@type": "Organization", name: site.name, url: site.url },
   datePublished: articleDates.publishedAt,
   ...(articleDates.updatedAt ? { dateModified: articleDates.updatedAt } : {}),
-  image: `${site.url}/blog/cliente-no-google-manaus.png`,
+  image: `${site.url}/blog/cliente-no-google-manaus.webp`,
   url: `${site.url}/blog/como-aparecer-no-google-em-manaus`,
   mainEntityOfPage: `${site.url}/blog/como-aparecer-no-google-em-manaus`,
   inLanguage: "pt-BR",

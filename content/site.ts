@@ -7,6 +7,11 @@ export const site = {
   region: "Manaus - Amazonas",
   url: "https://lumasites.com.br",
 
+  social: {
+    instagram: "https://instagram.com/jonathasborges1",
+    github: "https://github.com/jonathasborges1/",
+  },
+
   whatsapp: {
     number: "5592988410440",
     defaultMessage:
@@ -16,7 +21,7 @@ export const site = {
   email: "contato@lumasites.com.br",
 
   seo: {
-    title: "Luma Sites | Criação de Sites Simples em Manaus - AM",
+    title: "Criação de Sites em Manaus | Site Profissional a partir de R$ 497 - Luma Sites",
     description:
       "Criamos sites profissionais e rápidos em Manaus. Ideal para autônomos, clínicas, advogados e comércio. Sem mensalidade abusiva. Orçamento pelo WhatsApp.",
     keywords: [

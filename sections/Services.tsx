@@ -8,10 +8,13 @@ import { Aurora } from "@/components/Aurora";
 import { services } from "@/content/services";
 import { useSelection } from "@/components/SelectionContext";
 import { whatsappLink } from "@/utils/whatsapp";
+import { trackWhatsAppClick } from "@/utils/analytics";
+import { usePathname } from "next/navigation";
 import { Check, MessageCircle, Plus, Minus } from "lucide-react";
 
 export function Services() {
   const { toggle, has } = useSelection();
+  const pathname = usePathname();
 
   return (
     <section id="servicos" className="relative py-16 md:py-24">
@@ -130,6 +133,12 @@ export function Services() {
                         href={whatsappLink({ service: s.title })}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() =>
+                          trackWhatsAppClick({
+                            page: pathname,
+                            service: s.title,
+                          })
+                        }
                         aria-label={`Falar sobre ${s.title} no WhatsApp`}
                         className="relative inline-flex items-center justify-center w-11 h-11 rounded-full bg-glow-cyan/10 border-2 border-glow-cyan/70 text-glow-aqua hover:bg-glow-cyan/25 hover:shadow-glow-md transition-all hover:scale-110 active:scale-95"
                       >
@@ -156,6 +165,12 @@ export function Services() {
               })}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackWhatsAppClick({
+                  page: pathname,
+                  service: "sob medida",
+                })
+              }
               className="text-glow-aqua underline hover:text-white"
             >
               conta pra gente no WhatsApp

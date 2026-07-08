@@ -35,7 +35,7 @@ const posts = [
     readTime: "10 min",
     tags: ["Fitness", "SEO Local", "Manaus"],
     thumbnail: {
-      src: "/blog/site-para-personal-trainer-em-manaus.png",
+      src: "/blog/site-para-personal-trainer-em-manaus.webp",
       alt: "Personal trainer em Manaus com notebook mostrando presença profissional no Google",
       headline: "Site para Personal Trainer em Manaus",
       subheadline: "Credibilidade, SEO local e mais alunos pelo Google",
@@ -54,7 +54,7 @@ const posts = [
     readTime: "10 min",
     tags: ["Odontologia", "SEO Local", "Manaus"],
     thumbnail: {
-      src: "/blog/site-para-dentista-em-manaus.png",
+      src: "/blog/site-para-dentista-em-manaus.webp",
       alt: "Dentista em consultório em Manaus com notebook mostrando presença profissional no Google",
       headline: "Site para Dentista em Manaus",
       subheadline: "Credibilidade, SEO local e mais pacientes pelo Google",
@@ -73,7 +73,7 @@ const posts = [
     readTime: "10 min",
     tags: ["Medicina", "SEO Local", "Manaus"],
     thumbnail: {
-      src: "/blog/site-para-medico-em-manaus.png",
+      src: "/blog/site-para-medico-em-manaus.webp",
       alt: "Médico em consultório em Manaus com notebook mostrando presença profissional no Google",
       headline: "Site para Médico em Manaus",
       subheadline: "Credibilidade, SEO local e mais pacientes pelo Google",
@@ -92,7 +92,7 @@ const posts = [
     readTime: "11 min",
     tags: ["Psicologia", "SEO Local", "Manaus"],
     thumbnail: {
-      src: "/blog/site-para-psicologo-em-manaus.png",
+      src: "/blog/site-para-psicologo-em-manaus.webp",
       alt: "Psicóloga em Manaus usando notebook para fortalecer presença profissional no Google",
       headline: "Site para Psicólogo em Manaus",
       subheadline: "Credibilidade, SEO local e mais contatos pelo Google",
@@ -111,7 +111,7 @@ const posts = [
     readTime: "7 min",
     tags: ["Google", "SEO Local", "Manaus"],
     thumbnail: {
-      src: "/blog/cliente-no-google-manaus.png",
+      src: "/blog/cliente-no-google-manaus.webp",
       alt: "Painel de busca local no Google para negócios em Manaus",
       headline: "Seu Cliente Está no Google",
       subheadline: "SEO local para ser encontrado em Manaus",
@@ -130,7 +130,7 @@ const posts = [
     readTime: "9 min",
     tags: ["Advocacia", "SEO Local", "Manaus"],
     thumbnail: {
-      src: "/blog/site-para-advogados-em-manaus.png",
+      src: "/blog/site-para-advogados-em-manaus.webp",
       alt: "Notebook exibindo site profissional para advogado em Manaus",
       headline: "Site para Advogados em Manaus",
       subheadline: "Credibilidade, sobriedade e contatos qualificados",
@@ -148,7 +148,7 @@ const posts = [
     readTime: "8 min",
     tags: ["Preços", "Manaus", "Negócios Locais"],
     thumbnail: {
-      src: "/blog/criacao-de-sites-em-manaus.png",
+      src: "/blog/criacao-de-sites-em-manaus.webp",
       alt: "Guia de preços de criação de sites profissionais em Manaus",
       headline: "Quanto Custa um Site em Manaus",
       subheadline: "Faixas de valor reais e como comparar orçamentos",

@@ -10,6 +10,12 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
+const sameAs = [
+  `https://wa.me/${site.whatsapp.number}`,
+  site.social.instagram,
+  site.social.github,
+];
+
 const display = Cinzel({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -105,77 +111,114 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "@id": `${site.url}/#business`,
-              name: site.name,
-              description: site.seo.description,
-              url: site.url,
-              telephone: `+${site.whatsapp.number}`,
-              email: site.email,
-              logo: {
-                "@type": "ImageObject",
-                url: `${site.url}/favicon.svg`,
-              },
-              image: `${site.url}/og-image.jpg`,
-              areaServed: {
-                "@type": "City",
-                name: site.city,
-                containedInPlace: {
-                  "@type": "State",
-                  name: "Amazonas",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": `${site.url}/#organization`,
+                  name: site.name,
+                  url: site.url,
+                  email: site.email,
+                  logo: {
+                    "@type": "ImageObject",
+                    url: `${site.url}/favicon.svg`,
+                  },
+                  image: `${site.url}/og-image.jpg`,
+                  sameAs,
                 },
-              },
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: site.city,
-                addressRegion: site.state,
-                addressCountry: "BR",
-              },
-              priceRange: "R$ 497 - R$ 2.000",
-              hasOfferCatalog: {
-                "@type": "OfferCatalog",
-                name: "Serviços de criação de sites",
-                itemListElement: [
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Site Institucional",
-                      description: "Site profissional de 1 a 4 páginas para sua empresa em Manaus",
+                {
+                  "@type": "WebSite",
+                  "@id": `${site.url}/#website`,
+                  name: site.name,
+                  alternateName: site.brand,
+                  url: site.url,
+                  inLanguage: "pt-BR",
+                  publisher: {
+                    "@id": `${site.url}/#organization`,
+                  },
+                },
+                {
+                  "@type": "LocalBusiness",
+                  "@id": `${site.url}/#business`,
+                  name: site.name,
+                  description: site.seo.description,
+                  url: site.url,
+                  telephone: `+${site.whatsapp.number}`,
+                  email: site.email,
+                  logo: {
+                    "@type": "ImageObject",
+                    url: `${site.url}/favicon.svg`,
+                  },
+                  image: `${site.url}/og-image.jpg`,
+                  parentOrganization: {
+                    "@id": `${site.url}/#organization`,
+                  },
+                  areaServed: {
+                    "@type": "City",
+                    name: site.city,
+                    containedInPlace: {
+                      "@type": "State",
+                      name: "Amazonas",
                     },
                   },
-                  {
-                    "@type": "Offer",
-                    url: `${site.url}/landing-page-manaus`,
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Landing Page",
-                      description: "Página de conversão focada em captação de clientes pelo WhatsApp",
-                    },
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: site.city,
+                    addressRegion: site.state,
+                    addressCountry: "BR",
                   },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Site com Blog",
-                      description: "Site com área de conteúdo e SEO local",
-                    },
+                  priceRange: "R$ 497 - R$ 2.000",
+                  hasOfferCatalog: {
+                    "@type": "OfferCatalog",
+                    name: "Serviços de criação de sites",
+                    itemListElement: [
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Site Institucional",
+                          description:
+                            "Site profissional de 1 a 4 páginas para sua empresa em Manaus",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        url: `${site.url}/landing-page-manaus`,
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Landing Page",
+                          description:
+                            "Página de conversão focada em captação de clientes pelo WhatsApp",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Site com Blog",
+                          description: "Site com área de conteúdo e SEO local",
+                        },
+                      },
+                    ],
                   },
-                ],
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: "-3.1019",
-                longitude: "-60.0250",
-              },
-              openingHoursSpecification: {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                opens: "09:00",
-                closes: "18:00",
-              },
-              sameAs: [
-                `https://wa.me/${site.whatsapp.number}`,
+                  geo: {
+                    "@type": "GeoCoordinates",
+                    latitude: "-3.1019",
+                    longitude: "-60.0250",
+                  },
+                  openingHoursSpecification: {
+                    "@type": "OpeningHoursSpecification",
+                    dayOfWeek: [
+                      "Monday",
+                      "Tuesday",
+                      "Wednesday",
+                      "Thursday",
+                      "Friday",
+                    ],
+                    opens: "09:00",
+                    closes: "18:00",
+                  },
+                  sameAs,
+                },
               ],
             }),
           }}

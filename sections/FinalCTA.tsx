@@ -1,11 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import { GlowButton } from "@/components/GlowButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Fireflies } from "@/components/Fireflies";
 import { whatsappLink } from "@/utils/whatsapp";
+import { trackWhatsAppClick } from "@/utils/analytics";
 import { MessageCircle, Sparkles } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export function FinalCTA() {
+  const pathname = usePathname();
   const currentMonth = new Intl.DateTimeFormat("pt-BR", {
     month: "long",
   }).format(new Date());
@@ -133,6 +138,12 @@ export function FinalCTA() {
                   variant="amber"
                   size="lg"
                   className="w-full sm:w-auto"
+                  onClick={() =>
+                    trackWhatsAppClick({
+                      page: pathname,
+                      service: "final cta",
+                    })
+                  }
                 >
                   <MessageCircle size={17} strokeWidth={2} />
                   Quero meu orçamento agora

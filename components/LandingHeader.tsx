@@ -7,6 +7,7 @@ import { GlowButton } from "@/components/GlowButton";
 import { mainNavigation, servicePages } from "@/content/navigation";
 import { site } from "@/content/site";
 import { whatsappLink } from "@/utils/whatsapp";
+import { trackWhatsAppClick } from "@/utils/analytics";
 import { ChevronDown, Menu, MessageCircle, X } from "lucide-react";
 
 export function LandingHeader() {
@@ -126,6 +127,12 @@ export function LandingHeader() {
             rel="noopener noreferrer"
             variant="primary"
             size="md"
+            onClick={() =>
+              trackWhatsAppClick({
+                page: pathname,
+                service: "header",
+              })
+            }
           >
             <MessageCircle size={16} />
             Falar agora
@@ -214,7 +221,13 @@ export function LandingHeader() {
                 rel="noopener noreferrer"
                 variant="primary"
                 size="md"
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  trackWhatsAppClick({
+                    page: pathname,
+                    service: "header mobile",
+                  });
+                  setOpen(false);
+                }}
               >
                 <MessageCircle size={16} />
                 Falar no WhatsApp

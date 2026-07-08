@@ -8,10 +8,13 @@ import { LightOrb } from "@/components/LightOrb";
 import { Counter } from "@/components/Counter";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { whatsappLink } from "@/utils/whatsapp";
+import { trackWhatsAppClick } from "@/utils/analytics";
 import { MessageCircle, ArrowDown } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 export function Hero() {
+  const pathname = usePathname();
   const parallaxRef = useRef<HTMLDivElement>(null);
   const [isDesktop, setIsDesktop] = useState(false);
   const now = new Date();
@@ -189,6 +192,12 @@ export function Hero() {
                 variant="primary"
                 size="lg"
                 className="w-full sm:w-auto"
+                onClick={() =>
+                  trackWhatsAppClick({
+                    page: pathname,
+                    service: "hero",
+                  })
+                }
               >
                 <MessageCircle size={17} strokeWidth={2} />
                 Falar no WhatsApp agora

@@ -9,7 +9,8 @@
     "dev:clean": "npm run clean && npm run dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "optimize:blog-images": "node scripts/optimize-blog-images.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

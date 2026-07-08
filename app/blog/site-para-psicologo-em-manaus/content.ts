@@ -55,7 +55,7 @@ export type InternalLink = {
 const slug = "site-para-psicologo-em-manaus";
 const articleUrl = `${site.url}/blog/${slug}`;
 export const thumbnail = {
-  src: "/blog/site-para-psicologo-em-manaus.png",
+  src: "/blog/site-para-psicologo-em-manaus.webp",
   alt: "Psicóloga em Manaus usando notebook para fortalecer presença profissional no Google",
   width: 1536,
   height: 1024,

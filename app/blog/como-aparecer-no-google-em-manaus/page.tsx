@@ -146,7 +146,7 @@ export default function ComoAparecerNoGoogleEmManausPage() {
               <div className="mt-10 lg:mt-0">
                 <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-glow-sm">
                   <Image
-                    src="/blog/cliente-no-google-manaus.png"
+                    src="/blog/cliente-no-google-manaus.webp"
                     alt="Seu cliente está no Google — ele encontra você? Presença digital para negócios em Manaus"
                     width={1536}
                     height={1024}

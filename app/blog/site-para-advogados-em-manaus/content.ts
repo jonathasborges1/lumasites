@@ -93,7 +93,7 @@ export const pageMetadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "/blog/site-para-advogados-em-manaus.png",
+        url: "/blog/site-para-advogados-em-manaus.webp",
         width: 1680,
         height: 960,
         alt: "Site profissional para escritório de advocacia em Manaus",
@@ -105,7 +105,7 @@ export const pageMetadata: Metadata = {
     title: "Site para Advogados em Manaus | Captação com Credibilidade",
     description:
       "Entenda como deve ser um site para advogados em Manaus: estrutura ideal, regras de comunicação, SEO local e o que avaliar antes de contratar.",
-    images: ["/blog/site-para-advogados-em-manaus.png"],
+    images: ["/blog/site-para-advogados-em-manaus.webp"],
   },
 };
 
@@ -128,7 +128,7 @@ export const articleSchema = {
   },
   datePublished: articleDates.publishedAt,
   dateModified: articleDates.updatedAt,
-  image: `${site.url}/blog/site-para-advogados-em-manaus.png`,
+  image: `${site.url}/blog/site-para-advogados-em-manaus.webp`,
   url: articleUrl,
   mainEntityOfPage: articleUrl,
   inLanguage: "pt-BR",

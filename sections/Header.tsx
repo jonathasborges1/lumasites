@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { GlowButton } from "@/components/GlowButton";
 import { whatsappLink } from "@/utils/whatsapp";
+import { trackWhatsAppClick } from "@/utils/analytics";
 import { site } from "@/content/site";
 import { mainNavigation, servicePages } from "@/content/navigation";
 import { ChevronDown, Menu, MessageCircle, X } from "lucide-react";
@@ -121,6 +122,12 @@ export function Header() {
             rel="noopener noreferrer"
             variant="primary"
             size="md"
+            onClick={() =>
+              trackWhatsAppClick({
+                page: pathname,
+                service: "header",
+              })
+            }
           >
             <MessageCircle size={16} />
             Falar agora
@@ -209,7 +216,13 @@ export function Header() {
                 rel="noopener noreferrer"
                 variant="primary"
                 size="md"
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  trackWhatsAppClick({
+                    page: pathname,
+                    service: "header mobile",
+                  });
+                  setOpen(false);
+                }}
               >
                 <MessageCircle size={16} />
                 Falar no WhatsApp

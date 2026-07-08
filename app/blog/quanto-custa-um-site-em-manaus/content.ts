@@ -91,7 +91,7 @@ export const pageMetadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "/blog/criacao-de-sites-em-manaus.png",
+        url: "/blog/criacao-de-sites-em-manaus.webp",
         width: 1680,
         height: 960,
         alt: "Guia de preços de criação de sites profissionais em Manaus",
@@ -103,7 +103,7 @@ export const pageMetadata: Metadata = {
     title: "Quanto Custa um Site em Manaus em 2026? | Guia de Preços Real",
     description:
       "Valores reais por tipo de site, custos fixos anuais e as cobranças escondidas que você deve evitar antes de contratar.",
-    images: ["/blog/criacao-de-sites-em-manaus.png"],
+    images: ["/blog/criacao-de-sites-em-manaus.webp"],
   },
 };
 
@@ -122,7 +122,7 @@ export const articleSchema = {
   publisher: { "@type": "Organization", name: site.name, url: site.url },
   datePublished: articleDates.publishedAt,
   dateModified: articleDates.updatedAt,
-  image: `${site.url}/blog/criacao-de-sites-em-manaus.png`,
+  image: `${site.url}/blog/criacao-de-sites-em-manaus.webp`,
   url: articleUrl,
   mainEntityOfPage: articleUrl,
   inLanguage: "pt-BR",

@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { usePathname } from "next/navigation";
 import { useSelection } from "./SelectionContext";
 import { whatsappLink } from "@/utils/whatsapp";
+import { trackWhatsAppClick } from "@/utils/analytics";
 import { services } from "@/content/services";
 
 export function WhatsAppFloating() {
@@ -30,6 +31,12 @@ export function WhatsAppFloating() {
   if (pathname.startsWith("/proposta-comercial")) return null;
 
   const hasSelection = selected.length > 0;
+  const serviceLabel = hasSelection
+    ? selected
+        .map((id) => services.find((s) => s.id === id)?.title)
+        .filter(Boolean)
+        .join(", ")
+    : "geral";
 
   return (
     <div className="fixed bottom-5 right-5 z-50 flex items-end gap-3">
@@ -53,6 +60,12 @@ export function WhatsAppFloating() {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() =>
+          trackWhatsAppClick({
+            page: pathname,
+            service: serviceLabel,
+          })
+        }
         aria-label="Falar no WhatsApp"
         className="relative group flex items-center justify-center w-16 h-16 rounded-full bg-[#25D366] shadow-[0_0_24px_rgba(37,211,102,.6)] hover:shadow-[0_0_40px_rgba(37,211,102,.9)] transition-all duration-300 hover:scale-105 active:scale-95"
       >

@@ -61,7 +61,7 @@ const articleUrl = `${site.url}/blog/${slug}`;
 // ─── Thumbnail ────────────────────────────────────────────────────────────────
 
 export const thumbnail = {
-  src: "/blog/site-para-personal-trainer-em-manaus.png",
+  src: "/blog/site-para-personal-trainer-em-manaus.webp",
   alt: "Personal trainer em Manaus com notebook mostrando presença profissional no Google",
   width: 1680,
   height: 960,

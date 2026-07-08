@@ -60,7 +60,7 @@ const articleUrl = `${site.url}/blog/${slug}`;
 // ─── Thumbnail ────────────────────────────────────────────────────────────────
 
 export const thumbnail = {
-  src: "/blog/site-para-dentista-em-manaus.png",
+  src: "/blog/site-para-dentista-em-manaus.webp",
   alt: "Dentista em consultório em Manaus com notebook mostrando presença profissional no Google",
   width: 1680,
   height: 960,

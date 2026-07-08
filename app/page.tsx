@@ -13,6 +13,7 @@ import { Footer } from "@/sections/Footer";
 import { MascotBand } from "@/sections/MascotBand";
 import { SectionTransition } from "@/components/SectionTransition";
 import { site } from "@/content/site";
+import { faq } from "@/content/faq";
 
 export const metadata: Metadata = {
   alternates: { canonical: site.url },
@@ -21,6 +22,24 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "@id": `${site.url}/#faq`,
+            mainEntity: faq.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answer,
+              },
+            })),
+          }),
+        }}
+      />
       <Header />
       <main>
         <Hero />

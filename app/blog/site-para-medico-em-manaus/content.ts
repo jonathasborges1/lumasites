@@ -56,7 +56,7 @@ const slug = "site-para-medico-em-manaus";
 const articleUrl = `${site.url}/blog/${slug}`;
 
 export const thumbnail = {
-  src: "/blog/site-para-medico-em-manaus.png",
+  src: "/blog/site-para-medico-em-manaus.webp",
   alt: "Médico em consultório em Manaus com notebook mostrando presença profissional no Google",
   width: 1680,
   height: 960,
