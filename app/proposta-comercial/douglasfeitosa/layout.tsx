@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/douglasfeitosa/douglas-feitosa-retrato.jpg",
-        width: 853,
-        height: 1280,
-        alt: "Douglas Feitosa, advogado",
+        url: "/images/douglasfeitosa/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Douglas Feitosa Advocacia - previa conceitual",
       },
     ],
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "Douglas Feitosa Advocacia | Prévia Conceitual",
     description:
       "Landing page jurídica elegante, responsiva e orientada a atendimento online.",
-    images: ["/images/douglasfeitosa/douglas-feitosa-retrato.jpg"],
+    images: ["/images/douglasfeitosa/og-image.jpg"],
   },
 };
 
