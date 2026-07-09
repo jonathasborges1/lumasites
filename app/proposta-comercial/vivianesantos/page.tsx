@@ -42,6 +42,9 @@ const PHONE_TEL = "tel:+5511961252501";
 const EMAIL = "contato@socialconsultprev.com.br";
 const ADDRESS = "Av. Cangaíba, 2699, sala 5 — Cangaíba, São Paulo/SP";
 const MAPS = "https://www.google.com/maps/search/?api=1&query=Av.+Cangaiba+2699+Sao+Paulo+SP";
+const MAPS_EMBED = `https://www.google.com/maps?q=${encodeURIComponent(
+  "Av. Cangaíba, 2699 - Cangaíba, São Paulo - SP",
+)}&output=embed&hl=pt-BR&z=16`;
 
 const IMG = {
   logo: "/images/vivianesantos/viviane-santos-logo.png",
@@ -251,6 +254,7 @@ export default function VivianeSantosPage() {
       addressCountry: "BR",
     },
     openingHours: ["Mo-Fr 08:00-18:00", "Sa 09:00-13:00"],
+    hasMap: MAPS,
     areaServed: "Brasil",
     sameAs: [INSTAGRAM, FACEBOOK],
     serviceType: [
@@ -649,6 +653,25 @@ export default function VivianeSantosPage() {
               </a>
             </li>
           </ul>
+
+          <div className="vs-map">
+            <iframe
+              src={MAPS_EMBED}
+              title="Mapa com a localização do escritório: Av. Cangaíba, 2699, sala 5, Cangaíba, São Paulo"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+            <a
+              className="vs-map-link"
+              href={MAPS}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MapPin size={16} aria-hidden="true" /> Ver rotas no Google Maps
+              <ExternalLink size={14} aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </section>
 
@@ -1485,6 +1508,37 @@ const css = `
   }
   .vs-contact-list a:hover { color: var(--gold-light); }
   .vs-contact-list span { color: rgba(255,255,255,.9); }
+
+  .vs-map {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 0;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(255,255,255,.05);
+  }
+  .vs-map iframe {
+    display: block;
+    width: 100%;
+    height: 340px;
+    border: 0;
+    filter: saturate(.92);
+  }
+  .vs-map-link {
+    min-height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 16px;
+    border-top: 1px solid rgba(255,255,255,.14);
+    color: rgba(255,255,255,.88);
+    font-size: .92rem;
+    font-weight: 800;
+  }
+  .vs-map-link:hover { color: var(--gold-light); }
+  .vs-map-link svg { color: var(--gold-light); }
 
   .vs-footer {
     padding: 44px 0 110px;
