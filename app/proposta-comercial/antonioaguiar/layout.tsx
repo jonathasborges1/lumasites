@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Playfair_Display } from "next/font/google";
+import { Libre_Baskerville, Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -8,9 +8,9 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-const playfair = Playfair_Display({
+const libreBaskerville = Libre_Baskerville({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["400", "700"],
   style: ["normal", "italic"],
   variable: "--font-antonio-display",
   display: "swap",
@@ -52,7 +52,7 @@ export default function AntonioAguiarPropLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`${montserrat.variable} ${playfair.variable}`}>
+    <div className={`${montserrat.variable} ${libreBaskerville.variable}`}>
       {children}
     </div>
   );

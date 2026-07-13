@@ -3,15 +3,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
-  Ban,
   BookOpen,
-  Car,
+  BriefcaseBusiness,
   ChevronDown,
   ChevronRight,
-  CreditCard,
-  FileX,
   Globe,
-  IdCard,
   Landmark,
   Mail,
   MapPin,
@@ -19,6 +15,7 @@ import {
   Scale,
   Search,
   ShieldCheck,
+  Tractor,
   Users,
 } from "lucide-react";
 
@@ -39,29 +36,19 @@ const navItems = [
 
 const problems = [
   {
-    icon: Ban,
-    title: "Conta Bloqueada",
-    desc: "Banco bloqueou sua conta sem aviso ou justificativa?",
+    icon: Landmark,
+    title: "Direito Bancário",
+    desc: "Conta bloqueada, contrato abusivo, busca e apreensão ou nome negativado? Atuamos em todas as frentes contra abusos do banco.",
   },
   {
-    icon: FileX,
-    title: "Contrato Abusivo",
-    desc: "Parcelas altas, juros escondidos, cláusulas ilegais?",
+    icon: Tractor,
+    title: "Direito do Agronegócio",
+    desc: "Trator parado, safra comprometida ou contrato rural em risco? Suporte jurídico para quem produz.",
   },
   {
-    icon: Car,
-    title: "Busca e Apreensão",
-    desc: "Veículo ameaçado ou já tomado pelo banco?",
-  },
-  {
-    icon: CreditCard,
-    title: "Nome Negativado",
-    desc: "Negativação indevida travando seu crédito?",
-  },
-  {
-    icon: IdCard,
-    title: "CNH Suspensa",
-    desc: "CNH suspensa por dívida bancária?",
+    icon: BriefcaseBusiness,
+    title: "Direito Empresarial",
+    desc: "Contratos, relações societárias e suporte jurídico para decisões estratégicas do negócio.",
   },
   {
     icon: BookOpen,
@@ -74,7 +61,7 @@ const problems = [
     desc: "Produto, serviço ou cláusula que viola seus direitos como consumidor?",
   },
   {
-    icon: Landmark,
+    icon: ShieldCheck,
     title: "Direito Previdenciário",
     desc: "Orientação em demandas previdenciárias com suporte especializado.",
   },
@@ -623,7 +610,10 @@ button { font: inherit; }
   align-items: center;
   gap: 36px;
 }
-.aa-hero-copy { color: var(--aa-ink); }
+.aa-hero-copy {
+  min-width: 0;
+  color: var(--aa-ink);
+}
 .aa-kicker {
   display: inline-flex;
   align-items: center;
@@ -714,34 +704,39 @@ button { font: inherit; }
   border-color: rgba(40,71,63,0.34);
 }
 .aa-proof-bar {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  width: fit-content;
+  max-width: 100%;
   margin-top: 44px;
-  max-width: 440px;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+.aa-proof-bar::-webkit-scrollbar { display: none; }
 .aa-proof-item {
-  padding: 16px 16px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
   border: 1px solid rgba(201,168,76,0.22);
   background: rgba(255,255,255,0.58);
   border-radius: 2px;
-}
-.aa-proof-item strong {
-  display: block;
-  font-family: var(--font-antonio-display), Georgia, serif;
-  font-size: 20px;
-  font-weight: 700;
   color: var(--aa-petrol);
-  line-height: 1;
-}
-.aa-proof-item span {
-  display: block;
-  margin-top: 6px;
-  color: var(--aa-muted);
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  line-height: 1.4;
+  text-align: center;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+.aa-proof-item svg {
+  flex: 0 0 auto;
+  color: var(--aa-gold-dark);
 }
 
 /* Hero photo column */
@@ -935,7 +930,7 @@ button { font: inherit; }
 }
 .aa-about-photo {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1211 / 1299;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -1133,17 +1128,64 @@ button { font: inherit; }
 /* ── LOCALIZACAO ──────────────────────────────────── */
 .aa-location-grid {
   display: grid;
-  gap: 40px;
-  align-items: start;
+  gap: 24px;
+  align-items: stretch;
+}
+.aa-onsite-panel {
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid rgba(40,71,63,0.1);
+  border-top: 3px solid var(--aa-gold-dark);
+  border-radius: 2px;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 18px 42px rgba(40,71,63,0.06);
+}
+.aa-mode-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 14px;
+}
+.aa-mode-icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--aa-gold-dark);
+  background: rgba(204,166,121,0.13);
+}
+.aa-mode-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--aa-gold-dark);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.aa-mode-heading h3 {
+  margin: 0;
+  color: var(--aa-petrol);
+  font-family: var(--font-antonio-display), Georgia, serif;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.15;
+}
+.aa-mode-intro {
+  margin: 0 0 24px;
+  color: var(--aa-muted);
+  font-size: 13px;
+  line-height: 1.75;
 }
 .aa-offices {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 .aa-office-card {
-  padding: 20px 22px 20px 20px;
-  border-left: 3px solid var(--aa-gold-dark);
+  padding: 14px 16px;
+  border: 1px solid rgba(40,71,63,0.09);
+  border-left: 2px solid var(--aa-gold-dark);
   background: var(--aa-white, #fff);
   border-radius: 0 2px 2px 0;
   box-shadow: 0 2px 16px rgba(26,26,20,0.06);
@@ -1153,8 +1195,8 @@ button { font: inherit; }
   gap: 14px;
 }
 .aa-office-icon {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -1186,11 +1228,11 @@ button { font: inherit; }
 .aa-presence-panel {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  min-height: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   padding: clamp(28px, 5vw, 52px);
   border: 1px solid rgba(204,166,121,0.18);
   border-radius: 2px;
@@ -1221,6 +1263,10 @@ button { font: inherit; }
   border-radius: 50%;
   color: var(--aa-gold);
 }
+.aa-presence-panel .aa-mode-eyebrow {
+  position: relative;
+  color: var(--aa-gold);
+}
 .aa-presence-panel h3 {
   position: relative;
   max-width: 430px;
@@ -1237,16 +1283,22 @@ button { font: inherit; }
   font-size: 14px;
   line-height: 1.75;
 }
-.aa-location-note {
-  margin-top: 20px;
-  font-size: 13px;
-  font-style: italic;
-  color: var(--aa-muted);
+.aa-online-points {
+  position: relative;
+  margin-top: 24px;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
 }
-.aa-location-note svg { color: var(--aa-gold-dark); flex: 0 0 auto; }
+.aa-online-points span {
+  padding: 7px 10px;
+  border: 1px solid rgba(204,166,121,0.26);
+  color: rgba(245,240,232,0.82);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 
 /* ── CTA GOLD SECTION ────────────────────────────── */
 .aa-cta-inner {
@@ -1416,6 +1468,7 @@ button { font: inherit; }
 .aa-delay-3 { transition-delay: 0.24s; }
 .aa-delay-4 { transition-delay: 0.32s; }
 .aa-delay-5 { transition-delay: 0.40s; }
+.aa-delay-6 { transition-delay: 0.48s; }
 
 /* ── RESPONSIVE ───────────────────────────────────── */
 @media (min-width: 1120px) {
@@ -1427,7 +1480,7 @@ button { font: inherit; }
   .aa-hero-grid { grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr); }
   .aa-two-col { grid-template-columns: 1fr 1fr; }
   .aa-steps { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .aa-location-grid { grid-template-columns: 0.8fr 1fr; gap: 52px; }
+  .aa-location-grid { grid-template-columns: 1.06fr 0.94fr; gap: 24px; }
   .aa-footer-body { grid-template-columns: 1.4fr 0.8fr 1fr; gap: 52px; }
 }
 @media (min-width: 600px) {
@@ -1435,7 +1488,7 @@ button { font: inherit; }
 }
 @media (min-width: 1024px) {
   .aa-hero-grid { width: min(1280px, calc(100% - 56px)); }
-  .aa-problems { grid-template-columns: repeat(5, 1fr); }
+  .aa-problems { grid-template-columns: repeat(3, 1fr); }
   .aa-steps { grid-template-columns: repeat(4, 1fr); gap: 20px; }
 }
 
@@ -1448,9 +1501,20 @@ button { font: inherit; }
   .aa-hero h1 { font-size: clamp(28px, 9vw, 44px); }
   .aa-hero-sub { font-size: 14px; }
   .aa-hero-photo-wrap { display: none; }
-  .aa-proof-bar { margin-top: 28px; max-width: 100%; gap: 8px; }
-  .aa-proof-item { padding: 12px 10px; }
-  .aa-proof-item strong { font-size: 17px; }
+  .aa-proof-bar {
+    width: 100%;
+    grid-template-columns: repeat(3, max-content);
+    margin-top: 28px;
+    gap: 6px;
+  }
+  .aa-proof-item {
+    min-height: 42px;
+    padding: 0 5px;
+    gap: 4px;
+    font-size: 8px;
+    letter-spacing: 0;
+  }
+  .aa-proof-item svg { width: 11px; height: 11px; }
   .aa-actions { margin-top: 28px; gap: 10px; }
   .aa-actions a, .aa-actions button { width: 100%; justify-content: center; }
   .aa-section { padding: 64px 0; }
@@ -1703,7 +1767,7 @@ export default function AntonioAguiarPropPage() {
                   Florianópolis · Todo o Brasil
                 </strong>
               </div>
-              <span className="aa-mobile-oab">OAB 6589/AC</span>
+              <span className="aa-mobile-oab">OAB/AC nº 6.589</span>
             </div>
           </div>
         </div>
@@ -1715,19 +1779,18 @@ export default function AntonioAguiarPropPage() {
           <div className="aa-hero-bg" aria-hidden="true" />
           <div className="aa-hero-grid">
             <div className="aa-hero-copy">
-              <span className="aa-kicker">Direito Bancário · Rio Branco AC</span>
+              <span className="aa-kicker">
+                Advocacia Estratégica · Rio Branco AC
+              </span>
               <h1>
-                Seu banco agiu
+                Seu caso merece
                 <br />
-                contra você.{" "}
-                <em>Existe
-                <br />
-                solução jurídica.</em>
+                atenção. <em>Existe um caminho jurídico.</em>
               </h1>
               <p className="aa-hero-sub">
-                Revisão de contratos abusivos, conta bloqueada, negativação
-                indevida, busca e apreensão de veículo e suspensão de CNH.
-                Defendo seus direitos com estratégia, dedicação e clareza.
+                Atuação jurídica para pessoas, produtores rurais e empresas,
+                com análise cuidadosa, comunicação clara e estratégia. Conheça
+                abaixo as áreas de atuação.
               </p>
               <div className="aa-actions">
                 <a
@@ -1740,22 +1803,22 @@ export default function AntonioAguiarPropPage() {
                   Solicitar Atendimento
                 </a>
                 <a className="aa-btn-outline" href="#atuacao">
-                  Ver Atuação
+                  Conhecer Áreas
                   <ChevronRight size={16} />
                 </a>
               </div>
               <div className="aa-proof-bar" aria-label="Credenciais">
                 <div className="aa-proof-item">
-                  <strong>6589</strong>
-                  <span>OAB · Acre</span>
+                  <ShieldCheck size={14} aria-hidden="true" />
+                  <span>OAB/AC nº 6.589</span>
                 </div>
                 <div className="aa-proof-item">
-                  <strong>100%</strong>
-                  <span>Online</span>
+                  <MapPin size={14} aria-hidden="true" />
+                  <span>Presencial e online</span>
                 </div>
                 <div className="aa-proof-item">
-                  <strong>3</strong>
-                  <span>Estados</span>
+                  <Globe size={14} aria-hidden="true" />
+                  <span>Atendimento em todo o território nacional</span>
                 </div>
               </div>
             </div>
@@ -1765,17 +1828,17 @@ export default function AntonioAguiarPropPage() {
                 <div className="aa-hero-photo-accent" />
                 <Image
                   className="aa-hero-photo"
-                  src="/images/antonioaguiar/portraits/antonio-aguiar-hero-hq.webp"
+                  src="/images/antonioaguiar/portraits/antonio-aguiar-hero-cliente-v2.webp"
                   alt="Antonio Aguiar, advogado especialista em direito bancário"
-                  width={1086}
-                  height={1448}
+                  width={1122}
+                  height={1402}
                   sizes="(min-width: 900px) 400px, min(88vw, 400px)"
                   quality={90}
                   priority
                 />
                 <div className="aa-hero-photo-badge">
                   <strong>Antonio Aguiar</strong>
-                  <span>Advogado · OAB 6589/AC</span>
+                  <span>Advogado · OAB/AC nº 6.589</span>
                 </div>
               </div>
             </div>
@@ -1796,8 +1859,9 @@ export default function AntonioAguiarPropPage() {
               </h2>
               <p className="aa-lead">
                 Atuação em Direito Bancário, Direito Civil, Direito do
-                Consumidor, Direito Previdenciário e Direito do Agronegócio,
-                com foco em quem precisa de orientação jurídica especializada.
+                Consumidor, Direito Previdenciário, Direito Empresarial e
+                Direito do Agronegócio, com foco em quem precisa de orientação
+                jurídica especializada.
               </p>
             </div>
             <div className="aa-problems">
@@ -1827,16 +1891,16 @@ export default function AntonioAguiarPropPage() {
             <div className="aa-about-photo-wrap">
               <Image
                 className="aa-about-photo"
-                src="/images/antonioaguiar/office/antonio-aguiar-escritorio-hq.webp"
+                src="/images/antonioaguiar/office/antonio-aguiar-sobre-cliente.webp"
                 alt="Antonio Aguiar em ambiente profissional"
-                width={1448}
-                height={1086}
+                width={1211}
+                height={1299}
                 sizes="(min-width: 900px) 520px, calc(100vw - 40px)"
                 quality={90}
               />
               <div className="aa-about-badge">
                 <strong>Antonio Aguiar</strong>
-                <span>OAB 6589 · AC</span>
+                <span>OAB/AC nº 6.589</span>
               </div>
             </div>
 
@@ -1862,20 +1926,16 @@ export default function AntonioAguiarPropPage() {
               </p>
               <div className="aa-about-oab">
                 <ShieldCheck size={14} />
-                OAB 6589/AC · Atendimento Online para todo o Brasil
+                OAB/AC nº 6.589 · Atendimento Online para todo o Brasil
               </div>
               <div className="aa-tags" aria-label="Áreas de atuação">
                 {[
                   "Direito Bancário",
+                  "Direito do Agronegócio",
+                  "Direito Empresarial",
                   "Direito Civil",
                   "Direito do Consumidor",
                   "Direito Previdenciário",
-                  "Contratos",
-                  "Conta Bloqueada",
-                  "Busca e Apreensão",
-                  "CNH",
-                  "Negativação",
-                  "Direito do Agronegócio",
                 ].map((tag) => (
                   <span className="aa-tag" key={tag}>
                     {tag}
@@ -1986,15 +2046,32 @@ export default function AntonioAguiarPropPage() {
         >
           <div className="aa-wrap">
             <div className="aa-section-head center aa-reveal">
-              <span className="aa-label">Onde Atuamos</span>
-              <h2 className="aa-h2">Presença jurídica em três estados.</h2>
+              <span className="aa-label">Modalidades de Atendimento</span>
+              <h2 className="aa-h2">
+                Presencial em três estados. Online em todo o Brasil.
+              </h2>
               <p className="aa-lead">
-                Atuação com presença no Acre, Amazonas e Santa Catarina, além
-                de atendimento online em todo o Brasil.
+                Escolha a modalidade mais conveniente para o seu caso, com a
+                mesma atenção, clareza e acompanhamento em cada etapa.
               </p>
             </div>
             <div className="aa-location-grid aa-reveal aa-delay-1">
-              <div>
+              <div className="aa-onsite-panel">
+                <div className="aa-mode-heading">
+                  <span className="aa-mode-icon" aria-hidden="true">
+                    <MapPin size={20} />
+                  </span>
+                  <div>
+                    <span className="aa-mode-eyebrow">
+                      Atendimento presencial
+                    </span>
+                    <h3>Presença real em três estados.</h3>
+                  </div>
+                </div>
+                <p className="aa-mode-intro">
+                  Encontros presenciais no Acre, Amazonas e Santa Catarina,
+                  mediante agendamento prévio.
+                </p>
                 <div className="aa-offices">
                   {serviceRegions.map((region) => (
                     <div className="aa-office-card" key={region.acronym}>
@@ -2011,23 +2088,22 @@ export default function AntonioAguiarPropPage() {
                     </div>
                   ))}
                 </div>
-                <div className="aa-location-note">
-                  <Globe size={14} />
-                  <span>
-                    Atendimento presencial mediante disponibilidade e
-                    agendamento prévio
-                  </span>
-                </div>
               </div>
               <div className="aa-presence-panel">
+                <span className="aa-mode-eyebrow">Atendimento online</span>
                 <span className="aa-presence-icon" aria-hidden="true">
                   <Globe size={24} />
                 </span>
-                <h3>Atendimento sem fronteiras.</h3>
+                <h3>Em todo o território nacional.</h3>
                 <p>
-                  Orientação jurídica próxima e acessível, com atendimento
-                  online para clientes de qualquer região do Brasil.
+                  Consultas e acompanhamento jurídico para clientes de qualquer
+                  região do Brasil, sem a necessidade de deslocamento.
                 </p>
+                <div className="aa-online-points" aria-label="Canais online">
+                  <span>WhatsApp</span>
+                  <span>Videochamada</span>
+                  <span>E-mail</span>
+                </div>
               </div>
             </div>
           </div>
@@ -2079,11 +2155,11 @@ export default function AntonioAguiarPropPage() {
                 <div className="aa-footer-brand-tags">
                   {[
                     "Direito Bancário",
+                    "Direito do Agronegócio",
+                    "Direito Empresarial",
                     "Direito Civil",
                     "Direito do Consumidor",
                     "Direito Previdenciário",
-                    "Contratos",
-                    "Direito do Agronegócio",
                   ].map((tag) => (
                     <span className="aa-footer-brand-tag" key={tag}>
                       {tag}
@@ -2130,7 +2206,7 @@ export default function AntonioAguiarPropPage() {
                 </div>
                 <div className="aa-footer-contact-row">
                   <ShieldCheck size={14} />
-                  <span>OAB 6589/AC</span>
+                  <span>OAB/AC nº 6.589</span>
                 </div>
               </div>
             </div>
