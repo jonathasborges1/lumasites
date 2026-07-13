@@ -984,6 +984,7 @@ button { font: inherit; }
   font-size: 15px;
   line-height: 1.9;
 }
+.aa-about-copy .aa-h2 { margin-bottom: 20px; }
 .aa-about-copy p:last-child { margin-bottom: 0; }
 .aa-tags {
   display: flex;
