@@ -88,9 +88,8 @@ do Instagram, e os dados cadastrais que sustentam as afirmações (CNPJ no rodap
 
 ## Limitações das fontes → como a prévia tratou
 
-1. **Sem site e sem telefone público** → o WhatsApp da prévia usa número
-   ilustrativo (`5500000000000`), com aviso explícito no rodapé. Substituir
-   quando a cliente informar o oficial.
+1. **Contato direto por WhatsApp** → a prévia usa o número oficial informado
+   (`+55 92 8258-3636`) em todos os botões de orçamento.
 2. ~~Fotos do Instagram inacessíveis~~ → **resolvido**: a extração via API
    pública trouxe logo, foto da loja e 6 fotos de trabalhos reais; a galeria e
    o hero agora usam exclusivamente material do próprio Instagram da RB, com
@@ -168,7 +167,7 @@ do Instagram, e os dados cadastrais que sustentam as afirmações (CNPJ no rodap
 
 ## Próximos passos com a cliente
 
-- Receber o **WhatsApp oficial** para substituir o número placeholder.
+- Confirmar periodicamente se o **WhatsApp oficial** permanece ativo.
 - **Validar o uso das fotos** já integradas (todas do feed público da própria
   RB) e, se quiser, enviar versões em alta resolução.
 - Confirmar **horário de funcionamento** e serviços exatos (a lista atual segue

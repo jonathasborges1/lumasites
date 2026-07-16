@@ -42,7 +42,8 @@ import {
    36.240.173/0001-24 (RB Consertos e Manutenção de Cadeiras Giratórias,
    ativa desde 04/02/2020)                                                 */
 
-const WA_NUMBER = "5500000000000"; // Aguardando número oficial da cliente
+const WA_NUMBER = "559282583636";
+const WA_DISPLAY = "+55 92 8258-3636";
 const WA_TEXT = encodeURIComponent(
   "Olá! Vi o site da RB Manutenção em Cadeiras e quero um orçamento. 🪑",
 );
@@ -933,7 +934,7 @@ export default function RbCadeirasPreviewPage() {
               </a>
               <a href={WA_LINK} target="_blank" rel="noopener noreferrer">
                 <MessageCircle size={15} aria-hidden="true" />
-                WhatsApp (orçamentos)
+                WhatsApp {WA_DISPLAY}
               </a>
             </address>
             <div className="rb-contato-map">
@@ -1038,9 +1039,7 @@ export default function RbCadeirasPreviewPage() {
             <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer">
               Instagram {INSTAGRAM_HANDLE}
             </a>
-            . Marca, fotos e conteúdo pertencem à RB Manutenção em Cadeiras. O
-            número de WhatsApp desta prévia é ilustrativo e será substituído
-            pelo oficial.
+            . Marca, fotos e conteúdo pertencem à RB Manutenção em Cadeiras.
           </p>
         </div>
       </footer>
