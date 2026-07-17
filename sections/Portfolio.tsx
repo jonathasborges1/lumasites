@@ -79,7 +79,7 @@ export function Portfolio() {
           </div>
 
           {wideProjects.length > 0 && (
-            <div className="grid gap-4 sm:grid-cols-2 md:gap-5">
+            <div className="grid gap-4 sm:grid-cols-2 md:gap-5 lg:grid-cols-3">
               {wideProjects.map((item, index) => (
                 <PortfolioCard
                   key={item.id}

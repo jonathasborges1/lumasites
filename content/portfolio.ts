@@ -48,4 +48,12 @@ export const portfolioItems: PortfolioItem[] = [
     tag: "Direito",
     url: "https://rodriguesecastroadvocacia.com.br",
   },
+  {
+    id: "rosineideborges-01",
+    image: "/thumbnails/rosineide-borges-site.jpg",
+    client: "Rosineide B. Cavalcante",
+    category: "Psicologia",
+    tag: "Saúde Mental",
+    url: "https://rosineideborges.com.br/",
+  },
 ];
