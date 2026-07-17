@@ -1,0 +1,12 @@
+me ajude a otimizar o prompt abaixo
+
+precisamos criar previa conceitual com base na fonte: https://luminavitafinance.manus.space
+voce deve fazer uma analise inicial e verifique o pode ser melhorado para implementar na sequencia
+voce deve extrair os recursos textuais e visuais para usar na previa
+voce deve agregar valor e fazer algo melhor em relacao a fonte 
+voce deve seguir o padrao de header e footer utilizado em previas anteriores
+busque referencias externas com objetivo de agregar valor a previa
+pense e mais diretivas que voce pode pensar para inserir na previa conceitual
+gere seu resultado em formato .md
+
+ao final me pergunte se eu aprovo sua sugestao para seguir com a implementacao
