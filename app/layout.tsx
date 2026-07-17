@@ -14,6 +14,7 @@ const sameAs = [
   `https://wa.me/${site.whatsapp.number}`,
   site.social.instagram,
   site.social.github,
+  "https://maps.app.goo.gl/aDhJpbGaD4cGPYJn7",
 ];
 
 const display = Cinzel({
@@ -167,6 +168,7 @@ export default function RootLayout({
                     addressCountry: "BR",
                   },
                   priceRange: "R$ 497 - R$ 2.000",
+                  hasMap: "https://maps.app.goo.gl/aDhJpbGaD4cGPYJn7",
                   hasOfferCatalog: {
                     "@type": "OfferCatalog",
                     name: "Serviços de criação de sites",
