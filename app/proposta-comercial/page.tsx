@@ -7,6 +7,14 @@ import { ProposalGrid } from "./ProposalGrid";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   title: "Portfólio de Sites Profissionais | Agência de Sites em Manaus",
   description:
     "Sites criados pela Luma Sites para advocacia, segurança veicular, imobiliário, beleza e marketing — em Manaus e em todo o Brasil. Veja os projetos e os bastidores de cada um.",
