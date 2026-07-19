@@ -1,13 +1,8 @@
 export const servicePages = [
   {
-    href: "/criar-site-em-manaus",
-    label: "Criar site",
-    description: "Começa aqui — veja tipos, prazos e valores.",
-  },
-  {
-    href: "/site-profissional-manaus",
-    label: "Site de uma página",
-    description: "Para autônomos e prestadores que precisam de presença e contato.",
+    href: "/#inicio",
+    label: "Criação de sites",
+    description: "Conheça formatos, prazos e valores para criar seu site em Manaus.",
   },
   {
     href: "/landing-page-manaus",
@@ -18,11 +13,6 @@ export const servicePages = [
     href: "/site-institucional-manaus",
     label: "Site completo",
     description: "Várias páginas para apresentar empresa, equipe e serviços.",
-  },
-  {
-    href: "/desenvolvimento-de-sites-manaus",
-    label: "Site técnico / SEO",
-    description: "Performance, velocidade e posicionamento no Google local.",
   },
 ];
 

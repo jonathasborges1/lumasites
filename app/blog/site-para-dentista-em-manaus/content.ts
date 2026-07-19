@@ -398,7 +398,7 @@ export const internalLinks: InternalLink[] = [
     text: "Como psicólogos em Manaus podem construir uma presença digital ética e ser encontrados nas buscas locais.",
   },
   {
-    href: "/criar-site-em-manaus",
+    href: "/",
     label: "Criar site em Manaus",
     text: "Conheça formatos, prazos e caminhos para publicar uma presença digital própria em Manaus.",
   },

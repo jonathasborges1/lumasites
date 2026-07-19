@@ -385,7 +385,7 @@ export const internalLinks: InternalLink[] = [
     text: "Como dentistas e clínicas odontológicas em Manaus podem fortalecer presença no Google e gerar agendamentos qualificados.",
   },
   {
-    href: "/site-profissional-manaus",
+    href: "/site-institucional-manaus",
     label: "Site profissional em Manaus",
     text: "Veja como um site profissional transmite credibilidade antes do primeiro contato com o cliente.",
   },

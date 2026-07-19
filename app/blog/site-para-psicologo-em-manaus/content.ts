@@ -389,7 +389,7 @@ export const internalLinks: InternalLink[] = [
     text: "Entenda os sinais locais que ajudam um profissional a ser encontrado nas buscas do Google.",
   },
   {
-    href: "/criar-site-em-manaus",
+    href: "/",
     label: "Criar site em Manaus",
     text: "Conheça formatos, prazos e caminhos para publicar uma presença digital própria.",
   },

@@ -398,12 +398,12 @@ export type InternalLink = {
 
 export const internalLinks: InternalLink[] = [
   {
-    href: "/criar-site-em-manaus",
+    href: "/",
     label: "Criar site em Manaus",
     text: "Conheça os formatos que oferecemos, prazos reais e como funciona o processo do briefing à publicação.",
   },
   {
-    href: "/site-profissional-manaus",
+    href: "/site-institucional-manaus",
     label: "Site profissional em Manaus",
     text: "Veja como um site profissional transmite credibilidade antes do primeiro contato com o cliente.",
   },

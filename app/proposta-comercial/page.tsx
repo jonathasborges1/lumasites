@@ -181,7 +181,7 @@ export default async function ProposalsIndexPage() {
               </p>
               <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
                 <Link
-                  href="/criar-site-em-manaus"
+                  href="/"
                   className="font-medium text-cyan-300 transition-colors hover:text-white"
                 >
                   Criar site em Manaus →

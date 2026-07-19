@@ -499,7 +499,7 @@ export default function ComoAparecerNoGoogleEmManausPage() {
                   <MessageCircle size={18} />
                   Falar pelo WhatsApp
                 </GlowButton>
-                <GlowButton href="/criar-site-em-manaus" variant="ghost" size="lg">
+                <GlowButton href="/" variant="ghost" size="lg">
                   Ver opções e valores
                   <ArrowRight size={16} />
                 </GlowButton>

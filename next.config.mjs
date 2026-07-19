@@ -28,6 +28,22 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // Consolidate synonymous commercial intents on the homepage pillar.
+      {
+        source: "/criar-site-em-manaus",
+        destination: "/",
+        statusCode: 301,
+      },
+      {
+        source: "/desenvolvimento-de-sites-manaus",
+        destination: "/",
+        statusCode: 301,
+      },
+      {
+        source: "/site-profissional-manaus",
+        destination: "/",
+        statusCode: 301,
+      },
       // Post reposicionado para intenção de preço (evita canibalização com /criar-site-em-manaus).
       {
         source: "/blog/criacao-de-sites-em-manaus",

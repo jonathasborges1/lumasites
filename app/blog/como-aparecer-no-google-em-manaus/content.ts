@@ -293,12 +293,12 @@ export const internalLinks: InternalLink[] = [
     text: "Como advogados e escritórios em Manaus podem construir presença digital profissional e captar mais clientes.",
   },
   {
-    href: "/criar-site-em-manaus",
+    href: "/",
     label: "Criar site em Manaus",
     text: "Conheça formatos, prazos e caminhos para publicar uma presença digital própria em Manaus.",
   },
   {
-    href: "/site-profissional-manaus",
+    href: "/site-institucional-manaus",
     label: "Site profissional em Manaus",
     text: "Veja como um site profissional transmite credibilidade antes do primeiro contato com o cliente.",
   },

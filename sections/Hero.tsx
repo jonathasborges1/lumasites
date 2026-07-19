@@ -154,7 +154,7 @@ export function Hero() {
                 textShadow: "0 1px 0 rgba(0,0,0,.35)",
               }}
             >
-              Tire seu negócio
+              Criação de sites em Manaus
               <br />
               <span
                 className="inline-block bg-clip-text text-transparent animate-shimmer-slow"
@@ -164,22 +164,21 @@ export function Hero() {
                   backgroundSize: "200% 100%",
                 }}
               >
-                da escuridão digital
+                para destacar seu negócio
               </span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={300} duration={900}>
             <p className="mt-4 sm:mt-5 text-[15px] md:text-lg text-ink-secondary max-w-2xl mx-auto leading-relaxed">
-              Criamos sites{" "}
+              Criamos sites em Manaus{" "}
               <span className="text-glow-aqua font-medium">
                 rápidos, profissionais
               </span>{" "}
-              e sob medida em <span className="text-ink-primary">Manaus</span>.
+              e sob medida para o seu negócio.
               Seu cliente te
               <span className="text-glow-aqua font-medium"> encontra</span>.
               Você <span className="text-glow-aqua font-medium">cresce</span>.
-              Sem enrolação. Sem taxa escondida.
             </p>
           </ScrollReveal>
 

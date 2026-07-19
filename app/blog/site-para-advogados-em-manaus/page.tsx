@@ -520,7 +520,7 @@ export default function SiteParaAdvogadosEmManausPage() {
                   <MessageCircle size={18} />
                   Conversar no WhatsApp
                 </GlowButton>
-                <GlowButton href="/site-profissional-manaus" variant="ghost" size="lg">
+                <GlowButton href="/site-institucional-manaus" variant="ghost" size="lg">
                   Ver opções de site
                   <ArrowRight size={16} />
                 </GlowButton>

@@ -400,7 +400,7 @@ export const internalLinks: InternalLink[] = [
     text: "Como profissionais de saúde em Manaus podem fortalecer presença no Google e atrair pacientes qualificados.",
   },
   {
-    href: "/site-profissional-manaus",
+    href: "/site-institucional-manaus",
     label: "Site de uma página em Manaus",
     text: "Conheça o formato mais indicado para personal trainers: uma página comercial com foco em credibilidade e contato.",
   },
