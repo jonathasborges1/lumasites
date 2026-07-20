@@ -14,6 +14,7 @@ import {
 import { GlowButton } from "@/components/GlowButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { breadcrumbSchema } from "@/components/Breadcrumb";
+import { AuthorBio } from "@/components/AuthorBio";
 import { site } from "@/content/site";
 import { Footer } from "@/sections/Footer";
 import { Header } from "@/sections/Header";
@@ -366,6 +367,14 @@ export default function SiteParaPersonalTrainerEmManausPage() {
                   </div>
                 </div>
               </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        <section className="py-4">
+          <div className="mx-auto max-w-4xl px-5 md:px-8">
+            <ScrollReveal>
+              <AuthorBio />
             </ScrollReveal>
           </div>
         </section>

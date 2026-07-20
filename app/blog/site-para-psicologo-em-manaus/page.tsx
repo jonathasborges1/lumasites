@@ -14,6 +14,8 @@ import {
 import { GlowButton } from "@/components/GlowButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { breadcrumbSchema } from "@/components/Breadcrumb";
+import { AuthorBio } from "@/components/AuthorBio";
+import { CaseHighlight } from "@/components/CaseHighlight";
 import { site } from "@/content/site";
 import { Footer } from "@/sections/Footer";
 import { Header } from "@/sections/Header";
@@ -345,7 +347,7 @@ export default function SiteParaPsicologoEmManausPage() {
             </div>
 
             <ScrollReveal>
-              <div className="rounded-2xl border border-accent-amber/20 bg-accent-amber/5 p-6 md:p-8">
+              <div className="mb-10 rounded-2xl border border-accent-amber/20 bg-accent-amber/5 p-6 md:p-8">
                 <div className="flex items-start gap-4">
                   <Sparkles size={20} className="mt-1 shrink-0 text-accent-amber" />
                   <div>
@@ -360,6 +362,27 @@ export default function SiteParaPsicologoEmManausPage() {
                   </div>
                 </div>
               </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={90}>
+              <CaseHighlight
+                eyebrow="Projeto de psicologia entregue pela Luma Sites"
+                cases={[
+                  {
+                    client: "Rosineide B. Cavalcante",
+                    detail: "Site de psicologia com foco em saúde mental e primeiro contato claro.",
+                    url: "https://rosineideborges.com.br/",
+                  },
+                ]}
+              />
+            </ScrollReveal>
+          </div>
+        </section>
+
+        <section className="py-4">
+          <div className="mx-auto max-w-4xl px-5 md:px-8">
+            <ScrollReveal>
+              <AuthorBio />
             </ScrollReveal>
           </div>
         </section>
