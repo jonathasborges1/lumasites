@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Proposta Comercial | Dra. Tatiane Vasconcelos — Luma Sites",
+  title: "Proposta Comercial | Dra. Tatiane Vasconcelos",
   description:
     "Diagnóstico, direção estratégica, conceito visual, escopo e investimento para o novo site institucional da Dra. Tatiane Vasconcelos das Graças.",
   robots: {

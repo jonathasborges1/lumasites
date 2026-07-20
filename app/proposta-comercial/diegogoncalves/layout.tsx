@@ -17,7 +17,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Proposta Comercial | Diego Gonçalves Advocacia Criminal — Luma Sites",
+  title: "Proposta Comercial | Diego Gonçalves Advocacia Criminal",
   description:
     "Diagnóstico, direção estratégica, conceito visual, escopo e investimento para o novo site do Dr. Diego Gonçalves — advocacia criminal especializada em Manaus/AM.",
   robots: {

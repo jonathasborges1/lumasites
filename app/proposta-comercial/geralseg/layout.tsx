@@ -21,7 +21,7 @@ const description =
 const ogImage = "/images/geralseg/og-image.jpg";
 
 export const metadata: Metadata = {
-  title: "Proposta Comercial | GeraSeg Rastreamento Veicular - Luma Sites",
+  title: "Proposta Comercial | GeraSeg Rastreamento Veicular",
   description:
     "Direcao estrategica, conceito visual e escopo para o novo site da GeraSeg - solucoes em rastreamento veicular, monitoramento de frotas e videomonitoramento.",
   robots: {

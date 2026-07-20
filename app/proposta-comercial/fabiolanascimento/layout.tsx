@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Proposta Comercial | Fabiola Nascimento Semijoias — Luma Sites",
+  title: "Proposta Comercial | Fabiola Nascimento Semijoias",
   description:
     "Diagnóstico, direção estratégica, conceito visual, escopo e investimento para o novo site da Fabiola Nascimento — semijoias de fabricação própria com programa de revendedoras.",
   robots: {

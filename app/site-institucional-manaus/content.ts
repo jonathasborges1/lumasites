@@ -29,7 +29,7 @@ export const campaignWhatsApp = whatsappLink({
 });
 
 export const pageMetadata: Metadata = {
-  title: "Site Institucional em Manaus | Luma Sites",
+  title: "Site Institucional em Manaus",
   description:
     "Criamos sites institucionais em Manaus com múltiplas páginas, SEO local e identidade visual própria. Presença digital completa para sua empresa.",
   alternates: {

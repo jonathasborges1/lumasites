@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Proposta Comercial | Dr. Juraci Nunes — Luma Sites",
+  title: "Proposta Comercial | Dr. Juraci Nunes",
   description:
     "Diagnóstico, direção estratégica, conceito visual, escopo e investimento para o novo site institucional do Dr. Juraci Nunes.",
   robots: {
