@@ -236,27 +236,19 @@ export const benefits: Benefit[] = [
 
 export const articleSections: SectionBlock[] = [
   {
-    h2: "Como novos alunos encontram personal trainers antes de contratar",
+    h2: "A decisão de contratar nasce numa dor, mas se confirma no Google",
     paragraphs: [
-      "A decisão de contratar um personal trainer raramente começa num post do Instagram. Ela começa numa insatisfação: não estar conseguindo resultados sozinho, sentir dor durante treinos, querer começar a se exercitar mas não saber como, ou simplesmente querer evoluir mais rápido com acompanhamento profissional.",
-      "Esse momento de decisão vai para o Google. Pesquisas como personal trainer em Manaus, educador físico para emagrecimento Manaus, personal trainer domiciliar Parque 10 ou assessoria de treino online são o ponto de entrada de um futuro aluno. Quem não aparece nessas buscas simplesmente não existe para esse cliente.",
-      "Em Manaus, onde o mercado fitness cresceu nos últimos anos e a concorrência entre profissionais aumentou, estar presente no Google não é diferencial — está se tornando requisito para quem quer crescer além da sua rede de contatos imediata.",
+      "A decisão de contratar um personal trainer raramente começa num post do Instagram. Ela começa numa insatisfação: não estar conseguindo resultados sozinho, sentir dor durante treinos, querer começar a se exercitar mas não saber como, ou simplesmente querer evoluir mais rápido com acompanhamento profissional. O post que o futuro aluno viu meses atrás raramente é o gatilho — é o empurrão que o faz abrir o Google quando a insatisfação finalmente pesa mais que a inércia.",
+      "Nesse momento a pesquisa é concreta: personal trainer em Manaus, educador físico para emagrecimento, personal trainer domiciliar Parque 10, assessoria de treino online. Quem não aparece nessas buscas não perde a venda por preço ou por metodologia — perde porque nunca chegou a ser considerado.",
+      "O Instagram continua relevante depois disso, para quem já decidiu e quer ver o dia a dia do trabalho antes de mandar mensagem. Mas o momento que decide se você entra ou não na lista de opções é a busca no Google, não o feed.",
     ],
   },
   {
-    h2: "Por que o Instagram não é suficiente para crescer",
+    h2: "Site próprio é o que sobrevive à mudança de algoritmo",
     paragraphs: [
-      "O Instagram é a principal vitrine de personal trainers — e também a mais frágil. O alcance orgânico caiu significativamente nos últimos anos. Profiles com milhares de seguidores entregam conteúdo para uma fração da base. A plataforma prioriza Reels, depois Stories, depois feed — e essa lógica muda sem aviso.",
-      "Há outro problema: o Instagram atinge quem já te segue. O site atinge quem ainda não te conhece mas está procurando contratar. São públicos com intenções completamente diferentes. Um é relacionamento; o outro é aquisição.",
-      "Para personal trainers que dependem exclusivamente das redes sociais, qualquer mudança de algoritmo ou queda de engajamento impacta diretamente o fluxo de novos alunos. Um site é uma base própria, indexada pelo Google, que funciona independentemente de quantas vezes você posta por semana.",
-    ],
-  },
-  {
-    h2: "Como um site transmite credibilidade antes da primeira conversa",
-    paragraphs: [
-      "Contratar um personal trainer é uma decisão que envolve confiança: o aluno vai compartilhar limitações físicas, objetivos pessoais e, muitas vezes, inseguranças. Essa confiança começa antes de qualquer conversa.",
-      "Um site profissional apresenta o educador físico com clareza: CREF, formação, especializações, metodologia de trabalho, modalidades atendidas e área de atendimento. Quando o aluno sabe com quem vai treinar antes do primeiro contato, a fricção cai e a qualidade do lead sobe.",
-      "Design e linguagem também comunicam. Um site desorganizado, com informações incompletas ou layout amador sinaliza ao visitante que talvez o profissionalismo do treino seja parecido. Um site limpo, rápido e bem estruturado transmite o mesmo padrão de cuidado que o aluno espera encontrar nas sessões.",
+      "O Instagram é a vitrine mais usada por personal trainers — e também a mais frágil. O alcance orgânico caiu nos últimos anos, a plataforma prioriza Reels sobre feed sem aviso prévio, e um perfil com milhares de seguidores entrega conteúdo para uma fração da base. Nada disso está sob controle do profissional.",
+      "A diferença de público é o ponto central: o Instagram atinge quem já te segue — é relacionamento. O site é encontrado por quem ainda não te conhece e já decidiu que quer contratar — é aquisição. Confundir os dois canais faz o personal trainer investir tempo demais em quem já é próximo e de menos em quem está pronto para fechar.",
+      "Contratar também é uma decisão de confiança: o aluno vai compartilhar limitações físicas e inseguranças com quem vai acompanhá-lo. Um site que apresenta CREF, formação, metodologia e modalidades com clareza resolve essa checagem antes da primeira mensagem — um site desorganizado ou incompleto sinaliza, sem querer, que o acompanhamento do treino pode ter o mesmo padrão.",
     ],
   },
   {
@@ -390,9 +382,9 @@ export const localDifferentials: Benefit[] = [
 
 export const internalLinks: InternalLink[] = [
   {
-    href: "/proposta-comercial/alexserich",
-    label: "Exemplo: Alex Serich — Método Núcleo®",
-    text: "Veja um site real criado pela Luma Sites para personal trainer em Manaus com foco em consultoria fitness premium.",
+    href: "/blog/quanto-custa-um-site-em-manaus",
+    label: "Quanto Custa um Site em Manaus",
+    text: "Guia de preços real: faixas de valor por tipo de site, custos fixos e como comparar orçamentos.",
   },
   {
     href: "/blog/site-para-medico-em-manaus",

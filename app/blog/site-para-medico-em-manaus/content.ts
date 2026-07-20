@@ -156,7 +156,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Médico pode ter site profissional?",
-    a: "Sim. O CFM permite que médicos tenham site profissional, desde que a comunicação respeite o Código de Ética Médica. Isso significa evitar promessas de cura, não usar depoimentos de pacientes e manter linguagem informativa e ética. O site pode apresentar formação, especialidade, local de atendimento e canais de contato.",
+    a: "Sim. A Resolução CFM nº 2.336/2023, em vigor desde março de 2024, permite que médicos tenham site profissional, mas proíbe depoimentos de pacientes, promessas de resultado e comparações com outros profissionais. O site pode apresentar formação, CRM, especialidade, RQE quando houver, local de atendimento e canais de contato.",
   },
   {
     q: "Um site ajuda médico a conseguir pacientes pelo Google?",
@@ -218,75 +218,50 @@ export const benefits: Benefit[] = [
 
 export const articleSections: SectionBlock[] = [
   {
-    h2: "Por que médicos precisam aparecer no Google",
+    h2: "O paciente pesquisa antes de ligar — e a especialidade muda o que ele procura",
     paragraphs: [
-      "O comportamento do paciente mudou. Antes de ligar para um consultório ou aceitar uma indicação, a maioria das pessoas abre o Google para verificar informações. Procuram o nome do médico, a especialidade, o endereço, os horários e qualquer informação que ajude a confirmar que estão diante de um profissional sério.",
-      "Quando um médico não aparece no Google, ou aparece apenas com dados incompletos em plataformas de terceiros, esse momento de validação falha. O paciente pode desistir da busca, ir para outro profissional ou simplesmente não conseguir encontrar as informações que precisava para tomar uma decisão.",
-      "Para médicos em Manaus, o contexto local é ainda mais relevante. A cidade tem bairros distantes, deslocamento difícil e pacientes que priorizam proximidade ou atendimento por especialista disponível na cidade. Um site para médico em Manaus ajuda a capturar essa intenção de busca antes que o paciente escolha outra opção.",
+      "Antes de ligar para um consultório ou aceitar uma indicação, a maioria das pessoas abre o Google. Mas o que cada paciente pesquisa depende da especialidade e do momento. Quem procura um pediatra costuma pesquisar pelo bairro e pela indicação de outras mães. Quem procura um cardiologista ou um psiquiatra pesquisa o nome do médico depois de receber uma indicação, para confirmar formação e CRM antes de marcar. Quem procura um dermatologista para um procedimento estético compara dois ou três profissionais antes de decidir.",
+      "Quando o médico não aparece nessa pesquisa, ou aparece só com dados incompletos em plataformas de terceiros, esse momento de checagem falha silenciosamente — o paciente não avisa que desistiu, simplesmente não liga. Em Manaus, com bairros distantes e deslocamento difícil, essa checagem inclui também a pergunta prática de que zona da cidade o médico atende, não só quem ele é.",
+      "Isso significa que um site para médico em Manaus não pode ser genérico por especialidade. A página de um pediatra precisa responder dúvidas diferentes das de um psiquiatra ou de um dermatologista, porque o paciente que chega até ela está numa etapa diferente da decisão.",
     ],
   },
   {
-    h2: "Instagram sozinho não é suficiente para médicos",
+    h2: "Por que o Instagram não resolve essa checagem",
     paragraphs: [
-      "O Instagram pode ser uma ferramenta útil para educação em saúde e relacionamento com a audiência. Mas não substitui um site profissional. No feed, o conteúdo disputa atenção com entretenimento, notícias e anúncios. Um post educativo hoje some amanhã.",
-      "Existe também um fator de privacidade importante. Muitos pacientes preferem pesquisar discretamente antes de entrar em contato com um médico. Seguir um perfil publicamente pode não ser o que eles querem fazer antes de uma consulta. O site oferece uma experiência de busca discreta, direta e sem exposição social.",
-      "A diferença prática é simples: o Instagram atende quem já te encontrou. O site ajuda pacientes que ainda não te conhecem a te encontrar no Google.",
+      "O Instagram é útil para educação em saúde e relacionamento com quem já segue o perfil — mas atende um público diferente do que faz a checagem antes de marcar consulta. No feed, o conteúdo disputa atenção com entretenimento e anúncios, e um post educativo de hoje some do alcance amanhã.",
+      "Há também um fator que a medicina tem mais do que outras áreas: muitos pacientes preferem pesquisar discretamente antes de agendar, principalmente em especialidades como psiquiatria, ginecologia ou urologia. Seguir um perfil publicamente para depois marcar consulta expõe uma decisão que o paciente quer manter privada. O site permite essa checagem sem exposição social — o paciente lê, confirma e decide sem deixar rastro visível.",
+      "Na prática: o Instagram atende quem já te encontrou. O site é o que aparece para quem ainda não te conhece e está decidindo, no Google, se liga ou não.",
     ],
   },
   {
-    h2: "Como um site profissional transmite credibilidade médica",
+    h2: "O que o site pode mostrar — e o que a Resolução CFM nº 2.336/2023 não permite",
     paragraphs: [
-      "A medicina é uma das áreas onde credibilidade não é opcional. O paciente precisa sentir segurança antes de confiar alguém sua saúde. Um site bem estruturado contribui para essa percepção ao apresentar formação, registro no CRM, especialidade, local de atendimento e as informações que o paciente precisa antes de decidir.",
-      "Um bom site para médico não precisa ser complexo. Precisa ser claro, objetivo e tecnicamente confiável. O design deve transmitir seriedade. Os textos devem informar sem sensacionalismo. A estrutura deve facilitar o próximo passo — seja ligar, mandar mensagem ou encontrar o consultório.",
-      "A experiência de navegação também comunica. Um site que carrega rápido, funciona bem no celular e tem informações organizadas transmite o mesmo cuidado que o paciente espera encontrar no atendimento. Um site lento ou confuso gera dúvida antes mesmo da primeira consulta.",
+      "A publicidade médica é regulada pela Resolução CFM nº 2.336/2023, em vigor desde março de 2024, fiscalizada pelas Comissões de Divulgação de Assuntos Médicos (Codame) dos conselhos regionais. Ela é mais restritiva do que a publicidade de várias outras profissões de saúde: nenhum depoimento de paciente é permitido, mesmo com autorização, nenhuma promessa de resultado, nenhuma comparação com outros médicos e nenhuma foto de antes e depois de procedimento.",
+      "O que sobra é justamente o que constrói confiança sem depender de prova social: formação, CRM, especialidade, RQE quando houver, local de atendimento, convênios e conteúdo educativo sobre a especialidade. Um site que tenta contornar essas regras com linguagem promocional não só arrisca notificação do conselho — soa menos crível para o próprio paciente, que reconhece esse tom como propaganda, não como orientação de especialista.",
+      "Essa restrição, bem entendida, vira vantagem: como nenhum médico pode competir por depoimento ou promessa, quem tem o site mais claro sobre especialidade, formação e local de atendimento sai na frente — não por marketing mais agressivo, mas por informação mais completa.",
     ],
   },
   {
-    h2: "Vantagens do SEO local para médicos em Manaus",
+    h2: "SEO local: aparecer para a especialidade certa, no bairro certo",
     paragraphs: [
-      "SEO local é o conjunto de técnicas que faz um site aparecer quando alguém pesquisa por um serviço em uma cidade ou região específica. Para médicos, isso significa aparecer para buscas como dermatologista em Manaus, médico no Adrianópolis, cardiologista em Manaus ou pediatra no Dom Pedro.",
-      "Para o Google ranquear bem uma página médica, ela precisa de contexto local claro: cidade, especialidade, bairro de atendimento, consistência com o Perfil da Empresa no Google e conteúdo relevante sobre a especialidade. Um site genérico, sem referências locais, compete em desvantagem.",
-      "A criação de site para médico em Manaus precisa considerar isso desde a estrutura. Títulos, páginas e textos pensados para busca local são o que fazem a diferença entre aparecer na primeira página do Google ou ficar invisível para pacientes que estão ativamente procurando um especialista.",
+      "SEO local é o conjunto de técnicas que faz um site aparecer quando alguém pesquisa por um serviço numa cidade ou região específica. Para médicos, isso significa aparecer em buscas como dermatologista em Manaus, cardiologista no Adrianópolis ou pediatra no Dom Pedro — cada uma delas uma combinação de especialidade e bairro que o Google trata como intenção própria.",
+      "Para ranquear bem, uma página médica precisa de contexto local explícito — cidade, especialidade, bairro de atendimento — e consistência com o Perfil da Empresa no Google. O Google mostra primeiro o Local Pack (mapa com avaliações) e depois os resultados orgânicos; médicos com site otimizado aparecem nos dois, enquanto quem depende só de cadastros em plataformas de terceiros perde controle sobre as informações exibidas.",
+      "Isso muda a forma como o site deve ser estruturado desde o início: títulos, páginas e textos pensados para a combinação especialidade + bairro, não um site genérico que trata Manaus como detalhe de rodapé.",
     ],
   },
   {
-    h2: "Como pacientes encontram médicos no Google",
+    h2: "Site rápido, técnico e organizado — sem virar prontuário",
     paragraphs: [
-      "A busca geralmente começa com um sintoma, uma especialidade ou uma indicação. O paciente pesquisa algo como neurologista em Manaus, médico para ansiedade em Manaus ou ortopedista no Adrianópolis. Em alguns casos, pesquisa diretamente o nome do profissional após receber uma recomendação.",
-      "O Google apresenta resultados locais primeiro — o chamado Local Pack, com mapa e avaliações. Depois, os resultados orgânicos com sites. Médicos que têm site otimizado aparecem nas duas frentes. Quem depende apenas de cadastros em plataformas de terceiros aparece com menos controle sobre as informações apresentadas.",
-      "Estar presente com site próprio significa que o paciente encontra exatamente o que você quer que ele encontre: especialidade, formação, localização, formas de contato e o caminho para agendar.",
+      "Velocidade de carregamento e experiência mobile pesam no ranqueamento do Google, e no celular — onde grande parte das buscas de saúde acontece — um site lento perde o paciente antes de ele ler qualquer informação. Isso soma-se à estrutura técnica: hierarquia de títulos, meta description clara, sitemap e dados estruturados Schema.org para médicos ajudam o Google a entender do que a página trata.",
+      "Mas a estrutura técnica não substitui a decisão editorial mais importante: o que colocar. Um site para médico não precisa listar todo procedimento que o CFM permite mencionar — precisa focar no que o paciente da especialidade realmente pesquisa antes de marcar. Menos página genérica, mais página que responde a uma dúvida real.",
+      "Um site para médico em Manaus une três elementos: conteúdo claro sobre a especialidade, comunicação dentro da Resolução 2.336/2023, e base técnica correta para SEO local. Faltando um dos três, o conjunto perde força mesmo que os outros dois estejam bem feitos.",
     ],
   },
   {
-    h2: "Diferença entre redes sociais e site profissional para médicos",
+    h2: "Do clique ao agendamento: reduzir fricção sem forçar conversão",
     paragraphs: [
-      "A rede social é um canal de relacionamento e produção de conteúdo. O site é um ativo digital permanente. No Instagram, você publica dicas de saúde, responde dúvidas e constrói familiaridade com a audiência. No site, você estrutura autoridade, organiza informações essenciais e cria uma presença que o Google pode indexar.",
-      "Outra distinção relevante é o controle. Uma plataforma social pode mudar seus algoritmos, reduzir alcance ou até encerrar sua conta. O site é seu. O domínio é seu. O conteúdo permanece acessível independentemente de qualquer plataforma.",
-      "Para médicos, isso tem implicações práticas: pacientes com perfil mais criterioso tendem a confiar mais em profissionais com presença estruturada no próprio domínio do que apenas em redes sociais.",
-    ],
-  },
-  {
-    h2: "Site rápido e otimizado influencia no Google?",
-    paragraphs: [
-      "Sim. Velocidade de carregamento e experiência do usuário são fatores considerados pelo Google ao ranquear páginas. Um site lento pode fazer o paciente abandonar antes de ler o conteúdo. No celular, onde grande parte das buscas de saúde acontece, isso é ainda mais crítico.",
-      "Além da velocidade, a estrutura técnica conta: títulos organizados em hierarquia, meta description clara, URL amigável, sitemap, dados estruturados Schema.org para médicos e boa adaptação mobile. Esses elementos não substituem conteúdo relevante, mas ajudam o Google a encontrar e entender a página com mais facilidade.",
-      "Um site para médico em Manaus precisa unir três elementos: conteúdo claro sobre a especialidade, design profissional que transmita confiança e base técnica correta para SEO local. A ausência de qualquer um desses enfraquece o conjunto.",
-    ],
-  },
-  {
-    h2: "Como gerar agendamentos através do Google",
-    paragraphs: [
-      "Aparecer no Google é o primeiro passo. Para converter visitas em agendamentos, o site precisa guiar o paciente com clareza. Isso não significa CTAs agressivos. Na medicina, a conversão deve ser natural: o paciente entende a especialidade, sente segurança e encontra um caminho simples para entrar em contato.",
-      "Um botão de WhatsApp ou telefone visível, informação sobre convênios, horários e localização reduz a fricção. O paciente que chega ao site já tem uma intenção. Ele precisa de informação suficiente para tomar a decisão de entrar em contato — não de obstáculos.",
-      "Explicar o que acontece após o primeiro contato também ajuda. Se o paciente manda mensagem, ele quer saber como funciona o agendamento, se há consulta inicial, como é o atendimento. Um site que antecipa essas dúvidas chega antes do paciente precisar perguntar.",
-    ],
-  },
-  {
-    h2: "Marketing digital para médico em Manaus com ética e responsabilidade",
-    paragraphs: [
-      "Marketing digital para médico precisa respeitar o Código de Ética Médica do CFM. Isso significa não prometer resultados, não usar depoimentos de pacientes, não fazer comparações com outros profissionais e não usar linguagem sensacionalista. Dentro dessas diretrizes, há muito espaço para uma presença digital eficiente.",
-      "Conteúdo educativo sobre a especialidade, esclarecimento de dúvidas comuns, informações sobre procedimentos e orientações preventivas são estratégias que ampliam a presença orgânica com responsabilidade. Cada artigo publicado é uma nova oportunidade de aparecer no Google para buscas relacionadas à especialidade.",
-      "Para médicos em Manaus, isso representa uma vantagem competitiva real: poucos profissionais da cidade têm sites com conteúdo otimizado para buscas locais. Quem investe nessa base agora constrói presença que se fortalece com o tempo.",
+      "Aparecer no Google é o primeiro passo; converter a visita em agendamento depende de reduzir fricção, não de CTA agressivo — o que, aliás, esbarraria na Resolução 2.336/2023. Um botão de WhatsApp ou telefone visível, informação sobre convênios, horários e localização já resolve a maior parte da decisão para um paciente que chegou com intenção real.",
+      "Explicar o que acontece depois do primeiro contato também ajuda: se há retorno incluso, como funciona a marcação, quanto tempo dura a consulta inicial. Um site que antecipa essas dúvidas evita que a secretária gaste tempo respondendo pelo WhatsApp o que já poderia estar na página — e chega antes do paciente precisar perguntar.",
     ],
   },
 ];
