@@ -2,9 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { LoadingScreen } from "@/components/LoadingScreen";
 
-const INITIAL_MIN_MS = 200;
 const ROUTE_SHOW_DELAY_MS = 160;
 const NAV_MIN_MS = 50;
 const ROUTE_FAILSAFE_MS = 2500;
@@ -40,21 +38,14 @@ function NavProgressBar({ completing }: { completing: boolean }) {
 }
 
 export function GlobalLoadingOverlay() {
-  const [visible, setVisible] = useState(true);
-  const [mode, setMode] = useState<"boot" | "route">("boot");
+  const [visible, setVisible] = useState(false);
   const [completing, setCompleting] = useState(false);
   const pathname = usePathname();
   const startedAtRef = useRef<number>(Date.now());
-  const bootHandledRef = useRef(false);
   const hideTimerRef = useRef<number | null>(null);
   const routeShowTimerRef = useRef<number | null>(null);
   const settledRef = useRef(false);
   const waitForSettledRef = useRef(false);
-  const modeRef = useRef<"boot" | "route">("boot");
-
-  useEffect(() => {
-    modeRef.current = mode;
-  }, [mode]);
 
   const hideWithMinimum = (minimumMs: number) => {
     const elapsed = Date.now() - startedAtRef.current;
@@ -66,31 +57,13 @@ export function GlobalLoadingOverlay() {
 
     hideTimerRef.current = window.setTimeout(() => {
       hideTimerRef.current = null;
-      if (modeRef.current === "route") {
-        setCompleting(true);
-        window.setTimeout(() => {
-          setVisible(false);
-          setCompleting(false);
-        }, 220);
-      } else {
-        window.requestAnimationFrame(() => {
-          window.requestAnimationFrame(() => {
-            setVisible(false);
-          });
-        });
-      }
+      setCompleting(true);
+      window.setTimeout(() => {
+        setVisible(false);
+        setCompleting(false);
+      }, 220);
     }, remaining);
   };
-
-  useEffect(() => {
-    const frame = window.requestAnimationFrame(() => {
-      if (bootHandledRef.current) return;
-      bootHandledRef.current = true;
-      hideWithMinimum(INITIAL_MIN_MS);
-    });
-
-    return () => window.cancelAnimationFrame(frame);
-  }, []);
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
@@ -138,7 +111,6 @@ export function GlobalLoadingOverlay() {
       routeShowTimerRef.current = window.setTimeout(() => {
         routeShowTimerRef.current = null;
         setCompleting(false);
-        setMode("route");
         setVisible(true);
       }, ROUTE_SHOW_DELAY_MS);
     };
@@ -159,22 +131,20 @@ export function GlobalLoadingOverlay() {
   }, []);
 
   useEffect(() => {
-    if (!bootHandledRef.current) return;
-
     if (routeShowTimerRef.current) {
       window.clearTimeout(routeShowTimerRef.current);
       routeShowTimerRef.current = null;
     }
 
-    if (mode === "route" && waitForSettledRef.current && !settledRef.current) {
+    if (waitForSettledRef.current && !settledRef.current) {
       return;
     }
 
-    hideWithMinimum(mode === "boot" ? INITIAL_MIN_MS : NAV_MIN_MS);
+    hideWithMinimum(NAV_MIN_MS);
   }, [pathname]);
 
   useEffect(() => {
-    if (!visible || mode !== "route") return;
+    if (!visible) return;
     if (waitForSettledRef.current && !settledRef.current) return;
 
     const failsafe = window.setTimeout(() => {
@@ -182,7 +152,7 @@ export function GlobalLoadingOverlay() {
     }, ROUTE_FAILSAFE_MS);
 
     return () => window.clearTimeout(failsafe);
-  }, [visible, mode, pathname]);
+  }, [visible, pathname]);
 
   useEffect(() => {
     return () => {
@@ -197,15 +167,5 @@ export function GlobalLoadingOverlay() {
 
   if (!visible) return null;
 
-  if (mode === "route") {
-    return <NavProgressBar completing={completing} />;
-  }
-
-  return (
-    <LoadingScreen
-      fullScreen
-      label="Preparando a experiência"
-      hint="Carregando interface, recursos visuais e interações."
-    />
-  );
+  return <NavProgressBar completing={completing} />;
 }

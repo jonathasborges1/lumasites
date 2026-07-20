@@ -22,7 +22,7 @@ export function Counter({
   className = "",
 }: Props) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [value, setValue] = useState(from);
+  const [value, setValue] = useState(to);
   const startedRef = useRef(false);
 
   useEffect(() => {
@@ -35,6 +35,14 @@ export function Counter({
       setValue(to);
       return;
     }
+
+    // Already visible on mount (e.g. above the fold): keep the semantic
+    // final value instead of resetting to `from` and flashing back up.
+    const rect = el.getBoundingClientRect();
+    const alreadyVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (alreadyVisible) return;
+
+    setValue(from);
 
     const observer = new IntersectionObserver(
       ([entry]) => {
