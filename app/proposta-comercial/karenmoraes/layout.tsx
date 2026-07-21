@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function KarenLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`${playfair.variable} ${inter.variable}`} style={{ isolation: "isolate" }}>
+    <div className={`${playfair.variable} ${inter.variable}`} style={{ isolation: "isolate", colorScheme: "light" }}>
       {children}
     </div>
   );
