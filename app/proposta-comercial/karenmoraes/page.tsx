@@ -481,6 +481,7 @@ function Navbar() {
     ["Como Funciona", "#como-funciona"],
     ["Depoimentos", "#depoimentos"],
     ["Dúvidas Frequentes", "#faq"],
+    ["Blog", "/proposta-comercial/karenmoraes/blog"],
     ["Contato", "#contato"],
   ];
 
@@ -558,6 +559,7 @@ function Navbar() {
                 padding: "6px 0",
                 borderBottom: "2px solid transparent",
                 transition: "color .2s,border-color .2s",
+                whiteSpace: "nowrap",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.color = C.wine;
