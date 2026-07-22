@@ -30,9 +30,17 @@ function filePath(slug: string) {
 }
 
 /** Leitura via arquivos do próprio deploy — usada só como retaguarda, caso a
- * API do GitHub esteja fora do ar ou ainda não configurada. */
+ * API do GitHub esteja fora do ar ou ainda não configurada.
+ *
+ * O caminho abaixo precisa ser um literal (não a constante `KM_CONTENT_DIR`
+ * importada de outro módulo): o rastreador de arquivos do Next.js
+ * (@vercel/nft) só resolve `path.join(process.cwd(), "...")` de forma precisa
+ * quando consegue ver o texto literal na própria chamada. Com uma variável
+ * importada, ele não consegue provar o caminho em tempo de build e cai no
+ * modo conservador — varrendo o projeto inteiro (incluindo `.git`) para
+ * dentro do pacote da função serverless. */
 function listPublishedArticlesFromDisk(): Article[] {
-  const dir = path.join(process.cwd(), KM_CONTENT_DIR);
+  const dir = path.join(process.cwd(), "content/karenmoraes/blog");
   if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
@@ -42,7 +50,7 @@ function listPublishedArticlesFromDisk(): Article[] {
 }
 
 function getPublishedArticleFromDisk(slug: string): Article | null {
-  const file = path.join(process.cwd(), filePath(slug));
+  const file = path.join(process.cwd(), "content/karenmoraes/blog", `${slug}.md`);
   if (!fs.existsSync(file)) return null;
   return parseArticle(fs.readFileSync(file, "utf-8"));
 }

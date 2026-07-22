@@ -3,6 +3,7 @@ import { revalidatePath } from "next/cache";
 import { fetchGoogleDocAsMarkdown } from "@/lib/karenmoraes/googleDocs";
 import { convertDocxToMarkdown } from "@/lib/karenmoraes/docx";
 import { deleteArticleAdmin, getArticleAdmin, saveArticleAdmin, saveCoverImage } from "@/lib/karenmoraes/blog";
+import { assertUploadSize } from "@/lib/karenmoraes/config";
 
 export async function PUT(request: NextRequest, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -25,10 +26,13 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
     if (resync && article.source.type === "gdoc") {
       updatedContent = await fetchGoogleDocAsMarkdown(article.source.url);
     } else if (docxFile instanceof File && article.source.type === "docx") {
+      assertUploadSize(docxFile);
       updatedContent = await convertDocxToMarkdown(Buffer.from(await docxFile.arrayBuffer()));
     } else if (typeof content === "string" && content) {
       updatedContent = content;
     }
+
+    if (cover instanceof File) assertUploadSize(cover);
 
     const frontmatter = {
       ...article,

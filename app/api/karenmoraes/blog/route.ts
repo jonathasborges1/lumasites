@@ -10,6 +10,7 @@ import {
   slugify,
 } from "@/lib/karenmoraes/blog";
 import { deriveTitleAndExcerpt } from "@/lib/karenmoraes/extract";
+import { assertUploadSize } from "@/lib/karenmoraes/config";
 
 export async function GET() {
   try {
@@ -64,6 +65,7 @@ export async function POST(request: NextRequest) {
       source: source === "gdoc" ? { type: "gdoc", url: String(googleDocUrl ?? "") } : { type: "docx" },
     };
     if (cover instanceof File) {
+      assertUploadSize(cover);
       frontmatter.cover = await saveCoverImage(slug, cover);
     }
 

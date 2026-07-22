@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { fetchGoogleDocAsMarkdown } from "@/lib/karenmoraes/googleDocs";
 import { convertDocxToMarkdown } from "@/lib/karenmoraes/docx";
 import { deriveTitleAndExcerpt } from "@/lib/karenmoraes/extract";
+import { assertUploadSize } from "@/lib/karenmoraes/config";
 
 export async function POST(request: NextRequest) {
   const form = await request.formData();
@@ -21,6 +22,7 @@ export async function POST(request: NextRequest) {
       if (!(file instanceof File)) {
         return NextResponse.json({ error: "Envie um arquivo .docx" }, { status: 400 });
       }
+      assertUploadSize(file);
       content = await convertDocxToMarkdown(Buffer.from(await file.arrayBuffer()));
     } else {
       return NextResponse.json({ error: "Origem inválida" }, { status: 400 });

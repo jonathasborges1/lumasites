@@ -11,6 +11,16 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },
+  // As rotas de API do blog (karenmoraes) fazem fs.readdirSync/readFileSync com
+  // um caminho montado em runtime (path.join(process.cwd(), ...)) para a
+  // retaguarda em disco. Como o rastreador de arquivos do Next não consegue
+  // resolver esse caminho estaticamente, ele varre o projeto inteiro por
+  // segurança — incluindo o histórico do .git (200MB+ por arquivo), o que
+  // estourava o limite de 100MB por arquivo da Vercel. Excluir explicitamente
+  // o que nenhuma função serverless deveria carregar.
+  outputFileTracingExcludes: {
+    "*": [".git/**", "public/**", "scripts/**"],
+  },
   images: {
     qualities: [75, 90],
     unoptimized: process.env.NODE_ENV === "development",
