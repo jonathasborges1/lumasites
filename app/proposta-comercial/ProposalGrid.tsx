@@ -141,7 +141,7 @@ function CategoryFilters({
       </button>
       <div
         ref={scrollRef}
-        className="grid grid-rows-2 grid-flow-col gap-2 overflow-x-auto pb-1
+        className="grid grid-rows-[repeat(2,max-content)] grid-flow-col gap-2 overflow-x-auto pb-1
           sm:flex sm:flex-wrap sm:overflow-visible sm:pb-0
           [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         role="group"
@@ -152,7 +152,8 @@ function CategoryFilters({
         type="button"
         onClick={() => onSelect(null)}
         className={[
-          "shrink-0 inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] transition-all",
+          "shrink-0 inline-flex min-h-[44px] items-center gap-1.5 whitespace-nowrap rounded-full border px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] transition-all",
+          "sm:min-h-0 sm:px-3.5 sm:py-1.5 sm:text-[11px]",
           active === null
             ? "border-cyan-400/40 bg-cyan-400/15 text-cyan-300"
             : "border-white/[0.10] bg-white/[0.04] text-slate-400 hover:border-white/[0.20] hover:text-white",
@@ -179,7 +180,7 @@ function CategoryFilters({
             key={cat.name}
             type="button"
             onClick={() => onSelect(isActive ? null : cat.name)}
-            className="shrink-0 inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] transition-all"
+            className="shrink-0 inline-flex min-h-[44px] items-center gap-1.5 whitespace-nowrap rounded-full border px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] transition-all sm:min-h-0 sm:px-3.5 sm:py-1.5 sm:text-[11px]"
             style={
               isActive
                 ? {
