@@ -244,7 +244,7 @@ export default function BBAdvogadosPage() {
 
     <main id="conteudo">
       <section className={styles.hero} id="topo">
-        <div className={styles.heroImage} ref={heroImageRef}><Image src={images.team} alt="Sócios do Bergamaschi & Bergamaschi Advogados Associados" fill priority sizes="100vw" quality={95}/></div>
+        <div className={styles.heroImage} ref={heroImageRef}><Image src={images.team} alt="Sócios do Bergamaschi & Bergamaschi Advogados Associados" fill priority sizes="100vw" quality={90}/></div>
         <div className={styles.heroVeil}/><div className={styles.heroGrid} aria-hidden="true" ref={heroGridRef}/>
         <div className={styles.heroContent}>
           <div className={styles.eyebrow}><span>Leitura estratégica</span><span>Condução próxima</span></div>
@@ -317,7 +317,7 @@ export default function BBAdvogadosPage() {
               </div>
             </div>
             <figure className={styles.aboutPhoto}>
-              <Image src={images.quemSomos} alt="Sócios do Bergamaschi & Bergamaschi Advogados Associados" fill loading="eager" sizes="(max-width: 800px) 92vw, 45vw" quality={95}/>
+              <Image src={images.quemSomos} alt="Sócios do Bergamaschi & Bergamaschi Advogados Associados" fill loading="eager" sizes="(max-width: 800px) 92vw, 45vw" quality={90}/>
               <figcaption><strong>Liderança</strong><span>próxima em cada estratégia</span></figcaption>
             </figure>
           </div>
@@ -353,7 +353,7 @@ export default function BBAdvogadosPage() {
               onBlur={() => setAreaPaused(false)}
             >
               <div className={styles.areaCardMedia}>
-                <Image src={img} alt="" aria-hidden="true" fill sizes="(max-width: 700px) 50vw, (max-width: 1050px) 33vw, 25vw" quality={80}/>
+                <Image src={img} alt="" aria-hidden="true" fill sizes="(max-width: 700px) 50vw, (max-width: 1050px) 33vw, 25vw" quality={75}/>
               </div>
               <div className={styles.areaCardTop}>
                 <span className={styles.areaCardIndex}>{String(i + 1).padStart(2, "0")}</span>
