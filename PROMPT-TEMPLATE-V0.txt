@@ -1,12 +1,50 @@
-me ajude a otimizar o prompt abaixo
+# Prévia Conceitual — Prompt Template
 
-precisamos criar previa conceitual com base na fonte: https://luminavitafinance.manus.space
-voce deve fazer uma analise inicial e verifique o pode ser melhorado para implementar na sequencia
-voce deve extrair os recursos textuais e visuais para usar na previa
-voce deve agregar valor e fazer algo melhor em relacao a fonte 
-voce deve seguir o padrao de header e footer utilizado em previas anteriores
-busque referencias externas com objetivo de agregar valor a previa
-pense e mais diretivas que voce pode pensar para inserir na previa conceitual
-gere seu resultado em formato .md
+**Fonte:** https://www.instagram.com/thiagomartinsadvogado/
+**WhatsApp:** https://api.whatsapp.com/send/?phone=5531988699505&text&type=phone_number&app_absent=0
 
-ao final me pergunte se eu aprovo sua sugestao para seguir com a implementacao
+Objetivo: criar uma prévia conceitual em .md, responsiva e mobile first, que agregue valor em relação à fonte, seguindo o padrão de header, footer e botão de WhatsApp flutuante usado em prévias anteriores do projeto, pronta para eu avaliar e apresentar ao cliente.
+
+Execute as 3 etapas abaixo internamente e em sequência, sem parar para aprovação entre elas. Só me apresente o resultado final, já em formato de prévia conceitual completa. Ao final, pergunte se eu aprovo a sugestão para seguir com a implementação.
+
+---
+
+## Etapa 1 — Análise
+
+1. Acesse e analise o perfil do Instagram informado: identifique posicionamento, área de atuação, tom de voz, público-alvo e diferenciais já comunicados.
+2. Avalie o que já funciona na fonte e o que pode ser melhorado (clareza, hierarquia de informação, prova social, CTA, identidade visual).
+3. Pesquise referências externas (estado da arte) de sites/prévias de advocacia para embasar melhorias — cite as referências usadas.
+4. Registre internamente: pontos fortes da fonte, oportunidades de melhoria e referências externas encontradas (não precisa apresentar isso separadamente, apenas usar para embasar a Etapa 3).
+
+## Etapa 2 — Extração
+
+1. Extraia da fonte os recursos textuais: nome, especialidades, bio, depoimentos, contatos, chamadas para ação.
+2. Extraia os recursos visuais: logotipo, paleta de cores, tipografia aparente, fotos/assets utilizáveis, estilo geral da identidade visual.
+3. Identifique local(is) de atendimento (presencial e/ou online) para uso no mapa da Etapa 3.
+4. Organize tudo em uma lista estruturada (texto x visual) indicando o que será reaproveitado direto e o que será reformulado/melhorado na Etapa 3.
+
+## Etapa 3 — Desenvolvimento
+
+1. Com base nas etapas 1 e 2, gere a prévia conceitual completa em formato .md.
+2. Siga o padrão de header, footer e botão de WhatsApp flutuante utilizado em prévias anteriores do projeto.
+3. Aplique as melhorias identificadas na análise e incorpore o estado da arte pesquisado.
+4. Garanta que o layout descrito seja responsivo e mobile first.
+5. Inclua o número de WhatsApp informado como canal de contato/CTA.
+6. Gere um checklist de tudo que será necessário para desenvolver a prévia (assets, conteúdo, componentes, pendências).
+
+### Requisitos obrigatórios de conteúdo e design
+
+- **Localização:** incluir mapa (Google Maps) indicando onde o profissional atende, deixando claro se o atendimento é presencial, online ou ambos.
+- **Dinamismo:** prever efeitos especiais sutis (sem exageros) e transições suaves entre as seções, para dar sensação de movimento e modernidade.
+- **Backgrounds:** evitar cores chapadas — priorizar gradientes, texturas ou variações com ícones/imagens onde fizer sentido.
+- **Riqueza de detalhes:** ser generoso nos detalhes visuais (micro-interações, ícones, composição) para agregar valor percebido à prévia.
+- **Autonomia criativa:** usar o que julgar necessário, dentro do padrão do projeto, para elevar a qualidade da prévia.
+- **Sobreposição:** ter cuidado para que elementos (textos, botões, imagens, efeitos) não se sobreponham indevidamente, em nenhuma resolução.
+- **Enquadramento de imagens do cliente:** fotos do profissional não podem sair cortadas de forma indevida — aplicar os ajustes de enquadramento/crop necessários para cada breakpoint.
+- **Ícones:** usar ícones relacionados ao contexto jurídico/área de atuação, não genéricos.
+
+---
+
+Ao final, apresente a prévia conceitual completa e pergunte se aprovo a sugestão para seguir com a implementação.
+
+--//--

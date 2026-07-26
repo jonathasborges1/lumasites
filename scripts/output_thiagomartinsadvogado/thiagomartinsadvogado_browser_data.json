@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-07-26T14:51:33.279726",
+  "accessible": false,
+  "username": "thiagomartinsadvogado",
+  "full_name": null,
+  "bio": null,
+  "followers": null,
+  "following": null,
+  "posts_count": null,
+  "external_url": null,
+  "profile_pic_url": null,
+  "profile_pic_colors": [],
+  "post_image_urls": [],
+  "post_colors": [],
+  "all_colors": [],
+  "captions_sample": [],
+  "hashtags": [],
+  "highlight_count": 0,
+  "screenshots": [
+    "scripts\\output_thiagomartinsadvogado\\screenshots\\profile_top.png",
+    "scripts\\output_thiagomartinsadvogado\\screenshots\\profile_grid.png"
+  ]
+}
