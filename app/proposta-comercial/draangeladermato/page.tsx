@@ -4,7 +4,6 @@ import Image from "next/image";
 import {
   ArrowDown,
   ArrowRight,
-  Check,
   ChevronRight,
   Instagram,
   Menu,
@@ -22,6 +21,41 @@ const WHATSAPP = "5592928902505";
 const MESSAGE =
   "Olá! Gostaria de agendar uma consulta com a Dra. Angela Carolina Nascimento.";
 const whatsapp = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(MESSAGE)}`;
+
+const physicianSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Dra. Angela Carolina Nascimento",
+  url: "https://lumasites.com.br/proposta-comercial/draangeladermato",
+  image:
+    "https://lumasites.com.br/images/draangeladermato/dra-angela-hero-conceitual.png",
+  jobTitle: "Médica dermatologista",
+  identifier: [
+    {
+      "@type": "PropertyValue",
+      name: "CRM-AM",
+      value: "14020",
+    },
+    {
+      "@type": "PropertyValue",
+      name: "RQE em Dermatologia",
+      value: "6467",
+    },
+  ],
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Universidade José do Rosário Vellano (UNIFENAS)",
+  },
+  knowsAbout: [
+    "Dermatologia clínica",
+    "Dermatologia cirúrgica",
+    "Dermatologia estética",
+  ],
+  areaServed: {
+    "@type": "City",
+    name: "Manaus",
+  },
+};
 
 const nav = [
   ["Atendimento", "#atendimento"],
@@ -107,6 +141,10 @@ export default function DraAngelaPage() {
 
   return (
     <main className={styles.page} id="inicio">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(physicianSchema) }}
+      />
       <div className={styles.previewBar}>
         <span className={styles.previewDot} />
         <span>Prévia conceitual</span>
@@ -177,8 +215,27 @@ export default function DraAngelaPage() {
             <em> e conduzido com responsabilidade.</em>
           </h1>
           <p className={styles.heroLead}>
-            Diagnóstico preciso, tratamento individualizado e acompanhamento
-            baseado nas melhores evidências científicas.
+            Atendimento conduzido por médica com formação completa,
+            residência/especialização em Dermatologia e decisões baseadas nas
+            melhores evidências científicas.
+          </p>
+
+          <div
+            className={styles.credentialSpotlight}
+            aria-label="Credenciais profissionais da Dra. Angela Carolina Nascimento"
+          >
+            <ShieldCheck size={25} aria-hidden="true" />
+            <div>
+              <span>Registro médico</span>
+              <strong>CRM-AM 14020</strong>
+            </div>
+            <div>
+              <span>Especialista em Dermatologia</span>
+              <strong>RQE 6467</strong>
+            </div>
+          </div>
+          <p className={styles.credentialNote}>
+            RQE é o Registro de Qualificação de Especialista em Dermatologia.
           </p>
 
           <div className={styles.heroActions}>
@@ -199,12 +256,12 @@ export default function DraAngelaPage() {
 
           <div className={styles.credentials}>
             <div>
-              <span>Médica Dermatologista</span>
-              <strong>Dra. Angela Carolina Nascimento</strong>
+              <span>Formação médica</span>
+              <strong>Medicina · UNIFENAS, 2009</strong>
             </div>
             <div>
-              <span>Registro profissional</span>
-              <strong>CRM-AM 14029 · RQE 6467</strong>
+              <span>Formação em Dermatologia</span>
+              <strong>Hospital Central do Exército</strong>
             </div>
           </div>
         </div>
@@ -392,20 +449,29 @@ export default function DraAngelaPage() {
             evidências.
           </p>
 
-          <ul className={styles.qualifications}>
-            <li>
-              <Check size={15} />
-              Médica desde 2009
-            </li>
-            <li>
-              <Check size={15} />
-              Especialista em Dermatologia
-            </li>
-            <li>
-              <Check size={15} />
-              Hospital Central do Exército
-            </li>
-          </ul>
+          <div
+            className={styles.formationGrid}
+            aria-label="Formação e registros profissionais"
+          >
+            <article>
+              <Stethoscope size={20} aria-hidden="true" />
+              <span>Formação médica</span>
+              <strong>Medicina — UNIFENAS</strong>
+              <small>Graduação concluída em 2009</small>
+            </article>
+            <article>
+              <Microscope size={20} aria-hidden="true" />
+              <span>Especialização</span>
+              <strong>Dermatologia — HCE</strong>
+              <small>Residência/Especialização em Dermatologia</small>
+            </article>
+            <article>
+              <ShieldCheck size={20} aria-hidden="true" />
+              <span>Registros profissionais</span>
+              <strong>CRM-AM 14020</strong>
+              <small>RQE 6467 · Dermatologia</small>
+            </article>
+          </div>
 
           <p className={styles.signature}>
             “O sucesso do tratamento começa com a confiança em quem cuida de você.”
@@ -457,7 +523,7 @@ export default function DraAngelaPage() {
 
       <footer className={styles.footer}>
         <Brand light />
-        <p>CRM-AM 14029 · RQE 6467</p>
+        <p>CRM-AM 14020 · RQE 6467</p>
         <div>
           <span>Prévia conceitual desenvolvida por</span>
           <a href="https://lumasites.com.br" target="_blank" rel="noreferrer">

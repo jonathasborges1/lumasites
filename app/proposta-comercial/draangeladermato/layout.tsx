@@ -17,9 +17,9 @@ const body = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Prévia Conceitual | Dra. Angela Carolina Nascimento",
+  title: "Dra. Angela Carolina | Dermatologista em Manaus",
   description:
-    "Prévia conceitual do site da Dra. Angela Carolina Nascimento, médica dermatologista em Manaus.",
+    "Dra. Angela Carolina Nascimento, médica dermatologista em Manaus. CRM-AM 14020, RQE 6467 e formação em Dermatologia pelo Hospital Central do Exército.",
   alternates: {
     canonical:
       "https://lumasites.com.br/proposta-comercial/draangeladermato",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dra. Angela Carolina Nascimento | Dermatologista em Manaus",
     description:
-      "Dermatologia clínica em Manaus com diagnóstico preciso, cuidado individualizado e condutas baseadas em evidências.",
+      "Médica dermatologista em Manaus, CRM-AM 14020 e RQE 6467. Atendimento baseado em formação especializada, diagnóstico preciso e evidências.",
     type: "website",
     locale: "pt_BR",
     url: "https://lumasites.com.br/proposta-comercial/draangeladermato",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dra. Angela Carolina Nascimento | Dermatologista em Manaus",
     description:
-      "Dermatologia clínica em Manaus com diagnóstico preciso e cuidado individualizado.",
+      "Médica dermatologista em Manaus, CRM-AM 14020 e RQE 6467.",
     images: ["/images/draangeladermato/dra-angela-og.png"],
   },
   robots: { index: false, follow: false },
