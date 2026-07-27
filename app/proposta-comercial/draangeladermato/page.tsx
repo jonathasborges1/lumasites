@@ -131,12 +131,26 @@ function Brand({ light = false }: { light?: boolean }) {
 export default function DraAngelaPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [footerVisible, setFooterVisible] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const footer = document.getElementById("rodape");
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setFooterVisible(entry.isIntersecting),
+      { threshold: 0.15 },
+    );
+
+    observer.observe(footer);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -521,19 +535,76 @@ export default function DraAngelaPage() {
         </div>
       </section>
 
-      <footer className={styles.footer}>
-        <Brand light />
-        <p>CRM-AM 14020 · RQE 6467</p>
-        <div>
-          <span>Prévia conceitual desenvolvida por</span>
-          <a href="https://lumasites.com.br" target="_blank" rel="noreferrer">
-            Luma Sites
-          </a>
+      <footer className={styles.footer} id="rodape">
+        <div className={styles.footerMain}>
+          <div className={styles.footerBrand}>
+            <Brand light />
+            <p>Dermatologia clínica, cirúrgica e estética em Manaus.</p>
+          </div>
+
+          <div className={styles.footerCredentials}>
+            <span className={styles.footerEyebrow}>Credenciais profissionais</span>
+            <div className={styles.footerCredentialRow}>
+              <ShieldCheck size={17} strokeWidth={1.6} aria-hidden="true" />
+              <div>
+                <small>Registro médico</small>
+                <strong>CRM-AM 14020</strong>
+              </div>
+            </div>
+            <div className={styles.footerCredentialRow}>
+              <ShieldCheck size={17} strokeWidth={1.6} aria-hidden="true" />
+              <div>
+                <small>Especialista em Dermatologia</small>
+                <strong>RQE 6467</strong>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.footerContact}>
+            <span className={styles.footerEyebrow}>Agende sua avaliação</span>
+            <a
+              className={styles.footerWhatsapp}
+              href={whatsapp}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <WhatsAppIcon size={18} />
+              Agendar consulta
+            </a>
+            <a
+              className={styles.footerInstagram}
+              href="https://www.instagram.com/angelac.dermato/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Instagram size={15} strokeWidth={1.6} />
+              @angelac.dermato
+            </a>
+          </div>
+        </div>
+
+        <div className={styles.footerBottom}>
+          <span>© 2026 Dra. Angela Carolina Nascimento</span>
+          <nav aria-label="Navegação do rodapé">
+            {nav.map(([label, href]) => (
+              <a key={href} href={href}>
+                {label}
+              </a>
+            ))}
+          </nav>
+          <div>
+            <span>Site desenvolvido por</span>
+            <a href="https://lumasites.com.br" target="_blank" rel="noreferrer">
+              Luma Sites
+            </a>
+          </div>
         </div>
       </footer>
 
       <a
-        className={styles.floatingWhatsapp}
+        className={`${styles.floatingWhatsapp} ${
+          footerVisible ? styles.floatingWhatsappHidden : ""
+        }`}
         href={whatsapp}
         target="_blank"
         rel="noreferrer"
