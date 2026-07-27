@@ -74,14 +74,14 @@ function WhatsAppIcon({ size = 18 }: { size?: number }) {
 function Brand({ light = false }: { light?: boolean }) {
   return (
     <div className={`${styles.brand} ${light ? styles.brandLight : ""}`}>
-      <div className={styles.monogram} aria-hidden="true">
-        <span>A</span>
-        <span>C</span>
-      </div>
-      <div className={styles.brandText}>
-        <strong>Dra. Angela Carolina</strong>
-        <span>Nascimento · Dermatologista</span>
-      </div>
+      <Image
+        className={styles.brandLogo}
+        src="/images/draangeladermato/dra-angela-logo.png"
+        alt="Dra. Angela Carolina Nascimento — Dermatologia Clínica, Cirúrgica e Estética"
+        width={1068}
+        height={952}
+        priority
+      />
     </div>
   );
 }

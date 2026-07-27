@@ -88,54 +88,13 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 13px;
+  justify-content: center;
 }
 
-.monogram {
-  position: relative;
-  width: 48px;
-  height: 45px;
-  color: var(--forest);
-  font-family: var(--font-angela-display), serif;
-  font-size: 40px;
-  font-weight: 400;
-  line-height: 1;
-}
-
-.monogram span {
-  position: absolute;
-  top: 2px;
-}
-
-.monogram span:first-child {
-  left: 0;
-  color: var(--rose);
-  font-style: italic;
-}
-
-.monogram span:last-child {
-  right: 0;
-}
-
-.brandText {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.brandText strong {
-  font-family: var(--font-angela-display), serif;
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.brandText span {
-  color: var(--muted);
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+.brandLogo {
+  width: 104px;
+  height: auto;
+  display: block;
 }
 
 .desktopNav {
@@ -951,16 +910,15 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-.brandLight .monogram {
-  color: #fff;
+.brandLight {
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 14px;
+  background: rgba(255, 253, 249, 0.96);
 }
 
-.brandLight .brandText strong {
-  color: #fff;
-}
-
-.brandLight .brandText span {
-  color: rgba(255, 255, 255, 0.45);
+.brandLight .brandLogo {
+  width: 154px;
 }
 
 .footer > p {
@@ -1182,18 +1140,8 @@
     width: calc(100% - 28px);
   }
 
-  .monogram {
-    width: 39px;
-    height: 38px;
-    font-size: 33px;
-  }
-
-  .brandText strong {
-    font-size: 14px;
-  }
-
-  .brandText span {
-    font-size: 6px;
+  .brandLogo {
+    width: 84px;
   }
 
   .hero {
