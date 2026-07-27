@@ -77,11 +77,19 @@ function Brand({ light = false }: { light?: boolean }) {
       <Image
         className={styles.brandLogo}
         src="/images/draangeladermato/dra-angela-monogram.png"
-        alt="Monograma AC — Dra. Angela Carolina Nascimento"
+        alt="Monograma AC"
         width={841}
         height={741}
         priority
       />
+      <div className={styles.brandText}>
+        <span className={styles.brandHonorific}>Dra.</span>
+        <strong>Angela Carolina</strong>
+        <span className={styles.brandSurname}>Nascimento</span>
+        <span className={styles.brandCredentials}>CRM AM 14020 · RQE 6467</span>
+        <span className={styles.brandSpecialty}>Dermatologia</span>
+        <span className={styles.brandAreas}>Clínica · Cirúrgica · Estética</span>
+      </div>
     </div>
   );
 }

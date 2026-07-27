@@ -88,13 +88,78 @@
 .brand {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  gap: 12px;
 }
 
 .brandLogo {
-  width: 72px;
+  width: 66px;
   height: auto;
+  flex: 0 0 auto;
   display: block;
+}
+
+.brandText {
+  display: flex;
+  min-width: 158px;
+  flex-direction: column;
+  align-items: center;
+  color: var(--forest);
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.brandHonorific {
+  align-self: flex-start;
+  margin: 0 0 2px 2px;
+  font-size: 6px;
+  letter-spacing: 0.25em;
+}
+
+.brandText strong {
+  font-family: var(--font-angela-body), sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+}
+
+.brandSurname {
+  width: 100%;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 6px;
+  letter-spacing: 0.38em;
+}
+
+.brandSurname::before,
+.brandSurname::after {
+  height: 1px;
+  flex: 1;
+  background: currentColor;
+  content: "";
+  opacity: 0.55;
+}
+
+.brandCredentials {
+  margin-top: 5px;
+  font-size: 6px;
+  letter-spacing: 0.12em;
+}
+
+.brandSpecialty {
+  margin-top: 5px;
+  font-size: 7px;
+  letter-spacing: 0.28em;
+}
+
+.brandAreas {
+  margin-top: 2px;
+  font-size: 5px;
+  letter-spacing: 0.13em;
 }
 
 .desktopNav {
@@ -918,7 +983,15 @@
 }
 
 .brandLight .brandLogo {
-  width: 96px;
+  width: 74px;
+}
+
+.brandLight .brandText {
+  min-width: 176px;
+}
+
+.brandLight .brandText strong {
+  font-size: 14px;
 }
 
 .footer > p {
@@ -1141,7 +1214,33 @@
   }
 
   .brandLogo {
-    width: 64px;
+    width: 56px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brandText {
+    min-width: 134px;
+  }
+
+  .brandText strong {
+    font-size: 11px;
+  }
+
+  .brandHonorific,
+  .brandSurname,
+  .brandCredentials {
+    font-size: 5px;
+  }
+
+  .brandSpecialty {
+    font-size: 6px;
+  }
+
+  .brandAreas {
+    font-size: 4px;
   }
 
   .hero {
