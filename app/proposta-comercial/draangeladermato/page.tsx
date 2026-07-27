@@ -74,14 +74,14 @@ const careGroups = [
   {
     number: "02",
     eyebrow: "Cabelos & unhas",
-    title: "Saúde dos anexos",
+    title: "Queda de cabelo e problemas nas unhas",
     text: "Queda de cabelo, calvície, caspa, dermatite seborreica, doenças do couro cabeludo, micoses e outras alterações das unhas.",
   },
   {
     number: "03",
     eyebrow: "Prevenção",
     title: "Pintas, sinais e câncer de pele",
-    text: "Avaliação de pintas e sinais, rastreio de câncer de pele e acompanhamento de lesões que mudaram de forma, cor ou tamanho.",
+    text: "Avaliação de pintas e sinais, prevenção do câncer de pele e acompanhamento de lesões que mudaram de forma, cor ou tamanho.",
   },
   {
     number: "04",
@@ -341,7 +341,7 @@ export default function DraAngelaPage() {
       <section className={styles.approach} id="atendimento">
         <div className={styles.sectionIntro}>
           <p className={styles.eyebrowDark}>Por que escolher meu atendimento?</p>
-          <h2>O diagnóstico começa antes da primeira conduta.</h2>
+          <h2>O diagnóstico começa antes do primeiro tratamento.</h2>
         </div>
 
         <div className={styles.approachContent}>
@@ -369,7 +369,7 @@ export default function DraAngelaPage() {
             <span>02</span>
             <Microscope size={23} />
             <h3>Ciência que orienta</h3>
-            <p>Condutas atualizadas e fundamentadas nas melhores evidências disponíveis.</p>
+            <p>Tratamentos atualizados e fundamentados nas melhores evidências disponíveis.</p>
           </article>
           <article>
             <span>03</span>
