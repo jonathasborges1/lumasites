@@ -92,7 +92,7 @@
 }
 
 .brandLogo {
-  width: 104px;
+  width: 72px;
   height: auto;
   display: block;
 }
@@ -918,7 +918,7 @@
 }
 
 .brandLight .brandLogo {
-  width: 154px;
+  width: 96px;
 }
 
 .footer > p {
@@ -1141,7 +1141,7 @@
   }
 
   .brandLogo {
-    width: 84px;
+    width: 64px;
   }
 
   .hero {

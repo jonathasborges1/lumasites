@@ -76,10 +76,10 @@ function Brand({ light = false }: { light?: boolean }) {
     <div className={`${styles.brand} ${light ? styles.brandLight : ""}`}>
       <Image
         className={styles.brandLogo}
-        src="/images/draangeladermato/dra-angela-logo.png"
-        alt="Dra. Angela Carolina Nascimento — Dermatologia Clínica, Cirúrgica e Estética"
-        width={1068}
-        height={952}
+        src="/images/draangeladermato/dra-angela-monogram.png"
+        alt="Monograma AC — Dra. Angela Carolina Nascimento"
+        width={841}
+        height={741}
         priority
       />
     </div>
