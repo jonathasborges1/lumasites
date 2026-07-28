@@ -121,8 +121,37 @@ function Brand({ light = false }: { light?: boolean }) {
         <strong>Angela Carolina</strong>
         <span className={styles.brandSurname}>Nascimento</span>
         <span className={styles.brandCredentials}>CRM AM 14020 · RQE 6467</span>
-        <span className={styles.brandSpecialty}>Dermatologia</span>
-        <span className={styles.brandAreas}>Clínica · Cirúrgica · Estética</span>
+        <span className={styles.brandAreas}>
+          Dermatologista · Clínica · Cirúrgica · Estética
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function HeaderBrand({ compact }: { compact: boolean }) {
+  return (
+    <div className={`${styles.brand} ${styles.brandInline} ${compact ? styles.brandCompact : ""}`}>
+      <Image
+        className={styles.brandLogo}
+        src="/images/draangeladermato/dra-angela-monogram.png"
+        alt="Monograma AC"
+        width={841}
+        height={741}
+        priority
+      />
+      <div className={styles.brandText}>
+        <span className={styles.brandName}>
+          {!compact && <span className={styles.brandHonorific}>Dra. </span>}
+          Angela Carolina Nascimento
+        </span>
+        <span className={styles.brandMeta}>
+          <span>CRM-AM 14020</span>
+          <span className={styles.brandDot} aria-hidden="true" />
+          <span>RQE 6467</span>
+          <span className={styles.brandDot} aria-hidden="true" />
+          <span>Dermatologista</span>
+        </span>
       </div>
     </div>
   );
@@ -171,7 +200,7 @@ export default function DraAngelaPage() {
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
         <div className={styles.headerInner}>
           <a href="#inicio" aria-label="Voltar ao início">
-            <Brand />
+            <HeaderBrand compact={scrolled} />
           </a>
 
           <nav className={styles.desktopNav} aria-label="Navegação principal">
@@ -229,9 +258,9 @@ export default function DraAngelaPage() {
             <em> e conduzido com responsabilidade.</em>
           </h1>
           <p className={styles.heroLead}>
-            Atendimento conduzido por médica com formação completa,
-            residência/especialização em Dermatologia e decisões baseadas nas
-            melhores evidências científicas.
+            Atendimento realizado por médica com formação completa para um
+            diagnóstico preciso, tratamento individualizado e acompanhamento
+            baseado nas melhores evidências científicas.
           </p>
 
           <div
@@ -267,17 +296,6 @@ export default function DraAngelaPage() {
               <ArrowDown size={15} />
             </a>
           </div>
-
-          <div className={styles.credentials}>
-            <div>
-              <span>Formação médica</span>
-              <strong>Medicina · UNIFENAS, 2009</strong>
-            </div>
-            <div>
-              <span>Formação em Dermatologia</span>
-              <strong>Hospital Central do Exército</strong>
-            </div>
-          </div>
         </div>
 
         <div className={styles.heroVisual}>
@@ -290,13 +308,6 @@ export default function DraAngelaPage() {
               sizes="(min-width: 960px) 48vw, 100vw"
               quality={90}
             />
-          </div>
-          <div className={styles.heroSeal}>
-            <ShieldCheck size={18} />
-            <span>
-              Cuidado pautado em
-              <strong>ética e evidências</strong>
-            </span>
           </div>
           <p className={styles.conceptNote}>Imagem conceitual para direção de arte</p>
         </div>
@@ -611,7 +622,6 @@ export default function DraAngelaPage() {
         aria-label="Agendar consulta pelo WhatsApp"
       >
         <WhatsAppIcon size={24} />
-        <span>Agendar consulta</span>
       </a>
     </main>
   );

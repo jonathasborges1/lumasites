@@ -63,12 +63,14 @@
   position: fixed;
   inset: 34px 0 auto;
   z-index: 90;
-  height: 80px;
+  height: 116px;
   border-bottom: 1px solid transparent;
-  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: height 0.3s ease, background 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .header.scrolled {
+  height: 78px;
   background: rgba(255, 253, 249, 0.94);
   border-color: var(--line);
   box-shadow: 0 8px 40px rgba(16, 45, 41, 0.06);
@@ -162,6 +164,77 @@
   letter-spacing: 0.13em;
 }
 
+.brandInline {
+  gap: 16px;
+  transition: gap 0.3s ease;
+}
+
+.brandInline .brandLogo {
+  width: 72px;
+  transition: width 0.3s ease;
+}
+
+.brandInline .brandText {
+  min-width: 0;
+  align-items: flex-start;
+  text-align: left;
+  gap: 6px;
+}
+
+.brandName {
+  font-family: var(--font-angela-body), sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--forest-deep);
+  transition: font-size 0.3s ease;
+}
+
+.brandInline .brandHonorific {
+  align-self: auto;
+  margin: 0 5px 0 0;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+}
+
+.brandMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--forest-deep);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  transition: font-size 0.3s ease, gap 0.3s ease;
+}
+
+.brandDot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.brandInline.brandCompact {
+  gap: 12px;
+}
+
+.brandInline.brandCompact .brandLogo {
+  width: 46px;
+}
+
+.brandInline.brandCompact .brandName {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.brandInline.brandCompact .brandMeta {
+  gap: 6px;
+  font-size: 7px;
+}
+
 .desktopNav {
   display: flex;
   align-items: center;
@@ -240,7 +313,7 @@
 .hero {
   position: relative;
   min-height: 850px;
-  padding: 160px max(5vw, calc((100vw - 1240px) / 2)) 72px;
+  padding: 190px max(5vw, calc((100vw - 1240px) / 2)) 72px;
   display: grid;
   grid-template-columns: minmax(0, 1.04fr) minmax(390px, 0.96fr);
   align-items: center;
@@ -752,8 +825,8 @@
   max-width: 460px;
   margin: 0;
   color: rgba(255, 255, 255, 0.55);
-  font-size: 11px;
-  line-height: 1.8;
+  font-size: 14px;
+  line-height: 1.75;
 }
 
 .evaluationBand {
@@ -1202,23 +1275,38 @@
   right: 24px;
   bottom: 22px;
   z-index: 80;
-  height: 50px;
-  padding: 0 18px;
+  width: 54px;
+  height: 54px;
+  padding: 0;
   display: flex;
   align-items: center;
-  gap: 9px;
+  justify-content: center;
+  border-radius: 50%;
   background: var(--forest);
   color: #fff !important;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 14px 36px rgba(16, 45, 41, 0.28);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   transition:
     opacity 0.2s ease,
     transform 0.2s ease,
     visibility 0.2s ease;
+  animation: floatingWhatsappPulse 2.4s ease-out 1.5s infinite;
+}
+
+.floatingWhatsapp:hover {
+  transform: translateY(-2px);
+}
+
+@keyframes floatingWhatsappPulse {
+  0% {
+    box-shadow: 0 14px 36px rgba(16, 45, 41, 0.28), 0 0 0 0 rgba(16, 45, 41, 0.4);
+  }
+  70% {
+    box-shadow: 0 14px 36px rgba(16, 45, 41, 0.28), 0 0 0 14px rgba(16, 45, 41, 0);
+  }
+  100% {
+    box-shadow: 0 14px 36px rgba(16, 45, 41, 0.28), 0 0 0 0 rgba(16, 45, 41, 0);
+  }
 }
 
 .floatingWhatsappHidden {
@@ -1270,6 +1358,24 @@
 
   .headerInner {
     width: min(100% - 32px, 720px);
+  }
+
+  .brandInline .brandLogo {
+    width: 46px;
+  }
+
+  .brandInline .brandName {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+
+  .brandInline .brandHonorific {
+    display: none;
+  }
+
+  .brandInline .brandMeta {
+    gap: 6px;
+    font-size: 7px;
   }
 
   .desktopNav {
@@ -1522,8 +1628,24 @@
     gap: 16px;
   }
 
+  .aboutCopy > p:not(.eyebrowDark):not(.aboutLead):not(.signature) {
+    font-size: 14px;
+  }
+
   .formationGrid {
     grid-template-columns: 1fr;
+  }
+
+  .formationGrid span {
+    font-size: 9px;
+  }
+
+  .formationGrid strong {
+    font-size: 13px;
+  }
+
+  .formationGrid small {
+    font-size: 10px;
   }
 
   .heroFrame {
@@ -1606,17 +1728,6 @@
 
   .contactCard {
     padding: 30px 26px;
-  }
-
-  .floatingWhatsapp {
-    width: 52px;
-    padding: 0;
-    justify-content: center;
-    border-radius: 50%;
-  }
-
-  .floatingWhatsapp span {
-    display: none;
   }
 }
 
