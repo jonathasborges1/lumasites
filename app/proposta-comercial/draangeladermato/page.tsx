@@ -258,7 +258,7 @@ export default function DraAngelaPage() {
             <em> e conduzido com responsabilidade.</em>
           </h1>
           <p className={styles.heroLead}>
-            Atendimento realizado por médica com formação completa para um
+            Atendimento realizado por médica com formação completa, para um
             diagnóstico preciso, tratamento individualizado e acompanhamento
             baseado nas melhores evidências científicas.
           </p>
@@ -351,21 +351,14 @@ export default function DraAngelaPage() {
 
       <section className={styles.approach} id="atendimento">
         <div className={styles.sectionIntro}>
-          <p className={styles.eyebrowDark}>Por que escolher meu atendimento?</p>
-          <h2>O diagnóstico começa antes do primeiro tratamento.</h2>
+          <p className={styles.eyebrowDark}>Por que escolher o meu atendimento?</p>
+          <h2>Uma investigação cuidadosa é o primeiro passo para um tratamento eficaz.</h2>
         </div>
 
         <div className={styles.approachContent}>
           <p className={styles.approachLead}>
-            Uma investigação cuidadosa é o primeiro passo para um tratamento
-            eficaz. Aqui, cada paciente é ouvido com atenção, porque compreender
-            sua história também faz parte do diagnóstico.
-          </p>
-          <p>
-            Cada indicação é fundamentada em evidências científicas e feita com
-            responsabilidade, respeitando as necessidades de adultos e crianças.
-            O cuidado não segue fórmulas prontas: ele é construído a partir de
-            uma avaliação completa e de objetivos possíveis para cada pessoa.
+            Aqui cada paciente é ouvido com atenção, pois compreender a sua
+            história faz parte do diagnóstico.
           </p>
         </div>
 
@@ -467,7 +460,7 @@ export default function DraAngelaPage() {
             Central do Exército.
           </p>
           <p>
-            Como Capitã Médica do Exército Brasileiro, fui transferida para
+            Como Capitão Médica do Exército Brasileiro, fui transferida para
             Manaus em 2025. Foi aqui que me senti acolhida e confiante para
             concretizar um antigo sonho: abrir meu consultório e oferecer um
             atendimento pautado na ética, no respeito e na medicina baseada em
