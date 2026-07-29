@@ -17,7 +17,7 @@ import {
 import { useEffect, useState } from "react";
 import styles from "./style.module.css";
 
-const WHATSAPP = "5592928902505";
+const WHATSAPP = "559282902505";
 const MESSAGE =
   "Olá! Gostaria de agendar uma consulta com a Dra. Angela Carolina Nascimento.";
 const whatsapp = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(MESSAGE)}`;
