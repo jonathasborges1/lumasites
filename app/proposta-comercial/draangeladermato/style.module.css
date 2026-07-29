@@ -963,7 +963,7 @@
   font-family: var(--font-angela-display), serif;
   font-size: 90px;
   line-height: 0;
-  vertical-align: -0.15em;
+  vertical-align: -0.35em;
   margin-left: 6px;
 }
 
@@ -1569,6 +1569,17 @@
 
   .aboutCopy {
     padding: 90px 24px;
+  }
+
+  .quoteMark {
+    height: 34px;
+    font-size: 54px;
+  }
+
+  .quoteMarkClose {
+    font-size: 34px;
+    vertical-align: -0.05em;
+    margin-left: 4px;
   }
 
   .finalCta {

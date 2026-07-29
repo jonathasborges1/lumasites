@@ -69,7 +69,7 @@ const careGroups = [
     number: "01",
     eyebrow: "Pele",
     title: "Alterações da pele",
-    text: "Acne, melasma, rosácea, dermatites, alergias, psoríase, vitiligo, urticária, micoses, herpes e coceira persistente.",
+    text: "Acne, melasma, rosácea, dermatites, alergias, psoríase, vitiligo, urticária, micoses, herpes, coceira persistente e hidradenite supurativa.",
   },
   {
     number: "02",
@@ -93,7 +93,7 @@ const careGroups = [
     number: "05",
     eyebrow: "Estética",
     title: "Dermatologia estética",
-    text: "Toxina Botulínica (Botox), Peeling, Microagulhamento, Laser de CO2, MMP, Drug Delivery.",
+    text: "Toxina Botulínica (Botox), Peeling, Microagulhamento, Laser de CO2, MMP, Drug Delivery, Tratamento de cicatrizes de acne.",
   },
 ];
 
