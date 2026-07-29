@@ -34,7 +34,7 @@ const physicianSchema = {
     {
       "@type": "PropertyValue",
       name: "CRM-AM",
-      value: "14020",
+      value: "14029",
     },
     {
       "@type": "PropertyValue",
@@ -89,6 +89,12 @@ const careGroups = [
     title: "Procedimentos dermatológicos",
     text: "Avaliação de verrugas, cistos, caroços, furúnculos e outras lesões com indicação de pequenas cirurgias da pele.",
   },
+  {
+    number: "05",
+    eyebrow: "Estética",
+    title: "Dermatologia estética",
+    text: "Toxina Botulínica (Botox), Peeling, Microagulhamento, Laser de CO2, MMP, Drug Delivery.",
+  },
 ];
 
 function WhatsAppIcon({ size = 18 }: { size?: number }) {
@@ -120,7 +126,7 @@ function Brand({ light = false }: { light?: boolean }) {
         <span className={styles.brandHonorific}>Dra.</span>
         <strong>Angela Carolina</strong>
         <span className={styles.brandSurname}>Nascimento</span>
-        <span className={styles.brandCredentials}>CRM AM 14020 · RQE 6467</span>
+        <span className={styles.brandCredentials}>CRM AM 14029 · RQE 6467</span>
         <span className={styles.brandAreas}>
           Dermatologista · Clínica · Cirúrgica · Estética
         </span>
@@ -146,7 +152,7 @@ function HeaderBrand({ compact }: { compact: boolean }) {
           Angela Carolina Nascimento
         </span>
         <span className={styles.brandMeta}>
-          <span>CRM-AM 14020</span>
+          <span>CRM-AM 14029</span>
           <span className={styles.brandDot} aria-hidden="true" />
           <span>RQE 6467</span>
           <span className={styles.brandDot} aria-hidden="true" />
@@ -270,7 +276,7 @@ export default function DraAngelaPage() {
             <ShieldCheck size={25} aria-hidden="true" />
             <div>
               <span>Registro médico</span>
-              <strong>CRM-AM 14020</strong>
+              <strong>CRM-AM 14029</strong>
             </div>
             <div>
               <span>Especialista em Dermatologia</span>
@@ -365,51 +371,56 @@ export default function DraAngelaPage() {
         <div className={styles.principles}>
           <article>
             <span>01</span>
-            <ScanSearch size={23} />
-            <h3>Escuta que investiga</h3>
+            <h3><ScanSearch size={24} /> Escuta que investiga</h3>
             <p>Sua história, seus sintomas e sua rotina orientam uma avaliação mais precisa.</p>
           </article>
           <article>
             <span>02</span>
-            <Microscope size={23} />
-            <h3>Ciência que orienta</h3>
+            <h3><Microscope size={24} /> Ciência que orienta</h3>
             <p>Tratamentos atualizados e fundamentados nas melhores evidências disponíveis.</p>
           </article>
           <article>
             <span>03</span>
-            <ShieldCheck size={23} />
-            <h3>Responsabilidade que acompanha</h3>
+            <h3><ShieldCheck size={24} /> Responsabilidade que acompanha</h3>
             <p>Um plano individualizado, transparente e acompanhado ao longo do tratamento.</p>
           </article>
         </div>
       </section>
 
       <section className={styles.conditions} id="quando-procurar">
-        <div className={styles.conditionsHeading}>
-          <div>
-            <p className={styles.eyebrowLight}>Quando procurar um dermatologista?</p>
-            <h2>Para cuidar da saúde da pele em todas as fases da vida.</h2>
+        <div className={styles.conditionsLayout}>
+          <div className={styles.conditionsLeft}>
+            <div className={styles.conditionsHeading}>
+              <p className={styles.eyebrowLight}>Quando procurar um dermatologista?</p>
+              <h2>Para cuidar da saúde da pele em todas as fases da vida.</h2>
+            </div>
+            {careGroups.slice(0, 2).map((item) => (
+              <article key={item.number}>
+                <div className={styles.cardTop}>
+                  <span>{item.number}</span>
+                  <ArrowRight size={18} />
+                </div>
+                <p>{item.eyebrow}</p>
+                <h3>{item.title}</h3>
+                <div className={styles.cardLine} />
+                <p>{item.text}</p>
+              </article>
+            ))}
           </div>
-          <p>
-            A dermatologia vai além do que é visível. Alterações na pele, nos
-            cabelos e nas unhas podem sinalizar condições que merecem avaliação
-            especializada.
-          </p>
-        </div>
-
-        <div className={styles.conditionsGrid}>
-          {careGroups.map((item) => (
-            <article key={item.number}>
-              <div className={styles.cardTop}>
-                <span>{item.number}</span>
-                <ArrowRight size={18} />
-              </div>
-              <p>{item.eyebrow}</p>
-              <h3>{item.title}</h3>
-              <div className={styles.cardLine} />
-              <p>{item.text}</p>
-            </article>
-          ))}
+          <div className={styles.conditionsRight}>
+            {careGroups.slice(2).map((item) => (
+              <article key={item.number}>
+                <div className={styles.cardTop}>
+                  <span>{item.number}</span>
+                  <ArrowRight size={18} />
+                </div>
+                <p>{item.eyebrow}</p>
+                <h3>{item.title}</h3>
+                <div className={styles.cardLine} />
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
         </div>
 
         <div className={styles.evaluationBand}>
@@ -434,7 +445,7 @@ export default function DraAngelaPage() {
             <span className={styles.quoteMark}>“</span>
             <p>
               Mais do que tratar doenças da pele, meu propósito é cuidar de
-              pessoas.
+              pessoas.<span className={styles.quoteMarkClose}>&rdquo;</span>
             </p>
           </div>
           <div className={styles.aboutMonogram} aria-hidden="true">
@@ -486,7 +497,7 @@ export default function DraAngelaPage() {
             <article>
               <ShieldCheck size={20} aria-hidden="true" />
               <span>Registros profissionais</span>
-              <strong>CRM-AM 14020</strong>
+              <strong>CRM-AM 14029</strong>
               <small>RQE 6467 · Dermatologia</small>
             </article>
           </div>
@@ -527,13 +538,23 @@ export default function DraAngelaPage() {
             <br />
             5º andar, sala 521 · Adrianópolis
           </p>
+          <a
+            className={styles.contactMapButton}
+            href="https://www.google.com/maps/search/?api=1&query=Av+M%C3%A1rio+Ypiranga+315+Adrian%C3%B3polis+Manaus"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ArrowRight size={15} />
+            Ver no Google Maps
+          </a>
           <div className={styles.contactLine} />
           <a
+            className={styles.contactInstagramButton}
             href="https://www.instagram.com/angelac.dermato/"
             target="_blank"
             rel="noreferrer"
           >
-            <Instagram size={16} />
+            <Instagram size={17} />
             @angelac.dermato
           </a>
         </div>
@@ -552,7 +573,7 @@ export default function DraAngelaPage() {
               <ShieldCheck size={17} strokeWidth={1.6} aria-hidden="true" />
               <div>
                 <small>Registro médico</small>
-                <strong>CRM-AM 14020</strong>
+                <strong>CRM-AM 14029</strong>
               </div>
             </div>
             <div className={styles.footerCredentialRow}>

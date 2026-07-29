@@ -621,13 +621,13 @@
   flex-direction: column;
   gap: 5px;
   color: rgba(255, 255, 255, 0.48);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.06em;
 }
 
 .trustStrip strong {
   color: rgba(255, 255, 255, 0.92);
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -698,9 +698,9 @@
   position: absolute;
   top: 24px;
   right: 28px;
-  color: rgba(23, 59, 53, 0.22);
+  color: rgba(23, 59, 53, 0.45);
   font-family: var(--font-angela-display), serif;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .principles svg {
@@ -708,17 +708,26 @@
 }
 
 .principles h3 {
-  margin: 42px 0 14px;
+  margin: 14px 0 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   color: var(--forest);
   font-family: var(--font-angela-display), serif;
   font-size: 25px;
   font-weight: 600;
+  white-space: nowrap;
+}
+
+.principles h3 svg {
+  color: var(--rose);
+  flex-shrink: 0;
 }
 
 .principles p {
   margin: 0;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.8;
 }
 
@@ -742,10 +751,8 @@
 .conditionsHeading {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 90px;
-  align-items: end;
+  padding: 36px 36px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .conditionsHeading h2 {
@@ -753,35 +760,72 @@
   color: #fff;
 }
 
-.conditionsHeading > p {
-  margin: 0 0 4px;
-  color: rgba(255, 255, 255, 0.58);
-  font-size: 12px;
-  line-height: 1.85;
-}
-
-.conditionsGrid {
+.conditionsLayout {
   position: relative;
   z-index: 1;
-  margin-top: 70px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.conditionsGrid article {
-  min-height: 300px;
-  padding: 32px 36px 38px;
+.conditionsLeft {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  display: grid;
+  grid-template-rows: subgrid;
   border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.conditionsRight {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  display: grid;
+  grid-template-rows: subgrid;
+}
+
+.conditionsHeading {
+  position: relative;
+  z-index: 1;
+  padding: 36px 36px 32px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  transition: background 0.25s ease;
+  grid-row: 1;
 }
 
-.conditionsGrid article:nth-child(2n) {
-  border-right: 0;
+.conditionsHeading h2 {
+  max-width: 700px;
+  color: #fff;
 }
 
-.conditionsGrid article:nth-last-child(-n + 2) {
+.conditionsLeft article {
+  padding: 32px 36px 38px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.conditionsLeft article:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.conditionsLeft article:last-of-type {
+  border-bottom: 0;
+}
+
+.conditionsRight article {
+  padding: 32px 36px 38px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.conditionsRight article:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.conditionsRight article:last-child {
   border-bottom: 0;
 }
 
@@ -854,12 +898,12 @@
 
 .evaluationBand strong {
   font-family: var(--font-angela-display), serif;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .evaluationBand span {
   color: #65716c;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .evaluationBand a {
@@ -867,7 +911,7 @@
   align-items: center;
   gap: 8px;
   color: var(--forest);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -911,6 +955,16 @@
   font-family: var(--font-angela-display), serif;
   font-size: 90px;
   line-height: 1;
+}
+
+.quoteMarkClose {
+  display: inline;
+  color: var(--rose);
+  font-family: var(--font-angela-display), serif;
+  font-size: 90px;
+  line-height: 0;
+  vertical-align: -0.15em;
+  margin-left: 6px;
 }
 
 .aboutQuote p {
@@ -979,7 +1033,7 @@
 
 .formationGrid span {
   color: #77817c;
-  font-size: 7px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -987,13 +1041,13 @@
 
 .formationGrid strong {
   color: var(--forest);
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 .formationGrid small {
   color: var(--muted);
-  font-size: 8px;
+  font-size: 11px;
   line-height: 1.5;
 }
 
@@ -1054,7 +1108,7 @@
 .contactCard {
   position: relative;
   z-index: 1;
-  padding: 38px;
+  padding: 48px 44px;
   background: var(--paper);
   border-top: 3px solid var(--rose);
   box-shadow: 0 24px 70px rgba(16, 45, 41, 0.11);
@@ -1062,7 +1116,7 @@
 
 .contactCard > span {
   color: var(--rose);
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.17em;
   text-transform: uppercase;
@@ -1070,17 +1124,39 @@
 
 .contactCard strong {
   display: block;
-  margin-top: 12px;
+  margin-top: 14px;
   color: var(--forest);
   font-family: var(--font-angela-display), serif;
-  font-size: 27px;
+  font-size: 30px;
 }
 
 .contactCard p {
-  margin: 10px 0 0;
+  margin: 14px 0 0;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.8;
+}
+
+.contactMapButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 18px;
+  padding: 12px 20px;
+  border: 1px solid var(--forest);
+  background: var(--forest);
+  color: #fff !important;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contactMapButton:hover {
+  background: var(--forest-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16, 45, 41, 0.18);
 }
 
 .contactLine {
@@ -1089,16 +1165,27 @@
   background: var(--line);
 }
 
-.contactCard a {
-  display: flex;
+.contactInstagramButton {
+  display: inline-flex;
   align-items: center;
-  gap: 9px;
-  color: var(--forest);
-  font-size: 10px;
+  gap: 10px;
+  padding: 12px 20px;
+  border: 1px solid var(--line);
+  background: var(--ivory);
+  color: var(--forest) !important;
+  font-size: 11px;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
-.contactCard a svg {
+.contactInstagramButton:hover {
+  border-color: var(--rose);
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.contactInstagramButton svg {
   color: var(--rose);
 }
 
@@ -1449,8 +1536,7 @@
     padding: 90px 24px;
   }
 
-  .sectionIntro,
-  .conditionsHeading {
+  .sectionIntro {
     grid-template-columns: 1fr;
     gap: 24px;
   }
@@ -1684,19 +1770,30 @@
     margin-top: 52px;
   }
 
-  .conditionsGrid {
+  .conditionsLayout {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
 
-  .conditionsGrid article {
-    min-height: 280px;
-    padding: 28px 24px;
+  .conditionsLeft {
+    grid-column: 1;
+    grid-row: auto;
+    display: flex;
+    flex-direction: column;
     border-right: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   }
 
-  .conditionsGrid article:last-child {
-    border-bottom: 0 !important;
+  .conditionsRight {
+    grid-column: 1;
+    grid-row: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .conditionsLeft article,
+  .conditionsRight article {
+    padding: 28px 24px;
   }
 
   .evaluationBand {
