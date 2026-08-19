@@ -6,6 +6,7 @@ import {
   Banknote,
   Building2,
   ChevronRight,
+  FileSignature,
   FileText,
   Gavel,
   Handshake,
@@ -17,6 +18,7 @@ import {
   Scale,
   ShieldCheck,
   TrendingDown,
+  Users,
   Wheat,
   X,
 } from "lucide-react";
@@ -60,6 +62,8 @@ const legalServiceSchema = {
   knowsAbout: [
     "Revisão de contratos bancários empresariais",
     "Renegociação de dívidas empresariais",
+    "Direito societário e conflitos entre sócios",
+    "Planejamento patrimonial e sucessório",
     "Proteção patrimonial de empresas",
     "Direito do agronegócio",
   ],
@@ -115,6 +119,27 @@ const services = [
     title: "Atuação judicial fundamentada",
     text: "Cada medida é baseada em jurisprudência e decisões técnicas — não em promessas, mas em fundamentação jurídica sólida.",
   },
+  {
+    number: "07",
+    icon: FileSignature,
+    eyebrow: "Direito societário",
+    title: "Estruturação e revisão de contratos sociais",
+    text: "Elaboração e revisão de contratos sociais, acordos de sócios e reorganizações societárias, com segurança jurídica para o crescimento do negócio.",
+  },
+  {
+    number: "08",
+    icon: Users,
+    eyebrow: "Conflitos entre sócios",
+    title: "Mediação e resolução de disputas societárias",
+    text: "Atuação em divergências entre sócios, apuração de haveres e dissolução parcial de sociedade, buscando saídas que preservem a operação da empresa.",
+  },
+  {
+    number: "09",
+    icon: Landmark,
+    eyebrow: "Planejamento patrimonial",
+    title: "Sucessão empresarial e proteção de bens",
+    text: "Estruturação de planejamento patrimonial e sucessório para empresários e produtores rurais, reduzindo riscos e conflitos na transmissão do patrimônio.",
+  },
 ];
 
 function ColumnsMark({ size = 40 }: { size?: number }) {
@@ -158,10 +183,32 @@ function WhatsAppIcon({ size = 18 }: { size?: number }) {
 }
 
 function Brand({ light = false }: { light?: boolean }) {
+  if (!light) {
+    return (
+      <div className={styles.brand}>
+        <Image
+          src="/images/martinsadvocaciaempresarial/logo-martins-advogados-associados-transparente-v2.png"
+          alt="Martins Advogados Associados"
+          width={1536}
+          height={1024}
+          className={styles.brandLogo}
+          priority
+        />
+      </div>
+    );
+  }
+
   return (
-    <div className={`${styles.brand} ${light ? styles.brandLight : ""}`}>
+    <div className={`${styles.brand} ${styles.brandLight}`}>
       <span className={styles.brandMark}>
-        <ColumnsMark size={34} />
+        <Image
+          src="/images/martinsadvocaciaempresarial/monograma-martins-transparente-v2.png"
+          alt=""
+          width={1254}
+          height={1254}
+          className={styles.brandMarkImage}
+          aria-hidden="true"
+        />
       </span>
       <div className={styles.brandText}>
         <strong>Martins</strong>
@@ -266,16 +313,16 @@ export default function MartinsAdvocaciaPage() {
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>
             <span />
-            Advocacia empresarial em Posse, GO
+            Advocacia empresarial em Posse, GO — atendimento em todo o Brasil
           </p>
           <h1 id="hero-title">
             Sua empresa não precisa enfrentar
-            <em> o banco sozinha.</em>
+            <em> os problemas sozinha.</em>
           </h1>
           <p className={styles.heroLead}>
-            Revisão de contratos, redução de juros abusivos e proteção do
-            patrimônio da sua empresa — com fundamentação jurídica sólida, não
-            com promessas.
+            Revisão de contratos, resolução de conflitos societários e
+            proteção do patrimônio da sua empresa — com fundamentação
+            jurídica sólida, não com promessas.
           </p>
 
           <div
@@ -289,7 +336,7 @@ export default function MartinsAdvocaciaPage() {
             </div>
             <div>
               <span>Atuação</span>
-              <strong>Direito empresarial e bancário</strong>
+              <strong>Direito empresarial, societário e bancário</strong>
             </div>
           </div>
 
@@ -313,8 +360,8 @@ export default function MartinsAdvocaciaPage() {
         <div className={styles.heroVisual}>
           <div className={styles.heroPanel}>
             <Image
-              src="/images/martinsadvocaciaempresarial/paulo-martins-about.png"
-              alt="Dr. Paulo Martins, advogado responsável pela Martins Advocacia Empresarial, trabalhando no escritório"
+              src="/images/martinsadvocaciaempresarial/paulo-martins-recepcao.jpeg"
+              alt="Dr. Paulo Martins, advogado responsável pela Martins Advocacia Empresarial, na recepção do escritório"
               fill
               priority
               sizes="(min-width: 960px) 44vw, 90vw"
@@ -328,10 +375,6 @@ export default function MartinsAdvocaciaPage() {
               <strong>jurisprudência e dados reais</strong>
             </span>
           </div>
-          <p className={styles.conceptNote}>
-            Foto real do escritório — cliente pode enviar versão em alta
-            resolução
-          </p>
         </div>
 
         <div className={styles.scrollCue} aria-hidden="true">
@@ -366,7 +409,7 @@ export default function MartinsAdvocaciaPage() {
           <Handshake />
           <span>
             Atendimento
-            <strong>presencial e online</strong>
+            <strong>presencial em Posse-GO e online para todo o Brasil</strong>
           </span>
         </div>
       </section>
@@ -444,10 +487,6 @@ export default function MartinsAdvocaciaPage() {
           <div className={styles.aboutMonogram} aria-hidden="true">
             <ColumnsMark size={56} />
           </div>
-          <p className={styles.aboutPhotoNote}>
-            Foto real do escritório — cliente pode enviar versão em alta
-            resolução
-          </p>
         </div>
 
         <div className={styles.aboutCopy}>
@@ -459,15 +498,17 @@ export default function MartinsAdvocaciaPage() {
           </p>
           <p>
             À frente da Martins Advocacia Empresarial, o Dr. Paulo Martins
-            construiu um escritório voltado a um problema concreto e pouco
-            resolvido: empresários que pagam mais do que deveriam aos bancos
-            porque nunca questionaram um contrato.
+            construiu um escritório voltado a problemas concretos e pouco
+            resolvidos do empresário brasileiro: contratos bancários nunca
+            questionados, sociedades sem governança clara e patrimônio sem
+            planejamento sucessório.
           </p>
           <p>
-            Com sede em Posse, Goiás, o escritório atua na revisão técnica de
-            contratos bancários, na negociação de dívidas empresariais e na
-            proteção patrimonial de empresas — incluindo produtores rurais da
-            região, que enfrentam desafios próprios de crédito e dívida rural.
+            Com sede em Posse, Goiás, e atendimento para todo o Brasil, o
+            escritório atua na revisão de contratos bancários, na
+            estruturação e resolução de conflitos societários, e no
+            planejamento patrimonial e sucessório de empresários e produtores
+            rurais — sempre com fundamentação jurídica sólida, não promessas.
           </p>
 
           <div
@@ -478,13 +519,13 @@ export default function MartinsAdvocaciaPage() {
               <Scale size={20} aria-hidden="true" />
               <span>Registro profissional</span>
               <strong>OAB/GO 46.315</strong>
-              <small>Advocacia empresarial e bancária</small>
+              <small>Advocacia empresarial, societária e bancária</small>
             </article>
             <article>
               <Building2 size={20} aria-hidden="true" />
               <span>Sede</span>
               <strong>Posse, Goiás</strong>
-              <small>Atendimento presencial e online</small>
+              <small>Presencial em Posse-GO e online para todo o Brasil</small>
             </article>
             <article>
               <Wheat size={20} aria-hidden="true" />
@@ -574,7 +615,7 @@ export default function MartinsAdvocaciaPage() {
         <div className={styles.footerMain}>
           <div className={styles.footerBrand}>
             <Brand light />
-            <p>Advocacia empresarial e bancária em Posse, Goiás.</p>
+            <p>Advocacia empresarial, societária e bancária em Posse, Goiás — atendimento para todo o Brasil.</p>
           </div>
 
           <div className={styles.footerCredentials}>

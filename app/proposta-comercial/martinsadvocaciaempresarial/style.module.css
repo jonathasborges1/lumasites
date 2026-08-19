@@ -69,10 +69,11 @@
 }
 
 .header.scrolled {
-  background: rgba(255, 253, 250, 0.95);
+  background: rgba(255, 253, 250, 0.68);
   border-color: var(--line);
   box-shadow: 0 8px 40px rgba(11, 29, 48, 0.08);
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
 }
 
 .headerInner {
@@ -98,6 +99,18 @@
   color: var(--navy);
 }
 
+.brandMarkImage {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.brandLogo {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
 .brandText {
   display: flex;
   min-width: 168px;
@@ -118,14 +131,14 @@
 
 .brandSurname {
   margin-top: 5px;
-  font-size: 7px;
+  font-size: 8.5px;
   letter-spacing: 0.2em;
 }
 
 .brandCredentials {
   margin-top: 5px;
   color: var(--gold);
-  font-size: 7px;
+  font-size: 8.5px;
   letter-spacing: 0.12em;
 }
 
@@ -139,7 +152,7 @@
 .desktopNav a {
   position: relative;
   color: #454b52;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -169,7 +182,7 @@
   border: 1px solid var(--navy);
   background: var(--navy);
   color: #fff !important;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
@@ -198,6 +211,8 @@
   border: 1px solid var(--line);
   background: rgba(255, 253, 250, 0.7);
   color: var(--navy);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
 }
 
 .mobileMenu {
@@ -240,7 +255,7 @@
 .eyebrowDark,
 .eyebrowLight {
   margin: 0 0 24px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -328,7 +343,7 @@
 
 .credentialSpotlight span {
   color: #6b7176;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
@@ -359,7 +374,7 @@
   padding: 10px 0;
   border-bottom: 1px solid rgba(11, 29, 48, 0.24);
   color: var(--navy);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -417,7 +432,7 @@
   flex-direction: column;
   gap: 4px;
   color: var(--muted);
-  font-size: 8px;
+  font-size: 9px;
   line-height: 1.45;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -425,7 +440,7 @@
 
 .heroSeal strong {
   color: var(--navy);
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .conceptNote {
@@ -481,13 +496,13 @@
   flex-direction: column;
   gap: 5px;
   color: rgba(255, 255, 255, 0.48);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.06em;
 }
 
 .trustStrip strong {
   color: rgba(255, 255, 255, 0.94);
-  font-size: 10px;
+  font-size: 12.5px;
   font-weight: 600;
 }
 
@@ -552,7 +567,7 @@
 .servicesGrid article > p:first-of-type {
   margin: 34px 0 8px;
   color: var(--navy-soft);
-  font-size: 8px;
+  font-size: 9.5px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -577,7 +592,7 @@
 .servicesGrid article > p:last-child {
   margin: 0;
   color: var(--muted);
-  font-size: 11.5px;
+  font-size: 13.5px;
   line-height: 1.8;
 }
 
@@ -642,7 +657,7 @@
 
 .resultsGrid span {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.6;
 }
 
@@ -652,7 +667,7 @@
   max-width: 700px;
   margin: 30px 0 0;
   color: rgba(255, 255, 255, 0.45);
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.7;
 }
 
@@ -673,13 +688,13 @@
     linear-gradient(
       180deg,
       rgba(7, 16, 25, 0) 0%,
-      rgba(7, 16, 25, 0) 30%,
-      rgba(7, 16, 25, 0.95) 48%,
-      var(--navy-deep) 58%,
+      rgba(7, 16, 25, 0) 38%,
+      rgba(7, 16, 25, 0.92) 62%,
+      var(--navy-deep) 72%,
       var(--navy-deep) 100%
     ),
     linear-gradient(rgba(11, 29, 48, 0.5), rgba(7, 16, 25, 0.7)),
-    url("/images/martinsadvocaciaempresarial/paulo-martins-about.png") center 22% / cover;
+    url("/images/martinsadvocaciaempresarial/paulo-martins-recepcao.jpeg") center 55% / cover;
 }
 
 .aboutVisual::before {
@@ -749,7 +764,7 @@
   max-width: 640px;
   margin: 17px 0 0;
   color: var(--muted);
-  font-size: 12.5px;
+  font-size: 14px;
   line-height: 1.9;
 }
 
@@ -786,7 +801,7 @@
 
 .formationGrid span {
   color: #757b80;
-  font-size: 7px;
+  font-size: 8.5px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -794,13 +809,13 @@
 
 .formationGrid strong {
   color: var(--navy);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
 }
 
 .formationGrid small {
   color: var(--muted);
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.5;
 }
 
@@ -832,7 +847,7 @@
   max-width: 480px;
   margin: 20px 0 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.85;
 }
 
@@ -851,7 +866,7 @@
   border: 1px solid var(--line);
   background: var(--paper);
   color: var(--navy);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
@@ -883,7 +898,7 @@
   padding: 8px 14px;
   background: rgba(11, 29, 48, 0.82);
   color: rgba(255, 255, 255, 0.82);
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.03em;
 }
 
@@ -915,7 +930,7 @@
   max-width: 570px;
   margin: 24px 0 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.8;
 }
 
@@ -940,7 +955,7 @@
 
 .contactCard > span {
   color: var(--gold);
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.17em;
   text-transform: uppercase;
@@ -957,7 +972,7 @@
 .contactCard p {
   margin: 10px 0 0;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.8;
 }
 
@@ -972,7 +987,7 @@
   align-items: center;
   gap: 9px;
   color: var(--navy);
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 700;
 }
 
@@ -1006,6 +1021,11 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+.brandLight .brandMarkImage {
+  filter: invert(1);
+  opacity: 0.9;
+}
+
 .brandLight .brandText {
   min-width: 176px;
   color: rgba(255, 255, 255, 0.9);
@@ -1019,13 +1039,13 @@
   max-width: 300px;
   margin: 20px 0 0;
   color: rgba(255, 255, 255, 0.56);
-  font-size: 11px;
+  font-size: 12.5px;
   line-height: 1.7;
 }
 
 .footerEyebrow {
   color: var(--gold);
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1059,14 +1079,14 @@
 
 .footerCredentialRow small {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 7px;
+  font-size: 8.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .footerCredentialRow strong {
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
@@ -1082,7 +1102,7 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.06);
   color: #fff;
-  font-size: 9px;
+  font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1102,7 +1122,7 @@
   justify-content: center;
   gap: 8px;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 10px;
+  font-size: 11.5px;
   letter-spacing: 0.04em;
   transition: color 0.2s ease;
 }
@@ -1120,7 +1140,7 @@
   gap: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   color: rgba(255, 255, 255, 0.46);
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .footerBottom nav {
@@ -1232,7 +1252,7 @@
     border-bottom: 1px solid var(--line);
   }
 
-  .servicesGrid article:nth-last-child(-n + 2) {
+  .servicesGrid article:nth-last-child(-n + 1) {
     border-bottom: 0;
   }
 
@@ -1254,8 +1274,10 @@
   .header {
     top: 40px;
     height: 70px;
-    background: rgba(255, 253, 250, 0.96);
+    background: rgba(255, 253, 250, 0.7);
     border-color: var(--line);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
   }
 
   .headerInner {
@@ -1275,9 +1297,11 @@
     inset: 70px 0 auto;
     padding: 12px 24px 24px;
     flex-direction: column;
-    background: rgba(255, 253, 250, 0.98);
+    background: rgba(255, 253, 250, 0.86);
     border-bottom: 1px solid var(--line);
     box-shadow: 0 24px 44px rgba(11, 29, 48, 0.1);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
   }
 
   .mobileMenu.menuOpen {
@@ -1437,70 +1461,8 @@
   /* Reforço de legibilidade — textos em px fixos tendem a ficar
      pequenos demais em telas de toque; corpo de texto sobe para a
      faixa 13–15px e rótulos/legendas ganham 1–2px. */
-  .heroLead {
-    font-size: 15px;
-  }
-
   .approachLead {
     font-size: 14.5px;
-  }
-
-  .aboutCopy > p:not(.eyebrowDark):not(.aboutLead):not(.signature) {
-    font-size: 14px;
-  }
-
-  .servicesGrid article > p:last-child {
-    font-size: 13.5px;
-  }
-
-  .locationCopy > p {
-    font-size: 14px;
-  }
-
-  .finalContent p:not(.eyebrowLight) {
-    font-size: 14px;
-  }
-
-  .contactCard p {
-    font-size: 13px;
-  }
-
-  .contactCard a {
-    font-size: 11.5px;
-  }
-
-  .footerBrand > p {
-    font-size: 12.5px;
-  }
-
-  .footerInstagram {
-    font-size: 11.5px;
-  }
-
-  .resultsGrid span {
-    font-size: 12px;
-  }
-
-  .resultsNote {
-    font-size: 11px;
-  }
-
-  .primaryButton,
-  .finalButton,
-  .textButton {
-    font-size: 11px;
-  }
-
-  .locationBadges span {
-    font-size: 11px;
-  }
-
-  .heroSeal strong {
-    font-size: 11px;
-  }
-
-  .heroSeal span {
-    font-size: 8.5px;
   }
 
   /* Cartões de credencial (Sobre): ícone à esquerda ocupando toda a
@@ -1537,10 +1499,6 @@
     font-size: 11.5px;
     line-height: 1.5;
   }
-
-  .footerCredentialRow small {
-    font-size: 8.5px;
-  }
 }
 
 @media (max-width: 580px) {
@@ -1563,11 +1521,6 @@
 
   .brandText strong {
     font-size: 12px;
-  }
-
-  .brandSurname,
-  .brandCredentials {
-    font-size: 7px;
   }
 
   .hero {
@@ -1634,6 +1587,7 @@
   .aboutVisual {
     min-height: 460px;
     padding: 42px;
+    background-position: 0 0, 0 0, center 68%;
   }
 
   .aboutCopy {
