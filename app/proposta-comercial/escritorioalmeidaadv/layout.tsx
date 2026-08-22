@@ -16,6 +16,9 @@ const body = Work_Sans({
   display: "swap",
 });
 
+const OG_IMAGE_URL =
+  "https://lumasites.com.br/images/escritorioalmeidaadv/almeida-advocacia-og-v2.jpg";
+
 export const metadata: Metadata = {
   title: "Almeida Advocacia | Família, Trabalho e Previdenciário em São Miguel Paulista",
   description:
@@ -31,12 +34,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: "https://lumasites.com.br/proposta-comercial/escritorioalmeidaadv",
+    images: [
+      {
+        url: OG_IMAGE_URL,
+        width: 1200,
+        height: 630,
+        alt: "Almeida Advocacia — clareza jurídica para seguir em frente",
+        type: "image/jpeg",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Almeida Advocacia | São Miguel Paulista, SP",
     description:
       "Advocacia em Direito de Família, Trabalho e Previdenciário na Zona Leste de São Paulo.",
+    images: [OG_IMAGE_URL],
   },
   robots: { index: false, follow: false },
 };
