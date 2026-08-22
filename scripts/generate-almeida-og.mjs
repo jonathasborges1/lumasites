@@ -16,55 +16,55 @@ const portraitPath = path.join(
   "patricia-almeida-socia-editorial-v2.webp",
 );
 const logoPath = path.join(imageDirectory, "almeida-logo-original.png");
-const outputPath = path.join(imageDirectory, "almeida-advocacia-og-v2.jpg");
+const outputPath = path.join(imageDirectory, "almeida-advocacia-og-v3.jpg");
 
 const overlay = Buffer.from(`
   <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="portraitBlend" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0" stop-color="#720103" stop-opacity="1" />
-        <stop offset="0.5" stop-color="#720103" stop-opacity="0.76" />
-        <stop offset="1" stop-color="#730203" stop-opacity="0" />
+        <stop offset="0" stop-color="#1c1716" stop-opacity="1" />
+        <stop offset="0.5" stop-color="#1c1716" stop-opacity="0.78" />
+        <stop offset="1" stop-color="#1c1716" stop-opacity="0" />
       </linearGradient>
       <linearGradient id="bottomShade" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0.55" stop-color="#2f0001" stop-opacity="0" />
-        <stop offset="1" stop-color="#2f0001" stop-opacity="0.32" />
+        <stop offset="0.55" stop-color="#100d0c" stop-opacity="0" />
+        <stop offset="1" stop-color="#100d0c" stop-opacity="0.34" />
       </linearGradient>
     </defs>
 
     <rect x="565" y="0" width="310" height="630" fill="url(#portraitBlend)" />
     <rect width="1200" height="630" fill="url(#bottomShade)" />
 
-    <g opacity="0.15" stroke="#e1a063">
+    <g opacity="0.16" stroke="#b66f50">
       <line x1="64" y1="0" x2="64" y2="630" />
       <line x1="316" y1="0" x2="316" y2="630" />
       <line x1="568" y1="0" x2="568" y2="630" />
     </g>
 
-    <text x="64" y="190" fill="#f1b67d" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3.1">
-      ADVOCACIA PRÓXIMA · SÃO MIGUEL PAULISTA, SP
+    <text x="64" y="190" fill="#d89a7f" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3.1">
+      TRABALHISTA E PREVIDENCIÁRIO · SÃO MIGUEL PAULISTA, SP
     </text>
 
     <text x="64" y="272" fill="#fffaf6" font-family="Georgia, serif" font-size="60" font-weight="400" letter-spacing="-1.6">
-      Clareza jurídica
+      Seu trabalho afetou
     </text>
     <text x="64" y="342" fill="#fffaf6" font-family="Georgia, serif" font-size="60" font-weight="400" letter-spacing="-1.6">
-      para seguir em frente.
+      a sua saúde?
     </text>
 
-    <rect x="64" y="394" width="56" height="3" fill="#e1a063" />
-    <text x="64" y="444" fill="#f5d6bb" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="1.5">
-      FAMÍLIA  ·  TRABALHO  ·  PREVIDENCIÁRIO
+    <rect x="64" y="394" width="56" height="3" fill="#b66f50" />
+    <text x="64" y="444" fill="#e8ccc3" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1.3">
+      DOENÇAS OCUPACIONAIS  ·  CONCAUSA  ·  BENEFÍCIOS
     </text>
 
-    <rect x="64" y="528" width="186" height="38" rx="19" fill="#fff8f2" fill-opacity="0.08" stroke="#e1a063" stroke-opacity="0.72" />
-    <circle cx="85" cy="547" r="4" fill="#e1a063" />
+    <rect x="64" y="528" width="186" height="38" rx="19" fill="#e8ccc3" fill-opacity="0.08" stroke="#b66f50" stroke-opacity="0.72" />
+    <circle cx="85" cy="547" r="4" fill="#b66f50" />
     <text x="100" y="552" fill="#fff8f2" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.8">
       PRÉVIA CONCEITUAL
     </text>
 
-    <rect x="1167" y="44" width="3" height="118" fill="#730203" fill-opacity="0.44" />
-    <rect x="1128" y="44" width="42" height="3" fill="#730203" fill-opacity="0.44" />
+    <rect x="1167" y="44" width="3" height="118" fill="#8f5541" fill-opacity="0.44" />
+    <rect x="1128" y="44" width="42" height="3" fill="#8f5541" fill-opacity="0.44" />
   </svg>
 `);
 
@@ -89,8 +89,15 @@ const signature = await sharp({
   .composite([{ input: signatureMask, blend: "dest-in" }])
   .png()
   .toBuffer();
-const scaleMark = await sharp(resizedLogo)
+const scaleMarkRaw = await sharp(resizedLogo)
   .extract({ left: signatureWidth, top: 0, width: 60, height: 68 })
+  .ensureAlpha()
+  .raw()
+  .toBuffer({ resolveWithObject: true });
+for (let index = 0; index < scaleMarkRaw.data.length; index += 4) {
+  if (scaleMarkRaw.data[index + 1] < 18) scaleMarkRaw.data[index + 3] = 0;
+}
+const scaleMark = await sharp(scaleMarkRaw.data, { raw: scaleMarkRaw.info })
   .png()
   .toBuffer();
 const logo = await sharp({
@@ -118,7 +125,7 @@ const result = await sharp({
     width: 1200,
     height: 630,
     channels: 3,
-    background: "#720103",
+    background: "#1c1716",
   },
 })
   .composite([

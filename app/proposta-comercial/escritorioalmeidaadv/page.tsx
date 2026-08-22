@@ -1,12 +1,10 @@
 "use client";
 
 import {
-  Award,
   Briefcase,
   CheckCircle2,
   ChevronRight,
   ClipboardCheck,
-  Clock,
   FileText,
   Facebook,
   GraduationCap,
@@ -23,7 +21,6 @@ import {
   X,
   ArrowDown,
   ArrowRight,
-  Zap,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -70,20 +67,20 @@ const legalServiceSchema = {
     value: "387.824",
   },
   knowsAbout: [
-    "Direito de Família",
-    "Divórcio consensual e litigioso",
-    "Inventário e partilha de bens",
     "Direito do Trabalho",
-    "Direito do Consumidor",
     "Direito Previdenciário",
-    "Aposentadoria e benefícios do INSS",
+    "Doenças ocupacionais",
+    "Acidente do trabalho",
+    "Concausa trabalhista",
+    "Benefícios por incapacidade",
+    "Auxílio-acidente",
   ],
 };
 
 const nav = [
-  ["Áreas", "#areas"],
+  ["Atuação", "#areas"],
+  ["Doenças ocupacionais", "#doencas-ocupacionais"],
   ["Como Funciona", "#como-funciona"],
-  ["Depoimentos", "#depoimentos"],
   ["Sobre", "#sobre"],
   ["Sócias", "#equipe"],
   ["Contato", "#contato"],
@@ -92,59 +89,67 @@ const nav = [
 const areas = [
   {
     icon: Heart,
-    eyebrow: "Direito de Família",
-    title: "Cuidado jurídico nos momentos mais sensíveis da família",
+    eyebrow: "Doenças ocupacionais",
+    title: "Análise jurídica quando o trabalho causa ou agrava a saúde",
     tags: [
-      "Inventário e partilha",
-      "Herança",
-      "Separação",
-      "Divórcio consensual e litigioso",
-      "União estável",
-      "Pensão alimentícia",
-      "Guarda de filhos",
-      "Reconhecimento de paternidade",
-      "Doações",
-      "Venda de bens de família",
-      "Interdição",
-      "Alienação parental",
+      "LER/DORT",
+      "Tendinite e bursite",
+      "Problemas de coluna",
+      "Transtornos psicológicos",
+      "Perda auditiva",
+      "Doenças respiratórias",
+      "Dermatoses ocupacionais",
+      "Concausa",
     ],
   },
   {
     icon: Briefcase,
-    eyebrow: "Direito do Trabalho",
-    title: "Defesa técnica dos seus direitos na relação de trabalho",
+    eyebrow: "Proteção trabalhista",
+    title: "Orientação sobre o vínculo entre trabalho, adoecimento e emprego",
     tags: [
-      "Vínculo empregatício",
-      "Férias",
-      "Horas extras e jornada",
-      "Verbas rescisórias e FGTS",
-      "Assédio moral",
-      "Equiparação salarial",
-      "Licença-maternidade",
-      "Afastamento médico",
-      "Acordos coletivos",
-      "Benefícios",
-      "Trabalho temporário",
-      "Profissional autônomo",
-      "Comissões e bônus",
+      "Nexo causal ou concausal",
+      "Emissão e discussão da CAT",
+      "Estabilidade provisória",
+      "FGTS no afastamento acidentário",
+      "Retorno ao trabalho",
+      "Reintegração, quando aplicável",
+      "Reparação por danos",
+      "Análise de documentos e provas",
     ],
   },
   {
     icon: Landmark,
-    eyebrow: "Direito Previdenciário",
-    title: "Orientação para garantir o benefício que é seu por direito",
+    eyebrow: "Proteção previdenciária",
+    title: "Acompanhamento dos benefícios relacionados à incapacidade laboral",
     tags: [
-      "Aposentadoria por invalidez",
-      "Aposentadoria por tempo de contribuição",
-      "Aposentadoria por idade",
-      "Aposentadoria especial",
-      "Auxílio-doença",
-      "Auxílio-reclusão",
-      "Pensão por morte",
-      "Benefício assistencial (BPC/LOAS)",
+      "Benefício por incapacidade temporária",
+      "Natureza acidentária (B91)",
+      "Auxílio-acidente",
+      "Aposentadoria por incapacidade permanente",
+      "Reabilitação profissional",
+      "Perícia médica",
+      "Revisão da espécie do benefício",
+      "Acompanhamento perante o INSS",
     ],
   },
 ];
+
+const occupationalConditions = [
+  "Lesões por esforços repetitivos (LER/DORT)",
+  "Tendinite, bursite e síndrome do túnel do carpo",
+  "Hérnias e problemas de coluna relacionados ao esforço ou à postura",
+  "Ansiedade, depressão, burnout e outros transtornos psicológicos",
+  "Perda auditiva associada à exposição a ruído",
+  "Doenças respiratórias e dermatológicas ligadas ao ambiente laboral",
+] as const;
+
+const possibleRights = [
+  "Benefício por incapacidade temporária de natureza acidentária (B91)",
+  "Estabilidade provisória após a cessação do benefício, quando aplicável",
+  "Depósitos de FGTS durante o afastamento de natureza acidentária",
+  "Auxílio-acidente em caso de sequela permanente com redução da capacidade",
+  "Reparação por danos, quando presentes os requisitos de responsabilidade",
+] as const;
 
 const steps = [
   {
@@ -164,58 +169,31 @@ const steps = [
   },
   {
     icon: CheckCircle2,
-    title: "Execução",
-    text: "Comunicação ágil com o cliente e condução rápida e eficiente até a conclusão do caso.",
+    title: "Acompanhamento",
+    text: "Você recebe orientações sobre cada etapa e atualizações sobre o andamento das medidas adotadas.",
   },
 ];
 
 const trustItems = [
   {
-    icon: Zap,
-    label: "Agilidade",
-    text: "e segurança jurídica, do primeiro contato ao encaminhamento do caso",
+    icon: ClipboardCheck,
+    label: "Análise técnica",
+    text: "da relação entre atividade profissional, documentos médicos e histórico laboral",
   },
   {
-    icon: Clock,
-    label: "Encurtamento",
-    text: "dos prazos e otimização do tempo, com acompanhamento ativo",
+    icon: Briefcase,
+    label: "Atuação integrada",
+    text: "nas repercussões trabalhistas e previdenciárias do adoecimento",
   },
   {
-    icon: CheckCircle2,
-    label: "Resolução",
-    text: "dos problemas e garantia dos direitos, com foco em solução",
+    icon: MessageCircle,
+    label: "Orientação clara",
+    text: "sobre os caminhos possíveis e os documentos relevantes para cada situação",
   },
   {
-    icon: Award,
-    label: "Profissionalismo",
-    text: "qualidade, ética e transparência em cada atendimento",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Daiani Oliveira",
-    text: "Ótimo escritório, a doutora Patrícia é uma profissional de alta performance, super recomendo!",
-  },
-  {
-    name: "Luiz Carlos",
-    text: "Um caso para resolver de 5 anos, para vender a nossa casa que era herança de família — a Dra. Patrícia de Almeida, num diálogo, resolveu em 15 dias.",
-  },
-  {
-    name: "Wil Gomes",
-    text: "Atendimento excelente e atencioso, ótimo profissionalismo e muito bom o custo-benefício.",
-  },
-  {
-    name: "Bruna Barile",
-    text: "Dra. Patrícia, ótima profissional, serviços de excelência, super recomendo.",
-  },
-  {
-    name: "Tais Bernardo",
-    text: "Profissional excelente, percebo toda a dedicação dela com o trabalho. Indico, pela ética e profissionalismo!",
-  },
-  {
-    name: "Quiteria Santana",
-    text: "Ótimo atendimento e eficácia no serviço.",
+    icon: ShieldCheck,
+    label: "Acompanhamento próximo",
+    text: "com sigilo, responsabilidade técnica e comunicação durante o atendimento",
   },
 ];
 
@@ -223,14 +201,14 @@ const team = [
   {
     name: "Dra. Patrícia Oliveira Almeida",
     oab: "OAB/SP 387.824",
-    photo: "/images/escritorioalmeidaadv/patricia-almeida-socia-editorial-v2.webp",
+    photo: "/images/escritorioalmeidaadv/patricia-almeida-socia-editorial-v3.webp",
     role: "Sócia-fundadora",
-    detail: "Família, Consumidor, Trabalho e Previdenciário",
+    detail: "Atuação trabalhista e previdenciária integrada",
   },
   {
     name: "Dra. Suellen Chaves de Santana",
     oab: "OAB/SP 361.916",
-    photo: "/images/escritorioalmeidaadv/suellen-santana-socia-editorial-v2.webp",
+    photo: "/images/escritorioalmeidaadv/suellen-santana-socia-editorial-v3.webp",
     role: "Sócia",
     detail: "Atuação jurídica integrada ao escritório",
   },
@@ -442,16 +420,16 @@ export default function AlmeidaAdvocaciaPage() {
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>
             <span />
-            Advocacia próxima · São Miguel Paulista, SP
+            Trabalhista e Previdenciário · São Miguel Paulista, SP
           </p>
           <h1 id="hero-title">
-            Clareza jurídica
-            <span> para seguir em frente.</span>
+            Seu trabalho afetou
+            <span> a sua saúde?</span>
           </h1>
           <p className={styles.heroLead}>
-            Atendimento próximo e técnico, presencial ou à distância, para quem
-            precisa resolver questões de família, trabalho ou aposentadoria com
-            clareza sobre cada passo do processo.
+            Orientação jurídica para trabalhadores com doença desenvolvida ou
+            agravada pelas condições de trabalho, com análise integrada das
+            repercussões trabalhistas e previdenciárias.
           </p>
 
           <div className={styles.credentialSpotlight} aria-label="Credenciais profissionais da Dra. Patrícia Oliveira Almeida">
@@ -462,7 +440,7 @@ export default function AlmeidaAdvocaciaPage() {
             </div>
             <div>
               <span>Atuação</span>
-              <strong>Família, Trabalho e Previdenciário</strong>
+              <strong>Trabalhista e Previdenciário</strong>
             </div>
           </div>
 
@@ -472,7 +450,7 @@ export default function AlmeidaAdvocaciaPage() {
               <ArrowRight size={17} />
             </a>
             <a className={styles.textButton} href="#areas">
-              Conhecer as áreas de atuação
+              Entender a atuação
               <ArrowDown size={15} />
             </a>
           </div>
@@ -482,13 +460,13 @@ export default function AlmeidaAdvocaciaPage() {
           <div
             className={styles.heroPanel}
             role="img"
-            aria-label="Imagem institucional da Justiça em tons de vinho e bronze"
+            aria-label="Dra. Patrícia Oliveira Almeida em retrato profissional"
           >
             <div className={styles.heroPanelIndex} aria-hidden="true">A / 01</div>
             <div className={styles.heroPanelCaption}>
-              <span>Equilíbrio</span>
-              <span>Proteção</span>
-              <span>Clareza</span>
+              <span>Escuta</span>
+              <span>Análise</span>
+              <span>Orientação</span>
             </div>
           </div>
           <div className={styles.heroSeal}>
@@ -524,11 +502,11 @@ export default function AlmeidaAdvocaciaPage() {
       <section className={styles.approach} id="areas">
         <Reveal>
           <div className={styles.sectionIntro}>
-            <p className={styles.eyebrowDark}>Áreas de atuação</p>
-            <h2>Uma advocacia próxima para os momentos que mais importam.</h2>
+            <p className={styles.eyebrowDark}>Atuação integrada</p>
+            <h2>Trabalho e Previdência precisam conversar quando a saúde é afetada.</h2>
             <p className={styles.approachLead}>
-              Três frentes de atuação estruturadas para atender às necessidades mais
-              comuns de quem procura orientação jurídica na Zona Leste de São Paulo.
+              A mesma situação pode produzir efeitos no emprego, no afastamento e
+              nos benefícios do INSS. A análise considera essas frentes em conjunto.
             </p>
           </div>
         </Reveal>
@@ -552,7 +530,7 @@ export default function AlmeidaAdvocaciaPage() {
                     ))}
                   </ul>
                   <a className={styles.areaAction} href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-                    Conversar sobre esta área <ArrowRight size={16} />
+                    Conversar sobre este tema <ArrowRight size={16} />
                   </a>
                 </article>
               </Reveal>
@@ -561,11 +539,87 @@ export default function AlmeidaAdvocaciaPage() {
         </div>
       </section>
 
+      <section className={styles.occupational} id="doencas-ocupacionais">
+        <Reveal>
+          <div className={styles.occupationalHeading}>
+            <p className={styles.eyebrowDark}>Doenças ocupacionais e concausa</p>
+            <h2>O trabalho não precisa ser a única causa para ter relevância jurídica.</h2>
+            <p>
+              Uma doença pode ter sido provocada pela atividade profissional ou ter
+              sido agravada de forma relevante pelas condições em que o trabalho era
+              realizado. Cada situação exige análise médica, documental e jurídica.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className={styles.occupationalConcepts}>
+          <Reveal>
+            <article>
+              <span>01</span>
+              <Heart size={24} aria-hidden="true" />
+              <h3>Doença ocupacional</h3>
+              <p>
+                É aquela produzida, desencadeada ou relacionada às condições especiais
+                em que a atividade profissional é executada.
+              </p>
+            </article>
+          </Reveal>
+          <Reveal delay={90}>
+            <article>
+              <span>02</span>
+              <Scale size={24} aria-hidden="true" />
+              <h3>Concausa</h3>
+              <p>
+                Ocorre quando o trabalho, embora não seja a única causa, contribui
+                diretamente para o adoecimento, agravamento ou redução da capacidade.
+              </p>
+              <small>Referência informativa: art. 21, I, da Lei 8.213/91.</small>
+            </article>
+          </Reveal>
+        </div>
+
+        <div className={styles.occupationalDetails}>
+          <Reveal>
+            <div className={styles.conditionPanel}>
+              <p className={styles.eyebrowDark}>Situações que merecem avaliação</p>
+              <h3>Alguns exemplos recorrentes</h3>
+              <ul>
+                {occupationalConditions.map((condition) => (
+                  <li key={condition}>
+                    <CheckCircle2 size={17} aria-hidden="true" />
+                    {condition}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+
+          <Reveal delay={90}>
+            <div className={styles.rightsPanel}>
+              <p className={styles.eyebrowLight}>Possíveis repercussões</p>
+              <h3>Direitos e medidas dependem das circunstâncias do caso</h3>
+              <ul>
+                {possibleRights.map((right) => (
+                  <li key={right}>{right}</li>
+                ))}
+              </ul>
+              <p className={styles.legalNote}>
+                O reconhecimento não é automático. Vínculo, qualidade de segurado,
+                incapacidade, nexo e documentação precisam ser avaliados individualmente.
+              </p>
+              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+                Relatar minha situação <ArrowRight size={16} />
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section className={styles.steps} id="como-funciona">
         <Reveal>
           <div className={styles.resultsHeading}>
             <p className={styles.eyebrowLight}>Como funciona</p>
-            <h2>Um processo claro, do primeiro contato até a solução.</h2>
+            <h2>Um processo claro, do primeiro contato ao acompanhamento do caso.</h2>
           </div>
         </Reveal>
 
@@ -586,38 +640,12 @@ export default function AlmeidaAdvocaciaPage() {
         </div>
       </section>
 
-      <section className={styles.testimonials} id="depoimentos">
-        <Reveal>
-          <div className={styles.sectionIntro}>
-            <p className={styles.eyebrowDark}>Depoimentos</p>
-            <h2>Quem já foi atendido conta como foi.</h2>
-            <p className={styles.approachLead}>
-              Relatos espontâneos que traduzem o que mais importa: escuta, presença
-              e orientação clara em momentos decisivos.
-            </p>
-          </div>
-        </Reveal>
-
-        <div className={styles.testimonialsGrid}>
-          {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={(i % 3) * 90}>
-              <article className={styles.testimonialCard}>
-                <span className={styles.quoteMarkSmall}>&ldquo;</span>
-                <p>{t.text}</p>
-                <strong>{t.name}</strong>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
       <section className={styles.about} id="sobre">
         <div className={styles.aboutVisual}>
           <div className={styles.aboutQuote}>
             <span className={styles.quoteMark}>&ldquo;</span>
             <p>
-              Preservação da ética, confiança, seriedade e excelência em cada caso
-              que passa pelas mãos do escritório.
+              Ética, confiança, seriedade e cuidado técnico em cada atendimento.
             </p>
           </div>
           <div className={styles.aboutMonogram} aria-hidden="true">
@@ -629,13 +657,13 @@ export default function AlmeidaAdvocaciaPage() {
           <p className={styles.eyebrowDark}>Sobre o escritório</p>
           <h2>Dra. Patrícia Oliveira Almeida</h2>
           <p className={styles.aboutLead}>
-            Advocacia construída para acompanhar de perto quem mais precisa.
+            Experiência jurídica para orientar trabalhadores em momentos de incerteza.
           </p>
           <p>
             Advogada e proprietária da Almeida Advocacia, a Dra. Patrícia atua desde
             2017 em São Miguel Paulista, na Zona Leste de São Paulo. Possui experiência
-            em contencioso trabalhista e cível, com atuação em Direito de Família,
-            do Consumidor e Previdenciário, atendendo pessoas físicas e jurídicas.
+            em contencioso trabalhista e cível e atuação previdenciária, atendendo
+            pessoas físicas e jurídicas.
           </p>
           <p>
             O atendimento é conduzido com sigilo absoluto, de forma presencial ou à
@@ -649,7 +677,7 @@ export default function AlmeidaAdvocaciaPage() {
               <Scale size={20} aria-hidden="true" />
               <span>Registro profissional</span>
               <strong>OAB/SP 387.824</strong>
-              <small>Família, consumidor, trabalho e previdenciário</small>
+              <small>Trabalhista e Previdenciário</small>
             </article>
             <article>
               <GraduationCap size={20} aria-hidden="true" />
@@ -745,10 +773,10 @@ export default function AlmeidaAdvocaciaPage() {
         </div>
         <div className={styles.finalContent}>
           <p className={styles.eyebrowLight}>Fale com a Dra. Patrícia</p>
-          <h2>O primeiro passo é entender o que a lei diz sobre o seu caso.</h2>
+          <h2>Seu trabalho pode ter relação com o que aconteceu à sua saúde.</h2>
           <p>
-            Envie sua dúvida pelo WhatsApp e entenda, com sigilo e sem compromisso,
-            quais caminhos jurídicos estão ao seu alcance.
+            Conte sua situação pelo WhatsApp e receba orientação sobre os documentos
+            relevantes e os caminhos jurídicos que podem ser avaliados.
           </p>
           <a className={styles.finalButton} href={WHATSAPP_URL} target="_blank" rel="noreferrer">
             <WhatsAppIcon size={18} />
@@ -785,8 +813,8 @@ export default function AlmeidaAdvocaciaPage() {
           <div className={styles.footerBrand}>
             <Brand light />
             <p>
-              Advocacia em Direito de Família, Consumidor, Trabalho e Previdenciário
-              em São Miguel Paulista, atendimento presencial ou à distância.
+              Advocacia trabalhista e previdenciária em São Miguel Paulista, com foco
+              em doenças ocupacionais e atendimento presencial ou à distância.
             </p>
           </div>
 

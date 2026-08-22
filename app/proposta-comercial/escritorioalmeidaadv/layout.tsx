@@ -17,20 +17,20 @@ const body = Work_Sans({
 });
 
 const OG_IMAGE_URL =
-  "https://lumasites.com.br/images/escritorioalmeidaadv/almeida-advocacia-og-v2.jpg";
+  "https://lumasites.com.br/images/escritorioalmeidaadv/almeida-advocacia-og-v3.jpg";
 
 export const metadata: Metadata = {
-  title: "Almeida Advocacia | Família, Trabalho e Previdenciário em São Miguel Paulista",
+  title: "Almeida Advocacia | Doenças ocupacionais em São Miguel Paulista",
   description:
-    "Dra. Patrícia Oliveira Almeida, OAB/SP 387.824, advocacia em Direito de Família, Trabalho e Previdenciário na Zona Leste de São Paulo. Atendimento presencial ou à distância, com sigilo absoluto.",
+    "Advocacia trabalhista e previdenciária para trabalhadores com doenças ocupacionais, concausa e benefícios por incapacidade. Atendimento presencial ou à distância.",
   alternates: {
     canonical:
       "https://lumasites.com.br/proposta-comercial/escritorioalmeidaadv",
   },
   openGraph: {
-    title: "Almeida Advocacia | São Miguel Paulista, SP",
+    title: "Doenças ocupacionais | Almeida Advocacia",
     description:
-      "Advocacia em Direito de Família, Trabalho e Previdenciário, com atendimento próximo e técnico na Zona Leste de São Paulo. OAB/SP 387.824.",
+      "Orientação trabalhista e previdenciária quando o trabalho causa ou agrava a saúde. OAB/SP 387.824.",
     type: "website",
     locale: "pt_BR",
     url: "https://lumasites.com.br/proposta-comercial/escritorioalmeidaadv",
@@ -39,16 +39,16 @@ export const metadata: Metadata = {
         url: OG_IMAGE_URL,
         width: 1200,
         height: 630,
-        alt: "Almeida Advocacia — clareza jurídica para seguir em frente",
+        alt: "Almeida Advocacia — orientação sobre doenças ocupacionais",
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Almeida Advocacia | São Miguel Paulista, SP",
+    title: "Doenças ocupacionais | Almeida Advocacia",
     description:
-      "Advocacia em Direito de Família, Trabalho e Previdenciário na Zona Leste de São Paulo.",
+      "Orientação trabalhista e previdenciária quando o trabalho causa ou agrava a saúde.",
     images: [OG_IMAGE_URL],
   },
   robots: { index: false, follow: false },
