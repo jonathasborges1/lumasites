@@ -7,11 +7,6 @@ export const site = {
   region: "Manaus - Amazonas",
   url: "https://lumasites.com.br",
 
-  social: {
-    instagram: "https://instagram.com/jonathasborges1",
-    github: "https://github.com/jonathasborges1/",
-  },
-
   whatsapp: {
     number: "5592988410440",
     defaultMessage:

@@ -12,8 +12,6 @@ import "./globals.css";
 
 const sameAs = [
   `https://wa.me/${site.whatsapp.number}`,
-  site.social.instagram,
-  site.social.github,
   "https://maps.app.goo.gl/aDhJpbGaD4cGPYJn7",
 ];
 

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Instagram } from "lucide-react";
 import { GlowButton } from "@/components/GlowButton";
 import { site } from "@/content/site";
 
@@ -36,15 +35,6 @@ export function AuthorBio() {
             <GlowButton href="/proposta-comercial" variant="ghost" size="md">
               Ver portfólio
             </GlowButton>
-            <a
-              href={site.social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-display uppercase tracking-wide text-ink-muted transition-colors duration-200 hover:text-glow-aqua"
-            >
-              <Instagram size={13} />
-              @jonathasborges1
-            </a>
           </div>
         </div>
       </div>

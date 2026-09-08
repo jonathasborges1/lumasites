@@ -313,7 +313,7 @@ export default function SiteParaPersonalTrainerEmManausPage() {
                     Conversar sobre meu site
                   </GlowButton>
                   <p className="mt-5 text-sm text-ink-muted">
-                    lumasites.com.br · @jonathasborges1
+                    lumasites.com.br
                   </p>
                 </div>
               </div>
@@ -480,7 +480,7 @@ export default function SiteParaPersonalTrainerEmManausPage() {
               </div>
 
               <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-ink-muted">
-                {["lumasites.com.br", "@jonathasborges1", "Atendimento em Manaus"].map((item) => (
+                {["lumasites.com.br", "Atendimento em Manaus"].map((item) => (
                   <span key={item} className="inline-flex items-center gap-2">
                     <CheckCircle2 size={14} className="text-accent-green" />
                     {item}

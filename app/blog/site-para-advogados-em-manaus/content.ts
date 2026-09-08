@@ -119,7 +119,6 @@ export const articleSchema = {
     "@type": "Person",
     name: "Jonathas Borges",
     url: site.url,
-    sameAs: ["https://www.instagram.com/jonathasborges1"],
   },
   publisher: {
     "@type": "Organization",
