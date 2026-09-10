@@ -1,5 +1,6 @@
 import { Lock } from "lucide-react";
-import { KM_COLORS, KM_FONT_BODY, KM_FONT_HEADING, KM_WHATSAPP_LINK } from "@/lib/karenmoraes/theme";
+import { KM_COLORS, KM_FONT_BODY, KM_WHATSAPP_LINK } from "@/lib/karenmoraes/theme";
+import BrandLogo from "./BrandLogo";
 
 const HOME = "/proposta-comercial/karenmoraes";
 
@@ -54,7 +55,7 @@ export default function SiteHeader({
 
       <div
         style={{
-          background: KM_COLORS.white,
+          background: "#FFFFFF",
           borderBottom: `1px solid ${KM_COLORS.border}`,
         }}
       >
@@ -70,13 +71,13 @@ export default function SiteHeader({
             flexWrap: "wrap",
           }}
         >
-          <a href={HOME} style={{ textDecoration: "none", display: "flex", flexDirection: "column", lineHeight: 1.1 }}>
-            <span style={{ fontFamily: KM_FONT_HEADING, fontWeight: 700, fontSize: 18, color: KM_COLORS.wine }}>
-              Karen Moraes
-            </span>
-            <span style={{ fontFamily: KM_FONT_BODY, fontSize: 10, letterSpacing: 2, color: KM_COLORS.muted, textTransform: "uppercase" }}>
-              Família & Sucessões {variant === "admin" && "· Painel administrativo"}
-            </span>
+          <a href={HOME} aria-label="Karen Moraes — página inicial" style={{ textDecoration: "none", display: "block", flexShrink: 0 }}>
+            <BrandLogo style={{ width: 174 }} />
+            {variant === "admin" && (
+              <span style={{ display: "block", marginTop: 3, textAlign: "center", fontFamily: KM_FONT_BODY, fontSize: 9, letterSpacing: 1.8, color: KM_COLORS.muted, textTransform: "uppercase" }}>
+                Painel administrativo
+              </span>
+            )}
           </a>
 
           {variant === "public" && (

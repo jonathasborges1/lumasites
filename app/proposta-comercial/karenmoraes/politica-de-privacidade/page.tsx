@@ -1,14 +1,15 @@
 import Link from "next/link";
+import BrandLogo from "@/components/karenmoraes/BrandLogo";
 
 const C = {
-  wine: "#6B1A2A",
-  wineDark: "#4A1020",
-  rose: "#F9F0EB",
-  white: "#FDFAF8",
-  gold: "#BFA26A",
-  text: "#2C1810",
-  muted: "#7A5C54",
-  border: "#E0C8BC",
+  wine: "#21243A",
+  wineDark: "#14162A",
+  rose: "#F5F3EE",
+  white: "#FBFAF7",
+  gold: "#C6A15B",
+  text: "#1C1E2E",
+  muted: "#5B5F72",
+  border: "#D7CCB4",
 };
 
 const sections = [
@@ -97,19 +98,7 @@ export default function PrivacyPolicyPage() {
           >
             ← Voltar para a proposta
           </Link>
-          <p
-            style={{
-              color: C.gold,
-              fontSize: "12px",
-              fontWeight: 700,
-              letterSpacing: "2.4px",
-              textTransform: "uppercase",
-              marginTop: "36px",
-              marginBottom: "16px",
-            }}
-          >
-            Karen Moraes Advocacia
-          </p>
+          <BrandLogo tone="light" style={{ width: 230, marginTop: 36, marginBottom: 20 }} />
           <h1
             style={{
               color: C.white,

@@ -1,28 +1,29 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import BrandLogo from "@/components/karenmoraes/BrandLogo";
 
 /* ─── Design Tokens ─────────────────────────────────────────────── */
 const C = {
-  wine: "#6B1A2A",
-  wineDark: "#4A1020",
-  wineLight: "#8B2638",
-  wineTint: "rgba(107,26,42,0.06)",
-  rose: "#F9F0EB",
-  roseMid: "#EDD9D0",
-  champagne: "#F4E8DE",
-  gold: "#BFA26A",
-  goldLight: "#D4B88A",
+  wine: "#21243A",
+  wineDark: "#14162A",
+  wineLight: "#3A4370",
+  wineTint: "rgba(33,36,58,0.06)",
+  rose: "#F5F3EE",
+  roseMid: "#E8E0D3",
+  champagne: "#EFE8DC",
+  gold: "#C6A15B",
+  goldLight: "#E0C08A",
   greenCta: "#25D366",
   greenDark: "#128C48",
-  text: "#2C1810",
-  muted: "#7A5C54",
-  white: "#FDFAF8",
-  border: "#E0C8BC",
+  text: "#1C1E2E",
+  muted: "#5B5F72",
+  white: "#FBFAF7",
+  border: "#D7CCB4",
 };
 
-const FH = "var(--km-font-heading,'Playfair Display',Georgia,serif)";
-const FB = "var(--km-font-body,'Inter',system-ui,sans-serif)";
+const FH = "var(--km-font-heading,'Bodoni Moda',Georgia,serif)";
+const FB = "var(--km-font-body,'Outfit',system-ui,sans-serif)";
 
 const WA_BASE = "https://wa.me/5566992486203";
 const WA = (msg = "Olá, Dra. Karen! Gostaria de agendar uma consulta.") =>
@@ -41,7 +42,7 @@ const CSS = `
   /* nav */
   .km-nav-links{display:none;gap:20px;align-items:center}
   .km-menu-btn{display:flex;background:none;border:none;cursor:pointer;padding:8px;color:${C.wine}}
-  .km-mobile-nav{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:${C.white};border-top:1px solid ${C.border};padding:16px 24px 24px;gap:0;box-shadow:0 8px 32px rgba(107,26,42,.12);z-index:90}
+  .km-mobile-nav{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:${C.white};border-top:1px solid ${C.border};padding:16px 24px 24px;gap:0;box-shadow:0 8px 32px rgba(33,36,58,.12);z-index:90}
   .km-mobile-nav.open{display:flex}
   .km-nav-link{display:block;padding:12px 0;color:${C.text};text-decoration:none;font-family:${FB};font-size:15px;font-weight:500;border-bottom:1px solid ${C.border};transition:color .2s}
   .km-nav-link:hover{color:${C.wine}}
@@ -52,7 +53,7 @@ const CSS = `
   .km-hero-photo{display:block;order:2}
   .km-hero-copy{order:1}
   .km-hero-photo-card{padding:18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:12px;backdrop-filter:blur(12px);text-align:center}
-  .km-hero-image-wrap{position:relative;width:100%;height:300px;border-radius:10px;overflow:hidden;margin:0 auto 16px;background:linear-gradient(135deg,${C.gold} 0%,rgba(191,162,106,.3) 100%);border:1px solid rgba(191,162,106,.45);box-shadow:0 18px 48px rgba(0,0,0,.22)}
+  .km-hero-image-wrap{position:relative;width:100%;height:300px;border-radius:10px;overflow:hidden;margin:0 auto 16px;background:linear-gradient(135deg,${C.gold} 0%,rgba(198,161,91,.3) 100%);border:1px solid rgba(198,161,91,.45);box-shadow:0 18px 48px rgba(0,0,0,.22)}
   .km-hero-title-card{font-family:${FH};font-size:20px;font-weight:700;color:${C.white};margin-bottom:4px}
   .km-hero-oab{font-family:${FB};font-size:11px;color:${C.goldLight};letter-spacing:1.8px;text-transform:uppercase;margin-bottom:0}
   .km-hero-card-divider,.km-hero-card-desc,.km-hero-card-list{display:none}
@@ -85,8 +86,8 @@ const CSS = `
   .km-nav-top{top:36px}
 
   /* circular avatars — mobile only */
-  .km-avatar-hero{display:none;width:96px;height:96px;border-radius:50%;overflow:hidden;border:3px solid ${C.gold};box-shadow:0 0 0 4px rgba(191,162,106,.25),0 8px 24px rgba(0,0,0,.3);margin:0 auto 28px;position:relative;background:linear-gradient(135deg,${C.gold} 0%,rgba(191,162,106,.4) 100%);flex-shrink:0}
-  .km-avatar-about{display:none;width:120px;height:120px;border-radius:50%;overflow:hidden;border:3px solid ${C.wine};box-shadow:0 0 0 4px rgba(107,26,42,.18),0 8px 24px rgba(107,26,42,.2);margin:0 auto 28px;position:relative;background:linear-gradient(135deg,${C.wine} 0%,${C.wineLight} 100%);flex-shrink:0}
+  .km-avatar-hero{display:none;width:96px;height:96px;border-radius:50%;overflow:hidden;border:3px solid ${C.gold};box-shadow:0 0 0 4px rgba(198,161,91,.25),0 8px 24px rgba(0,0,0,.3);margin:0 auto 28px;position:relative;background:linear-gradient(135deg,${C.gold} 0%,rgba(198,161,91,.4) 100%);flex-shrink:0}
+  .km-avatar-about{display:none;width:120px;height:120px;border-radius:50%;overflow:hidden;border:3px solid ${C.wine};box-shadow:0 0 0 4px rgba(33,36,58,.18),0 8px 24px rgba(33,36,58,.2);margin:0 auto 28px;position:relative;background:linear-gradient(135deg,${C.wine} 0%,${C.wineLight} 100%);flex-shrink:0}
   .km-avatar-initials{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:${FH};font-weight:700;color:#fff}
   .km-avatar-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
   .km-about-photo-rect{display:none}
@@ -182,10 +183,18 @@ const CSS = `
     .km-hero-chip{padding:5px 14px;font-size:12px;letter-spacing:.3px}
     .km-wa-float{display:flex!important}
   }
+  @media(min-width:900px) and (max-width:1199px){
+    .km-nav-links{display:none}
+    .km-menu-btn{display:flex}
+  }
+  @media(min-width:1200px){
+    .km-nav-links{display:flex}
+    .km-menu-btn{display:none}
+  }
 
   /* transitions */
   .km-card{transition:transform .22s ease,box-shadow .22s ease}
-  .km-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(107,26,42,.13)}
+  .km-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(33,36,58,.13)}
   .km-faq-panel{overflow:hidden;transition:max-height .35s ease,opacity .3s ease;opacity:0;max-height:0}
   .km-faq-panel.open{opacity:1;max-height:600px}
   .km-btn-hover{transition:opacity .2s,transform .18s}
@@ -205,6 +214,71 @@ const CSS = `
   .km-input::placeholder{color:rgba(255,255,255,.45)}
   .km-input:focus{border-color:rgba(255,255,255,.55)}
   .km-textarea{height:130px;resize:vertical}
+
+  /* editorial hero */
+  .km-nav-editorial{background:rgba(20,22,42,.98)!important;border-bottom:1px solid rgba(224,192,138,.2)!important}
+  .km-nav-editorial .km-nav-link{color:rgba(255,255,255,.82)!important;border-bottom-color:transparent!important}
+  .km-nav-editorial .km-nav-link:hover{color:${C.goldLight}!important;border-bottom-color:${C.gold}!important}
+  .km-nav-editorial .km-menu-btn{color:${C.goldLight}!important}
+  .km-nav-editorial .km-mobile-nav{background:${C.wineDark};border-top-color:rgba(224,192,138,.2);box-shadow:0 16px 32px rgba(0,0,0,.28)}
+  .km-nav-editorial .km-mobile-nav .km-nav-link{border-bottom-color:rgba(255,255,255,.1)!important}
+  .km-nav-editorial-cta{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border:1px solid ${C.gold};border-radius:2px;color:${C.goldLight};font-family:${FB};font-size:12px;font-weight:700;letter-spacing:1px;text-decoration:none;text-transform:uppercase;white-space:nowrap}
+
+  .km-hero-editorial{position:relative;min-height:700px;padding:0!important;background:${C.wineDark}!important;isolation:isolate}
+  .km-hero-editorial::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(circle at 18% 20%,rgba(58,67,112,.42),transparent 34%),linear-gradient(100deg,#111426 0%,#171a2e 48%,#20243b 100%)}
+  .km-hero-editorial::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.25;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:4px 4px;pointer-events:none}
+  .km-hero-inner{position:relative;z-index:3;min-height:700px;display:flex;align-items:center;padding-top:56px;padding-bottom:64px}
+  .km-hero-editorial-copy{width:58%;max-width:700px}
+  .km-hero-editorial .km-hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;color:${C.goldLight};font-size:11px;letter-spacing:3.2px}
+  .km-hero-editorial .km-hero-eyebrow::before{content:"";width:36px;height:1px;background:${C.gold}}
+  .km-hero-editorial .km-hero-heading{max-width:680px;margin-bottom:22px;font-size:clamp(44px,4.35vw,62px);font-weight:500;line-height:1.04;letter-spacing:-1.2px}
+  .km-hero-editorial .km-hero-heading em{color:${C.goldLight};font-weight:500}
+  .km-hero-editorial-text{max-width:560px;margin-bottom:30px;color:rgba(255,255,255,.76);font-family:${FB};font-size:16px;line-height:1.7}
+  .km-hero-editorial-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+  .km-hero-gold-btn,.km-hero-outline-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 25px;border-radius:2px;font-family:${FB};font-size:12px;font-weight:700;letter-spacing:1.2px;text-decoration:none;text-transform:uppercase;transition:transform .2s ease,background .2s ease,color .2s ease}
+  .km-hero-gold-btn{background:linear-gradient(135deg,#d2ab67,#b7893f);border:1px solid #d8b46f;color:#171827;box-shadow:0 10px 30px rgba(198,161,91,.2)}
+  .km-hero-outline-btn{border:1px solid rgba(224,192,138,.72);color:${C.goldLight};background:rgba(20,22,42,.28);backdrop-filter:blur(5px)}
+  .km-hero-gold-btn:hover,.km-hero-outline-btn:hover{transform:translateY(-2px)}
+  .km-hero-outline-btn:hover{background:${C.gold};color:${C.wineDark}}
+  .km-hero-editorial-proof{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.55);font-family:${FB};font-size:12px;letter-spacing:.25px}
+  .km-hero-editorial-proof span{color:${C.goldLight}}
+  .km-hero-portrait-stage{position:absolute;z-index:1;top:0;right:0;bottom:0;width:55%;overflow:hidden}
+  .km-hero-portrait-stage::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,${C.wineDark} 0%,rgba(20,22,42,.82) 9%,rgba(20,22,42,.22) 42%,rgba(20,22,42,.05) 70%),linear-gradient(0deg,rgba(20,22,42,.68) 0%,transparent 35%)}
+  .km-hero-portrait-stage::after{content:"";position:absolute;z-index:3;inset:28px 32px 28px auto;width:1px;background:linear-gradient(transparent,rgba(224,192,138,.65),transparent)}
+  .km-hero-portrait-image{display:block;width:86%;height:100%;margin-left:auto;object-fit:cover;object-position:58% 20%;filter:saturate(.78) contrast(1.03) brightness(.74);-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 10%,#000 25%);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 10%,#000 25%)}
+  .km-hero-signature{position:absolute;z-index:4;right:96px;bottom:42px;text-align:right;color:#fff}
+  .km-hero-signature strong{display:block;font-family:${FH};font-size:23px;font-weight:500}
+  .km-hero-signature span{display:block;margin-top:4px;color:${C.goldLight};font-family:${FB};font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+  .km-hero-legal-words{position:absolute;z-index:4;right:54px;top:50%;display:flex;flex-direction:column;gap:8px;transform:translateY(-50%);color:${C.goldLight};font-family:${FB};font-size:9px;font-weight:700;letter-spacing:2px;text-align:right;text-transform:uppercase}
+
+  @media(max-width:899px){
+    .km-nav-editorial .km-wrap{padding:10px 16px!important}
+    .km-nav-editorial-cta{padding:9px 12px;font-size:10px}
+    .km-hero-editorial{min-height:auto}
+    .km-hero-inner{min-height:auto;padding-top:64px;padding-bottom:28px}
+    .km-hero-editorial-copy{width:100%;max-width:680px}
+    .km-hero-editorial .km-hero-heading{font-size:clamp(40px,10.5vw,58px);letter-spacing:-1px}
+    .km-hero-portrait-stage{position:relative;width:100%;height:440px;margin-top:-6px}
+    .km-hero-portrait-stage::before{background:linear-gradient(180deg,${C.wineDark} 0%,rgba(20,22,42,.35) 30%,rgba(20,22,42,.08) 62%,rgba(20,22,42,.72) 100%)}
+    .km-hero-portrait-stage::after{inset:18px 16px 18px auto}
+    .km-hero-portrait-image{width:100%;object-position:center 39%;-webkit-mask-image:none;mask-image:none}
+    .km-hero-signature{right:38px;bottom:28px}
+    .km-hero-legal-words{display:none}
+  }
+  @media(max-width:599px){
+    .km-nav-editorial .km-wrap{padding:8px 16px!important}
+    .km-nav-editorial a[aria-label="Karen Moraes — início"]{max-width:138px}
+    .km-nav-editorial-cta{display:none}
+    .km-hero-inner{padding-top:40px;padding-bottom:22px}
+    .km-hero-editorial .km-hero-eyebrow{font-size:9px;letter-spacing:2.2px;margin-bottom:18px}
+    .km-hero-editorial .km-hero-heading{font-size:clamp(34px,10vw,42px)!important;line-height:1.04!important;margin-bottom:18px!important}
+    .km-hero-editorial-text{font-size:15px;line-height:1.6;margin-bottom:25px}
+    .km-hero-editorial-actions{display:grid;grid-template-columns:1fr;gap:10px}
+    .km-hero-gold-btn,.km-hero-outline-btn{width:100%;min-height:50px;padding:0 18px}
+    .km-hero-editorial-proof{font-size:11px;line-height:1.45}
+    .km-hero-portrait-stage{height:390px}
+    .km-hero-signature strong{font-size:20px}
+  }
 `;
 
 /* ─── Sub-components ─────────────────────────────────────────────── */
@@ -487,15 +561,15 @@ function Navbar() {
 
   return (
     <nav
-      className="km-nav-top"
+      className="km-nav-top km-nav-editorial"
       style={{
         position: "sticky",
         zIndex: 100,
-        background: scrolled ? "rgba(253,250,248,.97)" : C.white,
-        borderBottom: `1px solid ${C.border}`,
+        background: scrolled ? "rgba(20,22,42,.97)" : C.wineDark,
+        borderBottom: `1px solid rgba(224,192,138,.2)`,
         backdropFilter: "blur(12px)",
         transition: "background .3s,box-shadow .3s",
-        boxShadow: scrolled ? "0 2px 20px rgba(107,26,42,.08)" : "none",
+        boxShadow: scrolled ? "0 8px 30px rgba(0,0,0,.2)" : "none",
       }}
     >
       <div
@@ -508,38 +582,17 @@ function Navbar() {
           position: "relative",
         }}
       >
-        {/* Logo */}
+        {/* Identidade visual da cliente */}
         <a
           href="#"
+          aria-label="Karen Moraes — início"
           style={{
             textDecoration: "none",
-            display: "flex",
-            flexDirection: "column",
-            lineHeight: 1.1,
+            display: "block",
+            flexShrink: 0,
           }}
         >
-          <span
-            style={{
-              fontFamily: FH,
-              fontWeight: 700,
-              fontSize: "18px",
-              color: C.wine,
-              letterSpacing: ".3px",
-            }}
-          >
-            Karen Moraes
-          </span>
-          <span
-            style={{
-              fontFamily: FB,
-              fontSize: "10px",
-              letterSpacing: "2px",
-              color: C.muted,
-              textTransform: "uppercase",
-            }}
-          >
-            Família & Sucessões
-          </span>
+          <BrandLogo tone="light" style={{ width: "clamp(140px, 16vw, 178px)" }} />
         </a>
 
         {/* Desktop nav */}
@@ -553,7 +606,7 @@ function Navbar() {
                 fontFamily: FB,
                 fontSize: "13px",
                 fontWeight: 500,
-                color: C.text,
+                color: "rgba(255,255,255,.82)",
                 textDecoration: "none",
                 letterSpacing: ".3px",
                 padding: "6px 0",
@@ -562,11 +615,11 @@ function Navbar() {
                 whiteSpace: "nowrap",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = C.wine;
-                e.currentTarget.style.borderColor = C.wine;
+                e.currentTarget.style.color = C.goldLight;
+                e.currentTarget.style.borderColor = C.gold;
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = C.text;
+                e.currentTarget.style.color = "rgba(255,255,255,.82)";
                 e.currentTarget.style.borderColor = "transparent";
               }}
             >
@@ -580,19 +633,7 @@ function Navbar() {
             href={WA()}
             target="_blank"
             rel="noopener noreferrer"
-            className="km-btn-hover"
-            style={{
-              background: C.wine,
-              color: "#fff",
-              padding: "9px 18px",
-              borderRadius: "4px",
-              fontFamily: FB,
-              fontWeight: 700,
-              fontSize: "13px",
-              textDecoration: "none",
-              letterSpacing: ".5px",
-              textTransform: "uppercase",
-            }}
+            className="km-nav-editorial-cta km-btn-hover"
           >
             Fale comigo →
           </a>
@@ -600,7 +641,7 @@ function Navbar() {
             className="km-menu-btn"
             onClick={() => setOpen(!open)}
             aria-label="Menu"
-            style={{ color: C.wine }}
+            style={{ color: C.goldLight }}
           >
             {open ? <CloseIcon /> : <MenuIcon />}
           </button>
@@ -627,8 +668,8 @@ function Navbar() {
           style={{
             marginTop: "16px",
             display: "block",
-            background: `linear-gradient(135deg, ${C.greenDark} 0%, ${C.greenCta} 100%)`,
-            color: "#fff",
+            background: `linear-gradient(135deg, ${C.goldLight} 0%, ${C.gold} 100%)`,
+            color: C.wineDark,
             padding: "14px",
             borderRadius: "4px",
             fontFamily: FB,
@@ -666,7 +707,7 @@ function HeroSection() {
           width: "360px",
           height: "360px",
           borderRadius: "50%",
-          background: "rgba(191,162,106,.08)",
+          background: "rgba(198,161,91,.08)",
           pointerEvents: "none",
         }}
       />
@@ -833,8 +874,8 @@ function HeroSection() {
                   borderRadius: "10px",
                   overflow: "hidden",
                   margin: "0 auto 24px",
-                  background: `linear-gradient(135deg, ${C.gold} 0%, rgba(191,162,106,.3) 100%)`,
-                  border: `1px solid rgba(191,162,106,.45)`,
+                  background: `linear-gradient(135deg, ${C.gold} 0%, rgba(198,161,91,.3) 100%)`,
+                  border: `1px solid rgba(198,161,91,.45)`,
                   boxShadow: "0 18px 48px rgba(0,0,0,.22)",
                 }}
               >
@@ -898,7 +939,7 @@ function HeroSection() {
               <div
                 style={{
                   height: "1px",
-                  background: "rgba(191,162,106,.3)",
+                  background: "rgba(198,161,91,.3)",
                   margin: "0 0 20px",
                 }}
               />
@@ -944,6 +985,64 @@ function HeroSection() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EditorialHeroSection() {
+  return (
+    <section className="km-hero-sec km-hero-editorial" aria-labelledby="km-hero-title">
+      <div className="km-wrap km-hero-inner">
+        <div className="km-hero-editorial-copy km-up">
+          <p className="km-hero-eyebrow">Advocacia e consultoria jurídica</p>
+          <h1 id="km-hero-title" className="km-hero-heading">
+            Segurança jurídica para decisões que <em>transformam vidas.</em>
+          </h1>
+          <p className="km-hero-editorial-text">
+            Atuação em Direito de Família e Sucessões com escuta atenta,
+            estratégia e orientação clara para proteger seus direitos nos
+            momentos que mais exigem segurança.
+          </p>
+
+          <div className="km-hero-editorial-actions">
+            <a
+              href={WA("Olá, Dra. Karen! Quero conversar sobre meu caso.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="km-hero-gold-btn"
+            >
+              Falar com a advogada
+            </a>
+            <a href="#sobre" className="km-hero-outline-btn">
+              Conheça o escritório
+            </a>
+          </div>
+
+          <p className="km-hero-editorial-proof">
+            <span aria-hidden="true">◆</span>
+            Atendimento online em todo o Brasil e presencial em Barra do Garças
+          </p>
+        </div>
+      </div>
+
+      <div className="km-hero-portrait-stage" aria-hidden="true">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={KAREN_HERO_PHOTO}
+          alt=""
+          className="km-hero-portrait-image"
+        />
+        <div className="km-hero-legal-words">
+          <span>Direito</span>
+          <span>Clareza</span>
+          <span>Estratégia</span>
+          <span>Segurança</span>
+        </div>
+        <div className="km-hero-signature">
+          <strong>Dra. Karen Moraes</strong>
+          <span>OAB/MT 36197</span>
         </div>
       </div>
     </section>
@@ -1330,7 +1429,7 @@ function AboutSection() {
                 aspectRatio: "4/5",
                 border: `1px solid ${C.border}`,
                 position: "relative",
-                boxShadow: "0 18px 48px rgba(107,26,42,.12)",
+                boxShadow: "0 18px 48px rgba(33,36,58,.12)",
               }}
             >
               <div
@@ -1370,7 +1469,7 @@ function AboutSection() {
                   position: "absolute",
                   inset: 0,
                   background:
-                    "linear-gradient(to top, rgba(74,16,32,.88) 0%, rgba(74,16,32,.3) 40%, rgba(74,16,32,0) 65%)",
+                    "linear-gradient(to top, rgba(20,22,42,.88) 0%, rgba(20,22,42,.3) 40%, rgba(20,22,42,0) 65%)",
                   pointerEvents: "none",
                 }}
                 aria-hidden="true"
@@ -1502,7 +1601,7 @@ function AboutSection() {
               <div
                 style={{
                   height: "1px",
-                  background: "rgba(191,162,106,.3)",
+                  background: "rgba(198,161,91,.3)",
                   margin: "0 16px 16px",
                 }}
               />
@@ -2033,7 +2132,7 @@ function FinalCTASection() {
           width: "400px",
           height: "400px",
           borderRadius: "50%",
-          background: "rgba(191,162,106,.06)",
+          background: "rgba(198,161,91,.06)",
           pointerEvents: "none",
         }}
       />
@@ -2125,29 +2224,10 @@ function ContactFooter() {
         <div className="km-footer-grid" style={{ paddingBottom: "64px" }}>
           {/* Col 1: Contact info */}
           <div>
-            <p
-              style={{
-                fontFamily: FH,
-                fontSize: "22px",
-                fontWeight: 700,
-                color: C.white,
-                marginBottom: "8px",
-              }}
-            >
-              Karen Moraes
-            </p>
-            <p
-              style={{
-                fontFamily: FB,
-                fontSize: "11px",
-                letterSpacing: "2.5px",
-                textTransform: "uppercase",
-                color: C.gold,
-                marginBottom: "28px",
-              }}
-            >
-              Família & Sucessões
-            </p>
+            <BrandLogo
+              tone="light"
+              style={{ width: "min(250px, 100%)", marginBottom: "28px" }}
+            />
 
             {[
               {
@@ -2632,7 +2712,7 @@ export default function KarenMoraesPage() {
       <div className="km km-top-pad">
         <TopBar />
         <Navbar />
-        <HeroSection />
+        <EditorialHeroSection />
         <IdentificationSection />
         <UrgencySection />
         <ServicesSection />

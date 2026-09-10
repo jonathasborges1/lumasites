@@ -1,13 +1,13 @@
-import { Playfair_Display, Inter } from "next/font/google";
+import { Bodoni_Moda, Outfit } from "next/font/google";
 import type { Metadata } from "next";
 
-const playfair = Playfair_Display({
+const bodoniModa = Bodoni_Moda({
   subsets: ["latin"],
   variable: "--km-font-heading",
   display: "swap",
 });
 
-const inter = Inter({
+const outfit = Outfit({
   subsets: ["latin"],
   variable: "--km-font-body",
   display: "swap",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function KarenLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`${playfair.variable} ${inter.variable}`} style={{ isolation: "isolate", colorScheme: "light" }}>
+    <div className={`${bodoniModa.variable} ${outfit.variable}`} style={{ isolation: "isolate", colorScheme: "light" }}>
       {children}
     </div>
   );
