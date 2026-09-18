@@ -6,6 +6,7 @@ const nextConfig = {
   trailingSlash: false,
   allowedDevOrigins: ["192.168.100.11"],
   reactStrictMode: true,
+  devIndicators: false,
   poweredByHeader: false,
   compress: true,
   experimental: {
