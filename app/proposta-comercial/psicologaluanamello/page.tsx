@@ -494,7 +494,7 @@ export default function PsicologaLuanaMelloPreview() {
             <div className={styles.heroPhotoFrame}>
               <div className={styles.heroPhoto}>
                 <Image
-                  src={`${assets}/luana-hero-clean-v2.jpg`}
+                  src={`${assets}/luana-client-hero-v1.webp`}
                   alt="Luana Mello, psicóloga clínica e do trabalho"
                   fill
                   sizes="(max-width: 900px) 90vw, 460px"
@@ -521,7 +521,7 @@ export default function PsicologaLuanaMelloPreview() {
         <div className={`${styles.container} ${styles.aboutGrid}`}>
           <div className={styles.aboutPortrait}>
             <Image
-              src={`${assets}/luana-about-clean-v2.jpg`}
+              src={`${assets}/luana-client-about-v1.webp`}
               alt="Luana Mello, psicóloga clínica e do trabalho"
               fill
               sizes="(max-width: 780px) 90vw, 430px"
@@ -941,7 +941,7 @@ export default function PsicologaLuanaMelloPreview() {
           <div className={styles.contactVisual}>
             <div className={styles.contactPortrait}>
                 <Image
-                  src={`${assets}/luana-contact-clean-v2.jpg`}
+                  src={`${assets}/luana-client-contact-v1.webp`}
                   alt="Retrato profissional de Luana Mello"
                   fill
                   sizes="(max-width: 860px) 90vw, 440px"
