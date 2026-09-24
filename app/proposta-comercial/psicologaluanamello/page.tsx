@@ -494,7 +494,7 @@ export default function PsicologaLuanaMelloPreview() {
             <div className={styles.heroPhotoFrame}>
               <div className={styles.heroPhoto}>
                 <Image
-                  src={`${assets}/luana-client-hero-v1.webp`}
+                  src={`${assets}/luana-hero-clean-v2.jpg`}
                   alt="Luana Mello, psicóloga clínica e do trabalho"
                   fill
                   sizes="(max-width: 900px) 90vw, 460px"
