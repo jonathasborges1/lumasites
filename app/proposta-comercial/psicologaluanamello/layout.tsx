@@ -16,7 +16,7 @@ const body = Inter({
   display: "swap",
 });
 
-const OG_IMAGE_URL = "https://lumasites.com.br/psicologaluanamello/og-luana-mello-v2.jpg";
+const OG_IMAGE_URL = "https://lumasites.com.br/psicologaluanamello/og-luana-mello-v3.jpg";
 
 export const metadata: Metadata = {
   title: "Luana Mello | Psicologia do Trabalho, Psicanálise e RH",
